@@ -7,7 +7,7 @@ import "../styles/App.css";
 
 const ProductionReport = () => {
   return (
-    <div className="container px-5 pb-5">
+    <div className="container-fluid pb-5">
       <div className="mt-2">
         <p className="text-end fst-italic">FRM-OPR-018</p>
         <div className="border border-3 border-dark">
@@ -40,16 +40,22 @@ const ProductionReport = () => {
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-3">
-                    <div className="mb-4">
+                    <div className="mb-1">
                       <p className="mb-2 px-2  fw-normal text-alat">
-                        No. Dokumen: <span className="fw-semibold fst-italic">FRM-OPR - 003</span>
+                        No. Dokumen:{" "}
+                        <span className="fw-semibold fst-italic">
+                          FRM-OPR - 003
+                        </span>
                       </p>
+                      <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
-                        Hari / Tanggal /Shift: {" "}
+                        Hari / Tanggal /Shift:{" "}
                       </p>
+                      <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
                         Halaman:{" "}
                       </p>
+                      <hr className="w-100" />
                     </div>
                   </th>
                 </thead>
@@ -61,27 +67,79 @@ const ProductionReport = () => {
             <Table bordered hover className="text-center mt-3">
               <thead>
                 <tr>
-                  <th scope="col" className="header-table-pit">
-                    No
+                  <th scope="col" colSpan={2} className="header-table-production fw-bold">
+                    FLEET
                   </th>
-                  <th scope="col" className="header-table-pit">
-                    ACTIVITY
+                  <th scope="col" colSpan={8} className="header-table-production fw-bold">
+                    FRONT LOADING
                   </th>
-                  <th scope="col" className="header-table-pit fw-bold">
-                    LOCATION
+                  <th scope="col" colSpan={2} className="header-table-production fw-bold">
+                    ROAD
                   </th>
-                  <th scope="col" className="header-table-pit fw-bold">
-                    SUPPORT FOR
+                  <th scope="col" colSpan={5} className="header-table-production fw-bold">
+                    DUMPING POINT
                   </th>
-                  <th scope="col" className="header-table-pit">
-                    UNIT
+                  <th scope="col" rowSpan={2} className="header-table-production fw-normal">
+                    REMARKS
                   </th>
-                  <th scope="col" className="header-table-pit">
-                    REMARK
+                </tr>
+                <tr>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    C/N LOADER
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    C/N HAULER
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    ROAD
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    PIT
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    BLOCK
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    SEAM
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    MATERIAL TYPE
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    RL
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    CONDITION
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    SUPPORT EQUIPMENT
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    CONDITION
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    SUPPORT EQUIPMENT
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    DISP/S'PILE
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    RL
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    CONDITION
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    SUPPORT EQUIPMENT
+                  </th>
+                  <th scope="col" className="header-table-production2 fw-normal">
+                    DISTANCE
                   </th>
                 </tr>
               </thead>
-              <tbody className="text-start">Data</tbody>
+              <tbody className="text-start">
+
+              </tbody>
             </Table>
 
             <hr className="w-100 solid m-0" />

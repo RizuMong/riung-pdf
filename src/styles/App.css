@@ -113,3 +113,18 @@ hr.solid {
   font-size: 30px;
   text-align: center;
 }
+
+.header-report-production {
+  font-size: 30px;
+  text-align: center;
+}
+
+.header-table-production {
+  font-size: 18px;
+  text-align: center;
+}
+
+.header-table-production2 {
+  font-size: 14px;
+  text-align: center;
+}
