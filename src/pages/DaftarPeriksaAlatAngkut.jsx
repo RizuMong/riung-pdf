@@ -1,6 +1,7 @@
 import React from "react";
 import { WithRouter } from "../utils/Navigation";
 
+import Table from "react-bootstrap/Table";
 import LogoRiung from "../assets/logo-riung.jpg";
 import "../styles/App.css";
 
@@ -11,7 +12,6 @@ const DaftarPeriksaAlatAngkut = () => {
         <p className="text-end fst-italic">FRM-OPR-018</p>
         <div className="border border-3 border-dark">
           <div className="p-3">
-            {/* Header */}
             <div className="row align-items-center">
               {/* Header Table */}
               <table className="table">
@@ -54,8 +54,46 @@ const DaftarPeriksaAlatAngkut = () => {
                   </th>
                 </thead>
               </table>
-              <hr className="w-100" />
             </div>
+            <hr className="w-100" />
+
+            {/* Table Content */}
+            <Table bordered hover className="text-center mt-3">
+              <thead>
+                <tr>
+                  <th scope="col" className="header-table">
+                    NO
+                  </th>
+                  <th scope="col" colSpan={2} className="header-table">
+                    PEMERIKSAAN
+                  </th>
+                  <th scope="col" colSpan={10} className="header-table">
+                    C/N UNIT
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-start">
+                <tr>
+                  <td className="text-center">1</td>
+                  <td className="fw-semibold">
+                    Apakah penyanggah mud guard utuh & baik
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+              </tbody>
+            </Table>
+
+            <hr className="w-100" />
 
             {/* Content Bottom */}
             <div className="container px-5 pt-3">
@@ -66,7 +104,9 @@ const DaftarPeriksaAlatAngkut = () => {
                   <p> Prod. Group Leader</p>
                 </div>
                 <div className="col-4 align-self-end">
-                  <p className="text-base">Distribusi : Asli : Production Dept., Yellow : Customer</p>
+                  <p className="text-base">
+                    Distribusi : Asli : Production Dept., Yellow : Customer
+                  </p>
                 </div>
                 <div className="col-4 text-center">
                   <p>Mengetahui,</p>

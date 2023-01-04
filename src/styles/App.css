@@ -73,3 +73,8 @@ p {
 .table>:not(caption)>*>* {
   padding: 0 !important;
 }
+
+.header-table {
+  font-size: 24px;
+  font-weight: 800;
+}
