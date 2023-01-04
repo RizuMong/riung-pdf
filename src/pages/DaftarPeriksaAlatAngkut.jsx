@@ -90,6 +90,227 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>Data</td>
                   <td>Data</td>
                 </tr>
+                <tr>
+                  <td className="text-center">2</td>
+                  <td className="fw-semibold">
+                    Apakah spring tidak retak & utuh
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">3</td>
+                  <td className="fw-semibold">
+                    Apakah baut roda, utuh & kencang 
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">4</td>
+                  <td className="fw-semibold">
+                    Apakah U-bolt utuh & kencang
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">5</td>
+                  <td className="fw-semibold">
+                    Apakah komponen undercarriage utuh & terikat
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">6</td>
+                  <td className="fw-semibold">
+                    Apakah bagian dalam vessel bersih
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">7</td>
+                  <td className="fw-semibold">
+                    Apakah plat vessel tidak ada yang robek
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">8</td>
+                  <td className="fw-semibold">
+                    Apakah kondisi tailgate & pintu utuh & baik
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">9</td>
+                  <td className="fw-semibold">
+                    Apakah plat pijakan tangga utuh & terikat
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">10</td>
+                  <td className="fw-semibold">
+                    Apakah extention vessel terikat (las) dengan baik
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">11</td>
+                  <td className="fw-semibold">
+                    Apakah cover/tutup battery utuh & terikat
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">12</td>
+                  <td className="fw-semibold">
+                    Apakah kelengkapan palu tersimpan dengan baik
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">13</td>
+                  <td className="fw-semibold">
+                    Apakah ram pelindung lampu terikat dengan baik
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td className="text-center">14</td>
+                  <td className="fw-semibold">
+                    Apakah kabel dan connector tidak ada yang lepas
+                  </td>
+                  <td>Small dump truck</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                  <td>Data</td>
+                </tr>
               </tbody>
             </Table>
 
