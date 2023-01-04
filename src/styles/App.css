@@ -107,3 +107,9 @@ hr.solid {
 .text-bottom-left {
   margin-left: 510px;
 }
+
+/* Styling Handover Production Report */
+.header-report-production {
+  font-size: 30px;
+  text-align: center;
+}
