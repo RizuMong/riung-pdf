@@ -55,7 +55,6 @@ const ReportPitService = () => {
             <hr className="w-100 solid" />
 
             {/* Table Content */}
-            
 
             <hr className="w-100 solid" />
 
@@ -63,19 +62,19 @@ const ReportPitService = () => {
             <div className="container px-5 pt-3">
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
-                  <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
+                  <p>Dibuat oleh,</p>
                   <p className="mt-5">(__________________)</p>
-                  <p> Prod. Group Leader</p>
+                  <p>Pit Service Group Leader</p>
                 </div>
-                <div className="col-4 align-self-end">
-                  <p className="text-base">
-                    Distribusi : Asli : Production Dept., Yellow : Customer
-                  </p>
+                <div className="col-4 text-center gap-5">
+                  <p>Diserahkan oleh:</p>
+                  <p className="mt-5">(__________________)</p>
+                  <p>Prod. Dept/Section Head</p>
                 </div>
                 <div className="col-4 text-center">
-                  <p>Mengetahui,</p>
+                  <p>Diterima oleh,</p>
                   <p className="mt-5">(__________________)</p>
-                  <p>Customer</p>
+                  <p>Pit Service Group Leader</p>
                 </div>
               </div>
             </div>
