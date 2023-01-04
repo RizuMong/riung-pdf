@@ -53,30 +53,25 @@ const DaftarPeriksaAlatAngkut = () => {
                     </div>
                   </th>
                 </thead>
-                
               </table>
-              <hr className="w-100"/>
+              <hr className="w-100" />
             </div>
 
             {/* Content Bottom */}
             <div className="container px-5 pt-3">
-              <div className="row justify-content-center">
-                <div className="col-10 d-flex gap-5">
-                  <p className="fw-bold mt-6">Productivity =</p>
-                  <div className="d-flex align-items-center gap-2">
-                    <div>
-                      <p className="fw-bold pl-3">60</p>
-                      <hr className="" />
-                      <p className="fw-bold pl-2">Minutes</p>
-                    </div>
-                    <p className="fw-bold">x Production</p>
-                  </div>
+              <div className="row align-items-center">
+                <div className="col-4 text-center gap-5">
+                  <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
+                  <p className="mt-5">(__________________)</p>
+                  <p> Prod. Group Leader</p>
                 </div>
-                <div className="col-2 text-center">
-                  <p>Dibuat oleh,</p>
-                  <p className="mt-5 border-bottom border-dark border-3">
-                    ( Group Leader )
-                  </p>
+                <div className="col-4 align-self-end">
+                  <p className="text-base">Distribusi : Asli : Production Dept., Yellow : Customer</p>
+                </div>
+                <div className="col-4 text-center">
+                  <p>Mengetahui,</p>
+                  <p className="mt-5">(__________________)</p>
+                  <p>Customer</p>
                 </div>
               </div>
             </div>
