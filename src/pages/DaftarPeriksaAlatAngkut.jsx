@@ -55,7 +55,7 @@ const DaftarPeriksaAlatAngkut = () => {
                 </thead>
               </table>
             </div>
-            <hr className="w-100" />
+            <hr className="w-100 solid" />
 
             {/* Table Content */}
             <Table bordered hover className="text-center mt-3">
@@ -314,7 +314,7 @@ const DaftarPeriksaAlatAngkut = () => {
               </tbody>
             </Table>
 
-            <hr className="w-100" />
+            <hr className="w-100 solid" />
 
             {/* Content Bottom */}
             <div className="container px-5 pt-3">

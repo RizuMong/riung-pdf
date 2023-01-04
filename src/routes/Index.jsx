@@ -7,7 +7,7 @@ import HandOverProductionReport from "../pages/ProductionReport";
 import ControlActivityCoalGetting from "../pages/ControlActivityCoalGetting";
 import DaftarPeriksaAlatLoading from "../pages/DaftarPeriksaAlatLoading";
 import ProductionControl from "../pages/ProductControl";
-import HandoverPitSupportServiceActivity from "../pages/ReportPitService";
+import HandoverReportPitSupportServiceActivity from "../pages/ReportPitService";
 import RoadMaintenanceHandover from "../pages/RoadMaintenanceHandover";
 import DaftarPeriksaLeader from "../pages/DaftarPeriksaLeader";
 
@@ -31,7 +31,7 @@ const Index = () => {
         <Route path="/product-control" element={<ProductionControl />} />
         <Route
           path="/report-pit-service"
-          element={<HandoverPitSupportServiceActivity />}
+          element={<HandoverReportPitSupportServiceActivity />}
         />
         <Route
           path="/control-activity-coal-getting"

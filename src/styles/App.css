@@ -51,6 +51,10 @@ p {
   font-size: 16px;
 }
 
+hr.solid {
+  border-top: 3px solid rgb(57, 57, 57) !important;
+}
+
 .text-alat {
   font-size: 14px;
 }
@@ -77,4 +81,18 @@ p {
 .header-table {
   font-size: 24px;
   font-weight: 800;
+}
+
+/* Styling Report For Pit Service Activity */
+.header-report-pit {
+  font-size: 26px;
+  text-align: center;
+}
+
+.mb-6 {
+  margin-bottom: 34px;
+}
+
+.text-lg {
+  font-size: 14px;
 }
