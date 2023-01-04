@@ -28,9 +28,7 @@ p {
   font-size: 30px;
 }
 
-.bg-w
-
-.pr-2 {
+.bg-w .pr-2 {
   padding-right: 10px;
 }
 
@@ -74,7 +72,7 @@ hr.solid {
   text-align: center;
 }
 
-.table>:not(caption)>*>* {
+.table > :not(caption) > * > * {
   padding: 0 !important;
 }
 
@@ -89,10 +87,23 @@ hr.solid {
   text-align: center;
 }
 
+.header-table-pit {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 .mb-6 {
   margin-bottom: 34px;
 }
 
 .text-lg {
   font-size: 14px;
+}
+
+.text-bottom {
+  font-size: 13px;
+}
+
+.text-bottom-left {
+  margin-left: 510px;
 }

@@ -55,8 +55,122 @@ const ReportPitService = () => {
             <hr className="w-100 solid" />
 
             {/* Table Content */}
+            <Table bordered hover className="text-center mt-3">
+              <thead>
+                <tr>
+                  <th scope="col" className="header-table-pit">
+                    No
+                  </th>
+                  <th scope="col" className="header-table-pit">
+                    ACTIVITY
+                  </th>
+                  <th scope="col" className="header-table-pit fw-bold">
+                    LOCATION
+                  </th>
+                  <th scope="col" className="header-table-pit fw-bold">
+                    SUPPORT FOR
+                  </th>
+                  <th scope="col" className="header-table-pit">
+                    UNIT
+                  </th>
+                  <th scope="col" className="header-table-pit">
+                    REMARK
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-start">
+                <tr>
+                  <td className="text-center">1</td>
+                  <td>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                  <td>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                  <td>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                  <td>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                  <td>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
 
-            <hr className="w-100 solid" />
+            <hr className="w-100 solid m-0" />
 
             {/* Content Bottom */}
             <div className="container px-5 pt-3">
@@ -79,6 +193,12 @@ const ReportPitService = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="d-flex">
+          <p className="text-bottom-left fw-normal text-bottom flex-grow-1">
+            Distribusi : Asli : Production Dept.
+          </p>
+          <p className="text-center fw-normal text-bottom">Revisi : 0</p>
         </div>
       </div>
     </div>
