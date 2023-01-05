@@ -83,15 +83,13 @@ const DaftarPeriksaGroupLeader = () => {
                     Sudah ada batang kayu untuk melintas channel
                   </td>
                   <td className="text-serif text-sm">
-                  Aman dari resiko longsor
+                    Aman dari resiko longsor
                   </td>
                   <td className="text-serif text-sm">
-                  Driver sudah mematuhi 
-rambu-rambu
+                    Driver sudah mematuhi rambu-rambu
                   </td>
                   <td className="text-serif text-sm">
-                  Batang kayu sudah dipasang 
-dua batang setiap lintasan
+                    Batang kayu sudah dipasang dua batang setiap lintasan
                   </td>
                 </tr>
                 <tr>
@@ -103,6 +101,53 @@ dua batang setiap lintasan
                   <td className="text-serif text-sm fw-bold">Ya</td>
                   <td className="text-serif text-sm fw-bold">Ya</td>
                   <td className="text-serif text-sm fw-bold">Tidak</td>
+                </tr>
+              </tbody>
+            </table>
+            {/* Lanjutan*/}
+            <table class="table table-bordered mt-4">
+              <thead className="text-center">
+                <tr>
+                  <th colSpan={3} scope="col" className="text-serif fs-5">
+                    Kondisi jalan Unit Exc Standar
+                  </th>
+                  <th colSpan={3} scope="col" className="text-serif fs-5">
+                    Safety
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                <tr>
+                  <td className="text-serif text-sm">
+                    Jalur track unit standar diatas gambut kering aman tanpa
+                    matting
+                  </td>
+                  <td className="text-serif text-sm">
+                    Jalur track unit standar diarea gambut basah sudah ada
+                    matting
+                  </td>
+                  <td className="text-serif text-sm">
+                    Jalur track unit standar diarea soil-lumpur sudah ada
+                    matting
+                  </td>
+                  <td className="text-serif text-sm">
+                    Aman dari amblas pada jalur yang tidak ada matting
+                  </td>
+                  <td className="text-serif text-sm">
+                    Jalur dengan matting dipasang dengan jarak 1 m atau kurang
+                    dan tidak lapuk
+                  </td>
+                  <td className="text-serif text-sm">
+                    Operator mengoperasikan unit saat
+                  </td>
+                </tr>
+                <tr>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Tidak</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Tidak</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
                 </tr>
               </tbody>
             </table>
