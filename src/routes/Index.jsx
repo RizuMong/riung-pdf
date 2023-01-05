@@ -9,7 +9,7 @@ import DaftarPeriksaAlatLoading from "../pages/DaftarPeriksaAlatLoading";
 import ProductionControl from "../pages/ProductControl";
 import HandoverReportPitSupportServiceActivity from "../pages/ReportPitService";
 import RoadMaintenanceHandover from "../pages/RoadMaintenanceHandover";
-import DaftarPeriksaLeader from "../pages/DaftarPeriksaLeader";
+import DaftarPeriksaLeader from "../pages/DaftarPeriksaGroupLeader";
 
 const Index = () => {
   return (

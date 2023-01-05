@@ -1,7 +1,6 @@
 import React from "react";
 import { WithRouter } from "../utils/Navigation";
 
-import Table from "react-bootstrap/Table";
 import LogoRiung from "../assets/logo-riung.jpg";
 import "../styles/App.css";
 

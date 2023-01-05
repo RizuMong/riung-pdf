@@ -158,3 +158,13 @@ hr .production {
 .header-road {
   font-size: 19px;
 }
+
+/* Daftar Periksa Group Leader */
+.header-leader {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.text-sm {
+  font-size: 14px;
+}
