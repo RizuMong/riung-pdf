@@ -49,26 +49,60 @@ const DaftarPeriksaGroupLeader = () => {
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}
-            {/* Table Kegiatatan */}
+            {/* JALAN/ACCES LV & ORANG & UNIT */}
             <table class="table table-bordered caption-top mt-4">
-              <caption className="text-black fw-semibold">Kegiatan</caption>
+              <caption className="text-black text-serif header-leader">
+                1. JALAN/ACCES LV & ORANG & UNIT
+              </caption>
               <thead className="text-center">
                 <tr>
-                  <th scope="col">Lokasi (Km)</th>
-                  <th scope="col">Kondisi Jalan</th>
-                  <th scope="col">Metode Perbaikan</th>
-                  <th colSpan={2} scope="col">
-                    Waktu Pengerjaan
+                  <th colSpan={3} scope="col" className="text-serif fs-5">
+                    Kondisi Jalan LV
+                  </th>
+                  <th colSpan={3} scope="col" className="text-serif fs-5">
+                    Kondisi Jalan orang / Operator
+                  </th>
+                  <th colSpan={2} scope="col" className="text-serif fs-5">
+                    Safety
                   </th>
                 </tr>
               </thead>
               <tbody className="text-center">
                 <tr>
-                  <th scope="row">1</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-serif text-sm">
+                    Lebar, grade, super elevasi sudah sesuai standar
+                  </td>
+                  <td className="text-serif text-sm">
+                    Rata dan bebas dari material lepas
+                  </td>
+                  <td className="text-serif text-sm">Bebas debu</td>
+                  <td className="text-serif text-sm">
+                    Lewat jalan pintas terdekat yang sudah ada
+                  </td>
+                  <td className="text-serif text-sm">
+                    Sudah ada batang kayu untuk melintas channel
+                  </td>
+                  <td className="text-serif text-sm">
+                  Aman dari resiko longsor
+                  </td>
+                  <td className="text-serif text-sm">
+                  Driver sudah mematuhi 
+rambu-rambu
+                  </td>
+                  <td className="text-serif text-sm">
+                  Batang kayu sudah dipasang 
+dua batang setiap lintasan
+                  </td>
+                </tr>
+                <tr>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Tidak</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Tidak</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Tidak</td>
                 </tr>
               </tbody>
             </table>
