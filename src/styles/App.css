@@ -134,6 +134,16 @@ hr.solid {
   margin-top: 22px !important;
 }
 
+.mb-7 {
+  margin-bottom: 40px;
+}
+
 hr .production {
   width: 400px !important;
+}
+
+.header-production-control {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 800
 }
