@@ -28,11 +28,11 @@ const ExcavatorControl = () => {
                   </h5>
                 </div>
               </div>
-              <div className="col-4">
-                <h1 className="header-excavator fw-bold">EXCAVATOR CONTROL</h1>
+              <div className="col-5">
+                <h1 className="header-excavator fw-bold px-5">EXCAVATOR CONTROL</h1>
               </div>
               {/* Input Type */}
-              <div className="col-4">
+              {/* <div className="col-4">
                 <div className="d-flex align-items-center gap-3 mb-2">
                   <label>Date: </label>
                   <input className="form-control w-100 rounded-0" type="date" />
@@ -45,9 +45,20 @@ const ExcavatorControl = () => {
                   <label className="pr-2">PIT: </label>
                   <input className="form-control w-100 rounded-0" type="text" />
                 </div>
-              </div>
+              </div> */}
 
               {/* Output Type */}
+              <div className="col-3 mb-2">
+                <p className="mb-2 px-2 fw-semibold text-alat">
+                  Date :{" "}
+                </p>
+                <p className="mb-2 px-2 fw-semibold text-alat">
+                  Shift :{" "}
+                </p>
+                <p className="mb-2 px-2 fw-semibold text-alat">
+                  PIT :{" "}
+                </p>
+              </div>
             </div>
 
             {/* Content Table */}
