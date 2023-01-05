@@ -67,79 +67,393 @@ const ProductionReport = () => {
             <Table bordered hover className="text-center mt-3">
               <thead>
                 <tr>
-                  <th scope="col" colSpan={2} className="header-table-production fw-bold">
+                  <th
+                    scope="col"
+                    colSpan={2}
+                    className="header-table-production fw-bold"
+                  >
                     FLEET
                   </th>
-                  <th scope="col" colSpan={8} className="header-table-production fw-bold">
+                  <th
+                    scope="col"
+                    colSpan={9}
+                    className="header-table-production fw-bold"
+                  >
                     FRONT LOADING
                   </th>
-                  <th scope="col" colSpan={2} className="header-table-production fw-bold">
+                  <th
+                    scope="col"
+                    colSpan={2}
+                    className="header-table-production fw-bold"
+                  >
                     ROAD
                   </th>
-                  <th scope="col" colSpan={5} className="header-table-production fw-bold">
+                  <th
+                    scope="col"
+                    colSpan={6}
+                    className="header-table-production fw-bold"
+                  >
                     DUMPING POINT
                   </th>
-                  <th scope="col" rowSpan={2} className="header-table-production fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={3}
+                    className="header-table-production fw-normal"
+                  >
                     REMARKS
                   </th>
                 </tr>
                 <tr>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     C/N LOADER
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     C/N HAULER
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  {/* <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     ROAD
-                  </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  </th> */}
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     PIT
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     BLOCK
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     SEAM
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     MATERIAL TYPE
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    colspan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     RL
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     CONDITION
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     SUPPORT EQUIPMENT
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     CONDITION
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     SUPPORT EQUIPMENT
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     DISP/S'PILE
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    colspan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     RL
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     CONDITION
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     SUPPORT EQUIPMENT
                   </th>
-                  <th scope="col" className="header-table-production2 fw-normal">
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    colspan={2}
+                    rowSpan={2}
+                    className="header-table-production2 fw-normal"
+                  >
                     DISTANCE
                   </th>
+                  {/* <th>dd</th> */}
                 </tr>
-              </thead>
-              <tbody className="text-start">
+                <tr>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  >
+                    PLAN
+                  </th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  >
+                    ACT
+                  </th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  >
+                    PLAN
+                  </th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  >
+                    ACT
+                  </th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  ></th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  ></th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  ></th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  ></th>
+                </tr>
 
-              </tbody>
+                {/* Data */}
+                <tr>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    DISP/SData
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    colSpan={2}
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th>
+                  {/* <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data
+                  </th> */}
+                </tr>
+                {/* <tr>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  ></th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  ></th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  ></th>
+                  <th
+                    scope="col"
+                    className="header-table-production2 fw-normal"
+                  ></th>
+                </tr> */}
+
+                {/* <tbody>
+                  <th scope="col" className="w-100">Data</th>
+                </tbody> */}
+              </thead>
+
+              <tbody className="text-start"></tbody>
             </Table>
 
             <hr className="w-100 solid m-0" />
