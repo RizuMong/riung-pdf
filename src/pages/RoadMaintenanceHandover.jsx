@@ -60,7 +60,9 @@ const RoadMaintenanceHandover = () => {
                   <th scope="col">Lokasi (Km)</th>
                   <th scope="col">Kondisi Jalan</th>
                   <th scope="col">Metode Perbaikan</th>
-                  <th colSpan={2} scope="col">Waktu Pengerjaan</th>
+                  <th colSpan={2} scope="col">
+                    Waktu Pengerjaan
+                  </th>
                 </tr>
               </thead>
               <tbody className="text-center">
@@ -76,17 +78,35 @@ const RoadMaintenanceHandover = () => {
 
             {/* Table Material ( Patching / resheeting ) */}
             <table class="table table-bordered caption-top mt-5">
-              <caption className="text-black fw-semibold">Material ( Patching / resheeting )</caption>
+              <caption className="text-black fw-semibold">
+                Material ( Patching / resheeting )
+              </caption>
               <thead className="text-center">
                 <tr>
-                  <th rowSpan={2} scope="col" style={{ verticalAlign: "middle" }}>Jenis Material</th>
-                  <th rowSpan={2} scope="col" style={{ verticalAlign: "middle" }}>Jenis Pekerjaan</th>
+                  <th
+                    rowSpan={2}
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                  >
+                    Jenis Material
+                  </th>
+                  <th
+                    rowSpan={2}
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                  >
+                    Jenis Pekerjaan
+                  </th>
                   <th scope="col">Pengangkutan</th>
-                  <th colSpan={2} scope="col">Hasil Patching / Resheeting</th>
+                  <th colSpan={2} scope="col">
+                    Hasil Patching / Resheeting
+                  </th>
                 </tr>
                 <tr>
                   <th scope="col">Total Rit</th>
-                  <th scope="col">Kubikasi (M<sup>3</sup>)</th>
+                  <th scope="col">
+                    Kubikasi (M<sup>3</sup>)
+                  </th>
                   <th scope="col">Panjang</th>
                 </tr>
               </thead>
@@ -100,6 +120,32 @@ const RoadMaintenanceHandover = () => {
                 </tr>
               </tbody>
             </table>
+
+            {/* Table A2B & Water Trailler */}
+            <table class="table table-bordered caption-top mt-5">
+              <caption className="text-black fw-semibold">
+                A2B & Water Trailler
+              </caption>
+              <thead className="text-center">
+                <tr>
+                  <th scope="col">C/N Unit</th>
+                  <th scope="col">Lokasi (Km)</th>
+                  <th scope="col">Aktivitas</th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                <tr>
+                  <th scope="row">1</th>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            {/* Catatan Problem */}
+            <div className="w-100 p-2 border h-100 mt-5 mb-5">
+              <p className="fw-semibold">Catatan Problem:</p>
+            </div>
 
             {/* Content Bottom */}
             <div className="container px-5 pt-3">
