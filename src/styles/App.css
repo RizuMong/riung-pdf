@@ -147,3 +147,9 @@ hr .production {
   text-align: center;
   font-weight: 800
 }
+
+.header-table-product {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
