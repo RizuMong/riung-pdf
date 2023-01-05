@@ -18,7 +18,7 @@ const ProductionReport = () => {
                 <thead>
                   <th className="col-3">
                     {" "}
-                    <div className="d-flex gap-3 mb-3">
+                    <div className="d-flex gap-3 mb-4">
                       <img
                         className="pl-2"
                         src={LogoRiung}
@@ -121,14 +121,6 @@ const ProductionReport = () => {
                   >
                     C/N HAULER
                   </th>
-                  {/* <th
-                    scope="col"
-                    style={{ verticalAlign: "middle" }}
-                    rowSpan={2}
-                    className="header-table-production2 fw-normal"
-                  >
-                    ROAD
-                  </th> */}
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
@@ -293,118 +285,118 @@ const ProductionReport = () => {
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 1
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 2
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 3
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 4
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 5
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 6
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 7
                   </th>
                   <th
                     scope="col"
                     className="header-table-production2 fw-normal"
                   >
-                    Data
-                  </th>
-                  <th
-                    scope="col"
-                    style={{ verticalAlign: "middle" }}
-                    className="header-table-production2 fw-normal"
-                  >
-                    Data
+                    Data 8
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 9
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 10
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 11
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    DISP/SData
+                    Data 12
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 13
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 14
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 15
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 16
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ verticalAlign: "middle" }}
+                    className="header-table-production2 fw-normal"
+                  >
+                    Data 17
                   </th>
                   <th
                     scope="col"
@@ -412,41 +404,16 @@ const ProductionReport = () => {
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 18
                   </th>
                   <th
                     scope="col"
                     style={{ verticalAlign: "middle" }}
                     className="header-table-production2 fw-normal"
                   >
-                    Data
+                    Data 19
                   </th>
-                  {/* <th
-                    scope="col"
-                    style={{ verticalAlign: "middle" }}
-                    className="header-table-production2 fw-normal"
-                  >
-                    Data
-                  </th> */}
                 </tr>
-                {/* <tr>
-                  <th
-                    scope="col"
-                    className="header-table-production2 fw-normal"
-                  ></th>
-                  <th
-                    scope="col"
-                    className="header-table-production2 fw-normal"
-                  ></th>
-                  <th
-                    scope="col"
-                    className="header-table-production2 fw-normal"
-                  ></th>
-                  <th
-                    scope="col"
-                    className="header-table-production2 fw-normal"
-                  ></th>
-                </tr> */}
 
                 {/* <tbody>
                   <th scope="col" className="w-100">Data</th>
