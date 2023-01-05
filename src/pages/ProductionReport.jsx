@@ -415,7 +415,6 @@ const ProductionReport = () => {
                   </th>
                 </tr>
 
-        
                 {/* <tbody>
                   <th scope="col" className="w-100">Data</th>
                 </tbody> */}
@@ -424,33 +423,32 @@ const ProductionReport = () => {
               <tbody className="text-start"></tbody>
             </Table>
 
-                    {/* Data Unit */}
-                    <div className="d-flex">
-                  <div className="mt-3">
-                    <Table bordered hover className="">
-                      <thead className="table table-light">
-                        <tr>
-                          <th>UNIT B/D</th>
-                          <th>UNIT S/B </th>
-                          {/* <th className="table">CATATAN:</th> */}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Data.........</td>
-                          <td>Data.........</td>
-                          {/* <td></td> */}
-                        </tr>
-                      </tbody>
-                    </Table>
-                  </div>
-                  <div className="mt-3">
-                    <hr className="production pl-2 w-100"/>
-                    <p className="fw-semibold">Catatan: ....</p>
-                    <hr className="production pl-2 mt-7 w-100"/>
-                  </div>
-                </div>
-
+            {/* Data Unit */}
+            <div className="d-flex">
+              <div className="mt-3">
+                <Table bordered hover className="">
+                  <thead className="table table-light">
+                    <tr>
+                      <th>UNIT B/D</th>
+                      <th>UNIT S/B </th>
+                      {/* <th className="table">CATATAN:</th> */}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Data.........</td>
+                      <td>Data.........</td>
+                      {/* <td></td> */}
+                    </tr>
+                  </tbody>
+                </Table>
+              </div>
+              <div className="mt-3">
+                <hr className="production pl-2 w-100" />
+                <p className="fw-semibold">Catatan: ....</p>
+                <hr className="production pl-2 mt-7 w-100" />
+              </div>
+            </div>
 
             <hr className="w-100 solid m-0" />
 
