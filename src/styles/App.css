@@ -128,3 +128,12 @@ hr.solid {
   font-size: 14px;
   text-align: center;
 }
+
+/* Styling Handover Production Report */
+/* .mt-7 {
+  margin-top: 46px !important;
+} */
+
+hr .production {
+  width: 400px !important;
+}

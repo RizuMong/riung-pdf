@@ -415,6 +415,31 @@ const ProductionReport = () => {
                   </th>
                 </tr>
 
+                {/* Data Unit */}
+                <div className="d-flex">
+                  <div className="mt-3">
+                    <Table bordered hover className="">
+                      <thead className="table table-light">
+                        <tr>
+                          <th>UNIT B/D</th>
+                          <th>UNIT S/B </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Data.........</td>
+                          <td>Data.........</td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </div>
+                  <div className="mt-3">
+                    <hr className="production pl-2"/>
+                    <p className="fw-semibold">Catatan: </p>
+                    <hr className="production pl-2 mt-7"/>
+                  </div>
+                </div>
+
                 {/* <tbody>
                   <th scope="col" className="w-100">Data</th>
                 </tbody> */}
