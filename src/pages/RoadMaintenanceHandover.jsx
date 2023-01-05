@@ -144,7 +144,7 @@ const RoadMaintenanceHandover = () => {
 
             {/* Catatan Problem */}
             <div className="w-100 p-2 border h-100 mt-5 mb-5">
-              <p className="fw-semibold">Catatan Problem:</p>
+              <p className="fw-semibold problem-note fs-5">Catatan Problem:</p>
             </div>
 
             {/* Content Bottom */}
