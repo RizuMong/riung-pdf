@@ -44,10 +44,7 @@ const RoadMaintenanceHandover = () => {
                     <p className="mb-3 px-2 fw-semibold text-alat">
                       Hari/Tanggal:{" "}
                     </p>
-                    <hr className="w-100" />
-                    <p className="pt-2 px-2 fw-semibold text-alat">
-                      Lokasi:{" "}
-                    </p>
+                    <p className="px-2 fw-semibold text-alat">Shift: </p>
                   </div>
                 </th>
               </thead>
@@ -55,45 +52,24 @@ const RoadMaintenanceHandover = () => {
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}
-            
 
             {/* Content Bottom */}
-            <table class="table mt-3">
-              <thead className="text-center">
-                <tr>
-                  <th scope="col" className="text-serif fw-bold">
-                    Shift
-                  </th>
-                  <th scope="col" className="text-serif fw-bold">
-                    Section Head
-                  </th>
-                  <th scope="col" className="text-serif fw-bold">
-                    Tanda Tangan
-                  </th>
-                  <th scope="col" className="text-serif fw-bold">
-                    Catatan{" "}
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-center">
-                <tr>
-                  <th className="text-serif" scope="row">
-                    I
-                  </th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th className="text-serif" scope="row">
-                    II
-                  </th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="container px-5 pt-3">
+              <div className="row align-items-center">
+                <div className="col-4 text-center gap-5">
+                  <p className="fw-normal">Dibuat oleh,</p>
+                  <p className="mt-5">(Pit Service Group Leader)</p>
+                </div>
+                <div className="col-4 text-center gap-5">
+                  <p className="fw-normal">Diserahkan,</p>
+                  <p className="mt-5">(Prod. Section Head)</p>
+                </div>
+                <div className="col-4 text-center">
+                  <p className="fw-normal">Diterima,</p>
+                  <p className="mt-5">(Pit Service Group Leader)</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
