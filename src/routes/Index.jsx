@@ -10,6 +10,7 @@ import ProductionControl from "../pages/ProductControl";
 import HandoverReportPitSupportServiceActivity from "../pages/ReportPitService";
 import RoadMaintenanceHandover from "../pages/RoadMaintenanceHandover";
 import DaftarPeriksaLeader from "../pages/DaftarPeriksaGroupLeader";
+import WorkOrderActionReport from "../pages/WorkOrderActionReport"
 
 const Index = () => {
   return (
@@ -44,6 +45,10 @@ const Index = () => {
         <Route
           path="/road-maintenance-handover"
           element={<RoadMaintenanceHandover />}
+        />
+         <Route
+          path="/work-order-action-report"
+          element={<WorkOrderActionReport />}
         />
       </Routes>
     </BrowserRouter>
