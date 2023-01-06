@@ -123,6 +123,7 @@ const ControlActivityCoalGetting = () => {
                   </th>
                 </tr>
               </thead>
+
               <tbody className="text-start">
                 <tr>
                   <td>
@@ -204,9 +205,7 @@ const ControlActivityCoalGetting = () => {
               </tbody>
               <tbody className="text-start">
                 <tr>
-                  <td>
-                    Size Coal:
-                  </td>
+                  <td>Size Coal:</td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -217,9 +216,7 @@ const ControlActivityCoalGetting = () => {
               </tbody>
               <tbody className="text-start">
                 <tr>
-                  <td>
-                    Cleaning:
-                  </td>
+                  <td>Cleaning:</td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -230,9 +227,7 @@ const ControlActivityCoalGetting = () => {
               </tbody>
               <tbody className="text-start">
                 <tr>
-                  <td>
-                      Kontaminasi OB:
-                  </td>
+                  <td>Kontaminasi OB:</td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -243,9 +238,7 @@ const ControlActivityCoalGetting = () => {
               </tbody>
               <tbody className="text-start">
                 <tr>
-                  <td>
-                  Kontaminasi dirty coal:
-                  </td>
+                  <td>Kontaminasi dirty coal:</td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -256,9 +249,7 @@ const ControlActivityCoalGetting = () => {
               </tbody>
               <tbody className="text-start">
                 <tr>
-                  <td>
-                  Kantongan air:
-                  </td>
+                  <td>Kantongan air:</td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -269,9 +260,7 @@ const ControlActivityCoalGetting = () => {
               </tbody>
               <tbody className="text-start">
                 <tr>
-                  <td>
-                  Kelayakan jalan:
-                  </td>
+                  <td>Kelayakan jalan:</td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -282,9 +271,7 @@ const ControlActivityCoalGetting = () => {
               </tbody>
               <tbody className="text-start">
                 <tr>
-                  <td>
-                  Metode loading:
-                  </td>
+                  <td>Metode loading:</td>
                   <td></td>
                   <td></td>
                   <td></td>

@@ -193,3 +193,10 @@ hr .production {
   font-weight: 400;
   text-align: center;
 }
+
+/* Styling DAFTAR PERIKSA KONTAMINASI ALAT LOADING/CLEANING */
+.header-alat-loading {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 900;
+}
