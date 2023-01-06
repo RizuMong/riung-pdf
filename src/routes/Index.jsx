@@ -17,7 +17,7 @@ const Index = () => {
       <Routes>
         <Route exact path="/" element={<ExcavatorControl />} />
         <Route
-          path="/periksa-alat-angkut"
+          path="/daftar-periksa-alat-angkut"
           element={<DaftarPeriksaAlatAngkut />}
         />
         <Route

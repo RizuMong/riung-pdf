@@ -152,6 +152,63 @@ const DaftarPeriksaGroupLeader = () => {
               </tbody>
             </table>
 
+            {/* JALAN/ACCES LV & ORANG & UNIT */}
+            <table class="table table-bordered caption-top mt-4">
+              <caption className="text-black text-serif header-leader">
+                1. JALAN/ACCES LV & ORANG & UNIT
+              </caption>
+              <thead className="text-center">
+                <tr>
+                  <th colSpan={3} scope="col" className="text-serif fs-5">
+                    Kondisi Jalan LV
+                  </th>
+                  <th colSpan={3} scope="col" className="text-serif fs-5">
+                    Kondisi Jalan orang / Operator
+                  </th>
+                  <th colSpan={2} scope="col" className="text-serif fs-5">
+                    Safety
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                <tr>
+                  <td className="text-serif text-sm">
+                    Lebar, grade, super elevasi sudah sesuai standar
+                  </td>
+                  <td className="text-serif text-sm">
+                    Rata dan bebas dari material lepas
+                  </td>
+                  <td className="text-serif text-sm">Bebas debu</td>
+                  <td className="text-serif text-sm">
+                    Lewat jalan pintas terdekat yang sudah ada
+                  </td>
+                  <td className="text-serif text-sm">
+                    Sudah ada batang kayu untuk melintas channel
+                  </td>
+                  <td className="text-serif text-sm">
+                    Aman dari resiko longsor
+                  </td>
+                  <td className="text-serif text-sm">
+                    Driver sudah mematuhi rambu-rambu
+                  </td>
+                  <td className="text-serif text-sm">
+                    Batang kayu sudah dipasang dua batang setiap lintasan
+                  </td>
+                </tr>
+                <tr>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Tidak</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Tidak</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Ya</td>
+                  <td className="text-serif text-sm fw-bold">Tidak</td>
+                </tr>
+              </tbody>
+            </table>
+
+
             {/* Table & Section Bottom */}
             <div className="row align-items-center">
               <div className="col-8">
