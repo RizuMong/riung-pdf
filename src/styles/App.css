@@ -160,7 +160,7 @@ hr .production {
   font-size: 19px;
 }
 
-/* Daftar Periksa Group Leader */
+/* Styling Daftar Periksa Group Leader */
 .header-leader {
   font-size: 18px;
   font-weight: 900;
@@ -169,4 +169,15 @@ hr .production {
 .text-sm {
   font-size: 14px;
   font-weight: 400;
+}
+
+/* Styling CONTROL ACTIVITY COAL GETTING */
+.header-coal-getting {
+  font-size: 26px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.mb-8 {
+  margin-bottom: 60px;
 }
