@@ -60,7 +60,111 @@ const ControlActivityCoalGetting = () => {
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}
-            <h5>Coming Soon</h5>
+            <Table responsive bordered hover>
+              <thead className="text-center">
+                <tr>
+                  <th
+                    rowSpan={2}
+                    scope="col-3"
+                    className="header-table-coal2"
+                    style={{ verticalAlign: "middle" }}
+                  >
+                    PEMERIKSAAN
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    C/N UNIT
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    C/N UNIT
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    C/N UNIT
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    C/N UNIT
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    C/N UNIT
+                  </th>
+                  <th
+                    scope="col-3"
+                    rowSpan={2}
+                    className="header-table-coal2"
+                    style={{ verticalAlign: "middle" }}
+                  >
+                    KETERANGAN
+                  </th>
+                </tr>
+                <tr>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    PIT: 
+                    <br/>
+                    SEAM:
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    PIT: 
+                    <br/>
+                    SEAM:
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    PIT: 
+                    <br/>
+                    SEAM:
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    PIT: 
+                    <br/>
+                    SEAM:
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    PIT: 
+                    <br/>
+                    SEAM:
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                <tr>
+                  <td>Content</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </Table>
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Bottom */}

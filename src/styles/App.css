@@ -181,3 +181,15 @@ hr .production {
 .mb-8 {
   margin-bottom: 60px;
 }
+
+.header-table-coal {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.header-table-coal2 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
