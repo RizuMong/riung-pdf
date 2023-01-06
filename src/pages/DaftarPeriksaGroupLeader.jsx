@@ -12,202 +12,482 @@ const DaftarPeriksaGroupLeader = () => {
           <div className="p-3">
             {/* Header */}
             {/* Header Table */}
-            <table className="table">
-              <thead>
-                <th className="col-4">
-                  {" "}
-                  <div className="d-flex gap-3 mb-3">
-                    <img
-                      className="pl-2"
-                      src={LogoRiung}
-                      width="120"
-                      height="60"
-                      alt="Logo RIUNG"
-                    />
-                    <h5 className="fw-bold text-serif">
-                      PT. RIUNG MITRA LESTARI <br /> JOB SITE : KRASSI
-                    </h5>
-                  </div>
-                </th>
-                <div className="vr" style={{ height: 100 }}></div>
-                <th className="col-5">
-                  <h1 className="header-production-control mb-3">
-                    DAFTAR PERIKSA <br /> GROUP LEADER OPEN CHANNEL
-                  </h1>
-                </th>
-                <div className="vr" style={{ height: 100 }}></div>
-                <th className="col-3">
-                  <div className="mb-4">
-                    <p className="mb-3 px-2 fw-semibold text-alat">
-                      Hari/Tanggal:{" "}
-                    </p>
-                    <p className="px-2 fw-semibold text-alat">Shift: </p>
-                  </div>
-                </th>
-              </thead>
-            </table>
+            <div className="table-responsive">
+              <table className="table">
+                <thead>
+                  <th className="col-4">
+                    {" "}
+                    <div className="d-flex gap-3 mb-3">
+                      <img
+                        className="pl-2"
+                        src={LogoRiung}
+                        width="120"
+                        height="60"
+                        alt="Logo RIUNG"
+                      />
+                      <h5 className="fw-bold text-serif">
+                        PT. RIUNG MITRA LESTARI <br /> JOB SITE : KRASSI
+                      </h5>
+                    </div>
+                  </th>
+                  <div className="vr" style={{ height: 100 }}></div>
+                  <th className="col-5">
+                    <h1 className="header-production-control mb-3">
+                      DAFTAR PERIKSA <br /> GROUP LEADER OPEN CHANNEL
+                    </h1>
+                  </th>
+                  <div className="vr" style={{ height: 100 }}></div>
+                  <th className="col-3">
+                    <div className="mb-4">
+                      <p className="mb-3 px-2 fw-semibold text-alat">
+                        Hari/Tanggal:{" "}
+                      </p>
+                      <p className="px-2 fw-semibold text-alat">Shift: </p>
+                    </div>
+                  </th>
+                </thead>
+              </table>
+            </div>
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}
             {/* JALAN/ACCES LV & ORANG & UNIT */}
-            <table class="table table-bordered caption-top mt-4">
-              <caption className="text-black text-serif header-leader">
-                1. JALAN/ACCES LV & ORANG & UNIT
-              </caption>
-              <thead className="text-center">
-                <tr>
-                  <th colSpan={3} scope="col" className="text-serif fs-5">
-                    Kondisi Jalan LV
-                  </th>
-                  <th colSpan={3} scope="col" className="text-serif fs-5">
-                    Kondisi Jalan orang / Operator
-                  </th>
-                  <th colSpan={2} scope="col" className="text-serif fs-5">
-                    Safety
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-center">
-                <tr>
-                  <td className="text-serif text-sm">
-                    Lebar, grade, super elevasi sudah sesuai standar
-                  </td>
-                  <td className="text-serif text-sm">
-                    Rata dan bebas dari material lepas
-                  </td>
-                  <td className="text-serif text-sm">Bebas debu</td>
-                  <td className="text-serif text-sm">
-                    Lewat jalan pintas terdekat yang sudah ada
-                  </td>
-                  <td className="text-serif text-sm">
-                    Sudah ada batang kayu untuk melintas channel
-                  </td>
-                  <td className="text-serif text-sm">
-                    Aman dari resiko longsor
-                  </td>
-                  <td className="text-serif text-sm">
-                    Driver sudah mematuhi rambu-rambu
-                  </td>
-                  <td className="text-serif text-sm">
-                    Batang kayu sudah dipasang dua batang setiap lintasan
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Tidak</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Tidak</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Tidak</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="table-responsive">
+              <table class="table table-bordered caption-top mt-4">
+                <caption className="text-black text-serif header-leader">
+                  1. JALAN/ACCES LV & ORANG & UNIT
+                </caption>
+                <thead className="text-center">
+                  <tr>
+                    <th colSpan={3} scope="col" className="text-serif fs-5">
+                      Kondisi Jalan LV
+                    </th>
+                    <th colSpan={3} scope="col" className="text-serif fs-5">
+                      Kondisi Jalan orang / Operator
+                    </th>
+                    <th colSpan={2} scope="col" className="text-serif fs-5">
+                      Safety
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <tr>
+                    <td className="text-serif text-sm">
+                      Lebar, grade, super elevasi sudah sesuai standar
+                    </td>
+                    <td className="text-serif text-sm">
+                      Rata dan bebas dari material lepas
+                    </td>
+                    <td className="text-serif text-sm">Bebas debu</td>
+                    <td className="text-serif text-sm">
+                      Lewat jalan pintas terdekat yang sudah ada
+                    </td>
+                    <td className="text-serif text-sm">
+                      Sudah ada batang kayu untuk melintas channel
+                    </td>
+                    <td className="text-serif text-sm">
+                      Aman dari resiko longsor
+                    </td>
+                    <td className="text-serif text-sm">
+                      Driver sudah mematuhi rambu-rambu
+                    </td>
+                    <td className="text-serif text-sm">
+                      Batang kayu sudah dipasang dua batang setiap lintasan
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             {/* Lanjutan*/}
-            <table class="table table-bordered mt-4">
-              <thead className="text-center">
-                <tr>
-                  <th colSpan={3} scope="col" className="text-serif fs-5">
-                    Kondisi jalan Unit Exc Standar
-                  </th>
-                  <th colSpan={3} scope="col" className="text-serif fs-5">
-                    Safety
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-center">
-                <tr>
-                  <td className="text-serif text-sm">
-                    Jalur track unit standar diatas gambut kering aman tanpa
-                    matting
-                  </td>
-                  <td className="text-serif text-sm">
-                    Jalur track unit standar diarea gambut basah sudah ada
-                    matting
-                  </td>
-                  <td className="text-serif text-sm">
-                    Jalur track unit standar diarea soil-lumpur sudah ada
-                    matting
-                  </td>
-                  <td className="text-serif text-sm">
-                    Aman dari amblas pada jalur yang tidak ada matting
-                  </td>
-                  <td className="text-serif text-sm">
-                    Jalur dengan matting dipasang dengan jarak 1 m atau kurang
-                    dan tidak lapuk
-                  </td>
-                  <td className="text-serif text-sm">
-                    Operator mengoperasikan unit saat
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Tidak</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Tidak</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="table-responsive">
+              <table class="table table-bordered mt-2">
+                <thead className="text-center">
+                  <tr>
+                    <th colSpan={3} scope="col" className="text-serif fs-5">
+                      Kondisi jalan Unit Exc Standar
+                    </th>
+                    <th colSpan={3} scope="col" className="text-serif fs-5">
+                      Safety
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <tr>
+                    <td className="text-serif text-sm">
+                      Jalur track unit standar diatas gambut kering aman tanpa
+                      matting
+                    </td>
+                    <td className="text-serif text-sm">
+                      Jalur track unit standar diarea gambut basah sudah ada
+                      matting
+                    </td>
+                    <td className="text-serif text-sm">
+                      Jalur track unit standar diarea soil-lumpur sudah ada
+                      matting
+                    </td>
+                    <td className="text-serif text-sm">
+                      Aman dari amblas pada jalur yang tidak ada matting
+                    </td>
+                    <td className="text-serif text-sm">
+                      Jalur dengan matting dipasang dengan jarak 1 m atau kurang
+                      dan tidak lapuk
+                    </td>
+                    <td className="text-serif text-sm">
+                      Operator mengoperasikan unit saat
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-            {/* JALAN/ACCES LV & ORANG & UNIT */}
-            <table class="table table-bordered caption-top mt-4">
-              <caption className="text-black text-serif header-leader">
-                1. JALAN/ACCES LV & ORANG & UNIT
-              </caption>
-              <thead className="text-center">
-                <tr>
-                  <th colSpan={3} scope="col" className="text-serif fs-5">
-                    Kondisi Jalan LV
-                  </th>
-                  <th colSpan={3} scope="col" className="text-serif fs-5">
-                    Kondisi Jalan orang / Operator
-                  </th>
-                  <th colSpan={2} scope="col" className="text-serif fs-5">
-                    Safety
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-center">
-                <tr>
-                  <td className="text-serif text-sm">
-                    Lebar, grade, super elevasi sudah sesuai standar
-                  </td>
-                  <td className="text-serif text-sm">
-                    Rata dan bebas dari material lepas
-                  </td>
-                  <td className="text-serif text-sm">Bebas debu</td>
-                  <td className="text-serif text-sm">
-                    Lewat jalan pintas terdekat yang sudah ada
-                  </td>
-                  <td className="text-serif text-sm">
-                    Sudah ada batang kayu untuk melintas channel
-                  </td>
-                  <td className="text-serif text-sm">
-                    Aman dari resiko longsor
-                  </td>
-                  <td className="text-serif text-sm">
-                    Driver sudah mematuhi rambu-rambu
-                  </td>
-                  <td className="text-serif text-sm">
-                    Batang kayu sudah dipasang dua batang setiap lintasan
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Tidak</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Tidak</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Ya</td>
-                  <td className="text-serif text-sm fw-bold">Tidak</td>
-                </tr>
-              </tbody>
-            </table>
+            {/* Peralatan */}
+            <div className="table-responsive">
+              <table class="table table-bordered caption-top mt-4">
+                <caption className="text-black text-serif header-leader">
+                  2. PERALATAN
+                </caption>
+                <thead className="text-center">
+                  <tr>
+                    <th
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Kondisi unit Sarana/LV
+                    </th>
+                    <th
+                      colSpan={2}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Kondisi Unit Kerja
+                    </th>
+                    <th
+                      colSpan={2}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Kondisi Stock Fuel & Drum
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <tr>
+                    <td
+                      className="text-serif text-sm"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Status unit LV ready
+                    </td>
+                    <td className="text-serif text-sm">
+                      Exc long arm standar sudah dipastikan status ready
+                    </td>
+                    <td className="text-serif text-sm">
+                      Exc Amphibi sudah dipastikan status ready
+                    </td>
+                    <td className="text-serif text-sm">
+                      Aman dari bocoran body, hose, valve dan gantungan drum
+                      tidak patah
+                    </td>
+                    <td className="text-serif text-sm">Di isi sesuai jadwal</td>
+                  </tr>
+                  <tr>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
+            {/* LAND CLEARING */}
+            <div className="table-responsive">
+              <table class="table table-bordered caption-top mt-4">
+                <caption className="text-black text-serif header-leader">
+                  3. LAND CLEARING
+                </caption>
+                <thead className="text-center">
+                  <tr>
+                    <th
+                      colSpan={3}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Unit Kerja
+                    </th>
+                    <th
+                      colSpan={2}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Survey
+                    </th>
+                    <th
+                      colSpan={2}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Kondisi Area Kerja
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <tr>
+                    <td className="text-serif text-sm">
+                      Lokasi unit sudah sesuai peruntukan
+                    </td>
+                    <td className="text-serif text-sm">
+                      Cara kerja alat sesuai standar
+                    </td>
+                    <td className="text-serif text-sm">
+                      Jalur land clearing sesuai pita survey
+                    </td>
+                    <td className="text-serif text-sm">
+                      Patok sudah terpasang & jelas sebagai batas pinggir atau
+                      center line
+                    </td>
+                    <td className="text-serif text-sm">
+                      Pemasangan patok sudah dipastikan benar / GPS
+                    </td>
+                    <td className="text-serif text-sm">
+                      Sudah dipastikan kondisi area gambut, berair, kering, atau
+                      top soil
+                    </td>
+                    <td className="text-serif text-sm">
+                      Sudah dipastikan area kerja tidak bersinggungan dengan
+                      masyarakat
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            {/* Lanjutan */}
+            <div className="table-responsive">
+              <table class="table table-bordered mt-2">
+                <thead className="text-center">
+                  <tr>
+                    <th colSpan={3} scope="col" className="text-serif fs-5">
+                      Safety
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <tr>
+                    <td className="text-serif text-sm">
+                      Aman dari resiko longsor
+                    </td>
+                    <td className="text-serif text-sm">
+                      Khusus Exc long arm standar sudah dipasang wire mesh
+                    </td>
+                    <td className="text-serif text-sm">
+                      Pohon kayu kering sudah dirobohkan lebih dulu jika ada
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* PENGGALIAN CHANNEL */}
+            <div className="table-responsive">
+              <table class="table table-bordered caption-top mt-4">
+                <caption className="text-black text-serif header-leader">
+                  4. PENGGALIAN CHANNEL
+                </caption>
+                <thead className="text-center">
+                  <tr>
+                    <th
+                      colSpan={3}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Kondisi Area Kerja
+                    </th>
+                    <th
+                      colSpan={3}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Unit Kerja/Alat
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <tr>
+                    <td className="text-serif text-sm">
+                      Awal penggalian sudah ditentukan harus diawali dari arah
+                      channel primer
+                    </td>
+                    <td className="text-serif text-sm">
+                      Dudukan unit track standar sudah terpasang matting
+                    </td>
+                    <td className="text-serif text-sm">
+                      Unit amphibi melakukan Penggalian dari genangan menuju
+                      saluran primer
+                    </td>
+                    <td className="text-serif text-sm">
+                      Alokasi / penempatan unit sudah sesuai peruntukan
+                    </td>
+                    <td className="text-serif text-sm">
+                      Cara kerja alat sudah sesuai standar
+                    </td>
+                    <td className="text-serif text-sm">
+                      Operator melakukan penggalian sudah sesuai pita survey
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            {/* Lanjutan */}
+            <div className="table-responsive">
+              <table class="table table-bordered mt-2">
+                <thead className="text-center">
+                  <tr>
+                    <th colSpan={4} scope="col" className="text-serif fs-5">
+                      Safety
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <tr>
+                    <td className="text-serif text-sm">
+                      Aman dari resiko longsor
+                    </td>
+                    <td className="text-serif text-sm">
+                      Jalur track unit standar sudah sipasang mating dan aman
+                    </td>
+                    <td className="text-serif text-sm">
+                      Operator melakukan proses penggalian sudah sesuai prosedur
+                    </td>
+                    <td className="text-serif text-sm">
+                      Lampu kerja unit untuk operasi malam hari sudah lengkap
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* PERAWATAN CHANNEL / MAINTENANCE & PENDALAMAN */}
+            <div className="table-responsive">
+              <table class="table table-bordered caption-top mt-4">
+                <caption className="text-black text-serif header-leader">
+                  5. PERAWATAN CHANNEL/MAINTENANCE & PENDALAMAN
+                </caption>
+                <thead className="text-center">
+                  <tr>
+                    <th
+                      colSpan={2}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Kondisi Area Kerja
+                    </th>
+                    <th
+                      colSpan={2}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Unit Kerja
+                    </th>
+                    <th
+                      colSpan={2}
+                      scope="col-2"
+                      className="text-serif fs-5"
+                      style={{ verticalAlign: "middle" }}
+                    >
+                      Safety
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <tr>
+                    <td className="text-serif text-sm">
+                      Sudah dipastikan kedalaman channel belum sesuai permintaan
+                      (RL)
+                    </td>
+                    <td className="text-serif text-sm">
+                      Masih adanya genangan air dalam saluran
+                    </td>
+                    <td className="text-serif text-sm">
+                      Alokasi/penempatan unit sudah sesuai peruntukan
+                    </td>
+                    <td className="text-serif text-sm">
+                      Cara kerja alat sudah sesuai prosedur
+                    </td>
+                    <td className="text-serif text-sm">
+                      Aman dari resiko longsor
+                    </td>
+                    <td className="text-serif text-sm">
+                      Lampu kerja unit untuk operasi malam sudah lengkap
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">Ya</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             {/* Table & Section Bottom */}
             <div className="row align-items-center">
