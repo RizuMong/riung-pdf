@@ -11,6 +11,7 @@ import HandoverReportPitSupportServiceActivity from "../pages/ReportPitService";
 import RoadMaintenanceHandover from "../pages/RoadMaintenanceHandover";
 import DaftarPeriksaLeader from "../pages/DaftarPeriksaGroupLeader";
 import WorkOrderActionReport from "../pages/WorkOrderActionReport"
+import LogBookSectionReport from "../pages/LogBookSectionReport";
 
 const Index = () => {
   return (
@@ -49,6 +50,10 @@ const Index = () => {
          <Route
           path="/work-order-action-report"
           element={<WorkOrderActionReport />}
+        />
+        <Route
+          path="/log-book-section-report"
+          element={<LogBookSectionReport />}
         />
       </Routes>
     </BrowserRouter>
