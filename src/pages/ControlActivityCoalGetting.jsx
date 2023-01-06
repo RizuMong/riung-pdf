@@ -9,7 +9,7 @@ const ControlActivityCoalGetting = () => {
   return (
     <div className="container px-5 pb-5">
       <div className="mt-2">
-        <p className="text-end fst-italic">FRM – OPR - 004</p>
+        <p className="text-end fst-italic">FRM – OPR - 021</p>
         <div className="border border-2 border-dark">
           <div className="p-3">
             {/* Header */}
@@ -71,34 +71,19 @@ const ControlActivityCoalGetting = () => {
                   >
                     PEMERIKSAAN
                   </th>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
+                  <th scope="col-3" className="header-table-coal text-start">
                     C/N UNIT
                   </th>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
+                  <th scope="col-3" className="header-table-coal text-start">
                     C/N UNIT
                   </th>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
+                  <th scope="col-3" className="header-table-coal text-start">
                     C/N UNIT
                   </th>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
+                  <th scope="col-3" className="header-table-coal text-start">
                     C/N UNIT
                   </th>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
+                  <th scope="col-3" className="header-table-coal text-start">
                     C/N UNIT
                   </th>
                   <th
@@ -111,51 +96,195 @@ const ControlActivityCoalGetting = () => {
                   </th>
                 </tr>
                 <tr>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: 
-                    <br/>
+                  <th scope="col-3" className="header-table-coal text-start">
+                    PIT:
+                    <br />
                     SEAM:
                   </th>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: 
-                    <br/>
+                  <th scope="col-3" className="header-table-coal text-start">
+                    PIT:
+                    <br />
                     SEAM:
                   </th>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: 
-                    <br/>
+                  <th scope="col-3" className="header-table-coal text-start">
+                    PIT:
+                    <br />
                     SEAM:
                   </th>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: 
-                    <br/>
+                  <th scope="col-3" className="header-table-coal text-start">
+                    PIT:
+                    <br />
                     SEAM:
                   </th>
-                  <th
-                    scope="col-3"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: 
-                    <br/>
+                  <th scope="col-3" className="header-table-coal text-start">
+                    PIT:
+                    <br />
                     SEAM:
                   </th>
                 </tr>
               </thead>
-              <tbody className="text-center">
+              <tbody className="text-start">
                 <tr>
-                  <td>Content</td>
+                  <td>
+                    Jumlah DT:
+                    <br />
+                    Plan:
+                    <br />
+                    Actual:
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                    Loading
+                    <br />
+                    <div className="d-flex gap-4">
+                      <span>Start:</span>
+                      <span>-</span>
+                      <span>Stop:</span>
+                    </div>
+                    <div className="d-flex gap-4">
+                      <span>Start:</span>
+                      <span>-</span>
+                      <span>Stop:</span>
+                    </div>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                    Jalan Hauling
+                    <br />
+                    <div className="d-flex gap-4">
+                      <span>Hujan:</span>
+                      <span>-</span>
+                      <span>Slippery:</span>
+                    </div>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                    Area PIT
+                    <br />
+                    <div className="d-flex gap-4">
+                      <span>Hujan:</span>
+                      <span>-</span>
+                      <span>Slippery:</span>
+                    </div>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                    Size Coal:
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                    Cleaning:
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                      Kontaminasi OB:
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                  Kontaminasi dirty coal:
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                  Kantongan air:
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                  Kelayakan jalan:
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody className="text-start">
+                <tr>
+                  <td>
+                  Metode loading:
+                  </td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -177,7 +306,8 @@ const ControlActivityCoalGetting = () => {
                 </div>
                 <div className="col-4 align-self-end">
                   <p className="text-base">
-                    Distribusi : <u>Asli</u> : Production Dept., <u>Yellow</u> : Customer
+                    Distribusi : <u>Asli</u> : Production Dept., <u>Yellow</u> :
+                    Customer
                   </p>
                 </div>
                 <div className="col-4 text-center">
