@@ -7,7 +7,7 @@ import "../styles/App.css";
 
 const DaftarPeriksaAlatLoading = () => {
   return (
-    <div className="container px-5 pb-5">
+    <div className="container-fluid px-5 pb-5">
       <div className="mt-2">
         <p className="text-end fst-italic">FRM – OPR - 018</p>
         <div className="border border-2 border-dark">
@@ -60,7 +60,7 @@ const DaftarPeriksaAlatLoading = () => {
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}
-            <Table responsive bordered hover>
+            <Table responsive bordered hover size="sm">
               <thead className="text-center">
                 <tr>
                   <th
@@ -115,13 +115,118 @@ const DaftarPeriksaAlatLoading = () => {
               </thead>
 
               <tbody className="text-start">
+                {/* A. PENGECHEKAN P2H */}
+                <tr>
+                  <td className="fw-bold">
+                    A. PENGECHEKAN P2H
+                    <br />
+                    <span className="fw-normal">
+                      1. Apakah P2H telah dilakukan dengan benar oleh operator
+                    </span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                {/* B. PENGECHEKAN UNIT */}
+                <tr>
+                  <td className="fw-bold">
+                    B. PENGECHEKAN UNIT <br />
+                    - Undercarriage
+                    <br />
+                    <span className="fw-normal">
+                      1. Apakah P2H telah dilakukan dengan benar oleh operator
+                    </span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2. Apakah kekencangan track-link normal</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
                 <tr>
                   <td>
-                    Jumlah DT:
+                    3. Apakah undercarriage sudah bersih dari material non
+                    Batubara
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                {/* Teeth, Pins & Bucket */}
+                <tr>
+                  <td className="fw-bold">
+                    - Teeth, Pins & Bucket
                     <br />
-                    Plan:
+                    <span className="fw-normal">
+                      1. Apakah P2H telah dilakukan dengan benar oleh operator
+                    </span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    2. Apakah pemasangan pin & lock pin bolt pada teeth bucket
+                    sudah benar & aman
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    3. Apakah teeth bucket bukan bekas reinforced (harus genuine
+                    parts)
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4. Apakah punggung bucket tidak ada retakan</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                {/* Teeth, Pins & Bucket */}
+                <tr>
+                  <td className="fw-bold">
+                    C. LINGKUNGAN
                     <br />
-                    Actual:
+                    <span className="fw-normal">
+                      1. Apakah lingkungan loading excavator <br/> sudah bersih dari
+                      material non-batubara
+                    </span>
                   </td>
                   <td></td>
                   <td></td>
