@@ -490,7 +490,7 @@ const DaftarPeriksaGroupLeader = () => {
             </div>
 
             {/* Table & Section Bottom */}
-            <div className="row align-items-center">
+            <div className="row align-items-center mb-5">
               <div className="col-8">
                 <table class="table table-bordered caption-top mt-4">
                   <caption className="text-black text-serif header-leader">
