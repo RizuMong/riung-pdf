@@ -9,9 +9,11 @@ import DaftarPeriksaAlatLoading from "../pages/DaftarPeriksaAlatLoading";
 import ProductionControl from "../pages/ProductControl";
 import HandoverReportPitSupportServiceActivity from "../pages/ReportPitService";
 import RoadMaintenanceHandover from "../pages/RoadMaintenanceHandover";
-import DaftarPeriksaLeader from "../pages/DaftarPeriksaGroupLeader";
+import DaftarPeriksaOpenLeader from "../pages/DaftarPeriksaGroupLeader";
+import DaftarPeriksaLeader from "../pages/DaftarPeriksaLeader"
 import WorkOrderActionReport from "../pages/WorkOrderActionReport"
 import LogBookSectionReport from "../pages/LogBookSectionReport";
+import PerintahKerjaHarian from "../pages/PerintahKerjaHarian";
 
 const Index = () => {
   return (
@@ -44,6 +46,10 @@ const Index = () => {
           element={<DaftarPeriksaLeader />}
         />
         <Route
+          path="/daftar-periksa-open-leader"
+          element={<DaftarPeriksaOpenLeader />}
+        />
+        <Route
           path="/road-maintenance-handover"
           element={<RoadMaintenanceHandover />}
         />
@@ -54,6 +60,10 @@ const Index = () => {
         <Route
           path="/log-book-section-report"
           element={<LogBookSectionReport />}
+        />
+         <Route
+          path="/perintah-kerja-harian"
+          element={<PerintahKerjaHarian />}
         />
       </Routes>
     </BrowserRouter>
