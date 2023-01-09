@@ -1,7 +1,6 @@
 import React from "react";
 import { WithRouter } from "../utils/Navigation";
 
-import Table from "react-bootstrap/Table";
 import LogoRiung from "../assets/logo-riung.jpg";
 import "../styles/App.css";
 
@@ -64,57 +63,107 @@ const LogBookSectionReport = () => {
 
             {/* Table Content */}
             <div className="table-responsive">
-                <table class="table table-bordered caption-top mt-2">
-                  <thead className="text-center">
-                    <tr>
-                      <th scope="col" className="fs-6">
-                        NO
-                      </th>
-                      <th scope="col" className="fs-6">
-                        LOKASI
-                      </th>
-                      <th scope="col" className="fs-6">
-                        C/N LOADER
-                      </th>
-                      <th scope="col" className="fs-6">
-                        C/N HAULER
-                      </th>
-                      <th scope="col" className="fs-6">
-                        AKTIVITAS
-                      </th>
-                      <th scope="col" className="fs-6">
-                        SKETSA
-                      </th>
-                      <th scope="col" className="fs-6">
-                        STATUS PKH
-                      </th>
-                      <th scope="col" className="fs-6">
-                        PROBLEM
-                      </th>
-                      <th scope="col" className="fs-6">
-                        CORRECTIVE ACTION
-                      </th>
-                      <th scope="col" className="fs-6">
-                        PARAF
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-center">
-                    <tr>
-                      <td className="text-sm fw-normal">1</td>
-                      <td className="text-sm fw-normal">PIT CENTRAL</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">5 x DT VOLVO</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <table class="table table-bordered caption-top mt-2">
+                <thead className="text-center">
+                  <tr>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="3%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      NO
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="10%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      LOKASI
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="8%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      C/N LOADER
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="8%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      C/N HAULER
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="22%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      AKTIVITAS
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="14%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      SKETSA
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="5%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      STATUS PKH
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="15%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      PROBLEM
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="10%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      CORRECTIVE ACTION
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="5%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      PARAF
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <tr>
+                    <td className="text-sm fw-normal">1</td>
+                    <td className="text-sm fw-normal">PIT CENTRAL</td>
+                    <td className="text-sm fw-normal">EX 510</td>
+                    <td className="text-sm fw-normal">5 x DT VOLVO</td>
+                    <td className="text-sm fw-normal">EX 510</td>
+                    <td className="text-sm fw-normal">EX 510</td>
+                    <td className="text-sm fw-normal">EX 510</td>
+                    <td className="text-sm fw-normal">EX 510</td>
+                    <td className="text-sm fw-normal">EX 510</td>
+                    <td className="text-sm fw-normal">EX 510</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             <hr className="w-100 solid m-0" />
 
