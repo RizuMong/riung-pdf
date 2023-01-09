@@ -139,6 +139,10 @@ hr.solid {
   margin-top: 22px !important;
 }
 
+.h-10 {
+  height: 20px !important;
+}
+
 .mb-7 {
   margin-bottom: 40px;
 }
