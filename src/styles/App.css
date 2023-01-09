@@ -190,6 +190,10 @@ hr .production {
   margin-bottom: 60px;
 }
 
+.pl-4 {
+  padding-left: 34%;
+}
+
 .header-table-coal {
   font-size: 14px;
   font-weight: 400;

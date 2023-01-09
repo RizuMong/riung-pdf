@@ -32,7 +32,6 @@ const PerintahKerjaHarian = () => {
                       PERINTAH KERJA HARIAN (PKH)
                     </h1>
                   </th>
-                  {/* <div className="vr" style={{ height: 100 }}></div> */}
                   <th className="col-3">
                     <div className="mb-4">
                       <p className="mb-2 px-2 fw-semibold fst-italic text-alat">
