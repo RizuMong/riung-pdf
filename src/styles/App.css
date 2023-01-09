@@ -24,6 +24,10 @@ p {
   margin-bottom: 0 !important;
 }
 
+table {
+  margin: 0;
+}
+
 /* Styling Excavator Control */
 .header-excavator {
   font-size: 30px;

@@ -154,13 +154,52 @@ const LogBookSectionReport = () => {
                     <td className="text-sm fw-normal">PIT CENTRAL</td>
                     <td className="text-sm fw-normal">EX 510</td>
                     <td className="text-sm fw-normal">5 x DT VOLVO</td>
-                    <td className="text-sm fw-normal">EX 510</td>
+                    <td className="text-sm fw-normal">
+                      Loading FD RL -5, 5x DT Volvo FMX 400 dumping Void Selatan
+                      Pit Central , jarak 800 m, Target 240 bcm/jam
+                    </td>
                     <td className="text-sm fw-normal">EX 510</td>
                     <td className="text-sm fw-normal">EX 510</td>
                     <td className="text-sm fw-normal">EX 510</td>
                     <td className="text-sm fw-normal">EX 510</td>
                     <td className="text-sm fw-normal">EX 510</td>
                   </tr>
+                </tbody>
+              </table>
+
+              <table className="table table-bordered">
+                <thead className="text-center">
+                  <tr>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="15%"
+                      scope="col"
+                      className="fs-6 table-dark"
+                    >
+                      UNIT BREAK DOWN
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="15%"
+                      scope="col"
+                      className="fs-6 table-dark"
+                    >
+                      UNIT BREAK DOWN
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle" }}
+                      width="70%"
+                      scope="col"
+                      className="fs-6"
+                    >
+                      CATATAN
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <td className="text-sm fw-semibold">Data</td>
+                  <td className="text-sm fw-semibold">Data</td>
+                  <td className="text-sm fw-semibold">Data</td>
                 </tbody>
               </table>
             </div>
