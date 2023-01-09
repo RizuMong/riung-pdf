@@ -146,7 +146,7 @@ const PerintahKerjaHarian = () => {
             {/* Content Bottom */}
             <div className="row">
               <div>
-                <div className="d-flex gap-5">
+                <div className="d-flex gap-5 mt-1">
                   <p className="mb-2 mt px-2 fw-normal text-alat">
                     Dibuat: Dept. Head
                   </p>
