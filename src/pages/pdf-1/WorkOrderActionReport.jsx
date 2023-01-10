@@ -62,7 +62,7 @@ const WorkOrderActionReport = () => {
             </div>
             <hr className="w-100 solid" />
 
-            {/* Table Content */}
+            {/* Head Table Content */}
             <Table responsive bordered>
               <thead className="text-center">
                 <tr>
@@ -119,6 +119,7 @@ const WorkOrderActionReport = () => {
               </thead>
             </Table>
 
+            {/* Table Content */}
             <Table responsive bordered className="m-0">
               <thead>
                 <tr>
@@ -207,9 +208,9 @@ const WorkOrderActionReport = () => {
                   ></th>
                 </tr>
               </thead>
-              <thead></thead>
             </Table>
 
+            {/* Content Bottom & Tanda Tangan */}
             <Table responsive bordered className="m-0">
               <thead className="text-center">
                 <tr>
@@ -268,10 +269,6 @@ const WorkOrderActionReport = () => {
                 </tr>
               </thead>
             </Table>
-
-            {/* <hr className="w-100 solid" /> */}
-
-            {/* Content Bottom */}
           </div>
         </div>
       </div>
