@@ -128,6 +128,28 @@ const CheckAktivitasPeledakan = () => {
                 </tr>
                 <tr>
                   <td style={{ verticalAlign: "middle" }} className="text-sm">
+                    2
+                  </td>
+                  <td
+                    style={{ verticalAlign: "middle" }}
+                    className="text-sm text-start"
+                  >
+                     Apakah informasi peledakan dan bendera merah sudah dipasang pada jalan/akses menuju tambang?
+                  </td>
+                  <td style={{ verticalAlign: "middle" }} className="text-sm">
+                    YA
+                  </td>
+                  <td
+                    style={{ verticalAlign: "middle" }}
+                    className="text-sm"
+                  ></td>
+                  <td
+                    style={{ verticalAlign: "middle" }}
+                    className="text-sm"
+                  ></td>
+                </tr>
+                <tr>
+                  <td style={{ verticalAlign: "middle" }} className="text-sm">
                     3
                   </td>
                   <td
