@@ -8,7 +8,7 @@ import "../../styles/App.css";
 const BlastDesign = () => {
   return (
     <div className="container-fluid">
-      <div className="mt-1">
+      <div className="mt-1 mb-1">
         <p className="text-end fst-italic">FRM-OPR-018</p>
         <div className="border border-3 border-dark">
           <div className="p-3">

@@ -7,7 +7,7 @@ import "../../styles/App.css";
 const PerintahKerjaHarian = () => {
   return (
     <div className="container-fluid">
-      <div className="mt-2">
+      <div className="mt-1 mb-1">
         <div className="border border-3 border-dark">
           <div className="p-1">
             <div className="row align-items-center">

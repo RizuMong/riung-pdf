@@ -7,7 +7,7 @@ import "../../styles/App.css";
 const DaftarPeriksaLeader = () => {
   return (
     <div className="container-fluid">
-      <div className="mt-2">
+      <div className="mt-1 mb-1">
         <div className="border border-2 border-dark">
           <div className="p-3">
             {/* Header */}

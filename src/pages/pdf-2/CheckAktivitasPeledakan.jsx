@@ -7,8 +7,8 @@ import "../../styles/App.css";
 
 const CheckAktivitasPeledakan = () => {
   return (
-    <div className="container-fluid px-5 pb-5">
-      <div className="mt-2">
+    <div className="container-fluid">
+      <div className="mt-1 mb-1">
         <div className="border border-2 border-dark">
           <div className="p-2">
             {/* Header */}
@@ -134,7 +134,8 @@ const CheckAktivitasPeledakan = () => {
                     style={{ verticalAlign: "middle" }}
                     className="text-sm text-start"
                   >
-                     Apakah informasi peledakan dan bendera merah sudah dipasang pada jalan/akses menuju tambang?
+                    Apakah informasi peledakan dan bendera merah sudah dipasang
+                    pada jalan/akses menuju tambang?
                   </td>
                   <td style={{ verticalAlign: "middle" }} className="text-sm">
                     YA

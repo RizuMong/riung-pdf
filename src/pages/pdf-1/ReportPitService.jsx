@@ -7,8 +7,8 @@ import "../../styles/App.css";
 
 const ReportPitService = () => {
   return (
-    <div className="container">
-      <div className="mt-2">
+    <div className="container-fluid">
+      <div className="mt-1 mb-1">
         <p className="text-end fst-italic">FRM-OPR-018</p>
         <div className="border border-3 border-dark">
           <div className="p-1">
