@@ -1,8 +1,8 @@
 import React from "react";
-import { WithRouter } from "../utils/Navigation";
+import { WithRouter } from "../../utils/Navigation";
 
-import LogoRiung from "../assets/logo-riung.jpg";
-import "../styles/App.css";
+import LogoRiung from "../../assets/logo-riung.jpg";
+import "../../styles/App.css";
 
 const RoadMaintenanceHandover = () => {
   return (

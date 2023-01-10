@@ -1,14 +1,14 @@
 import React from "react";
-import { WithRouter } from "../utils/Navigation";
+import { WithRouter } from "../../utils/Navigation";
 
-import LogoRiung from "../assets/logo-riung2.jpg";
-import "../styles/App.css";
+import LogoRiung from "../../assets/logo-riung2.jpg";
+import "../../styles/App.css";
 
 const WorkOrderActionReport = () => {
   return (
     <div className="container-fluid pb-5">
       <div className="mt-2">
-        <p className="text-end fst-italic">Form Eng 024</p>
+        <p className="text-end fs-6 fst-italic">Form Eng 024</p>
         <div className="border border-3 border-dark">
           <div className="p-1">
             <div className="row align-items-center">
@@ -64,6 +64,10 @@ const WorkOrderActionReport = () => {
             <hr className="w-100 solid" />
 
             {/* Table Content */}
+
+
+            {/* Content Bottom */}
+
           </div>
         </div>
       </div>
