@@ -212,3 +212,16 @@ hr .production {
   text-align: center;
   font-weight: 900;
 }
+
+/* Styling WorkOrderActionReport */
+.header-table-action {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.header-table-action2 {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}

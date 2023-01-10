@@ -1,6 +1,7 @@
 import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
+import { Table } from "react-bootstrap";
 import LogoRiung from "../../assets/logo-riung2.jpg";
 import "../../styles/App.css";
 
@@ -52,9 +53,7 @@ const WorkOrderActionReport = () => {
                   <div className="vr" style={{ height: 70 }}></div>
                   <th className="col-2 pl-2">
                     <div className="mb-3">
-                      <p className="mb-2 px-2 fw-normal text-alat">
-                        HALAMAN
-                      </p>
+                      <p className="mb-2 px-2 fw-normal text-alat">HALAMAN</p>
                       <p className="fw-normal text-alat pl-4">1</p>
                     </div>
                   </th>
@@ -64,10 +63,154 @@ const WorkOrderActionReport = () => {
             <hr className="w-100 solid" />
 
             {/* Table Content */}
+            <Table responsive bordered>
+              <thead className="text-center">
+                <tr>
+                  <th
+                    colspan={2}
+                    scope="col-3"
+                    className="header-table-action border-end"
+                    style={{ verticalAlign: "middle" }}
+                  >
+                    PEMERIKSAAN
+                  </th>
+                  <th
+                    colspan={2}
+                    scope="col-3"
+                    className="header-table-action"
+                    style={{ verticalAlign: "middle" }}
+                  >
+                    ACTION REPORT
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col-3" className="header-table-coal text-start ">
+                    KEPADA: Prod & TDC Dept. Head
+                  </th>
+                  <th
+                    scope="col-3"
+                    className="header-table-coal text-start border-end"
+                  >
+                    DEPT. : Production & TDC
+                  </th>
+                  <th scope="col-3" className="header-table-coal text-start">
+                    KEPADA: Engineering Dept. Head
+                  </th>
+                  <th scope="col-3" className="header-table-coal text-start">
+                    Dept. Engineering
+                  </th>
+                </tr>
+                <tr>
+                  <th
+                    colspan={2}
+                    scope="col-3"
+                    className="header-table-coal text-start border-end"
+                  >
+                    TEMBUSAN: Project Manager
+                  </th>
+                  <th
+                    colspan={2}
+                    scope="col-3"
+                    className="header-table-coal text-start"
+                  >
+                    TEMBUSAN: Project Manager
+                  </th>
+                </tr>
+              </thead>
+            </Table>
 
+            <Table responsive bordered className="m-0">
+              <thead>
+                <tr>
+                  <th
+                    style={{ width: "5%", verticalAlign: "middle" }}
+                    className="header-table-action2"
+                  >
+                    NO
+                  </th>
+                  <th
+                    style={{ width: "32%", verticalAlign: "middle" }}
+                    className="header-table-action2"
+                  >
+                    URAIAN PEKERJAAN
+                  </th>
+                  <th
+                    style={{ width: "10%", verticalAlign: "middle" }}
+                    className="header-table-action2"
+                  >
+                    LOKASI
+                  </th>
+                  <th
+                    style={{ width: "5%", verticalAlign: "middle" }}
+                    className="header-table-action2 border-end"
+                  >
+                    TARGET WAKTU
+                  </th>
+                  <th
+                    style={{ width: "32%", verticalAlign: "middle" }}
+                    className="header-table-action2"
+                  >
+                    URAIAN PELAKSANAAN
+                  </th>
+                  <th
+                    style={{ width: "16%", verticalAlign: "middle" }}
+                    className="header-table-action2"
+                  >
+                    KETERANGAN
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                <tr>
+                  <td className="text-sm">(1)</td>
+                  <td className="text-sm">
+                    Target Include Rain & Slippery: OB: 542, 500 Bcm
+                  </td>
+                  <td className="text-sm fw-semibold">A2 Utara</td>
+                  <td className="text-sm fw-semibold border-end">28/08/21</td>
+                  <td className="text-sm">
+                    Actual Production OB: OB: 563, 571 Bcm Coal: 44' 267 Ton
+                  </td>
+                  <td className="text-sm">Keterangan</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th className="text-sm fw-normal border-top" colSpan={4}>
+                    GAMBAR ACUAN...
+                  </th>
+                  <th
+                    className="fw-semibold border-top"
+                    rowSpan={2}
+                    colSpan={2}
+                    style={{ verticalAlign: "top" }}
+                  >
+                    CATATAN:
+                  </th>
+                </tr>
+                <tr>
+                  <th
+                    style={{ width: "50%" }}
+                    className="fw-semibold"
+                    colSpan={4}
+                  >
+                    CATATAN:
+                    <span className="text-sm fw-normal">
+                      Harap Feedback diberikan maksimal pada target waktu yang
+                      telah tercantum sebelum pukul 15:00 WITA
+                    </span>
+                  </th>
+                  <th
+                    style={{ width: "50%" }}
+                    className="fw-semibold px-1"
+                    colSpan={2}
+                  ></th>
+                </tr>
+              </thead>
+            </Table>
+            {/* <hr className="w-100 solid" /> */}
 
             {/* Content Bottom */}
-
           </div>
         </div>
       </div>
