@@ -70,7 +70,7 @@ const WorkOrderActionReport = () => {
                     colspan={2}
                     scope="col-3"
                     className="header-table-action border-end"
-                    style={{ verticalAlign: "middle" }}
+                    style={{ width: "50%", verticalAlign: "middle" }}
                   >
                     PEMERIKSAAN
                   </th>
@@ -78,7 +78,7 @@ const WorkOrderActionReport = () => {
                     colspan={2}
                     scope="col-3"
                     className="header-table-action"
-                    style={{ verticalAlign: "middle" }}
+                    style={{ width: "50%", verticalAlign: "middle" }}
                   >
                     ACTION REPORT
                   </th>
@@ -123,13 +123,13 @@ const WorkOrderActionReport = () => {
               <thead>
                 <tr>
                   <th
-                    style={{ width: "5%", verticalAlign: "middle" }}
+                    style={{ width: "3%", verticalAlign: "middle" }}
                     className="header-table-action2"
                   >
                     NO
                   </th>
                   <th
-                    style={{ width: "32%", verticalAlign: "middle" }}
+                    style={{ width: "29%", verticalAlign: "middle" }}
                     className="header-table-action2"
                   >
                     URAIAN PEKERJAAN
@@ -141,7 +141,7 @@ const WorkOrderActionReport = () => {
                     LOKASI
                   </th>
                   <th
-                    style={{ width: "5%", verticalAlign: "middle" }}
+                    style={{ width: "8%", verticalAlign: "middle" }}
                     className="header-table-action2 border-end"
                   >
                     TARGET WAKTU
@@ -153,7 +153,7 @@ const WorkOrderActionReport = () => {
                     URAIAN PELAKSANAAN
                   </th>
                   <th
-                    style={{ width: "16%", verticalAlign: "middle" }}
+                    style={{ width: "18%", verticalAlign: "middle" }}
                     className="header-table-action2"
                   >
                     KETERANGAN
@@ -239,14 +239,16 @@ const WorkOrderActionReport = () => {
                     </p>
                     <p className="fw-normal text-sm text-start px-1">PARAF: </p>
                   </th>
+
                   <th style={{ width: "25%" }} className="fw-semibold">
                     <p className="fw-normal text-sm">Krassi, 22 Agustus 2021</p>
                     <p>DIORDER OLEH,</p>
                     <p className="mt-5 border-top border-1">(Afrizon)</p>
                   </th>
+
                   <th
                     style={{ width: "25%", verticalAlign: "top" }}
-                    className="fw-semibold px-1"
+                    className="fw-semibold"
                   >
                     <p>DITERIMA OLEH,</p>
                     <p className="fw-normal text-sm text-start px-1">
