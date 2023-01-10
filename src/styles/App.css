@@ -105,6 +105,10 @@ hr.solid {
   font-size: 14px;
 }
 
+.text-xl {
+  font-size: 20px;
+}
+
 .text-bottom {
   font-size: 13px;
 }
@@ -229,4 +233,10 @@ hr .production {
 .text-base {
   font-size: 16px;
   font-weight: 400;
+}
+
+/* Styling CHECK LIST AKTIVITAS PELEDAKAN */
+.header-check {
+  font-size: 26px;
+  text-align: center;
 }
