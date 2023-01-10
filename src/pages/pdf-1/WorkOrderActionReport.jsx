@@ -7,7 +7,7 @@ import "../../styles/App.css";
 
 const WorkOrderActionReport = () => {
   return (
-    <div className="container-fluid pb-5">
+    <div className="container-fluid">
       <div className="mt-2">
         <p className="text-end fs-6 fst-italic">Form Eng 024</p>
         <div className="border border-3 border-dark">

@@ -6,7 +6,7 @@ import "../../styles/App.css";
 
 const DaftarPeriksaGroupLeader = () => {
   return (
-    <div className="container-fluid px-5 pb-5">
+    <div className="container-fluid">
       <div className="mt-2">
         <div className="border border-2 border-dark">
           <div className="p-3">

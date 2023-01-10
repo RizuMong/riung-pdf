@@ -7,7 +7,7 @@ import "../../styles/App.css";
 
 const ExcavatorControl = () => {
   return (
-    <div className="container px-5 pb-5">
+    <div className="container">
       <div className="mt-2">
         <p className="text-end fst-italic">FRM – OPR - 002</p>
         <div className="border border-2 border-dark">

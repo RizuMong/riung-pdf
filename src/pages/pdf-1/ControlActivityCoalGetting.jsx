@@ -7,7 +7,7 @@ import "../../styles/App.css";
 
 const ControlActivityCoalGetting = () => {
   return (
-    <div className="container px-5 pb-5">
+    <div className="container">
       <div className="mt-2">
         <p className="text-end fst-italic">FRM – OPR - 021</p>
         <div className="border border-2 border-dark">

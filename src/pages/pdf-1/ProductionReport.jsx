@@ -7,7 +7,7 @@ import "../../styles/App.css";
 
 const ProductionReport = () => {
   return (
-    <div className="container-fluid pb-5">
+    <div className="container-fluid">
       <div className="mt-2">
         <p className="text-end fst-italic">FRM-OPR-018</p>
         <div className="border border-3 border-dark">
