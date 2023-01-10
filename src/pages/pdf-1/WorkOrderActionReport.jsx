@@ -207,7 +207,66 @@ const WorkOrderActionReport = () => {
                   ></th>
                 </tr>
               </thead>
+              <thead></thead>
             </Table>
+
+            <Table responsive bordered className="m-0">
+              <thead className="text-center">
+                <tr>
+                  <th style={{ width: "25%" }} className="fw-semibold">
+                    <p className="fw-normal text-sm">Krassi, 22 Agustus 2021</p>
+                    <p>DIORDER OLEH,</p>
+                    <p className="mt-5 border-top border-1">
+                      (Yogi Aditya Widodo)
+                    </p>
+                  </th>
+                  <th
+                    style={{ width: "25%", verticalAlign: "top" }}
+                    className="fw-semibold px-1"
+                  >
+                    <p>DITERIMA OLEH,</p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      NAMA: Afrizon
+                    </p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      JABATAN: Prod Dept. Head
+                    </p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      DEPT: Production
+                    </p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      TANGGAL:
+                    </p>
+                    <p className="fw-normal text-sm text-start px-1">PARAF: </p>
+                  </th>
+                  <th style={{ width: "25%" }} className="fw-semibold">
+                    <p className="fw-normal text-sm">Krassi, 22 Agustus 2021</p>
+                    <p>DIORDER OLEH,</p>
+                    <p className="mt-5 border-top border-1">(Afrizon)</p>
+                  </th>
+                  <th
+                    style={{ width: "25%", verticalAlign: "top" }}
+                    className="fw-semibold px-1"
+                  >
+                    <p>DITERIMA OLEH,</p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      NAMA: Yogi Aditya W.
+                    </p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      JABATAN: Engineering Dept. Head
+                    </p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      DEPT: Engineering
+                    </p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      TANGGAL:
+                    </p>
+                    <p className="fw-normal text-sm text-start px-1">PARAF: </p>
+                  </th>
+                </tr>
+              </thead>
+            </Table>
+
             {/* <hr className="w-100 solid" /> */}
 
             {/* Content Bottom */}
