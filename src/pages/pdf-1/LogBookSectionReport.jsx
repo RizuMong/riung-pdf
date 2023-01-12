@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const LogBookSectionReport = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
+        {
+          id_logbook: "WC2vgKhVg",
+        }
+      )
+      .then((res) => {
+        const { data } = res.data;
+        setData(data);
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
@@ -25,8 +54,8 @@ const LogBookSectionReport = () => {
                         alt="Logo RIUNG"
                       />
                       <h5 className="fw-bold text-lg">
-                        PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                        SMU
+                        PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
+                        {data.jobsite}
                       </h5>
                     </div>
                   </th>
@@ -47,7 +76,7 @@ const LogBookSectionReport = () => {
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
-                        Hari / Tanggal:{" "}
+                        Hari / Tanggal: {data.tanggal}
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
@@ -149,21 +178,23 @@ const LogBookSectionReport = () => {
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  <tr>
-                    <td className="text-sm fw-normal">1</td>
-                    <td className="text-sm fw-normal">PIT CENTRAL</td>
-                    <td className="text-sm fw-normal">EX 510</td>
-                    <td className="text-sm fw-normal">5 x DT VOLVO</td>
-                    <td className="text-sm fw-normal">
-                      Loading FD RL -5, 5x DT Volvo FMX 400 dumping Void Selatan
-                      Pit Central , jarak 800 m, Target 240 bcm/jam
-                    </td>
-                    <td className="text-sm fw-normal">EX 510</td>
-                    <td className="text-sm fw-normal">EX 510</td>
-                    <td className="text-sm fw-normal">EX 510</td>
-                    <td className="text-sm fw-normal">EX 510</td>
-                    <td className="text-sm fw-normal">EX 510</td>
-                  </tr>
+                  {data.line?.map((item) => {
+                    <tr>
+                      <td className="text-sm fw-normal">1</td>
+                      <td className="text-sm fw-normal">{item.lokasi}</td>
+                      <td className="text-sm fw-normal">EX 510</td>
+                      <td className="text-sm fw-normal">5 x DT VOLVO</td>
+                      <td className="text-sm fw-normal">
+                        Loading FD RL -5, 5x DT Volvo FMX 400 dumping Void
+                        Selatan Pit Central , jarak 800 m, Target 240 bcm/jam
+                      </td>
+                      <td className="text-sm fw-normal">EX 510</td>
+                      <td className="text-sm fw-normal">EX 510</td>
+                      <td className="text-sm fw-normal">EX 510</td>
+                      <td className="text-sm fw-normal">EX 510</td>
+                      <td className="text-sm fw-normal">EX 510</td>
+                    </tr>;
+                  })}
                 </tbody>
               </table>
 
@@ -211,17 +242,17 @@ const LogBookSectionReport = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan Oleh,</p>
-                  <p className="mt-5 fw-bold">(Yosua H)</p>
+                  <p className="mt-5 fw-bold">({data.diserahkan_oleh})</p>
                   <p className="fw-bold">Section Shift 1</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
-                  <p className="mt-5 fw-bold">(Muhlis)</p>
+                  <p className="mt-5 fw-bold">({data.diterima_oleh})</p>
                   <p className="fw-bold">Koordinator Shift 2</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diketahui,</p>
-                  <p className="mt-5 fw-bold">(__________________)</p>
+                  <p className="mt-5 fw-bold">({data.diketahui})</p>
                   <p className="fw-bold">Production Dept Head</p>
                 </div>
               </div>
