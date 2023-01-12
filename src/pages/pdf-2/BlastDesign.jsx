@@ -1,7 +1,6 @@
 import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
-import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -34,9 +33,7 @@ const BlastDesign = () => {
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-5">
-                    <h1 className="header-drill mb-4">
-                      DRILL DESIGN
-                    </h1>
+                    <h1 className="header-drill mb-4">DRILL DESIGN</h1>
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-3">
@@ -58,7 +55,6 @@ const BlastDesign = () => {
             <hr className="w-100 solid" />
 
             {/* Table Content */}
-
           </div>
         </div>
       </div>
