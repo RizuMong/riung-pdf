@@ -178,21 +178,18 @@ const LogBookSectionReport = () => {
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  {data.line?.map((item) => {
-                    <tr>
+                  {data.line?.map((item, index) => {
+                    <tr key={index}>
                       <td className="text-sm fw-normal">1</td>
-                      <td className="text-sm fw-normal">{item.lokasi}</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">5 x DT VOLVO</td>
-                      <td className="text-sm fw-normal">
-                        Loading FD RL -5, 5x DT Volvo FMX 400 dumping Void
-                        Selatan Pit Central , jarak 800 m, Target 240 bcm/jam
-                      </td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">EX 510</td>
-                      <td className="text-sm fw-normal">EX 510</td>
+                      <td className="text-sm fw-normal">{item?.lokasi}</td>
+                      <td className="text-sm fw-normal">{item?._cn_hauler[0]}</td>
+                      <td className="text-sm fw-normal">{item?.cn_hauler[1]}</td>
+                      <td className="text-sm fw-normal">{item?.aktivitas}</td>
+                      <td className="text-sm fw-normal">{item?.sketsa}</td>
+                      <td className="text-sm fw-normal">{item?.status_pkh}</td>
+                      <td className="text-sm fw-normal">{item?.problem}</td>
+                      <td className="text-sm fw-normal">{item?.corrective_action}</td>
+                      <td className="text-sm fw-normal">{item?.paraf}</td>
                     </tr>;
                   })}
                 </tbody>
