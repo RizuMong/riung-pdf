@@ -9,7 +9,7 @@ const BlastDesign = () => {
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
-        <p className="text-end fst-italic">FRM-OPR-018</p>
+        <p className="text-end fst-italic">FRM-OPR-007</p>
         <div className="border border-3 border-dark">
           <div className="p-3">
             <div className="row align-items-center">
@@ -18,7 +18,7 @@ const BlastDesign = () => {
                 <thead>
                   <th className="col-4">
                     {" "}
-                    <div className="d-flex gap-3 mb-3">
+                    <div className="d-flex gap-3 mb-3 align-items-center">
                       <img
                         className="pl-2"
                         src={LogoRiung}
@@ -28,14 +28,14 @@ const BlastDesign = () => {
                       />
                       <h5 className="fw-bold header-pt">
                         PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                        ...........................
+                        MGM
                       </h5>
                     </div>
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-5">
-                    <h1 className="header-alat-angkut mb-4">
-                      DAFTAR PERIKSA KONTAMINASI ALAT ANGKUT BATUBARA
+                    <h1 className="header-drill mb-4">
+                      DRILL DESIGN
                     </h1>
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
