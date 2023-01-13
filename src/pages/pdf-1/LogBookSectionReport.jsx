@@ -5,6 +5,8 @@ import axios from "axios";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
+const baseUrl = "";
+
 const LogBookSectionReport = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -186,15 +188,21 @@ const LogBookSectionReport = () => {
                     <tr key={index}>
                       <td className="text-sm fw-normal">1</td>
                       <td className="text-sm fw-normal">{item?.lokasi}</td>
-                      <td className="text-sm fw-normal">{item?.cn_hauler[0]}</td>
-                      <td className="text-sm fw-normal">{item?.cn_hauler[1]}</td>
+                      <td className="text-sm fw-normal">
+                        {item?.cn_hauler[0]}
+                      </td>
+                      <td className="text-sm fw-normal">
+                        {item?.cn_hauler[1]}
+                      </td>
                       <td className="text-sm fw-normal">{item?.aktivitas}</td>
                       {/* <td className="text-sm fw-normal">{item?.sketsa}</td> */}
                       {/* <td className="text-sm fw-normal">{item?.status_pkh}</td> */}
                       <td className="text-sm fw-normal">{item?.problem}</td>
-                      <td className="text-sm fw-normal">{item?.corrective_action}</td>
+                      <td className="text-sm fw-normal">
+                        {item?.corrective_action}
+                      </td>
                       {/* <td className="text-sm fw-normal">{item?.paraf}</td> */}
-                    </tr>
+                    </tr>;
                   })}
                   {/* <tr>
                     <td className="text-sm fw-normal">1</td>
