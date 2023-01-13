@@ -3,6 +3,9 @@ import { WithRouter } from "../../utils/Navigation";
 
 import Img_Sketsa from "../../assets/img_sketsa.jpg"
 import Img_TTD from "../../assets/img_ttd.png"
+import lubang1 from "../../assets/lubang_1.jpg"
+import lubang2 from "../../assets/lubang_2.jpg"
+import lubang3 from "../../assets/lubang_3.jpg"
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -144,15 +147,59 @@ const BlastDesign = () => {
                         <p>Drill & Blast Eng</p>
                       </div>
                     </th>
+                    <th style={{verticalAlign: "middle"}}>
+                      <div className="d-flex justify-content-between px-5">
+                        <div className="fw-normal">
+                          <p>Keterangan:</p>
+                          <p>Kode Kondisi Lubang</p>
+                          <div className="d-flex gap-3 pb-3">
+                            <img src={lubang1} alt="Lubang Satu" width="22px" height="24px" />
+                            <p>Lubang Kering</p>
+                          </div>
+                          <div className="d-flex gap-3 pb-3">
+                            <img src={lubang2} alt="Lubang Satu" width="22px" height="24px" />
+                            <p>Lubang Basah</p>
+                          </div>
+                          <div className="d-flex gap-2">
+                            <img src={lubang3} alt="Lubang Satu" width="32px" height="32px" />
+                            <p>Lubang Rusak</p>
+                          </div>
+                        </div>
+                        <div>
+                          <table className="table table-bordered">
+                            <thead className="text-center">
+                              <tr>
+                                <th className="fw-normal" colspan={2}>Vol. By formula (BCM)</th>
+                              </tr>
+                              <tr>
+                                <th className="fw-normal">Plan</th>
+                                <th className="fw-normal">Actual</th>
+                              </tr>
+                              <tr>
+                                <th className="fw-normal text-danger fs-5">23.500</th>
+                                <th className="fw-normal text-danger fs-5">23.520</th>
+                              </tr>
+                              <tr>
+                                <th className="fw-normal" colspan={2}>Powder Faktor (Kg / BCM)</th>
+                              </tr>
+                              <tr>
+                                <th className="fw-normal">Plan</th>
+                                <th className="fw-normal">Actual</th>
+                              </tr>
+                              <tr>
+                                <th className="fw-normal text-danger fs-5">0.23</th>
+                                <th className="fw-normal text-danger fs-5">0.20</th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+                      </div>
+                    </th>
                   </tr>
-                  
                 </thead>
               </table>
             </div>
           </div>
-          <hr className="w-100 solid" />
-
-          {/* Table Content */}
         </div>
       </div>
     </div>

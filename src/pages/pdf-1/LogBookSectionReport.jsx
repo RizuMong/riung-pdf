@@ -24,7 +24,7 @@ const LogBookSectionReport = () => {
       .then((res) => {
         const { data } = res.data;
         setData(data);
-        // console.log(data);
+        console.log(data);
         console.log({
           arr: data.line,
         });
@@ -189,11 +189,11 @@ const LogBookSectionReport = () => {
                       <td className="text-sm fw-normal">{item?.cn_hauler[0]}</td>
                       <td className="text-sm fw-normal">{item?.cn_hauler[1]}</td>
                       <td className="text-sm fw-normal">{item?.aktivitas}</td>
-                      <td className="text-sm fw-normal">{item?.sketsa}</td>
-                      <td className="text-sm fw-normal">{item?.status_pkh}</td>
+                      {/* <td className="text-sm fw-normal">{item?.sketsa}</td> */}
+                      {/* <td className="text-sm fw-normal">{item?.status_pkh}</td> */}
                       <td className="text-sm fw-normal">{item?.problem}</td>
                       <td className="text-sm fw-normal">{item?.corrective_action}</td>
-                      <td className="text-sm fw-normal">{item?.paraf}</td>
+                      {/* <td className="text-sm fw-normal">{item?.paraf}</td> */}
                     </tr>
                   })}
                   {/* <tr>
