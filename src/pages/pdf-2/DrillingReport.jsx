@@ -33,7 +33,9 @@ const DrillingReport = () => {
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-5">
-                    <h1 className="header-drill fw-bold mb-6">DRILLING REPORT</h1>
+                    <h1 className="header-drill fw-bold mb-6">
+                      DRILLING REPORT
+                    </h1>
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-3">
@@ -42,7 +44,8 @@ const DrillingReport = () => {
                         PIT: <span className="text-danger">EAST KAWI</span>
                       </p>
                       <p className="mb-2 px-2 text-serif fw-normal text-alat border-bottom border-1 pb-2">
-                        Tanggal: <span className="text-danger">8 - 11 - 2022</span>
+                        Tanggal:{" "}
+                        <span className="text-danger">8 - 11 - 2022</span>
                       </p>
                       <p className="mb-2 px-2 text-serif fw-normal text-alat border-bottom border-1 pb-1">
                         SHIFT: <span className="text-danger">1</span>
@@ -51,6 +54,8 @@ const DrillingReport = () => {
                   </th>
                 </thead>
               </table>
+
+              
 
             </div>
             <hr className="w-100 solid" />

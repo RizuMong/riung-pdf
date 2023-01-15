@@ -5,27 +5,27 @@ import axios from "axios";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
-const baseUrl = "";
-
-const LogBookSectionReport = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+const LogBookSectionReport = ({ id_logbook }) => {
+  const [datas, setDatas] = useState([]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [id_logbook]);
 
-  const fetchData = () => {
+  const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
+        import.meta.env.VITE_LOGBOOK_URL,
         {
           id_logbook: "WC2vgKhVg",
         }
+        // {
+        //   id_logbook: id_logbook,
+        // }
       )
       .then((res) => {
-        const { data } = res.data;
-        setData(data);
+        const { data } = res;
+        setDatas(data);
         console.log(data);
         console.log({
           arr: data.line,
@@ -60,7 +60,7 @@ const LogBookSectionReport = () => {
                       />
                       <h5 className="fw-bold text-lg">
                         PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
-                        {data.jobsite}
+                        {datas.jobsite}
                       </h5>
                     </div>
                   </th>
@@ -81,7 +81,7 @@ const LogBookSectionReport = () => {
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
-                        Hari / Tanggal: {data.tanggal}
+                        Hari / Tanggal: {datas.tanggal}
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
@@ -100,110 +100,57 @@ const LogBookSectionReport = () => {
               <table class="table table-bordered caption-top mt-2">
                 <thead className="text-center">
                   <tr>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="3%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="3%" scope="col" className="fs-6 align-middle">
                       NO
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="10%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="10%" scope="col" className="fs-6 align-middle">
                       LOKASI
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="8%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="8%" scope="col" className="fs-6 align-middle">
                       C/N LOADER
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="8%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="8%" scope="col" className="fs-6 align-middle">
                       C/N HAULER
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="22%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="22%" scope="col" className="fs-6 align-middle">
                       AKTIVITAS
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="14%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="14%" scope="col" className="fs-6 align-middle">
                       SKETSA
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="5%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="5%" scope="col" className="fs-6 align-middle">
                       STATUS PKH
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="15%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="15%" scope="col" className="fs-6 align-middle">
                       PROBLEM
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="10%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="10%" scope="col" className="fs-6 align-middle">
                       CORRECTIVE ACTION
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="5%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="5%" scope="col" className="fs-6 align-middle">
                       PARAF
                     </th>
                   </tr>
                 </thead>
 
                 <tbody className="text-center">
-                  {data.line?.map((item, index) => {
-                    <tr key={index}>
+                  {datas.line?.map((item) => {
+                    <tr>
                       <td className="text-sm fw-normal">1</td>
-                      <td className="text-sm fw-normal">{item?.lokasi}</td>
-                      <td className="text-sm fw-normal">
-                        {item?.cn_hauler[0]}
-                      </td>
-                      <td className="text-sm fw-normal">
-                        {item?.cn_hauler[1]}
-                      </td>
-                      <td className="text-sm fw-normal">{item?.aktivitas}</td>
+                      <td className="text-sm fw-normal">{item.lokasi}</td>
+                      <td className="text-sm fw-normal">{item.cn_hauler[0]}</td>
+                      <td className="text-sm fw-normal">{item.cn_hauler[1]}</td>
+                      <td className="text-sm fw-normal">{item.aktivitas}</td>
                       {/* <td className="text-sm fw-normal">{item?.sketsa}</td> */}
                       {/* <td className="text-sm fw-normal">{item?.status_pkh}</td> */}
-                      <td className="text-sm fw-normal">{item?.problem}</td>
+                      <td className="text-sm fw-normal">{item.problem}</td>
                       <td className="text-sm fw-normal">
-                        {item?.corrective_action}
+                        {item.corrective_action}
                       </td>
                       {/* <td className="text-sm fw-normal">{item?.paraf}</td> */}
                     </tr>;
                   })}
+
                   {/* <tr>
                     <td className="text-sm fw-normal">1</td>
                     <td className="text-sm fw-normal">
@@ -225,27 +172,20 @@ const LogBookSectionReport = () => {
                 <thead className="text-center">
                   <tr>
                     <th
-                      style={{ verticalAlign: "middle" }}
                       width="15%"
                       scope="col"
-                      className="fs-6 table-dark"
+                      className="fs-6 table-dark align-middle"
                     >
                       UNIT BREAK DOWN
                     </th>
                     <th
-                      style={{ verticalAlign: "middle" }}
                       width="15%"
                       scope="col"
-                      className="fs-6 table-dark"
+                      className="fs-6 table-dark align-middle"
                     >
                       UNIT BREAK DOWN
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="70%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="70%" scope="col" className="fs-6 align-middle">
                       CATATAN
                     </th>
                   </tr>
@@ -265,17 +205,17 @@ const LogBookSectionReport = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan Oleh,</p>
-                  <p className="mt-5 fw-bold">({data.diserahkan_oleh})</p>
+                  <p className="mt-5 fw-bold">({datas.diserahkan_oleh})</p>
                   <p className="fw-bold">Section Shift 1</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
-                  <p className="mt-5 fw-bold">({data.diterima_oleh})</p>
+                  <p className="mt-5 fw-bold">({datas.diterima_oleh})</p>
                   <p className="fw-bold">Koordinator Shift 2</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diketahui,</p>
-                  <p className="mt-5 fw-bold">({data.diketahui})</p>
+                  <p className="mt-5 fw-bold">({datas.diketahui})</p>
                   <p className="fw-bold">Production Dept Head</p>
                 </div>
               </div>
