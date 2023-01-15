@@ -5,12 +5,12 @@ import axios from "axios";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
-const LogBookSectionReport = ({ id_logbook }) => {
+const LogBookSectionReport = ({}) => {
   const [datas, setDatas] = useState([]);
 
   useEffect(() => {
     fetchData();
-  }, [id_logbook]);
+  }, []);
 
   const fetchData = async () => {
     axios
@@ -97,7 +97,7 @@ const LogBookSectionReport = ({ id_logbook }) => {
 
             {/* Table Content */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-2">
+              <table className="table table-bordered caption-top mt-2">
                 <thead className="text-center">
                   <tr>
                     <th width="3%" scope="col" className="fs-6 align-middle">
@@ -134,37 +134,28 @@ const LogBookSectionReport = ({ id_logbook }) => {
                 </thead>
 
                 <tbody className="text-center">
-                  {datas.line?.map((item) => {
-                    <tr>
-                      <td className="text-sm fw-normal">1</td>
-                      <td className="text-sm fw-normal">{item.lokasi}</td>
-                      <td className="text-sm fw-normal">{item.cn_hauler[0]}</td>
-                      <td className="text-sm fw-normal">{item.cn_hauler[1]}</td>
-                      <td className="text-sm fw-normal">{item.aktivitas}</td>
-                      {/* <td className="text-sm fw-normal">{item?.sketsa}</td> */}
-                      {/* <td className="text-sm fw-normal">{item?.status_pkh}</td> */}
-                      <td className="text-sm fw-normal">{item.problem}</td>
-                      <td className="text-sm fw-normal">
-                        {item.corrective_action}
-                      </td>
-                      {/* <td className="text-sm fw-normal">{item?.paraf}</td> */}
-                    </tr>;
+                  {datas.line?.map((item, index) => {
+                    return (
+                      <tr key={index}>
+                        <td className="text-sm fw-normal">1</td>
+                        <td className="text-sm fw-normal">{item.lokasi}</td>
+                        <td className="text-sm fw-normal">
+                          {item.cn_hauler[0]}
+                        </td>
+                        <td className="text-sm fw-normal">
+                          {item.cn_hauler[1]}
+                        </td>
+                        <td className="text-sm fw-normal">{item.aktivitas}</td>
+                        {/* <td className="text-sm fw-normal">{item?.sketsa}</td> */}
+                        {/* <td className="text-sm fw-normal">{item?.status_pkh}</td> */}
+                        <td className="text-sm fw-normal">{item.problem}</td>
+                        <td className="text-sm fw-normal">
+                          {item.corrective_action}
+                        </td>
+                        {/* <td className="text-sm fw-normal">{item?.paraf}</td> */}
+                      </tr>
+                    );
                   })}
-
-                  {/* <tr>
-                    <td className="text-sm fw-normal">1</td>
-                    <td className="text-sm fw-normal">
-                      {data.line[0].aktivitas}
-                    </td>
-                    <td className="text-sm fw-normal">{item?.cn_hauler[0]}</td>
-                      <td className="text-sm fw-normal">{item?.cn_hauler[1]}</td>
-                      <td className="text-sm fw-normal">{item?.aktivitas}</td>
-                      <td className="text-sm fw-normal">{item?.sketsa}</td>
-                      <td className="text-sm fw-normal">{item?.status_pkh}</td>
-                      <td className="text-sm fw-normal">{item?.problem}</td>
-                      <td className="text-sm fw-normal">{item?.corrective_action}</td>
-                      <td className="text-sm fw-normal">{item?.paraf}</td>
-                  </tr> */}
                 </tbody>
               </table>
 
