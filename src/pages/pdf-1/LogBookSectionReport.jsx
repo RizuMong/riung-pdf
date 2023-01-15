@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
 import axios from "axios";
 
+import Img_TTD from "../../assets/img_ttd.png";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -198,17 +199,20 @@ const LogBookSectionReport = ({}) => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan Oleh,</p>
-                  <p className="mt-5 fw-bold">({datas.diserahkan_oleh})</p>
+                  <img src={Img_TTD} alt="Gambar TTD" width="80" />
+                  <p className="fw-bold">({datas.diserahkan_oleh})</p>
                   <p className="fw-bold">Section Shift 1</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
-                  <p className="mt-5 fw-bold">({datas.diterima_oleh})</p>
+                  <img src={Img_TTD} alt="Gambar TTD" width="80" />
+                  <p className="fw-bold">({datas.diterima_oleh})</p>
                   <p className="fw-bold">Koordinator Shift 2</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diketahui,</p>
-                  <p className="mt-5 fw-bold">({datas.diketahui})</p>
+                  <img src={Img_TTD} alt="Gambar TTD" width="80" />
+                  <p className="fw-bold">({datas.diketahui})</p>
                   <p className="fw-bold">Production Dept Head</p>
                 </div>
               </div>
