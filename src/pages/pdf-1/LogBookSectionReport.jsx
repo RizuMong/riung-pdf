@@ -27,16 +27,9 @@ const LogBookSectionReport = ({}) => {
       .then((res) => {
         const { data } = res;
         setDatas(data);
-        console.log(data);
-        console.log({
-          arr: data.line,
-        });
       })
       .catch((err) => {
         alert(err);
-      })
-      .finally(() => {
-        setLoading(false);
       });
   };
 
