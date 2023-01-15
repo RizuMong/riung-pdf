@@ -128,30 +128,22 @@ const LogBookSectionReport = ({}) => {
                 </thead>
 
                 <tbody className="text-center">
-                  {datas.line?.map((item, index) => {
-                    return (
-                      <tr key={index}>
-                        <td className="text-sm fw-normal">{index + 1}</td>
-                        <td className="text-sm fw-normal">{item.lokasi}</td>
-                        <td className="text-sm fw-normal">
-                          {item.cn_hauler[0]}
-                        </td>
-                        <td className="text-sm fw-normal">
-                          {item.cn_hauler[1]}
-                        </td>
-                        <td className="text-sm fw-normal">{item.aktivitas}</td>
-                        <td className="text-sm fw-normal">{item?.sketsa}</td>
-                        <td className="text-sm fw-normal">
-                          {item?.status_pkh}
-                        </td>
-                        <td className="text-sm fw-normal">{item.problem}</td>
-                        <td className="text-sm fw-normal">
-                          {item.corrective_action}
-                        </td>
-                        <td className="text-sm fw-normal">{item?.paraf}</td>
-                      </tr>
-                    );
-                  })}
+                  {datas.line?.map((item, index) => (
+                    <tr key={index}>
+                      <td className="text-sm fw-normal">{index + 1}</td>
+                      <td className="text-sm fw-normal">{item.lokasi}</td>
+                      <td className="text-sm fw-normal">{item.cn_hauler[0]}</td>
+                      <td className="text-sm fw-normal">{item.cn_hauler[1]}</td>
+                      <td className="text-sm fw-normal">{item.aktivitas}</td>
+                      <td className="text-sm fw-normal">{item?.sketsa}</td>
+                      <td className="text-sm fw-normal">{item?.status_pkh}</td>
+                      <td className="text-sm fw-normal">{item.problem}</td>
+                      <td className="text-sm fw-normal">
+                        {item.corrective_action}
+                      </td>
+                      <td className="text-sm fw-normal">{item?.paraf}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
 
