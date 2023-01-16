@@ -16,10 +16,10 @@ const LogBookSectionReport = ({}) => {
   const fetchData = async () => {
     axios
       .post(
-        import.meta.env.VITE_LOGBOOK_URL,
-        {
-          id_logbook: "WC2vgKhVg",
-        }
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
+        // {
+        //   id_logbook: "WC2vgKhVg",
+        // }
         // {
         //   id_logbook: id_logbook,
         // }
