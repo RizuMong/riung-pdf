@@ -17,9 +17,10 @@ const LogBookSectionReport = ({}) => {
     axios
       .post(
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
-        // {
-        //   id_logbook: "WC2vgKhVg",
-        // }
+        {
+          // Payload yang mau jadi dinamis
+          id_logbook: "WC2vgKhVg",
+        }
         // {
         //   id_logbook: id_logbook,
         // }
