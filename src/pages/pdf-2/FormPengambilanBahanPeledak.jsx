@@ -149,8 +149,8 @@ const FormPengambilanBahanPeledak = () => {
                   <th className="fw-normal"></th>
                   <th className="fw-normal"></th>
                   <th className="fw-normal">POLISI</th>
-                  <th className="fw-normal">NAMA</th>
-                  <th className="fw-normal">Tanda Tangan</th>
+                  <th className="fw-normal"></th>
+                  <th className="fw-normal"></th>
                 </tr>
                 <tr className="text-center align-middle">
                   <th className="fw-normal">KEP.Gudang Handak</th>
