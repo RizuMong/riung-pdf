@@ -162,7 +162,7 @@ const LogBookSectionReport = ({}) => {
                       scope="col"
                       className="fs-6 table-dark align-middle"
                     >
-                      UNIT BREAK DOWN
+                       UNIT STB 
                     </th>
                     <th width="70%" scope="col" className="fs-6 align-middle">
                       CATATAN
