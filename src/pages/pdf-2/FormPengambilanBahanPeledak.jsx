@@ -145,31 +145,31 @@ const FormPengambilanBahanPeledak = () => {
                   <th className="fw-normal">Tanda Tangan</th>
                 </tr>
                 <tr className="text-center align-middle">
-                  <th className="fw-normal">JABATAN</th>
-                  <th className="fw-normal">NAMA</th>
-                  <th className="fw-normal">Tanda Tangan</th>
-                  <th className="fw-normal">JABATAN</th>
-                  <th className="fw-normal">NAMA</th>
-                  <th className="fw-normal">Tanda Tangan</th>
-                </tr>
-                <tr className="text-center align-middle">
+                  <th className="fw-normal">KEPALA TEKNIK</th>
+                  <th className="fw-normal"></th>
+                  <th className="fw-normal"></th>
                   <th className="fw-normal">POLISI</th>
-                  <th className="fw-normal"></th>
-                  <th className="fw-normal"></th>
-                  <th className="fw-normal">Kepala Teknik Tamban</th>
-                  <th className="fw-normal"></th>
-                  <th className="fw-normal"></th>
+                  <th className="fw-normal">NAMA</th>
+                  <th className="fw-normal">Tanda Tangan</th>
                 </tr>
                 <tr className="text-center align-middle">
+                  <th className="fw-normal">KEP.Gudang Handak</th>
+                  <th className="fw-normal"></th>
+                  <th className="fw-normal"></th>
                   <th className="fw-normal">SATPAM</th>
                   <th className="fw-normal"></th>
                   <th className="fw-normal"></th>
-                  <th className="fw-normal">Kepala Gudang Handak</th>
-                  <th className="fw-normal"></th>
-                  <th className="fw-normal"></th>
                 </tr>
                 <tr className="text-center align-middle">
-                  <th className="fw-normal"></th>
+                  <th className="fw-normal">Dikawal,</th>
+                  <th className="fw-normal">NAMA</th>
+                  <th className="fw-normal">Tanda Tangan</th>
+                  <th className="fw-normal">Diterima,</th>
+                  <th className="fw-normal">NAMA</th>
+                  <th className="fw-normal"> Tanda Tangan</th>
+                </tr>
+                <tr className="text-center align-middle">
+                  <th className="fw-normal">POLISI</th>
                   <th className="fw-normal"></th>
                   <th className="fw-normal"></th>
                   <th className="fw-normal">Drill & Blast Group Leader</th>
