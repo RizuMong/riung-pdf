@@ -9,6 +9,9 @@ import "../../styles/App.css";
 const LogBookSectionReport = ({}) => {
   const [datas, setDatas] = useState([]);
 
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -18,12 +21,8 @@ const LogBookSectionReport = ({}) => {
       .post(
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
         {
-          // Payload yang mau jadi dinamis
-          id_logbook: "WC2vgKhVg",
+          id_logbook: queryParams.get("id_logbook"),
         }
-        // {
-        //   id_logbook: id_logbook,
-        // }
       )
       .then((res) => {
         const { data } = res;
