@@ -131,15 +131,15 @@ const LogBookSectionReport = ({}) => {
                   {datas.line?.map((item, index) => (
                     <tr key={index}>
                       <td className="text-sm fw-normal">{index + 1}</td>
-                      <td className="text-sm fw-normal">{item.lokasi}</td>
-                      <td className="text-sm fw-normal">{item.cn_hauler[0]}, {item.cn_hauler[1]}</td>
-                      <td className="text-sm fw-normal">{item.cn_loader}</td>
-                      <td className="text-sm fw-normal">{item.aktivitas}</td>
+                      <td className="text-sm fw-normal">{item?.lokasi}</td>
+                      <td className="text-sm fw-normal">{item?.cn_hauler[0]}, {item?.cn_hauler[1]}</td>
+                      <td className="text-sm fw-normal">{item?.cn_loader}</td>
+                      <td className="text-sm fw-normal">{item?.aktivitas}</td>
                       <td className="text-sm fw-normal">{item?.sketsa}</td>
                       <td className="text-sm fw-normal">{item?.status_pkh}</td>
-                      <td className="text-sm fw-normal">{item.problem}</td>
+                      <td className="text-sm fw-normal">{item?.problem}</td>
                       <td className="text-sm fw-normal">
-                        {item.corrective_action}
+                        {item?.corrective_action}
                       </td>
                       <td className="text-sm fw-normal">{item?.paraf}</td>
                     </tr>
@@ -185,19 +185,19 @@ const LogBookSectionReport = ({}) => {
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan Oleh,</p>
                   <img src={Img_TTD} alt="Gambar TTD" width="80" />
-                  <p className="fw-bold">({datas.diserahkan_oleh})</p>
+                  <p className="fw-bold">({datas?.diserahkan_oleh})</p>
                   <p className="fw-bold">Section Shift 1</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
                   <img src={Img_TTD} alt="Gambar TTD" width="80" />
-                  <p className="fw-bold">({datas.diterima_oleh})</p>
+                  <p className="fw-bold">({datas?.diterima_oleh})</p>
                   <p className="fw-bold">Koordinator Shift 2</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diketahui,</p>
                   <img src={Img_TTD} alt="Gambar TTD" width="80" />
-                  <p className="fw-bold">({datas.diketahui})</p>
+                  <p className="fw-bold">({datas?.diketahui})</p>
                   <p className="fw-bold">Production Dept Head</p>
                 </div>
               </div>
