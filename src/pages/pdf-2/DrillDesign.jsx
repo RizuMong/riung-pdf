@@ -96,14 +96,12 @@ const DrillDesign = () => {
                       <th className="text-center d-flex justify-content-evenly gap-5">
                         <div className="mt-5 mb-5">
                           <p className="fw-normal">Dibuat Oleh,</p>
-                          <img src={Img_TTD} alt="TTD" width="100px"/>
-                          <p className="fw-normal">(M. Arif)</p>
+                          <p className="fw-normal mt-5">(M. Arif)</p>
                           <p>Drill & Blast Eng</p>
                         </div>
                         <div className="mb-5 mt-5">
                           <p className="fw-normal">Dibuat Oleh,</p>
-                          <img src={Img_TTD} alt="TTD" width="100px"/>
-                          <p className="fw-normal">(M. Arif)</p>
+                          <p className="fw-normal mt-5">(M. Arif)</p>
                           <p>Drill & Blast Eng</p>
                         </div>
                       </th>

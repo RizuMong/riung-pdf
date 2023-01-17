@@ -1,7 +1,6 @@
 import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
-import Img_TTD from "../../assets/img_ttd.png";
 import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
@@ -41,34 +40,34 @@ const FormPengambilanBahanPeledak = () => {
                   <tr>
                     <th className="fw-normal">
                       TANGGAL :{" "}
-                      <span className="text-danger">8 - 11 - 2022</span>
+                      <span className="text-black">8 - 11 - 2022</span>
                     </th>
                     <th className="fw-normal">
                       PETUGAS GUDANG :{" "}
-                      <span className="text-danger">Prihanto</span>
+                      <span className="text-black">Prihanto</span>
                     </th>
                   </tr>
                   <tr>
                     <th className="fw-normal">
-                      PENGAMBIL : <span className="text-danger">Heri. P</span>
+                      PENGAMBIL : <span className="text-black">Heri. P</span>
                     </th>
                     <th className="fw-normal">LOKASI: El: 183 RL: 175</th>
                   </tr>
                   <tr>
                     <th className="fw-normal">
-                      DRIVER : <span className="text-danger">Adi</span>
+                      DRIVER : <span className="text-black">Adi</span>
                     </th>
                     <th className="fw-normal">
-                      PEMOHON : <span className="text-danger">Heri. P</span>
+                      PEMOHON : <span className="text-black">Heri. P</span>
                     </th>
                   </tr>
                   <tr>
                     <th className="fw-normal">
                       NOMOR MOBIL :{" "}
-                      <span className="text-danger">RML - PRO 01</span>
+                      <span className="text-black">RML - PRO 01</span>
                     </th>
                     <th className="fw-normal">
-                      JAM : <span className="text-danger">07:00 WIB </span>
+                      JAM : <span className="text-black">07:00 WIB </span>
                     </th>
                   </tr>
                 </thead>
@@ -134,8 +133,7 @@ const FormPengambilanBahanPeledak = () => {
                   <th rowSpan={5} className="fw-normal">
                     <p>Pemohon,</p>
                     <p>Jabatan: Drill & Blast GL</p>
-                    <img src={Img_TTD} alt="Gambar TTD" width="80" />
-                    <p>(Heri. P)</p>
+                    <p className="mt-5">(Heri. P)</p>
                   </th>
                   <th className="fw-normal">Disetujui,</th>
                   <th className="fw-normal">NAMA</th>

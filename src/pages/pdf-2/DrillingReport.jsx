@@ -1,7 +1,6 @@
 import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
-import Img_TTD from "../../assets/img_ttd.png";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -177,54 +176,6 @@ const DrillingReport = () => {
                       <td>Data</td>
                       <td>Data</td>
                     </tr>
-                    {/* <tr className="text-center">
-                      <td colSpan={5} className="text-start fw-semibold">
-                        TOTAL UNIT DRILLING 1:
-                      </td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                    </tr>
-                    <tr className="text-center">
-                      <td colSpan={5} className="text-start fw-semibold">
-                        TOTAL UNIT DRILLING 2:
-                      </td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                    </tr> */}
                     <tr className="text-center">
                       <td colSpan={5} className="text-center fs-5 fw-semibold">
                         TOTAL
@@ -257,14 +208,12 @@ const DrillingReport = () => {
                 <div className="row border border-1 align-items-center">
                   <div className="col-3 text-center gap-5">
                     <p className="fw-bold">Diserahkan Oleh,</p>
-                    <img src={Img_TTD} alt="Gambar TTD" width="80" />
-                    <p className="fw-bold">(Data)</p>
+                    <p className="fw-bold mt-5">(Data)</p>
                     <p className="fw-bold">Section Shift 1</p>
                   </div>
                   <div className="col-3 text-center gap-5">
                     <p className="fw-bold">Diterima Oleh,</p>
-                    <img src={Img_TTD} alt="Gambar TTD" width="80" />
-                    <p className="fw-bold">(Data)</p>
+                    <p className="fw-bold mt-5">(Data)</p>
                     <p className="fw-bold">Koordinator Shift 2</p>
                   </div>
                   <div className="col-6">

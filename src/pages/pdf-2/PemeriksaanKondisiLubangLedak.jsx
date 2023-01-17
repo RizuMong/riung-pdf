@@ -4,7 +4,6 @@ import { WithRouter } from "../../utils/Navigation";
 import lubang1 from "../../assets/lubang_1.jpg";
 import lubang2 from "../../assets/lubang_2.jpg";
 import lubang3 from "../../assets/lubang_3.jpg";
-import Img_TTD from "../../assets/img_ttd.png";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -37,7 +36,7 @@ const PemeriksaanKondisiLubangLedak = () => {
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-5">
-                    <h1 className="header-drill2 mb-4">
+                    <h1 className="header-drill2 mb-5">
                       PEMERIKSAAN KONDISI & KEDALAMAN LUBANG LEDAK
                     </h1>
                   </th>
@@ -45,14 +44,14 @@ const PemeriksaanKondisiLubangLedak = () => {
                   <th className="col-3">
                     <div className="mb-2">
                       <p className="mb-2 px-2 text-serif fw-normal align-middle text-alat border-bottom border-1 pb-2">
-                        PIT: <span className="text-danger">EAST KAWI</span>
+                        PIT: <span className="text-black">EAST KAWI</span>
                       </p>
                       <p className="mb-2 px-2 text-serif fw-normal align-middle text-alat border-bottom border-1 pb-2">
                         TANGGAL:{" "}
-                        <span className="text-danger">8 - 11 - 2022</span>
+                        <span className="text-black">8 - 11 - 2022</span>
                       </p>
                       <p className="mb-2 px-2 text-serif fw-normal align-middle text-alat border-bottom border-1 pb-1">
-                        SHIFT: <span className="text-danger">1</span>
+                        SHIFT: <span className="text-black">1</span>
                       </p>
                     </div>
                   </th>
@@ -65,7 +64,7 @@ const PemeriksaanKondisiLubangLedak = () => {
                   <thead>
                     <tr className="text-center align-middle">
                       <th width="60%" rowSpan={15}>
-                        Image
+                        
                       </th>
                       <th width="16%">HASIL PEMERIKSAAN</th>
                       <th width="5%">PLAN</th>
@@ -184,18 +183,16 @@ const PemeriksaanKondisiLubangLedak = () => {
                       </th>
                     </tr>
                     <tr>
-                      <th colSpan={4} className="fw-normal">
+                      <th colSpan={4} className="fw-normal text-center">
                         <div className="d-flex gap-5 justify-content-evenly">
                           <div>
                             <p className="fw-normal">Dibuat Oleh,</p>
-                            <img src={Img_TTD} alt="TTD" width="100px" />
-                            <p className="fw-normal">(M. Arif)</p>
+                            <p className="fw-normal mt-5">(M. Arif)</p>
                             <p>Drill & Blast Eng</p>
                           </div>
                           <div>
                             <p className="fw-normal">Dibuat Oleh,</p>
-                            <img src={Img_TTD} alt="TTD" width="100px" />
-                            <p className="fw-normal">(M. Arif)</p>
+                            <p className="fw-normal mt-5">(M. Arif)</p>
                             <p>Drill & Blast Eng</p>
                           </div>
                         </div>

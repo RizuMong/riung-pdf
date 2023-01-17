@@ -2,7 +2,6 @@ import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
 import Img_Sketsa from "../../assets/img_sketsa.jpg";
-import Img_TTD from "../../assets/img_ttd.png";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -41,10 +40,10 @@ const BlastingReport = () => {
                   <th className="col-3 align-bottom">
                     <div className="mb-2">
                       <p className="mb-2 px-2 fw-normal text-alat border-bottom border-1 pb-3">
-                        PIT: <span className="text-danger">EAST KAWI</span>
+                        PIT: <span className="text-black">EAST KAWI</span>
                       </p>
                       <p className="mb-2 px-2 fw-normal text-alat border-bottom border-1 pt-1 pb-3">
-                        SHIFT: <span className="text-danger">1</span>
+                        SHIFT: <span className="text-black">1</span>
                       </p>
                     </div>
                   </th>
@@ -167,16 +166,14 @@ const BlastingReport = () => {
                           </div>
                           <div className="px-5 border-start border-1">
                             <div className="d-flex gap-5">
-                              <div className="mt-5 mb-5">
+                              <div className="mt-5 mb-5 text-center">
                                 <p className="fw-normal">Dibuat Oleh,</p>
-                                <img src={Img_TTD} alt="TTD" width="100px" />
-                                <p className="fw-normal">(M. Arif)</p>
+                                <p className="fw-normal mt-5">(M. Arif)</p>
                                 <p>Drill & Blast Eng</p>
                               </div>
-                              <div className="mb-5 mt-5">
+                              <div className="mb-5 mt-5 text-center">
                                 <p className="fw-normal">Dibuat Oleh,</p>
-                                <img src={Img_TTD} alt="TTD" width="100px" />
-                                <p className="fw-normal">(M. Arif)</p>
+                                <p className="fw-normal mt-5">(M. Arif)</p>
                                 <p>Drill & Blast Eng</p>
                               </div>
                             </div>

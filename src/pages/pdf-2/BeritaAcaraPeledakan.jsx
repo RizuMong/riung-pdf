@@ -73,45 +73,45 @@ const BeritaAcaraPeledakan = () => {
                     <td className="text-start">Jumlah lubang</td>
                     <td>Lubang</td>
                     <td className="text-black">70</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>2</td>
                     <td className="text-start">Ammonium Nitrate</td>
                     <td>kg</td>
                     <td className="text-black">4800</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>3</td>
                     <td className="text-start">Emulsion</td>
                     <td>kg</td>
                     <td className="text-black">-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>4</td>
                     <td className="text-start">Dynamite</td>
                     <td>kg</td>
                     <td className="text-black">35</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>5</td>
                     <td className="text-start">Electric Detonator No. 8 Instantaneous</td>
                     <td>Pcs</td>
                     <td className="text-black">1</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr className="align-middle">
                     <td rowSpan={4}>6</td>
@@ -121,9 +121,9 @@ const BeritaAcaraPeledakan = () => {
                     </td>
                     <td>EA</td>
                     <td className="text-black">20</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr className="align-middle">
                     <td className="text-start">
@@ -132,9 +132,9 @@ const BeritaAcaraPeledakan = () => {
                     </td>
                     <td>EA</td>
                     <td className="text-black">20</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr className="align-middle">
                     <td className="text-start">
@@ -143,9 +143,9 @@ const BeritaAcaraPeledakan = () => {
                     </td>
                     <td>EA</td>
                     <td className="text-black">20</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr className="align-middle">
                     <td className="text-start">
@@ -154,18 +154,18 @@ const BeritaAcaraPeledakan = () => {
                     </td>
                     <td>EA</td>
                     <td className="text-black">20</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>7</td>
                     <td className="text-start">Booster 400 gr</td>
                     <td>EA</td>
                     <td className="text-black">1</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                 </tbody>
               </Table>

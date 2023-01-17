@@ -2,7 +2,6 @@ import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
 import Img_Sketsa from "../../assets/img_sketsa.jpg";
-import Img_TTD from "../../assets/img_ttd.png";
 import lubang1 from "../../assets/lubang_1.jpg";
 import lubang2 from "../../assets/lubang_2.jpg";
 import lubang3 from "../../assets/lubang_3.jpg";
@@ -171,14 +170,12 @@ const BlastDesign = () => {
                       <th className="text-center d-flex justify-content-evenly gap-5">
                         <div className="mt-5 mb-5">
                           <p className="fw-normal">Dibuat Oleh,</p>
-                          <img src={Img_TTD} alt="TTD" width="100px" />
-                          <p className="fw-normal">(M. Arif)</p>
+                          <p className="fw-normal mt-5">(M. Arif)</p>
                           <p>Drill & Blast Eng</p>
                         </div>
                         <div className="mb-5 mt-5">
                           <p className="fw-normal">Dibuat Oleh,</p>
-                          <img src={Img_TTD} alt="TTD" width="100px" />
-                          <p className="fw-normal">(M. Arif)</p>
+                          <p className="fw-normal mt-5">(M. Arif)</p>
                           <p>Drill & Blast Eng</p>
                         </div>
                       </th>
@@ -228,10 +225,10 @@ const BlastDesign = () => {
                                   <th className="fw-normal">Actual</th>
                                 </tr>
                                 <tr>
-                                  <th className="fw-normal text-danger fs-5">
+                                  <th className="fw-normal text-black fs-5">
                                     23.500
                                   </th>
-                                  <th className="fw-normal text-danger fs-5">
+                                  <th className="fw-normal text-black fs-5">
                                     23.520
                                   </th>
                                 </tr>
@@ -245,10 +242,10 @@ const BlastDesign = () => {
                                   <th className="fw-normal">Actual</th>
                                 </tr>
                                 <tr>
-                                  <th className="fw-normal text-danger fs-5">
+                                  <th className="fw-normal text-black fs-5">
                                     0.23
                                   </th>
-                                  <th className="fw-normal text-danger fs-5">
+                                  <th className="fw-normal text-black fs-5">
                                     0.20
                                   </th>
                                 </tr>
