@@ -320,20 +320,50 @@ const ProductControl = () => {
               </thead>
               <tbody className="text-center">
                 <tr>
-                  <th className="text-serif" scope="row">
+                  <th className="text-serif align-middle" scope="row">
                     I
                   </th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                  </td>
+                  <td>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                  </td>
+                  <td>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                  </td>
                 </tr>
                 <tr>
-                  <th className="text-serif" scope="row">
+                  <th className="text-serif align-middle" scope="row">
                     II
                   </th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                  </td>
+                  <td>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                  </td>
+                  <td>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                  </td>
                 </tr>
               </tbody>
             </table>

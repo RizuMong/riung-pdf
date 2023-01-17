@@ -424,31 +424,82 @@ const ProductionReport = () => {
             </Table>
 
             {/* Data Unit */}
-            <div className="d-flex">
+            <table className="table table-bordered">
+                <thead className="text-center">
+                  <tr>
+                    <th
+                      width="15%"
+                      scope="col"
+                      className="fs-6 table-light align-middle"
+                    >
+                      UNIT B/D
+                    </th>
+                    <th
+                      width="15%"
+                      scope="col"
+                      className="fs-6 table-light align-middle"
+                    >
+                      UNIT S/B
+                    </th>
+                    <th width="70%" scope="col" className="fs-6 align-middle text-start">
+                      CATATAN
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  <td className="text-sm fw-semibold border border-1">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                  <td className="text-sm fw-semibold border border-1">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                  <td className="text-sm fw-semibold border border-1">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                </tbody>
+              </table>
+              
+            {/* <div className="d-flex">
               <div className="mt-3">
-                <Table bordered hover className="">
+                <Table bordered hover>
                   <thead className="table table-light">
                     <tr>
                       <th>UNIT B/D</th>
                       <th>UNIT S/B </th>
-                      {/* <th className="table">CATATAN:</th> */}
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Data.........</td>
-                      <td>Data.........</td>
-                      {/* <td></td> */}
+                      <td>
+                        <br/>
+                        <br/>
+                      </td>
+                      <td>
+                        <br/>
+                        <br/>
+                      </td>
                     </tr>
                   </tbody>
                 </Table>
               </div>
               <div className="mt-3">
                 <hr className="production pl-2 w-100" />
-                <p className="fw-semibold">Catatan: ....</p>
+                <p className="fw-semibold">Catatan: </p>
                 <hr className="production pl-2 mt-7 w-100" />
               </div>
-            </div>
+            </div> */}
 
             <hr className="w-100 solid m-0" />
 
@@ -457,17 +508,17 @@ const ProductionReport = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Dibuat oleh,</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p className="fw-bold">Group Leader</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan,</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p className="fw-bold">Section Head</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diterima,</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p className="fw-bold">Group Leader</p>
                 </div>
               </div>

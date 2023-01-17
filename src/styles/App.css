@@ -101,6 +101,10 @@ hr.solid {
   font-weight: 400;
 }
 
+.mb-9 {
+  margin-bottom: 60px !important;
+}
+
 .mb-6 {
   margin-bottom: 34px;
 }

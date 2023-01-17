@@ -321,7 +321,7 @@ const DaftarPeriksaAlatAngkut = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p> Prod. Group Leader</p>
                 </div>
                 <div className="col-4 align-self-end">
@@ -331,7 +331,7 @@ const DaftarPeriksaAlatAngkut = () => {
                 </div>
                 <div className="col-4 text-center">
                   <p>Mengetahui,</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p>Customer</p>
                 </div>
               </div>

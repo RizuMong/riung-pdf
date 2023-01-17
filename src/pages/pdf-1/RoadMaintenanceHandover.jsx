@@ -33,7 +33,7 @@ const RoadMaintenanceHandover = () => {
                 </th>
                 <div className="vr" style={{ height: 100 }}></div>
                 <th className="col-5">
-                  <h1 className="header-production-control mb-3">
+                  <h1 className="header-production-control mb-7">
                     ROAD MAINTENANCE HANDOVER
                   </h1>
                 </th>

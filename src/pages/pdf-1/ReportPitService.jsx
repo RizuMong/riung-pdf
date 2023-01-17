@@ -177,17 +177,17 @@ const ReportPitService = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p>Dibuat oleh,</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p>Pit Service Group Leader</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p>Diserahkan oleh:</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p>Prod. Dept/Section Head</p>
                 </div>
                 <div className="col-4 text-center">
                   <p>Diterima oleh,</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p>Pit Service Group Leader</p>
                 </div>
               </div>

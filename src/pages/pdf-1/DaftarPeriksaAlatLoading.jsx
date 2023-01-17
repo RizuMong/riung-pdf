@@ -34,7 +34,7 @@ const DaftarPeriksaAlatLoading = () => {
                 </th>
                 <div className="vr" style={{ height: 100 }}></div>
                 <th className="col-5">
-                  <h1 className="header-alat-loading mb-5 ">
+                  <h1 className="header-alat-loading fs-5 mb-9 ">
                     DAFTAR PERIKSA KONTAMINASI ALAT LOADING/CLEANING
                   </h1>
                 </th>
@@ -244,7 +244,7 @@ const DaftarPeriksaAlatLoading = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p> Prod. Group Leader</p>
                 </div>
                 <div className="col-4 align-self-end">
@@ -255,7 +255,7 @@ const DaftarPeriksaAlatLoading = () => {
                 </div>
                 <div className="col-4 text-center">
                   <p>Mengetahui,</p>
-                  <p className="mt-5">(__________________)</p>
+                  <p className="mt-5">()</p>
                   <p>Customer</p>
                 </div>
               </div>
