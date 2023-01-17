@@ -1,7 +1,7 @@
 import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
-import Img_Sketsa from "../../assets/img_sketsa.jpg";
+// import Img_Sketsa from "../../assets/img_sketsa.jpg";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -73,11 +73,11 @@ const BlastingReport = () => {
                         rowSpan={3}
                         className="fw-semibold align-top"
                       >
-                        <img
+                        {/* <img
                           src={Img_Sketsa}
                           alt="Gambar Sketsa"
                           width="1000px"
-                        />
+                        /> */}
                       </th>
                     </tr>
                     <tr>

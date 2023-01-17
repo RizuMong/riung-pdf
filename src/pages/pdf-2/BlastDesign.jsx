@@ -1,7 +1,7 @@
 import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
-import Img_Sketsa from "../../assets/img_sketsa.jpg";
+// import Img_Sketsa from "../../assets/img_sketsa.jpg";
 import lubang1 from "../../assets/lubang_1.jpg";
 import lubang2 from "../../assets/lubang_2.jpg";
 import lubang3 from "../../assets/lubang_3.jpg";
@@ -78,11 +78,11 @@ const BlastDesign = () => {
                         className="fw-semibold"
                       >
                         <h5 className="fs-6 p-1 fw-semibold">SKETSA</h5>
-                        <img
+                        {/* <img
                           src={Img_Sketsa}
                           alt="Gambar Sketsa"
                           width="1000px"
-                        />
+                        /> */}
                       </th>
                     </tr>
 

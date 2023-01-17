@@ -1,8 +1,8 @@
 import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
-import Img_Sketsa from "../../assets/img_sketsa.jpg"
-import Img_TTD from "../../assets/img_ttd.png"
+// import Img_Sketsa from "../../assets/img_sketsa.jpg"
+// import Img_TTD from "../../assets/img_ttd.png"
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -58,8 +58,10 @@ const DrillDesign = () => {
                 <table className="table table-bordered">
                   <thead>
                     <tr>
-                      <th style={{width: "30%"}}>
-                        <h5 className="fs-6 fw-semibold p-1">LOKASI <span className="fst-italic">DRILLING</span></h5>
+                      <th style={{ width: "30%" }}>
+                        <h5 className="fs-6 fw-semibold p-1">
+                          LOKASI <span className="fst-italic">DRILLING</span>
+                        </h5>
                         <div className="p-1 fs-6 fw-normal">
                           <p className="px-3">PIT: EAST KAWI</p>
                           <p className="px-3">BLOK: -</p>
@@ -68,14 +70,24 @@ const DrillDesign = () => {
                           <p className="px-3">RL: 175</p>
                         </div>
                       </th>
-                      <th rowSpan={3} style={{verticalAlign: "top", width: "60%"}} className="fw-semibold">
+                      <th
+                        rowSpan={3}
+                        style={{ verticalAlign: "top", width: "60%" }}
+                        className="fw-semibold"
+                      >
                         <h5 className="fs-6 p-1 fw-semibold">SKETSA</h5>
-                        <img src={Img_Sketsa} alt="Gambar Sketsa" width="1000px" />
+                        {/* <img
+                          src={Img_Sketsa}
+                          alt="Gambar Sketsa"
+                          width="1000px"
+                        /> */}
                       </th>
                     </tr>
                     <tr>
-                    <th style={{width: "30%"}}>
-                        <h5 className="fs-6 fw-semibold p-1">DIMENSI <span className="fst-italic">DRILLING</span></h5>
+                      <th style={{ width: "30%" }}>
+                        <h5 className="fs-6 fw-semibold p-1">
+                          DIMENSI <span className="fst-italic">DRILLING</span>
+                        </h5>
                         <div className="p-1 fs-6 fw-normal">
                           <p className="px-3">BURDEN: 6 (m)</p>
                           <p className="px-3">SPACING : 7 (m)</p>
@@ -89,7 +101,9 @@ const DrillDesign = () => {
                           <p className="px-3">No. Of Hole : 70</p>
                           <p className="px-3">VOLUME : 23.520 (Bcm)</p>
                         </div>
-                        <h5 className="fs-6 fw-semibold p-1">UNIT C/N: DR 103</h5>
+                        <h5 className="fs-6 fw-semibold p-1">
+                          UNIT C/N: DR 103
+                        </h5>
                       </th>
                     </tr>
                     <tr>

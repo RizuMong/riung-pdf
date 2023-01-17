@@ -63,9 +63,7 @@ const PemeriksaanKondisiLubangLedak = () => {
                 <table className="table table-bordered">
                   <thead>
                     <tr className="text-center align-middle">
-                      <th width="60%" rowSpan={15}>
-                        
-                      </th>
+                      <th width="60%" rowSpan={15}></th>
                       <th width="16%">HASIL PEMERIKSAAN</th>
                       <th width="5%">PLAN</th>
                       <th width="5%">ACTUAL</th>
