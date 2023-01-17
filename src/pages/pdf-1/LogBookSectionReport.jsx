@@ -101,10 +101,10 @@ const LogBookSectionReport = ({}) => {
                       LOKASI
                     </th>
                     <th width="8%" scope="col" className="fs-6 align-middle">
-                      C/N LOADER
+                      C/N HAULER
                     </th>
                     <th width="8%" scope="col" className="fs-6 align-middle">
-                      C/N HAULER
+                      C/N LOADER
                     </th>
                     <th width="22%" scope="col" className="fs-6 align-middle">
                       AKTIVITAS
@@ -132,7 +132,7 @@ const LogBookSectionReport = ({}) => {
                     <tr key={index}>
                       <td className="text-sm fw-normal">{index + 1}</td>
                       <td className="text-sm fw-normal">{item?.lokasi}</td>
-                      <td className="text-sm fw-normal">{item.cn_hauler}</td>
+                      <td className="text-sm fw-normal">{item?.cn_hauler}</td>
                       <td className="text-sm fw-normal">{item?.cn_loader}</td>
                       <td className="text-sm fw-normal">{item?.aktivitas}</td>
                       <td className="text-sm fw-normal">{item?.sketsa}</td>
