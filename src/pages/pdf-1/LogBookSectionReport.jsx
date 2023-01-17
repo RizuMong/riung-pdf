@@ -132,9 +132,7 @@ const LogBookSectionReport = ({}) => {
                     <tr key={index}>
                       <td className="text-sm fw-normal">{index + 1}</td>
                       <td className="text-sm fw-normal">{item?.lokasi}</td>
-                      <td className="text-sm fw-normal">
-                        {item?.cn_hauler[0]}, {item?.cn_hauler[1]}
-                      </td>
+                      <td className="text-sm fw-normal">{item.cn_hauler}</td>
                       <td className="text-sm fw-normal">{item?.cn_loader}</td>
                       <td className="text-sm fw-normal">{item?.aktivitas}</td>
                       <td className="text-sm fw-normal">{item?.sketsa}</td>
