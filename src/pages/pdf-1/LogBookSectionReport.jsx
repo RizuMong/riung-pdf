@@ -132,7 +132,9 @@ const LogBookSectionReport = ({}) => {
                     <tr key={index}>
                       <td className="text-sm fw-normal">{index + 1}</td>
                       <td className="text-sm fw-normal">{item?.lokasi}</td>
-                      <td className="text-sm fw-normal">{item?.cn_hauler[0]}, {item?.cn_hauler[1]}</td>
+                      <td className="text-sm fw-normal">
+                        {item?.cn_hauler[0]}, {item?.cn_hauler[1]}
+                      </td>
                       <td className="text-sm fw-normal">{item?.cn_loader}</td>
                       <td className="text-sm fw-normal">{item?.aktivitas}</td>
                       <td className="text-sm fw-normal">{item?.sketsa}</td>
@@ -162,7 +164,7 @@ const LogBookSectionReport = ({}) => {
                       scope="col"
                       className="fs-6 table-dark align-middle"
                     >
-                       UNIT STB 
+                      UNIT STB
                     </th>
                     <th width="70%" scope="col" className="fs-6 align-middle">
                       CATATAN
@@ -170,9 +172,27 @@ const LogBookSectionReport = ({}) => {
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  <td className="text-sm fw-semibold">Data</td>
-                  <td className="text-sm fw-semibold">Data</td>
-                  <td className="text-sm fw-semibold">Data</td>
+                  <td className="text-sm fw-semibold border border-1">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                  <td className="text-sm fw-semibold border border-1">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
+                  <td className="text-sm fw-semibold border border-1">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </td>
                 </tbody>
               </table>
             </div>
@@ -184,21 +204,18 @@ const LogBookSectionReport = ({}) => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan Oleh,</p>
-                  <img src={Img_TTD} alt="Gambar TTD" width="80" />
                   <p className="fw-bold">({datas?.diserahkan_oleh})</p>
-                  <p className="fw-bold">Section Shift 1</p>
+                  <p className="fw-bold m">Section Shift 1</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
-                  <img src={Img_TTD} alt="Gambar TTD" width="80" />
                   <p className="fw-bold">({datas?.diterima_oleh})</p>
-                  <p className="fw-bold">Koordinator Shift 2</p>
+                  <p className="fw-bold m">Koordinator Shift 2</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diketahui,</p>
-                  <img src={Img_TTD} alt="Gambar TTD" width="80" />
                   <p className="fw-bold">({datas?.diketahui})</p>
-                  <p className="fw-bold">Production Dept Head</p>
+                  <p className="fw-bold m">Production Dept Head</p>
                 </div>
               </div>
             </div>
