@@ -75,7 +75,7 @@ const LogBookSectionReport = ({}) => {
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
-                        Hari / Tanggal: {datas.tanggal}
+                        Hari / Tanggal: {datas.tanggal.substring(0, 5)}
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">

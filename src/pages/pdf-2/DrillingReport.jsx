@@ -42,14 +42,14 @@ const DrillingReport = () => {
                   <th className="col-3">
                     <div className="mb-2">
                       <p className="mb-2 px-2 text-serif fw-normal align-middle text-alat border-bottom border-1 pb-2">
-                        PIT: <span className="text-danger">EAST KAWI</span>
+                        PIT: <span className="text-black">EAST KAWI</span>
                       </p>
                       <p className="mb-2 px-2 text-serif fw-normal align-middle text-alat border-bottom border-1 pb-2">
                         Tanggal:{" "}
-                        <span className="text-danger">8 - 11 - 2022</span>
+                        <span className="text-black">8 - 11 - 2022</span>
                       </p>
                       <p className="mb-2 px-2 text-serif fw-normal align-middle text-alat border-bottom border-1 pb-1">
-                        SHIFT: <span className="text-danger">1</span>
+                        SHIFT: <span className="text-black">1</span>
                       </p>
                     </div>
                   </th>
@@ -151,7 +151,7 @@ const DrillingReport = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center text-danger">
+                    <tr className="text-center text-black">
                       <td>Data</td>
                       <td>Data</td>
                       <td>Data</td>
@@ -177,7 +177,7 @@ const DrillingReport = () => {
                       <td>Data</td>
                       <td>Data</td>
                     </tr>
-                    <tr className="text-center">
+                    {/* <tr className="text-center">
                       <td colSpan={5} className="text-start fw-semibold">
                         TOTAL UNIT DRILLING 1:
                       </td>
@@ -224,10 +224,10 @@ const DrillingReport = () => {
                       <td>Data</td>
                       <td>Data</td>
                       <td>Data</td>
-                    </tr>
+                    </tr> */}
                     <tr className="text-center">
-                      <td colSpan={5} className="text-start fw-semibold">
-                        TOTAL (1 + 2)
+                      <td colSpan={5} className="text-center fs-5 fw-semibold">
+                        TOTAL
                       </td>
                       <td>Data</td>
                       <td>Data</td>
