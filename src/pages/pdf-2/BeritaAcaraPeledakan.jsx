@@ -1,7 +1,6 @@
 import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
-import Img_TTD from "../../assets/img_ttd.png";
 import { Table } from "react-bootstrap";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
@@ -47,10 +46,10 @@ const BeritaAcaraPeledakan = () => {
               {/* Header Content */}
               <div className="mb-2">
                 <p>Telah dilaksanakan peledakan,</p>
-                <p>Dilokasi: <span className="text-danger">Pit East Kawi – Ekspose Seam 5</span></p>
-                <p>Pada tanggal: <span className="text-danger"> 8 - 11- 2022 </span></p>
-                <p>Pada jam: <span className="text-danger">12:30 WIB</span></p>
-                <p>Nama juru ledak: <span className="text-danger">Heri. P</span></p>
+                <p>Dilokasi:<span className="text-black">Pit East Kawi – Ekspose Seam 5</span></p>
+                <p>Pada tanggal: <span className="text-black"> 8 - 11- 2022 </span></p>
+                <p>Pada jam: <span className="text-black">12:30 WIB</span></p>
+                <p>Nama juru ledak: <span className="text-black">Heri. P</span></p>
               </div>
 
               <Table responsive bordered>
@@ -73,7 +72,7 @@ const BeritaAcaraPeledakan = () => {
                     <td>1</td>
                     <td className="text-start">Jumlah lubang</td>
                     <td>Lubang</td>
-                    <td className="text-danger">70</td>
+                    <td className="text-black">70</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -82,7 +81,7 @@ const BeritaAcaraPeledakan = () => {
                     <td>2</td>
                     <td className="text-start">Ammonium Nitrate</td>
                     <td>kg</td>
-                    <td className="text-danger">4800</td>
+                    <td className="text-black">4800</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -91,7 +90,7 @@ const BeritaAcaraPeledakan = () => {
                     <td>3</td>
                     <td className="text-start">Emulsion</td>
                     <td>kg</td>
-                    <td className="text-danger">-</td>
+                    <td className="text-black">-</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -100,7 +99,7 @@ const BeritaAcaraPeledakan = () => {
                     <td>4</td>
                     <td className="text-start">Dynamite</td>
                     <td>kg</td>
-                    <td className="text-danger">35</td>
+                    <td className="text-black">35</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -109,7 +108,7 @@ const BeritaAcaraPeledakan = () => {
                     <td>5</td>
                     <td className="text-start">Electric Detonator No. 8 Instantaneous</td>
                     <td>Pcs</td>
-                    <td className="text-danger">1</td>
+                    <td className="text-black">1</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -121,7 +120,7 @@ const BeritaAcaraPeledakan = () => {
                       <p>EXEL TLD 17 …. MS</p>
                     </td>
                     <td>EA</td>
-                    <td className="text-danger">20</td>
+                    <td className="text-black">20</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -132,7 +131,7 @@ const BeritaAcaraPeledakan = () => {
                       <p>EXEL TLD 25 …. MS</p>
                     </td>
                     <td>EA</td>
-                    <td className="text-danger">20</td>
+                    <td className="text-black">20</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -143,7 +142,7 @@ const BeritaAcaraPeledakan = () => {
                       <p>EXEL TLD 65 …. MS</p>
                     </td>
                     <td>EA</td>
-                    <td className="text-danger">20</td>
+                    <td className="text-black">20</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -154,7 +153,7 @@ const BeritaAcaraPeledakan = () => {
                       <p>EXEL MS D 12. 12 M</p>
                     </td>
                     <td>EA</td>
-                    <td className="text-danger">20</td>
+                    <td className="text-black">20</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -163,7 +162,7 @@ const BeritaAcaraPeledakan = () => {
                     <td>7</td>
                     <td className="text-start">Booster 400 gr</td>
                     <td>EA</td>
-                    <td className="text-danger">1</td>
+                    <td className="text-black">1</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -171,14 +170,14 @@ const BeritaAcaraPeledakan = () => {
                 </tbody>
               </Table>
 
+              {/* Content Bottom */}
               <Table responsive bordered>
                 <thead>
                   <tr className="text-center align-middle">
                     <th rowSpan={5} className="fw-normal">
                       <p>Dibuat Oleh,</p>
                       <p>JURU LEDAK</p>
-                      <img src={Img_TTD} alt="Gambar TTD" width="80" />
-                      <p>(Heri. P)</p>
+                      <p className="mt-5">(Heri. P)</p>
                     </th>
                     <th className="fw-normal" colSpan={3}>Diketahui oleh,</th>
                     <th className="fw-normal" colSpan={3}>Disetujui oleh,</th>
