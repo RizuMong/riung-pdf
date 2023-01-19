@@ -57,10 +57,6 @@ const ProductionReport = () => {
         if (res.data && res.data[0] && res.data[0].shift) {
           setShift(res.data[0].shift);
         }
-        console.log({
-          arr: data[0].shift,
-        });
-        console.log(data);
       })
       .catch((err) => {
         alert(err);
