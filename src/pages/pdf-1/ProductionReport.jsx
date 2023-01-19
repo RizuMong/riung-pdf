@@ -43,17 +43,20 @@ const ProductionReport = () => {
           shift: "Shift 1",
           updated_at: 1673495715902,
           updated_by: 163623,
-        }, 
-        headers: {
-          'Content-type': 'application/json'
-        }
+        },
       })
       .then((res) => {
         const { data } = res;
         setDatas(data);
-        setDiterima(res.data[0].diterima);
-        setTanggal(res.data[0].tanggal);
-        setShift(res.data[0].shift);
+        if (res.data && res.data[0] && res.data[0].diterima) {
+          setDiterima(res.data[0].diterima);
+        }
+        if (res.data && res.data[0] && res.data[0].tanggal) {
+          setTanggal(res.data[0].tanggal);
+        }
+        if (res.data && res.data[0] && res.data[0].shift) {
+          setShift(res.data[0].shift);
+        }
         console.log({
           arr: data[0].shift,
         });
