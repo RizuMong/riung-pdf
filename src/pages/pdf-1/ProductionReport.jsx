@@ -43,7 +43,10 @@ const ProductionReport = () => {
           shift: "Shift 1",
           updated_at: 1673495715902,
           updated_by: 163623,
-        },
+        }, 
+        headers: {
+          'Content-type': 'application/json'
+        }
       })
       .then((res) => {
         const { data } = res;
