@@ -18,7 +18,7 @@ const LogBookSectionReport = ({}) => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
+        import.meta.env.VITE_LOGBOOK_URL,
         {
           id_logbook: queryParams.get("id_logbook"),
         }

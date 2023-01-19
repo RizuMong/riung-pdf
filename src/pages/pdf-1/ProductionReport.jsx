@@ -21,33 +21,30 @@ const ProductionReport = () => {
 
   const fetchData = async () => {
     axios
-      .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/handover-production",
-        {
-          data: {
-            _id: queryParams.get("_id"),
-            company_id: queryParams.get("company_id"),
-            created_at: 1673495715902,
-            created_by: 163623,
-            date: 1673136000000,
-            id: "qk1GlB2VR",
-            id_hop: "qk1GlB2VR",
-            kategori: "Front OB",
-            lokasi: "testing",
-            lokasi_pkh_id: "fr5MlB2Vg",
-            penerima_hop: {
-              company_user_id: 163624,
-              email: "userbiariung4@mailinator.com",
-              name: "userbiariung4 ",
-              photo: "",
-            },
-            pkh_id: "iQFMlfhVg",
-            shift: "Shift 1",
-            updated_at: 1673495715902,
-            updated_by: 163623,
+      .post(import.meta.env.VITE_HANDOVER_URL, {
+        data: {
+          _id: queryParams.get("_id"),
+          company_id: queryParams.get("company_id"),
+          created_at: queryParams.get("created_at"),
+          created_by: queryParams.get("created_by"),
+          date: queryParams.get("date"),
+          id: queryParams.get("id"),
+          id_hop: queryParams.get("id_hop"),
+          kategori: "Front OB",
+          lokasi: "testing",
+          lokasi_pkh_id: "fr5MlB2Vg",
+          penerima_hop: {
+            company_user_id: 163624,
+            email: "userbiariung4@mailinator.com",
+            name: "userbiariung4 ",
+            photo: "",
           },
-        }
-      )
+          pkh_id: "iQFMlfhVg",
+          shift: "Shift 1",
+          updated_at: 1673495715902,
+          updated_by: 163623,
+        },
+      })
       .then((res) => {
         const { data } = res;
         setDatas(data);
