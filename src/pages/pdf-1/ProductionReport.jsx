@@ -21,7 +21,7 @@ const ProductionReport = () => {
 
   const fetchData = async () => {
     axios
-      .post(import.meta.env.VITE_HANDOVER_URL, {
+      .post("https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/handover-production", {
         data: {
           _id: queryParams.get("_id"),
           company_id: queryParams.get("company_id"),
