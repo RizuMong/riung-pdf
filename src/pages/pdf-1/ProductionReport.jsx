@@ -1,11 +1,69 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const ProductionReport = () => {
+  const [datas, setDatas] = useState([]);
+  const [diterima, setDiterima] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [shift, setShift] = useState("");
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/handover-production",
+        {
+          data: {
+            _id: queryParams.get("_id"),
+            company_id: queryParams.get("company_id"),
+            created_at: 1673495715902,
+            created_by: 163623,
+            date: 1673136000000,
+            id: "qk1GlB2VR",
+            id_hop: "qk1GlB2VR",
+            kategori: "Front OB",
+            lokasi: "testing",
+            lokasi_pkh_id: "fr5MlB2Vg",
+            penerima_hop: {
+              company_user_id: 163624,
+              email: "userbiariung4@mailinator.com",
+              name: "userbiariung4 ",
+              photo: "",
+            },
+            pkh_id: "iQFMlfhVg",
+            shift: "Shift 1",
+            updated_at: 1673495715902,
+            updated_by: 163623,
+          },
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+        setDatas(data);
+        setDiterima(res.data[0].diterima);
+        setTanggal(res.data[0].tanggal);
+        setShift(res.data[0].shift);
+        console.log({
+          arr: data[0].shift,
+        });
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
@@ -49,7 +107,7 @@ const ProductionReport = () => {
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
-                        Hari / Tanggal /Shift:{" "}
+                        Hari / Tanggal /Shift: {tanggal} / {shift}
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
@@ -425,81 +483,55 @@ const ProductionReport = () => {
 
             {/* Data Unit */}
             <table className="table table-bordered">
-                <thead className="text-center">
-                  <tr>
-                    <th
-                      width="15%"
-                      scope="col"
-                      className="fs-6 table-light align-middle"
-                    >
-                      UNIT B/D
-                    </th>
-                    <th
-                      width="15%"
-                      scope="col"
-                      className="fs-6 table-light align-middle"
-                    >
-                      UNIT S/B
-                    </th>
-                    <th width="70%" scope="col" className="fs-6 align-middle text-start">
-                      CATATAN
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="text-center">
-                  <td className="text-sm fw-semibold border border-1">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </td>
-                  <td className="text-sm fw-semibold border border-1">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </td>
-                  <td className="text-sm fw-semibold border border-1">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </td>
-                </tbody>
-              </table>
-              
-            {/* <div className="d-flex">
-              <div className="mt-3">
-                <Table bordered hover>
-                  <thead className="table table-light">
-                    <tr>
-                      <th>UNIT B/D</th>
-                      <th>UNIT S/B </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <br/>
-                        <br/>
-                      </td>
-                      <td>
-                        <br/>
-                        <br/>
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </div>
-              <div className="mt-3">
-                <hr className="production pl-2 w-100" />
-                <p className="fw-semibold">Catatan: </p>
-                <hr className="production pl-2 mt-7 w-100" />
-              </div>
-            </div> */}
+              <thead className="text-center">
+                <tr>
+                  <th
+                    width="15%"
+                    scope="col"
+                    className="fs-6 table-light align-middle"
+                  >
+                    UNIT B/D
+                  </th>
+                  <th
+                    width="15%"
+                    scope="col"
+                    className="fs-6 table-light align-middle"
+                  >
+                    UNIT S/B
+                  </th>
+                  <th
+                    width="70%"
+                    scope="col"
+                    className="fs-6 align-middle text-start"
+                  >
+                    CATATAN
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                <td className="text-sm fw-semibold border border-1">
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                </td>
+                <td className="text-sm fw-semibold border border-1">
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                </td>
+                <td className="text-sm fw-semibold border border-1">
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                </td>
+              </tbody>
+            </table>
 
             <hr className="w-100 solid m-0" />
 
@@ -518,7 +550,7 @@ const ProductionReport = () => {
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diterima,</p>
-                  <p className="mt-5">()</p>
+                  <p className="mt-5">({diterima})</p>
                   <p className="fw-bold">Group Leader</p>
                 </div>
               </div>

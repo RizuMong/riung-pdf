@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
 import axios from "axios";
 
-import Img_TTD from "../../assets/img_ttd.png";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
