@@ -31,23 +31,6 @@ const ExcavatorControl = () => {
               <div className="col-5">
                 <h1 className="header-excavator fw-bold px-5">EXCAVATOR CONTROL</h1>
               </div>
-              {/* Input Type */}
-              {/* <div className="col-4">
-                <div className="d-flex align-items-center gap-3 mb-2">
-                  <label>Date: </label>
-                  <input className="form-control w-100 rounded-0" type="date" />
-                </div>
-                <div className="d-flex align-items-center gap-3 mb-2">
-                  <label>Shift: </label>
-                  <input className="form-control w-100 rounded-0" type="text" />
-                </div>
-                <div className="d-flex align-items-center gap-3">
-                  <label className="pr-2">PIT: </label>
-                  <input className="form-control w-100 rounded-0" type="text" />
-                </div>
-              </div> */}
-
-              {/* Output Type */}
               <div className="col-3 mb-2">
                 <p className="mb-2 px-2 fw-semibold text-alat">
                   Date :{" "}
