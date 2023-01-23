@@ -84,7 +84,7 @@ const ExcavatorControl = () => {
                   />
                   <h5 className="fw-bold fs-6">
                     PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
-                    {jobsite}
+                    {/* {jobsite} */}
                   </h5>
                 </div>
               </div>
@@ -95,10 +95,10 @@ const ExcavatorControl = () => {
               </div>
               <div className="col-3 mb-2">
                 <p className="mb-2 px-2 fw-semibold text-alat">
-                  Date : {tanggal}
+                  {/* Date : {tanggal} */}
                 </p>
                 <p className="mb-2 px-2 fw-semibold text-alat">
-                  Shift : {shift}
+                  {/* Shift : {shift} */}
                 </p>
                 <p className="mb-2 px-2 fw-semibold text-alat">PIT : </p>
               </div>
@@ -132,7 +132,7 @@ const ExcavatorControl = () => {
                 </tr>
               </thead>
               <tbody>
-                {datas.map((item, index) => (
+                {/* {datas.map((item, index) => (
                   <>
                     <tr key={index}>
                       <td>{item.line.jam}</td>
@@ -144,7 +144,7 @@ const ExcavatorControl = () => {
                       <td>{item.line.action}</td>
                     </tr>
                   </>
-                ))}
+                ))} */}
               </tbody>
             </Table>
 
