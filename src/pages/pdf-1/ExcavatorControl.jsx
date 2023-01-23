@@ -23,7 +23,7 @@ const ExcavatorControl = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/excavator-control",
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/excavator",
         {
           _id: queryParams.get("_id"),
           company_id: queryParams.get("company_id"),
