@@ -7,63 +7,64 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const ExcavatorControl = () => {
-  const [datas, setDatas] = useState([]);
-  const [jobsite, setJobsite] = useState("");
-  const [tanggal, setTanggal] = useState("");
-  const [shift, setShift] = useState("");
-  const [penerima, setPenerima] = useState("");
+  // const [datas, setDatas] = useState([]);
+  // const [jobsite, setJobsite] = useState("");
+  // const [tanggal, setTanggal] = useState("");
+  // const [shift, setShift] = useState("");
+  // // const [penerima, setPenerima] = useState("");
 
-  const windowUrl = window.location.search;
-  const queryParams = new URLSearchParams(windowUrl);
+  // const windowUrl = window.location.search;
+  // const queryParams = new URLSearchParams(windowUrl);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-  const fetchData = async () => {
-    axios
-      .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/excavator-control-page",
-        {
-          _id: queryParams.get("_id"),
-          company_id: queryParams.get("company_id"),
-          created_at: queryParams.get("created_at"),
-          created_by: queryParams.get("created_by"),
-          date: queryParams.get("date"),
-          id: queryParams.get("id"),
-          id_excon: queryParams.get("id_excon"),
-          lokasi: queryParams.get("lokasi"),
-          lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-          pkh_id: queryParams.get("pkh_id"),
-          shift: queryParams.get("shift"),
-          updated_at: queryParams.get("updated_at"),
-          updated_by: queryParams.get("updated_by"),
-        }
-      )
-      .then((res) => {
-        const { data } = res;
-        setDatas(data);
-        if (res.data && res.data[0] && res.data[0].jobsite) {
-          setJobsite(res.data[0].jobsite);
-        }
-        if (res.data && res.data[0] && res.data[0].tanggal) {
-          setTanggal(res.data[0].tanggal);
-        }
-        if (res.data && res.data[0] && res.data[0].shift) {
-          setShift(res.data[0].shift);
-        }
-        if (res.data && res.data[0] && res.data[0].penerima) {
-          setPenerima(res.data[0].penerima);
-        }
-        console.log(res.data[0].penerima);
-        console.log({
-          line: data[0].line,
-        });
-      })
-      .catch((err) => {
-        alert(err);
-      });
-  };
+  // const fetchData = async () => {
+  //   axios
+  //     .post(
+  //       "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/excavator-control-page",
+  //       {
+  //         _id: queryParams.get("_id"),
+  //         company_id: queryParams.get("company_id"),
+  //         created_at: queryParams.get("created_at"),
+  //         created_by: queryParams.get("created_by"),
+  //         date: queryParams.get("date"),
+  //         id: queryParams.get("id"),
+  //         id_excon: queryParams.get("id_excon"),
+  //         lokasi: queryParams.get("lokasi"),
+  //         lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+  //         pkh_id: queryParams.get("pkh_id"),
+  //         shift: queryParams.get("shift"),
+  //         updated_at: queryParams.get("updated_at"),
+  //         updated_by: queryParams.get("updated_by"),
+  //       }
+  //     )
+  //     .then((res) => {
+  //       const { data } = res;
+  //       setDatas(data);
+  //       if (res.data && res.data[0] && res.data[0].jobsite) {
+  //         setJobsite(res.data[0].jobsite);
+  //       }
+  //       if (res.data && res.data[0] && res.data[0].tanggal) {
+  //         setTanggal(res.data[0].tanggal);
+  //       }
+  //       if (res.data && res.data[0] && res.data[0].shift) {
+  //         setShift(res.data[0].shift);
+  //       }
+  //       // if (res.data && res.data[0] && res.data[0].penerima) {
+  //       //   setPenerima(res.data[0].penerima);
+  //       // }
+  //       // console.log(res.data[0].penerima);
+  //       // console.log(data);
+  //       console.log({
+  //         line: data[0].line,
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       alert(err);
+  //     });
+  // };
 
   return (
     <div className="container-fluid">
@@ -164,7 +165,7 @@ const ExcavatorControl = () => {
                 <div className="col-3 text-center">
                   <p>Dibuat oleh,</p>
                   <p className="mt-5 border-bottom border-dark border-3 w-100">
-                    ({penerima})
+                    {/* ({penerima}) */}
                   </p>
                 </div>
               </div>
