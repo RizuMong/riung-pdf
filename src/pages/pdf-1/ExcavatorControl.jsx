@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
@@ -8,6 +9,9 @@ import "../../styles/App.css";
 const ExcavatorControl = () => {
   const [datas, setDatas] = useState([]);
   const [jobsite, setJobsite] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [shift, setShift] = useState("");
+  const [penerima, setPenerima] = useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -42,6 +46,19 @@ const ExcavatorControl = () => {
         if (res.data && res.data[0] && res.data[0].jobsite) {
           setJobsite(res.data[0].jobsite);
         }
+        if (res.data && res.data[0] && res.data[0].tanggal) {
+          setTanggal(res.data[0].tanggal);
+        }
+        if (res.data && res.data[0] && res.data[0].shift) {
+          setShift(res.data[0].shift);
+        }
+        if (res.data && res.data[0] && res.data[0].penerima) {
+          setPenerima(res.data[0].penerima);
+        }
+        console.log(res.data[0].penerima);
+        console.log({
+          line: data[0].line
+        });
       })
       .catch((err) => {
         alert(err);
@@ -64,9 +81,9 @@ const ExcavatorControl = () => {
                     height="60"
                     alt="Logo RIUNG"
                   />
-                  <h5 className="fw-bold">
-                    PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                    {jobsite}
+                  <h5 className="fw-bold fs-6">
+                    PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE {" "}
+                    {jobsite} 
                   </h5>
                 </div>
               </div>
@@ -76,8 +93,8 @@ const ExcavatorControl = () => {
                 </h1>
               </div>
               <div className="col-3 mb-2">
-                <p className="mb-2 px-2 fw-semibold text-alat">Date : </p>
-                <p className="mb-2 px-2 fw-semibold text-alat">Shift : </p>
+                <p className="mb-2 px-2 fw-semibold text-alat">Date : {tanggal}</p>
+                <p className="mb-2 px-2 fw-semibold text-alat">Shift : {shift}</p>
                 <p className="mb-2 px-2 fw-semibold text-alat">PIT : </p>
               </div>
             </div>
@@ -139,7 +156,7 @@ const ExcavatorControl = () => {
                 <div className="col-2 text-center">
                   <p>Dibuat oleh,</p>
                   <p className="mt-5 border-bottom border-dark border-3">
-                    ( Group Leader )
+                    ( {penerima} )
                   </p>
                 </div>
               </div>
