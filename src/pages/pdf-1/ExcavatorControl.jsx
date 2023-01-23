@@ -107,13 +107,13 @@ const ExcavatorControl = () => {
             <Table bordered hover size="sm mt-3 text-center">
               <thead>
                 <tr>
-                  <th width="10%" className="table-dark">Jam</th>
-                  <th width="10%">CN Loader</th>
-                  <th width="10%">Productivity</th>
-                  <th width="10%">Minutes</th>
-                  <th width="10%">Production</th>
-                  <th width="25%">Problem</th>
-                  <th width="25%">Action</th>
+                  <th width="10%" className="table-dark align-middle">Jam</th>
+                  <th width="10%" className="align-middle">CN Loader</th>
+                  <th width="10%" className="align-middle">Productivity</th>
+                  <th width="10%" className="align-middle">Minutes</th>
+                  <th width="10%" className="align-middle">Production</th>
+                  <th width="10%" className="align-middle">Problem</th>
+                  <th width="25%" className="align-middle">Action</th>
                 </tr>
               </thead>
               <tbody>
