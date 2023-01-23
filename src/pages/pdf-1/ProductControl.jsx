@@ -1,11 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const ProductControl = () => {
+  const [datas, setDatas] = useState([]);
+  const [jobsite, setJobsite] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [lokasi, setLokasi] = useState("");
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/product-control-page",
+        {
+          data: {
+            _id: "63c6688ccdeb3866444b985e",
+            company_id: 23946,
+            created_at: 1673947275959,
+            created_by: 163623,
+            id: "yLzQHmo4g",
+            id_production_control: "yLzQHmo4g",
+            lokasi: "test pdf 1",
+            lokasi_pkh_id: "9H-UHiT4R",
+            pkh: "a_iFa0h4R",
+            shift: "Shift 1",
+            tanggal: 1673136000000,
+            updated_at: 1673947275959,
+            updated_by: 163623,
+          },
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+        setDatas(data);
+        if (res.data && res.data[0] && res.data[0].jobsite) {
+          setJobsite(res.data[0].jobsite);
+        }
+        if (res.data && res.data[0] && res.data[0].tanggal) {
+          setTanggal(res.data[0].tanggal);
+        }
+        if (res.data && res.data[0] && res.data[0].lokasi) {
+          setLokasi(res.data[0].lokasi);
+        }
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
@@ -27,8 +77,8 @@ const ProductControl = () => {
                       alt="Logo RIUNG"
                     />
                     <h5 className="fw-bold header-pt">
-                      PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                      ...........................
+                      PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
+                      {jobsite}
                     </h5>
                   </div>
                 </th>
@@ -42,11 +92,11 @@ const ProductControl = () => {
                 <th className="col-3">
                   <div className="mb-4">
                     <p className="mb-3 px-2 text-serif fw-semibold text-alat">
-                      Hari/Tanggal:{" "}
+                      Hari/Tanggal: {tanggal}
                     </p>
                     <hr className="w-100" />
                     <p className="pt-2 px-2 text-serif fw-semibold text-alat">
-                      Lokasi:{" "}
+                      Lokasi: {lokasi}
                     </p>
                   </div>
                 </th>
@@ -60,31 +110,33 @@ const ProductControl = () => {
                 <tr>
                   <th
                     rowSpan={2}
+                    width="20%"
                     scope="col-3"
-                    className="header-table-product"
-                    style={{ verticalAlign: "middle" }}
+                    className="header-table-product align-middle"
                   >
                     Waktu
                   </th>
                   <th
                     scope="col-3"
+                    width="25%"
                     colSpan={2}
-                    className="header-table-product"
+                    className="header-table-product align-middle"
                   >
                     Produksi
                   </th>
                   <th
                     scope="col-3"
+                    width="25%"
                     colSpan={2}
-                    className="header-table-product"
+                    className="header-table-product align-middle"
                   >
                     Akumulasi Produksi
                   </th>
                   <th
                     rowSpan={2}
+                    width="30%"
                     scope="col-3"
-                    className="header-table-product"
-                    style={{ verticalAlign: "middle" }}
+                    className="header-table-product align-middle"
                   >
                     Keterangan
                   </th>
@@ -97,206 +149,16 @@ const ProductControl = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
-                <tr>
-                  <td>07:00 - 08:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>07:00 - 08:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>08:00 - 09:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>09:00 - 10:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>10:00 - 11:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>11:00 - 12:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>12:00 - 13:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>13:00 - 14:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>14:00 - 15:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>15:00 - 16:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>16:00 - 17:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>17:00 - 18:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>18:00 - 19:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>19:00 - 20:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>20:00 - 21:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>21:00 - 22:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>22:00 - 23:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>23:00 - 24:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>00:00 - 01:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>01:00 - 02:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>02:00 - 03:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>03:00 - 04:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>04:00 - 05:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>05:00 - 06:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>06:00 - 07:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                {datas?.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item?.line.jam}</td>
+                    <td>{item?.line.produksi_plan}</td>
+                    <td>{item?.line.produksi_aktual}</td>
+                    <td>{item?.line.akumulasi_plan}</td>
+                    <td>{item?.line.akumulasi_aktual}</td>
+                    <td></td>
+                  </tr>
+                ))}
               </tbody>
             </Table>
 
@@ -324,22 +186,22 @@ const ProductControl = () => {
                     I
                   </th>
                   <td>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                   </td>
                   <td>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                   </td>
                   <td>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                   </td>
                 </tr>
                 <tr>
@@ -347,22 +209,22 @@ const ProductControl = () => {
                     II
                   </th>
                   <td>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                   </td>
                   <td>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                   </td>
                   <td>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                   </td>
                 </tr>
               </tbody>
