@@ -175,7 +175,7 @@ const ExcavatorControl = () => {
                 <div className="col-3 text-center">
                   <p>Dibuat oleh,</p>
                   <p className="mt-5 border-bottom border-dark border-3 w-100">
-                    {/* ({penerima}) */}
+                    ({penerima}) ddd
                   </p>
                 </div>
               </div>
