@@ -127,16 +127,16 @@ const ExcavatorControl = () => {
                 </tr>
               </thead>
               <tbody>
-                {datas?.map((item, index) => (
+                {datas && datas.length && datas.map((item, index) => (
                   <>
                     <tr key={index}>
-                      <td>{item.line.jam}</td>
-                      <td>{item.line.cn_loader}</td>
-                      <td>{item.line.productivity}</td>
-                      <td>{item.line.minute}</td>
-                      <td>{item.line.production}</td>
-                      <td>{item.line.problem_rmgm}</td>
-                      <td>{item.line.action}</td>
+                      <td>{item?.line.jam}</td>
+                      <td>{item?.line.cn_loader}</td>
+                      <td>{item?.line.productivity}</td>
+                      <td>{item?.line.minute}</td>
+                      <td>{item?.line.production}</td>
+                      <td>{item?.line.problem_rmgm}</td>
+                      <td>{item?.line.action}</td>
                     </tr>
                   </>
                 ))}
