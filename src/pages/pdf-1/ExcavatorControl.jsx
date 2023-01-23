@@ -52,14 +52,9 @@ const ExcavatorControl = () => {
         if (res.data && res.data[0] && res.data[0].shift) {
           setShift(res.data[0].shift);
         }
-        if (res.data && res.data[0] && res.data[0].penerima) {
-          setPenerima(res.data[0].penerima);
+        if (res?.data && res?.data[0] && res.data[0]?.penerima) {
+          setPenerima(res?.data[0]?.penerima);
         }
-        console.log(res.data[0].penerima);
-        console.log(data);
-        console.log({
-          line: data[0].line,
-        });
       })
       .catch((err) => {
         alert(err);
@@ -165,7 +160,7 @@ const ExcavatorControl = () => {
                 <div className="col-3 text-center">
                   <p>Dibuat oleh,</p>
                   <p className="mt-5 border-bottom border-dark border-3 w-100">
-                    ({penerima})
+                    {/* ({penerima}) */}
                   </p>
                 </div>
               </div>
