@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
 
 import Table from "react-bootstrap/Table";
@@ -6,6 +6,48 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const ExcavatorControl = () => {
+  const [datas, setDatas] = useState([]);
+  const [jobsite, setJobsite] = useState("");
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/excavator-control",
+        {
+          _id: "63bf84a460a970d4e54ac862",
+          company_id: 23946,
+          created_at: 1673495716571,
+          created_by: 163623,
+          date: 1673136000000,
+          id: "uE1G_B2Vg",
+          id_excon: "uE1G_B2Vg",
+          lokasi: "testing",
+          lokasi_pkh_id: "fr5MlB2Vg",
+          pkh_id: "iQFMlfhVg",
+          shift: "Shift 1",
+          updated_at: 1674390296971,
+          updated_by: 163623,
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+        setDatas(data);
+        if (res.data && res.data[0] && res.data[0].jobsite) {
+          setJobsite(res.data[0].jobsite);
+        }
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
@@ -24,23 +66,19 @@ const ExcavatorControl = () => {
                   />
                   <h5 className="fw-bold">
                     PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                    ...........................
+                    {jobsite}
                   </h5>
                 </div>
               </div>
               <div className="col-5">
-                <h1 className="header-excavator fw-bold px-5">EXCAVATOR CONTROL</h1>
+                <h1 className="header-excavator fw-bold px-5">
+                  EXCAVATOR CONTROL
+                </h1>
               </div>
               <div className="col-3 mb-2">
-                <p className="mb-2 px-2 fw-semibold text-alat">
-                  Date :{" "}
-                </p>
-                <p className="mb-2 px-2 fw-semibold text-alat">
-                  Shift :{" "}
-                </p>
-                <p className="mb-2 px-2 fw-semibold text-alat">
-                  PIT :{" "}
-                </p>
+                <p className="mb-2 px-2 fw-semibold text-alat">Date : </p>
+                <p className="mb-2 px-2 fw-semibold text-alat">Shift : </p>
+                <p className="mb-2 px-2 fw-semibold text-alat">PIT : </p>
               </div>
             </div>
 
@@ -49,424 +87,6 @@ const ExcavatorControl = () => {
               <thead>
                 <tr>
                   <th className="col-2 table-dark">Jam ke-1</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-2</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-3</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-4</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-5</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-6</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-7</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-8</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-9</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-10</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-11</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-              </tbody>
-            </Table>
-            <Table bordered hover size="sm mt-3 text-center">
-              <thead>
-                <tr>
-                  <th className="col-2 table-dark">Jam ke-12</th>
                   <th className="col-2">Productivity</th>
                   <th className="col-2">Minutes</th>
                   <th className="col-2">Production</th>
