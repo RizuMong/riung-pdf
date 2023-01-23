@@ -25,19 +25,19 @@ const ProductControl = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/product-control-page",
         {
           data: {
-            _id: "63c6688ccdeb3866444b985e",
-            company_id: 23946,
-            created_at: 1673947275959,
-            created_by: 163623,
+            _id: queryParams.get("_id"),
+            company_id:  queryParams.get("company_id"),
+            created_at: queryParams.get("created_at"),
+            created_by: queryParams.get("created_by"),
             id: queryParams.get("id"),
             id_production_control: queryParams.get("id_production_control"),
             lokasi: "test pdf 1",
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh: queryParams.get("pkh"),
-            shift: "Shift 1",
-            tanggal: 1673136000000,
-            updated_at: 1673947275959,
-            updated_by: 163623,
+            shift: queryParams.get("shift"),
+            tanggal: queryParams.get("tanggal"),
+            updated_at: queryParams.get("updated_at"),
+            updated_by: queryParams.get("updated_by"),
           },
         }
       )
