@@ -25,19 +25,19 @@ const ExcavatorControl = () => {
       .post(
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/excavator-control-page",
         {
-          _id: "63bf84a460a970d4e54ac862",
-          company_id: 23946,
-          created_at: 1673495716571,
-          created_by: 163623,
-          date: 1673136000000,
-          id: "uE1G_B2Vg",
-          id_excon: "uE1G_B2Vg",
-          lokasi: "testing",
-          lokasi_pkh_id: "fr5MlB2Vg",
-          pkh_id: "iQFMlfhVg",
-          shift: "Shift 1",
-          updated_at: 1674390296971,
-          updated_by: 163623,
+          _id: queryParams.get("_id"),
+          company_id: queryParams.get("company_id"),
+          created_at: queryParams.get("created_at"),
+          created_by: queryParams.get("created_by"),
+          date: queryParams.get("date"),
+          id: queryParams.get("id"),
+          id_excon: queryParams.get("id_excon"),
+          lokasi: queryParams.get("lokasi"),
+          lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+          pkh_id: queryParams.get("pkh_id"),
+          shift: queryParams.get("shift"),
+          updated_at: queryParams.get("updated_at"),
+          updated_by: queryParams.get("updated_by"),
         }
       )
       .then((res) => {
@@ -56,7 +56,7 @@ const ExcavatorControl = () => {
           setPenerima(res?.data[0]?.penerima);
         }
         console.log({
-          line: data[0].penerima
+          line: data[0].penerima,
         });
 
         console.log(data);
@@ -132,19 +132,21 @@ const ExcavatorControl = () => {
                 </tr>
               </thead>
               <tbody>
-                {datas && datas.length && datas.map((item, index) => (
-                  <>
-                    <tr key={index}>
-                      <td>{item?.line.jam}</td>
-                      <td>{item?.line.cn_loader}</td>
-                      <td>{item?.line.productivity}</td>
-                      <td>{item?.line.minute}</td>
-                      <td>{item?.line.production}</td>
-                      <td>{item?.line.problem_rmgm}</td>
-                      <td>{item?.line.action}</td>
-                    </tr>
-                  </>
-                ))}
+                {datas &&
+                  datas.length &&
+                  datas.map((item, index) => (
+                    <>
+                      <tr key={index}>
+                        <td>{item?.line.jam}</td>
+                        <td>{item?.line.cn_loader}</td>
+                        <td>{item?.line.productivity}</td>
+                        <td>{item?.line.minute}</td>
+                        <td>{item?.line.production}</td>
+                        <td>{item?.line.problem_rmgm}</td>
+                        <td>{item?.line.action}</td>
+                      </tr>
+                    </>
+                  ))}
               </tbody>
             </Table>
 
