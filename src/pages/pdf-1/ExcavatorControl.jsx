@@ -125,7 +125,7 @@ const ExcavatorControl = () => {
                       <td>{item.line.productivity}</td>
                       <td>{item.line.minute}</td>
                       <td>{item.line.production}</td>
-                      <td>Problem</td>
+                      <td>{item.line.problem_rmgm}</td>
                       <td>{item.line.action}</td>
                     </tr>
                   </>
