@@ -57,7 +57,7 @@ const ExcavatorControl = () => {
         }
         console.log(res.data[0].penerima);
         console.log({
-          line: data[0].line
+          line: data[0].line,
         });
       })
       .catch((err) => {
@@ -82,8 +82,8 @@ const ExcavatorControl = () => {
                     alt="Logo RIUNG"
                   />
                   <h5 className="fw-bold fs-6">
-                    PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE {" "}
-                    {jobsite} 
+                    PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
+                    {jobsite}
                   </h5>
                 </div>
               </div>
@@ -93,8 +93,12 @@ const ExcavatorControl = () => {
                 </h1>
               </div>
               <div className="col-3 mb-2">
-                <p className="mb-2 px-2 fw-semibold text-alat">Date : {tanggal}</p>
-                <p className="mb-2 px-2 fw-semibold text-alat">Shift : {shift}</p>
+                <p className="mb-2 px-2 fw-semibold text-alat">
+                  Date : {tanggal}
+                </p>
+                <p className="mb-2 px-2 fw-semibold text-alat">
+                  Shift : {shift}
+                </p>
                 <p className="mb-2 px-2 fw-semibold text-alat">PIT : </p>
               </div>
             </div>
@@ -103,46 +107,36 @@ const ExcavatorControl = () => {
             <Table bordered hover size="sm mt-3 text-center">
               <thead>
                 <tr>
-                  <th className="col-2 table-dark">Jam ke-1</th>
-                  <th className="col-2">Productivity</th>
-                  <th className="col-2">Minutes</th>
-                  <th className="col-2">Production</th>
-                  <th className="col-2">Problem</th>
-                  <th className="col-2">Action</th>
+                  <th width="10%" className="table-dark">Jam</th>
+                  <th width="10%">CN Loader</th>
+                  <th width="10%">Productivity</th>
+                  <th width="10%">Minutes</th>
+                  <th width="10%">Production</th>
+                  <th width="25%">Problem</th>
+                  <th width="25%">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Productivity</td>
-                  <td>60</td>
-                  <td>Production</td>
-                  <td>Problem</td>
-                  <td>Action</td>
-                </tr>
+                {datas.map((item, index) => (
+                  <>
+                    <tr key={index}>
+                      <td>{item.line.jam}</td>
+                      <td>{item.line.cn_loader}</td>
+                      <td>{item.line.productivity}</td>
+                      <td>{item.line.minute}</td>
+                      <td>{item.line.production}</td>
+                      <td>Problem</td>
+                      <td>{item.line.action}</td>
+                    </tr>
+                  </>
+                ))}
               </tbody>
             </Table>
 
             {/* Content Bottom */}
             <div className="container px-5 pt-3">
               <div className="row justify-content-center">
-                <div className="col-10 d-flex gap-5">
+                <div className="col-9 d-flex gap-5">
                   <p className="fw-bold mt-6">Productivity =</p>
                   <div className="d-flex align-items-center gap-2">
                     <div>
@@ -153,10 +147,10 @@ const ExcavatorControl = () => {
                     <p className="fw-bold">x Production</p>
                   </div>
                 </div>
-                <div className="col-2 text-center">
+                <div className="col-3 text-center">
                   <p>Dibuat oleh,</p>
-                  <p className="mt-5 border-bottom border-dark border-3">
-                    ( {penerima} )
+                  <p className="mt-5 border-bottom border-dark border-3 w-100">
+                    ({penerima})
                   </p>
                 </div>
               </div>
