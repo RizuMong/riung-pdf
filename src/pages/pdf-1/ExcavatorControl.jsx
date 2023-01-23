@@ -127,7 +127,7 @@ const ExcavatorControl = () => {
                 </tr>
               </thead>
               <tbody>
-                {datas.map((item, index) => (
+                {datas?.map((item, index) => (
                   <>
                     <tr key={index}>
                       <td>{item.line.jam}</td>
