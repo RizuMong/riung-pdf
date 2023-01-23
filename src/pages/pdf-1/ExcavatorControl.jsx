@@ -25,19 +25,19 @@ const ExcavatorControl = () => {
       .post(
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/excavator-control",
         {
-          _id: "63bf84a460a970d4e54ac862",
-          company_id: 23946,
-          created_at: 1673495716571,
-          created_by: 163623,
-          date: 1673136000000,
-          id: "uE1G_B2Vg",
-          id_excon: "uE1G_B2Vg",
-          lokasi: "testing",
-          lokasi_pkh_id: "fr5MlB2Vg",
-          pkh_id: "iQFMlfhVg",
-          shift: "Shift 1",
-          updated_at: 1674390296971,
-          updated_by: 163623,
+          _id: queryParams.get("_id"),
+          company_id: queryParams.get("company_id"),
+          created_at: queryParams.get("created_at"),
+          created_by: queryParams.get("created_by"),
+          date: queryParams.get("date"),
+          id: queryParams.get("id"),
+          id_excon: queryParams.get("id_excon"),
+          lokasi: queryParams.get("lokasi"),
+          lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+          pkh_id: queryParams.get("pkh_id"),
+          shift: queryParams.get("shift"),
+          updated_at: queryParams.get("updated_at"),
+          updated_by: queryParams.get("updated_by"),
         }
       )
       .then((res) => {
@@ -107,13 +107,27 @@ const ExcavatorControl = () => {
             <Table bordered hover size="sm mt-3 text-center">
               <thead>
                 <tr>
-                  <th width="10%" className="table-dark align-middle">Jam</th>
-                  <th width="10%" className="align-middle">CN Loader</th>
-                  <th width="10%" className="align-middle">Productivity</th>
-                  <th width="10%" className="align-middle">Minutes</th>
-                  <th width="10%" className="align-middle">Production</th>
-                  <th width="10%" className="align-middle">Problem</th>
-                  <th width="25%" className="align-middle">Action</th>
+                  <th width="10%" className="table-dark align-middle">
+                    Jam
+                  </th>
+                  <th width="10%" className="align-middle">
+                    CN Loader
+                  </th>
+                  <th width="10%" className="align-middle">
+                    Productivity
+                  </th>
+                  <th width="10%" className="align-middle">
+                    Minutes
+                  </th>
+                  <th width="10%" className="align-middle">
+                    Production
+                  </th>
+                  <th width="10%" className="align-middle">
+                    Problem
+                  </th>
+                  <th width="25%" className="align-middle">
+                    Action
+                  </th>
                 </tr>
               </thead>
               <tbody>
