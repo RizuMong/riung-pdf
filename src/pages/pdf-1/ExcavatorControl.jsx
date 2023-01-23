@@ -11,7 +11,7 @@ const ExcavatorControl = () => {
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
-  // const [penerima, setPenerima] = useState("");
+  const [penerima, setPenerima] = useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -52,9 +52,9 @@ const ExcavatorControl = () => {
         if (res.data && res.data[0] && res.data[0].shift) {
           setShift(res.data[0].shift);
         }
-        // if (res?.data && res?.data[0] && res.data[0]?.penerima) {
-        //   setPenerima(res?.data[0]?.penerima);
-        // }
+        if (res?.data && res?.data[0] && res.data[0]?.penerima) {
+          setPenerima(res?.data[0]?.penerima);
+        }
         console.log({
           line: data[0].penerima,
         });
