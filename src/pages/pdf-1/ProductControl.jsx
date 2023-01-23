@@ -12,6 +12,9 @@ const ProductControl = () => {
   const [tanggal, setTanggal] = useState("");
   const [lokasi, setLokasi] = useState("");
 
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -26,11 +29,11 @@ const ProductControl = () => {
             company_id: 23946,
             created_at: 1673947275959,
             created_by: 163623,
-            id: "yLzQHmo4g",
-            id_production_control: "yLzQHmo4g",
+            id: queryParams.get("id"),
+            id_production_control: queryParams.get("id_production_control"),
             lokasi: "test pdf 1",
-            lokasi_pkh_id: "9H-UHiT4R",
-            pkh: "a_iFa0h4R",
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            pkh: queryParams.get("pkh"),
             shift: "Shift 1",
             tanggal: 1673136000000,
             updated_at: 1673947275959,
