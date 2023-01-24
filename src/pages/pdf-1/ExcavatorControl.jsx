@@ -33,7 +33,7 @@ const ExcavatorControl = () => {
           id: queryParams.get("id"),
           id_excon: queryParams.get("id_excon"),
           lokasi: queryParams.get("lokasi"),
-          lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+          id_lokasi_pkh: queryParams.get("id_lokasi_pkh"),
           pkh_id: queryParams.get("pkh_id"),
           shift: queryParams.get("shift"),
           updated_at: queryParams.get("updated_at"),
