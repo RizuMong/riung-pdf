@@ -11,7 +11,7 @@ const ExcavatorControl = () => {
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
-  const [penerima, setPenerima] = useState("");
+  // const [penerima, setPenerima] = useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -52,9 +52,11 @@ const ExcavatorControl = () => {
         if (res.data && res.data[0] && res.data[0].shift) {
           setShift(res.data[0].shift);
         }
-        if (res?.data && res?.data[0] && res.data[0]?.penerima) {
-          setPenerima(res?.data[0]?.penerima);
-        }
+        // setPenerima(res.data[0].penerima)
+        // if (res?.data && res?.data[0] && res.data[0]?.penerima) {
+        //   setPenerima(res?.data[0]?.penerima);
+        // }
+        console.log(res.data[0].penerima);
         console.log({
           line: data[0].penerima,
         });
@@ -133,27 +135,24 @@ const ExcavatorControl = () => {
               </thead>
               <tbody>
                 {datas &&
-                  datas.length &&
-                  datas.map((item, index) => (
-                    <>
-                      <tr key={index}>
-                        <td>{item?.line.jam}</td>
-                        <td>{item?.line.cn_loader}</td>
-                        <td>{item?.line.productivity}</td>
-                        <td>{item?.line.minute}</td>
-                        <td>{item?.line.production}</td>
-                        <td>
-                          {item?.line.problem_rmgm ||
-                            item?.line.problem_rbms ||
-                            item?.line.problem_rebh ||
-                            item?.line.problem_rhml ||
-                            item?.line.problem_rmip ||
-                            item?.line.problem_rmtu ||
-                            item?.line.problem_rsmu}
-                        </td>
-                        <td>{item?.line.action}</td>
-                      </tr>
-                    </>
+                  datas?.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item?.line.jam}</td>
+                      <td>{item?.line.cn_loader}</td>
+                      <td>{item?.line.productivity}</td>
+                      <td>{item?.line.minute}</td>
+                      <td>{item?.line.production}</td>
+                      <td>
+                        {item?.line.problem_rmgm ||
+                          item?.line.problem_rbms ||
+                          item?.line.problem_rebh ||
+                          item?.line.problem_rhml ||
+                          item?.line.problem_rmip ||
+                          item?.line.problem_rmtu ||
+                          item?.line.problem_rsmu}
+                      </td>
+                      <td>{item?.line.action}</td>
+                    </tr>
                   ))}
               </tbody>
             </Table>
@@ -175,7 +174,7 @@ const ExcavatorControl = () => {
                 <div className="col-3 text-center">
                   <p>Dibuat oleh,</p>
                   <p className="mt-5 border-bottom border-dark border-3 w-100">
-                    ({penerima}) ddd
+                    {/* ({penerima}) */}
                   </p>
                 </div>
               </div>
