@@ -86,7 +86,7 @@ const ExcavatorControl = () => {
                   />
                   <h5 className="fw-bold fs-6">
                     PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
-                    {jobsite}
+                    {/* {jobsite} */}
                   </h5>
                 </div>
               </div>
@@ -174,7 +174,7 @@ const ExcavatorControl = () => {
                 <div className="col-3 text-center">
                   <p>Dibuat oleh,</p>
                   <p className="mt-5 border-bottom border-dark border-3 w-100">
-                    {/* ({penerima}) */}
+                    {/* ({penerima}) */} 
                   </p>
                 </div>
               </div>
