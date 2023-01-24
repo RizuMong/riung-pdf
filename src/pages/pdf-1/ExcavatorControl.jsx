@@ -56,7 +56,7 @@ const ExcavatorControl = () => {
         // if (res?.data && res?.data[0] && res.data[0]?.penerima) {
         //   setPenerima(res?.data[0]?.penerima);
         // }
-        console.log(res.data[0].penerima);
+        console.log(res.data[0].tanggal);
         console.log({
           line: data[0].penerima,
         });
@@ -86,7 +86,7 @@ const ExcavatorControl = () => {
                   />
                   <h5 className="fw-bold fs-6">
                     PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
-                    {/* {jobsite} */}
+                    {jobsite}
                   </h5>
                 </div>
               </div>
