@@ -22,7 +22,7 @@ const ProductControl = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/product-control-page",
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/production-control-page",
         {
           data: {
             _id: queryParams.get("_id"),
@@ -80,8 +80,7 @@ const ProductControl = () => {
                       alt="Logo RIUNG"
                     />
                     <h5 className="fw-bold header-pt">
-                      PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
-                      {jobsite}
+                      PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "} {jobsite}
                     </h5>
                   </div>
                 </th>
@@ -159,7 +158,7 @@ const ProductControl = () => {
                     <td>{item?.line.produksi_aktual}</td>
                     <td>{item?.line.akumulasi_plan}</td>
                     <td>{item?.line.akumulasi_aktual}</td>
-                    <td></td>
+                    <td>{item?.line.keterangan}</td>
                   </tr>
                 ))}
               </tbody>
