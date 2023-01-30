@@ -32,13 +32,13 @@ const DaftarPeriksaAlatAngkut = () => {
                       </h5>
                     </div>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 80 }}></div>
                   <th className="col-5">
                     <h1 className="header-alat-angkut mb-4">
                       DAFTAR PERIKSA KONTAMINASI ALAT ANGKUT BATUBARA
                     </h1>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 80 }}></div>
                   <th className="col-3">
                     <div className="mb-2">
                       <p className="mb-2 px-2 text-serif fw-semibold text-alat">
@@ -61,25 +61,37 @@ const DaftarPeriksaAlatAngkut = () => {
             <Table bordered hover className="text-center mt-3">
               <thead>
                 <tr>
-                  <th scope="col" className="header-table">
+                  <th scope="col" rowSpan={2} className="header-table align-middle">
                     NO
                   </th>
-                  <th scope="col" colSpan={2} className="header-table">
+                  <th scope="col" rowSpan={2} colSpan={2} className="header-table align-middle">
                     PEMERIKSAAN
                   </th>
-                  <th scope="col" colSpan={10} className="header-table">
+                  <th scope="col" colSpan={10} className="header-table align-middle">
                     C/N UNIT
                   </th>
+                </tr>
+                <tr>
+                  <th>CN</th>
+                  <th>CN</th>
+                  <th>CN</th>
+                  <th>CN</th>
+                  <th>CN</th>
+                  <th>CN</th>
+                  <th>CN</th>
+                  <th>CN</th>
+                  <th>CN</th>
+                  <th>CN</th>
                 </tr>
               </thead>
               <tbody className="text-start">
                 <tr>
                   <td className="text-center">1</td>
-                  <td className="fw-semibold">
+                  <td width="30%" className="fw-semibold">
                     Apakah penyanggah mud guard utuh & baik
                   </td>
-                  <td>Small dump truck</td>
-                  <td>Data</td>
+                  <td width="15%">Small dump truck</td>
+                  <td>CN</td>
                   <td>Data</td>
                   <td>Data</td>
                   <td>Data</td>
