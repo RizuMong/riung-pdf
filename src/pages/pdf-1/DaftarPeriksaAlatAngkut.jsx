@@ -413,7 +413,7 @@ const DaftarPeriksaAlatAngkut = () => {
                   </td>
                   <td>Small dump truck</td>
                   <td>{q1i}</td>
-                  <td>{q1i}</td>
+                  <td>{q2i}</td>
                   <td>q9</td>
                   <td>q9</td>
                   <td>q9</td>
