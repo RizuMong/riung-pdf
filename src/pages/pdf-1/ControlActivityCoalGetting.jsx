@@ -14,11 +14,15 @@ const ControlActivityCoalGetting = () => {
   const [shift, setShift] = useState("");
   const [penerima, setPenerima] = useState("");
 
-
   //Kolom 1
   const [cn1, setCn1] = useState("");
   const [pit1, setPit1] = useState("");
   const [seam1, setSeam1] = useState("");
+  const [dt_plan1, setDtPlan1] = useState("");
+  const [dt_actual1, setDtActual1] = useState("");
+  const [loading_start1, setLoadingStart1] = useState("");
+
+  const [coal1, setCoal1] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -35,26 +39,24 @@ const ControlActivityCoalGetting = () => {
             shift: "Shift 1",
             lokasi_pkh_id: "9H-UHiT4R",
             id_control_activity_coal_getting: "YGeUNiTVR",
-          }
+          },
         }
       )
       .then((res) => {
         const { data } = res;
         setDatas(data);
         setTanggal(data[0].tanggal);
-        setLokasi(data[0].lokasi)
-        setPenerima(data[0].penerima)
-        setJobsite(data[0].jobsite)
-        setShift(data[0].shift)
-
+        setLokasi(data[0].lokasi);
+        setPenerima(data[0].penerima);
+        setJobsite(data[0].jobsite);
+        setShift(data[0].shift);
 
         // Kolom 1
         setPit1(data[0].data.pit);
         setSeam1(data[0].data.seam);
-        setCn1(data[0].data.cn_unit)
-
-        // Dt Plan: dt_plan
-        // Dt Actual: dt_actual
+        setCn1(data[0].data.cn_unit);
+        setDtPlan1(data[0].data.dt_plan);
+        setDtActual1(data[0].data.dt_actual);
         // Loading Start: loading_start_1
         // Loading Start: loading_start_2
         // Loading Stop: loading_stop_1
@@ -65,9 +67,13 @@ const ControlActivityCoalGetting = () => {
         // Area Pit Slippery: area_pit_slippery
         // Size Coal: size_coal
         // Cleaning: cleaning
+        // Kontaminasi OB: kontaminasi
+        // Kontaminasi Dirty Coal: kontaminasi_dirty_coal
+        // Kantongan Air:
+        // Kelayakan Akses Front Coal: akses_front_coal
+        // Metode Loading: metode_loading
 
-
-        console.log(data[0].data.pit);
+        console.log(data[0].data.dt_plan);
       })
       .catch((err) => {
         alert(err);
@@ -95,8 +101,8 @@ const ControlActivityCoalGetting = () => {
                       alt="Logo RIUNG"
                     />
                     <h5 className="fw-bold header-pt">
-                      PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                      {" "} {jobsite}
+                      PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
+                      {jobsite}
                     </h5>
                   </div>
                 </th>
@@ -110,16 +116,14 @@ const ControlActivityCoalGetting = () => {
                 <th className="col-3">
                   <div className="mb-4">
                     <p className="mb-2 pt-1 px-2 fw-semibold text-alat">
-                      HARI/TANGGAL:{" "} {tanggal} 
+                      HARI/TANGGAL: {tanggal}
                     </p>
                     <hr className="w-100" />
                     <p className="mb-2 px-2 fw-semibold text-alat">
-                      PIT & SHIFT:{" "} {lokasi} & {shift}
+                      PIT & SHIFT: {lokasi} & {shift}
                     </p>
                     <hr className="w-100" />
-                    <p className="mb-2 px-2 fw-semibold text-alat">
-                      HALAMAN:{" "}
-                    </p>
+                    <p className="mb-2 px-2 fw-semibold text-alat">HALAMAN: </p>
                     <hr className="w-100" />
                   </div>
                 </th>
@@ -201,12 +205,26 @@ const ControlActivityCoalGetting = () => {
                     <br />
                     Actual:
                   </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center">
+                    <br /> {dt_plan1} <br /> {dt_actual1}
+                  </td>
+                  <td className="text-center">
+                    {" "}
+                    {/* <br /> {dt_plan2} <br /> {dt_actual2} */}
+                  </td>
+                  <td className="text-center">
+                    {" "}
+                    {/* <br /> {dt_plan3} <br /> {dt_actual3} */}
+                  </td>
+                  <td className="text-center">
+                    {" "}
+                    {/* <br /> {dt_plan4} <br /> {dt_actual4} */}
+                  </td>
+                  <td className="text-center">
+                    {" "}
+                    {/* <br /> {dt_plan5} <br /> {dt_actual5} */}
+                  </td>
+                  <td className="text-center"></td>
                 </tr>
               </tbody>
               <tbody className="text-start">
