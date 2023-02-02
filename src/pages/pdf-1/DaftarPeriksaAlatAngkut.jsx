@@ -173,8 +173,8 @@ const DaftarPeriksaAlatAngkut = () => {
   const [q10m, setQ10m] = useState("");
   const [q10n, setQ10n] = useState("");
 
-  // const windowUrl = window.location.search;
-  // const queryParams = new URLSearchParams(windowUrl);
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
 
   useEffect(() => {
     fetchData();
@@ -186,34 +186,34 @@ const DaftarPeriksaAlatAngkut = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa-alat-angkut-batubara",
         {
           data: {
-            tanggal: 1673136000000,
-            lokasi: "test pdf 1",
-            shift: "Shift 1",
-            is_hauling: true,
+            tanggal: queryParams.get("tanggal"),
+            lokasi: queryParams.get("lokasi"),
+            shift: queryParams.get("shift"),
+            is_hauling: queryParams.get("is_hauling"),
             dpkab: [
               {
                 tipe: {
-                  id: "",
-                  name: "",
+                  id: queryParams.get("tipe"),
+                  name: queryParams.get("name"),
                 },
                 cn_unit: {
-                  id: "",
-                  name: "",
+                  id: queryParams.get("id"),
+                  name: queryParams.get("name"),
                 },
-                q1: true,
-                q2: true,
-                q3: true,
-                q4: false,
-                q5: false,
-                q6: true,
-                q7: true,
-                q8: false,
-                q9: true,
-                q10: false,
-                q11: true,
-                q12: false,
-                q13: false,
-                q14: true,
+                q1: queryParams.get("q1"),
+                q2: queryParams.get("q2"),
+                q3: queryParams.get("q3"),
+                q4: queryParams.get("q4"),
+                q5: queryParams.get("q5"),
+                q6: queryParams.get("q6"),
+                q7: queryParams.get("q7"),
+                q8: queryParams.get("q8"),
+                q9: queryParams.get("q9"),
+                q10: queryParams.get("q10"),
+                q11: queryParams.get("q11"),
+                q12: queryParams.get("q12"),
+                q13: queryParams.get("q13"),
+                q14: queryParams.get("q14"),
               },
             ],
             id_daftar_periksa_kontaminasi_alat_batubara: "fqgwNmoVg",
@@ -485,16 +485,16 @@ const DaftarPeriksaAlatAngkut = () => {
                   </th>
                 </tr>
                 <tr className="text-center">
-                  <th>CN</th>
-                  <th>CN</th>
-                  <th>CN</th>
-                  <th>CN</th>
-                  <th>CN</th>
-                  <th>CN</th>
-                  <th>CN</th>
-                  <th>CN</th>
-                  <th>CN</th>
-                  <th>CN</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
                 </tr>
               </thead>
               <tbody className="text-start">
@@ -553,7 +553,9 @@ const DaftarPeriksaAlatAngkut = () => {
                 </tr>
                 <tr className="text-center">
                   <td className="text-center">4</td>
-                  <td className="fw-semibold text-start">Apakah U-bolt utuh & kencang</td>
+                  <td className="fw-semibold text-start">
+                    Apakah U-bolt utuh & kencang
+                  </td>
                   <td className="text-start">Small dump truck</td>
                   <td>{q1d}</td>
                   <td>{q2d}</td>
@@ -566,12 +568,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9d}</td>
                   <td>{q10d}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">5</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah komponen undercarriage utuh & terikat
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1e}</td>
                   <td>{q2e}</td>
                   <td>{q3e}</td>
@@ -583,12 +585,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9e}</td>
                   <td>{q10e}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">6</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah bagian dalam vessel bersih
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1f}</td>
                   <td>{q2f}</td>
                   <td>{q3f}</td>
@@ -600,12 +602,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9f}</td>
                   <td>{q10f}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">7</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah plat vessel tidak ada yang robek
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1g}</td>
                   <td>{q2g}</td>
                   <td>{q3g}</td>
@@ -617,12 +619,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9g}</td>
                   <td>{q10g}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">8</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah kondisi tailgate & pintu utuh & baik
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1h}</td>
                   <td>{q2h}</td>
                   <td>{q3h}</td>
@@ -634,12 +636,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9h}</td>
                   <td>{q10h}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">9</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah plat pijakan tangga utuh & terikat
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1i}</td>
                   <td>{q2i}</td>
                   <td>{q3i}</td>
@@ -651,12 +653,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9i}</td>
                   <td>{q10i}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">10</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah extention vessel terikat (las) dengan baik
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1j}</td>
                   <td>{q2j}</td>
                   <td>{q3j}</td>
@@ -668,12 +670,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9j}</td>
                   <td>{q10j}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">11</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah cover/tutup battery utuh & terikat
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1k}</td>
                   <td>{q2k}</td>
                   <td>{q3k}</td>
@@ -685,12 +687,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9k}</td>
                   <td>{q10k}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">12</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah kelengkapan palu tersimpan dengan baik
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1l}</td>
                   <td>{q2l}</td>
                   <td>{q3l}</td>
@@ -702,12 +704,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9l}</td>
                   <td>{q10l}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">13</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah ram pelindung lampu terikat dengan baik
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1m}</td>
                   <td>{q2m}</td>
                   <td>{q3m}</td>
@@ -719,12 +721,12 @@ const DaftarPeriksaAlatAngkut = () => {
                   <td>{q9m}</td>
                   <td>{q10m}</td>
                 </tr>
-                <tr>
+                <tr className="text-center">
                   <td className="text-center">14</td>
-                  <td className="fw-semibold">
+                  <td className="fw-semibold text-start">
                     Apakah kabel dan connector tidak ada yang lepas
                   </td>
-                  <td>Small dump truck</td>
+                  <td className="text-start">Small dump truck</td>
                   <td>{q1n}</td>
                   <td>{q2n}</td>
                   <td>{q3n}</td>
