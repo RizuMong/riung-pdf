@@ -1,11 +1,79 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const ControlActivityCoalGetting = () => {
+  const [datas, setDatas] = useState([]);
+  const [jobsite, setJobsite] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [lokasi, setLokasi] = useState("");
+  const [shift, setShift] = useState("");
+  const [penerima, setPenerima] = useState("");
+
+
+  //Kolom 1
+  const [cn1, setCn1] = useState("");
+  const [pit1, setPit1] = useState("");
+  const [seam1, setSeam1] = useState("");
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/control-activity-coal-getting",
+        {
+          data: {
+            tanggal: 1673136000000,
+            lokasi: "test pdf 1",
+            shift: "Shift 1",
+            lokasi_pkh_id: "9H-UHiT4R",
+            id_control_activity_coal_getting: "YGeUNiTVR",
+          }
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+        setDatas(data);
+        setTanggal(data[0].tanggal);
+        setLokasi(data[0].lokasi)
+        setPenerima(data[0].penerima)
+        setJobsite(data[0].jobsite)
+        setShift(data[0].shift)
+
+
+        // Kolom 1
+        setPit1(data[0].data.pit);
+        setSeam1(data[0].data.seam);
+        setCn1(data[0].data.cn_unit)
+
+        // Dt Plan: dt_plan
+        // Dt Actual: dt_actual
+        // Loading Start: loading_start_1
+        // Loading Start: loading_start_2
+        // Loading Stop: loading_stop_1
+        // Loading Stop: loading_stop_2
+        // Jalan Haulin Hujan: jalan_hauling_hujan
+        // Jalan Haulin Slippery: jalan_hauling_slippery
+        //Area Pit Hujan: area_pit_hujan
+        // Area Pit Slippery: area_pit_slippery
+        // Size Coal: size_coal
+        // Cleaning: cleaning
+
+
+        console.log(data[0].data.pit);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
@@ -28,7 +96,7 @@ const ControlActivityCoalGetting = () => {
                     />
                     <h5 className="fw-bold header-pt">
                       PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                      ...........................
+                      {" "} {jobsite}
                     </h5>
                   </div>
                 </th>
@@ -41,16 +109,16 @@ const ControlActivityCoalGetting = () => {
                 <div className="vr" style={{ height: 100 }}></div>
                 <th className="col-3">
                   <div className="mb-4">
-                    <p className="mb-2 pt-1 px-2 text-serif fw-semibold text-alat">
-                      Hari/Tanggal:{" "}
+                    <p className="mb-2 pt-1 px-2 fw-semibold text-alat">
+                      HARI/TANGGAL:{" "} {tanggal} 
                     </p>
                     <hr className="w-100" />
-                    <p className="mb-2 px-2 text-serif fw-semibold text-alat">
-                      Lokasi:{" "}
+                    <p className="mb-2 px-2 fw-semibold text-alat">
+                      PIT & SHIFT:{" "} {lokasi} & {shift}
                     </p>
                     <hr className="w-100" />
-                    <p className="mb-2 px-2 text-serif fw-semibold text-alat">
-                      Halaman:{" "}
+                    <p className="mb-2 px-2 fw-semibold text-alat">
+                      HALAMAN:{" "}
                     </p>
                     <hr className="w-100" />
                   </div>
@@ -72,19 +140,19 @@ const ControlActivityCoalGetting = () => {
                     PEMERIKSAAN
                   </th>
                   <th scope="col-3" className="header-table-coal text-start">
-                    C/N UNIT
+                    C/N UNIT: {cn1}
                   </th>
                   <th scope="col-3" className="header-table-coal text-start">
-                    C/N UNIT
+                    C/N UNIT:
                   </th>
                   <th scope="col-3" className="header-table-coal text-start">
-                    C/N UNIT
+                    C/N UNIT:
                   </th>
                   <th scope="col-3" className="header-table-coal text-start">
-                    C/N UNIT
+                    C/N UNIT:
                   </th>
                   <th scope="col-3" className="header-table-coal text-start">
-                    C/N UNIT
+                    C/N UNIT:
                   </th>
                   <th
                     scope="col-3"
@@ -97,9 +165,9 @@ const ControlActivityCoalGetting = () => {
                 </tr>
                 <tr>
                   <th scope="col-3" className="header-table-coal text-start">
-                    PIT:
+                    PIT: {pit1}
                     <br />
-                    SEAM:
+                    SEAM: {seam1}
                   </th>
                   <th scope="col-3" className="header-table-coal text-start">
                     PIT:
@@ -299,7 +367,7 @@ const ControlActivityCoalGetting = () => {
                 </div>
                 <div className="col-4 text-center">
                   <p>Mengetahui,</p>
-                  <p className="mt-5">()</p>
+                  <p className="mt-5">({penerima})</p>
                   <p>Customer</p>
                 </div>
               </div>
