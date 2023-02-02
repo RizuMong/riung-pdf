@@ -20,7 +20,8 @@ const ControlActivityCoalGetting = () => {
   const [seam1, setSeam1] = useState("");
   const [dt_plan1, setDtPlan1] = useState("");
   const [dt_actual1, setDtActual1] = useState("");
-  const [loading_start1, setLoadingStart1] = useState("");
+  const [loading_start1a, setLoadingStart1a] = useState("");
+  const [loading_start2a, setLoadingStart2a] = useState("");
 
   const [coal1, setCoal1] = useState("");
 
@@ -57,6 +58,8 @@ const ControlActivityCoalGetting = () => {
         setCn1(data[0].data.cn_unit);
         setDtPlan1(data[0].data.dt_plan);
         setDtActual1(data[0].data.dt_actual);
+        setLoadingStart1a(data[0].data.loading_start_1)
+        setLoadingStart2a(data[0].data.loading_start_2)
         // Loading Start: loading_start_1
         // Loading Start: loading_start_2
         // Loading Stop: loading_stop_1
@@ -196,6 +199,7 @@ const ControlActivityCoalGetting = () => {
                 </tr>
               </thead>
 
+              {/* Jumlah DT */}
               <tbody className="text-start">
                 <tr>
                   <td>
@@ -227,6 +231,7 @@ const ControlActivityCoalGetting = () => {
                   <td className="text-center"></td>
                 </tr>
               </tbody>
+              {/* Loading */}
               <tbody className="text-start">
                 <tr>
                   <td>
@@ -243,14 +248,16 @@ const ControlActivityCoalGetting = () => {
                       <span>Stop:</span>
                     </div>
                   </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center"> <br/> {loading_start1a} - {loading_start2a} </td>
+                  {/* <td className="text-center"> <br/> {loading_start1b} - {loading_start2b} </td> */}
+                  {/* <td className="text-center"> <br/> {loading_start1c} - {loading_start2c} </td> */}
+                  {/* <td className="text-center"> <br/> {loading_start1d} - {loading_start2d} </td> */}
+                  {/* <td className="text-center"> <br/> {loading_start1e} - {loading_start2e} </td> */}
+                 
                   <td></td>
                 </tr>
               </tbody>
+              {/* Jalan Hauling */}
               <tbody className="text-start">
                 <tr>
                   <td>
@@ -262,7 +269,7 @@ const ControlActivityCoalGetting = () => {
                       <span>Slippery:</span>
                     </div>
                   </td>
-                  <td></td>
+                  <td className="text-center">Jalan</td>
                   <td></td>
                   <td></td>
                   <td></td>
