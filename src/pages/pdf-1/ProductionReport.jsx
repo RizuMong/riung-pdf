@@ -11,6 +11,7 @@ const ProductionReport = () => {
   const [diterima, setDiterima] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
+  const [jobsite, setJobsite] = useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -60,6 +61,7 @@ const ProductionReport = () => {
         if (res.data && res.data[0] && res.data[0].shift) {
           setShift(res.data[0].shift);
         }
+        setJobsite(data[0]?.jobsite)
       })
       .catch((err) => {
         alert(err);
@@ -88,7 +90,7 @@ const ProductionReport = () => {
                       />
                       <h5 className="fw-bold text-lg">
                         PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                        ...........................
+                        {" "} {jobsite}
                       </h5>
                     </div>
                   </th>
