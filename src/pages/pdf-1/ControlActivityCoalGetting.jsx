@@ -360,14 +360,14 @@ const ControlActivityCoalGetting = () => {
                     width="14%"
                     className="header-table-coal text-start"
                   >
-                    C/N UNIT:
+                    C/N UNIT: {cn4}
                   </th>
                   <th
                     scope="col-3"
                     width="14%"
                     className="header-table-coal text-start"
                   >
-                    C/N UNIT:
+                    C/N UNIT: {cn5}
                   </th>
                   <th
                     scope="col-3"
