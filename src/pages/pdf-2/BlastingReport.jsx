@@ -1,7 +1,6 @@
 import React from "react";
 import { WithRouter } from "../../utils/Navigation";
 
-// import Img_Sketsa from "../../assets/img_sketsa.jpg";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 

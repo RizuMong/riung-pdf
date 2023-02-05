@@ -25,6 +25,9 @@ import DrillDesign from "../pages/pdf-2/DrillDesign";
 import DrillingReport from "../pages/pdf-2/DrillingReport";
 import FormPengambilanBahanPeledak from "../pages/pdf-2/FormPengambilanBahanPeledak";
 import PemeriksaanKondisiLubangLedak from "../pages/pdf-2/PemeriksaanKondisiLubangLedak";
+import FormKehadiran from "../pages/pdf-2/FormKehadiran";
+import LembarPica from "../pages/pdf-2/LembarPica";
+import MinutesOfMeeting from "../pages/pdf-2/MinutesOfMeeting";
 
 const Index = () => {
   return (
@@ -98,6 +101,9 @@ const Index = () => {
           path="/berita-acara-peledakan"
           element={<BeritaAcaraPeledakan />}
         />
+        <Route path="/form-kehadiran" element={<FormKehadiran />} />
+        <Route path="/lembar-pica" element={<LembarPica />} />
+        <Route path="/minutes-of-meeting" element={<MinutesOfMeeting />} />
       </Routes>
     </BrowserRouter>
   );
