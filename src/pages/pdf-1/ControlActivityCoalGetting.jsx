@@ -22,7 +22,21 @@ const ControlActivityCoalGetting = () => {
   const [dt_actual1, setDtActual1] = useState("");
   const [loading_start1a, setLoadingStart1a] = useState("");
   const [loading_start2a, setLoadingStart2a] = useState("");
+  const [loading_stop1a, setLoadingStop1a] = useState("");
+  const [loading_stop2a, setLoadingStop2a] = useState("");
+  const [jalan_hauling_hujan1, setJalanHaulingHujan1a] = useState("");
+  const [jalan_hauling_slippery1, setJalanHaulingSlippery1a] = useState("");
+  const [area_pit_hujan1, setAreaPitHujan1a] = useState("");
+  const [area_pit_slippery1, setAreaPitSlippery1a] = useState("");
+  const [size_coal1, setSizeCoal1] = useState("");
+  const [cleaning1, setCleaning1] = useState("");
+  const [kontaminasi1, setKontaminasi1] = useState("");
+  const [kontaminasi_dirty_coal1, setDirtyCoal1] = useState("");
+  const [kantongan_air1, setKantonganAir1] = useState("");
+  const [kelayakan_akses1, setKelayakanAkses1] = useState("");
+  const [metode_loading1, setMetodeLoading1] = useState("");
 
+  //Kolom 2
   const [coal1, setCoal1] = useState("");
 
   useEffect(() => {
@@ -58,23 +72,21 @@ const ControlActivityCoalGetting = () => {
         setCn1(data[0].data.cn_unit);
         setDtPlan1(data[0].data.dt_plan);
         setDtActual1(data[0].data.dt_actual);
-        setLoadingStart1a(data[0].data.loading_start_1)
-        setLoadingStart2a(data[0].data.loading_start_2)
-        // Loading Start: loading_start_1
-        // Loading Start: loading_start_2
-        // Loading Stop: loading_stop_1
-        // Loading Stop: loading_stop_2
-        // Jalan Haulin Hujan: jalan_hauling_hujan
-        // Jalan Haulin Slippery: jalan_hauling_slippery
-        //Area Pit Hujan: area_pit_hujan
-        // Area Pit Slippery: area_pit_slippery
-        // Size Coal: size_coal
-        // Cleaning: cleaning
-        // Kontaminasi OB: kontaminasi
-        // Kontaminasi Dirty Coal: kontaminasi_dirty_coal
-        // Kantongan Air:
-        // Kelayakan Akses Front Coal: akses_front_coal
-        // Metode Loading: metode_loading
+        setLoadingStart1a(data[0].data.loading_start_1);
+        setLoadingStart2a(data[0].data.loading_start_2);
+        setLoadingStop1a(data[0].data.loading_stop_1);
+        setLoadingStop2a(data[0].data.loading_stop_2);
+        setJalanHaulingHujan1a(data[0].data.jalan_hauling_hujan);
+        setJalanHaulingSlippery1a(data[0].data.jalan_hauling_slippery);
+        setAreaPitHujan1a(data[0].data.area_pit_hujan);
+        setAreaPitSlippery1a(data[0].data.area_pit_slippery)
+        setSizeCoal1(data[0].data.size_coal)
+        setCleaning1(data[0].data.cleaning)
+        setKontaminasi1(data[0].data.kontaminasi)
+        setDirtyCoal1(data[0].data.kontaminasi_dirty_coal)
+        // Kantongan Air: Belum ada datanya
+        setKelayakanAkses1(data[0].data.akses_front_coal)
+        setMetodeLoading1(data[0].data.metode_loading)
 
         console.log(data[0].data.dt_plan);
       })
@@ -140,58 +152,78 @@ const ControlActivityCoalGetting = () => {
                 <tr>
                   <th
                     rowSpan={2}
+                    width="15%"
                     scope="col-3"
-                    className="header-table-coal2"
-                    style={{ verticalAlign: "middle" }}
+                    className="header-table-coal2 align-middle"
                   >
                     PEMERIKSAAN
                   </th>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th
+                    scope="col-3"
+                    width="14%"
+                    className="header-table-coal text-start"
+                  >
                     C/N UNIT: {cn1}
                   </th>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th
+                    scope="col-3"
+                    width="14%"
+                    className="header-table-coal text-start"
+                  >
                     C/N UNIT:
                   </th>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th
+                    scope="col-3"
+                    width="14%"
+                    className="header-table-coal text-start"
+                  >
                     C/N UNIT:
                   </th>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th
+                    scope="col-3"
+                    width="14%"
+                    className="header-table-coal text-start"
+                  >
                     C/N UNIT:
                   </th>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th
+                    scope="col-3"
+                    width="14%"
+                    className="header-table-coal text-start"
+                  >
                     C/N UNIT:
                   </th>
                   <th
                     scope="col-3"
                     rowSpan={2}
-                    className="header-table-coal2"
-                    style={{ verticalAlign: "middle" }}
+                    width="15%"
+                    className="header-table-coal2 align-middle"
                   >
                     KETERANGAN
                   </th>
                 </tr>
                 <tr>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th scope="col-3" width="14%" className="header-table-coal text-start">
                     PIT: {pit1}
                     <br />
                     SEAM: {seam1}
                   </th>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th scope="col-3" width="14%" className="header-table-coal text-start">
                     PIT:
                     <br />
                     SEAM:
                   </th>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th scope="col-3" width="14%" className="header-table-coal text-start">
                     PIT:
                     <br />
                     SEAM:
                   </th>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th scope="col-3" width="14%" className="header-table-coal text-start">
                     PIT:
                     <br />
                     SEAM:
                   </th>
-                  <th scope="col-3" className="header-table-coal text-start">
+                  <th scope="col-3" width="14%" className="header-table-coal text-start">
                     PIT:
                     <br />
                     SEAM:
@@ -248,12 +280,31 @@ const ControlActivityCoalGetting = () => {
                       <span>Stop:</span>
                     </div>
                   </td>
-                  <td className="text-center"> <br/> {loading_start1a} - {loading_start2a} </td>
-                  {/* <td className="text-center"> <br/> {loading_start1b} - {loading_start2b} </td> */}
-                  {/* <td className="text-center"> <br/> {loading_start1c} - {loading_start2c} </td> */}
-                  {/* <td className="text-center"> <br/> {loading_start1d} - {loading_start2d} </td> */}
-                  {/* <td className="text-center"> <br/> {loading_start1e} - {loading_start2e} </td> */}
-                 
+                  <td className="text-center text-sm">
+                    {" "}
+                    <br /> {loading_start1a} - {loading_start2a} <br />{" "}
+                    {loading_stop1a} - {loading_stop2a}{" "}
+                  </td>
+                  {/* <td className="text-center text-sm">
+                    {" "}
+                    <br /> {loading_start1a} - {loading_start2a}{" "}
+                    <br /> {loading_stop1a} - {loading_stop2a}{" "}
+                  </td>
+                  <td className="text-center text-sm">
+                    {" "}
+                    <br /> {loading_start1a} - {loading_start2a}{" "}
+                    <br /> {loading_stop1a} - {loading_stop2a}{" "}
+                  </td>
+                  <td className="text-center text-sm">
+                    {" "}
+                    <br /> {loading_start1a} - {loading_start2a}{" "}
+                    <br /> {loading_stop1a} - {loading_stop2a}{" "}
+                  </td>
+                  <td className="text-center text-sm">
+                    {" "}
+                    <br /> {loading_start1a} - {loading_start2a}{" "}
+                    <br /> {loading_stop1a} - {loading_stop2a}{" "}
+                  </td> */}
                   <td></td>
                 </tr>
               </tbody>
@@ -269,14 +320,18 @@ const ControlActivityCoalGetting = () => {
                       <span>Slippery:</span>
                     </div>
                   </td>
-                  <td className="text-center">Jalan</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center text-sm">
+                    <br />
+                    {jalan_hauling_hujan1} - {jalan_hauling_slippery1}
+                  </td>
+                  <td className="text-center text-sm"></td>
+                  <td className="text-center text-sm"></td>
+                  <td className="text-center text-sm"></td>
+                  <td className="text-center text-sm"></td>
+                  <td className="text-center text-sm"></td>
                 </tr>
               </tbody>
+              {/* Area Pit */}
               <tbody className="text-start">
                 <tr>
                   <td>
@@ -288,89 +343,112 @@ const ControlActivityCoalGetting = () => {
                       <span>Slippery:</span>
                     </div>
                   </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center text-sm">
+                    <br />
+                    {area_pit_hujan1} - {area_pit_slippery1}
+                  </td>
+                  <td className="text-center text-sm">
+                    <br />
+                    {/* Data2 */}
+                  </td>
+                  <td className="text-center text-sm">
+                    <br />
+                    {/* Data3 */}
+                  </td>
+                  <td className="text-center text-sm">
+                    <br />
+                    {/* Data4 */}
+                  </td>
+                  <td className="text-center text-sm">
+                    <br />
+                    {/* Data5 */}
+                  </td>
+                  <td className="text-center text-sm">
+                  </td>
                 </tr>
               </tbody>
+              {/* Size Coal */}
               <tbody className="text-start">
                 <tr>
                   <td>Size Coal:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center">{size_coal1}</td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
                 </tr>
               </tbody>
+              {/* Cleaning */}
               <tbody className="text-start">
                 <tr>
                   <td>Cleaning:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center">{cleaning1}</td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
                 </tr>
               </tbody>
+              {/* Kontaminasi */}
               <tbody className="text-start">
                 <tr>
                   <td>Kontaminasi OB:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center">{kontaminasi1}</td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
                 </tr>
               </tbody>
+              {/* Kontaminasi Dirty Coal */}
               <tbody className="text-start">
                 <tr>
                   <td>Kontaminasi dirty coal:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center">{kontaminasi_dirty_coal1}</td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
                 </tr>
               </tbody>
+              {/* Kantongan Air */}
               <tbody className="text-start">
                 <tr>
                   <td>Kantongan air:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
                 </tr>
               </tbody>
+              {/* Kelayakan Jalan */}
               <tbody className="text-start">
                 <tr>
                   <td>Kelayakan jalan:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center">{kelayakan_akses1}</td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
                 </tr>
               </tbody>
+              {/* Metode Loading */}
               <tbody className="text-start">
                 <tr>
                   <td>Metode loading:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td className="text-center">{metode_loading1}</td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
+                  <td className="text-center"></td>
                 </tr>
               </tbody>
             </Table>
