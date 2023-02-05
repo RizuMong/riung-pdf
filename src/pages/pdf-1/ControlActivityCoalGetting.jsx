@@ -124,6 +124,9 @@ const ControlActivityCoalGetting = () => {
   const [kelayakan_akses5, setKelayakanAkses5] = useState("");
   const [metode_loading5, setMetodeLoading5] = useState("");
 
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -134,11 +137,13 @@ const ControlActivityCoalGetting = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/control-activity-coal-getting",
         {
           data: {
-            tanggal: 1673136000000,
-            lokasi: "test pdf 1",
-            shift: "Shift 1",
-            lokasi_pkh_id: "9H-UHiT4R",
-            id_control_activity_coal_getting: "YGeUNiTVR",
+            tanggal: queryParams.get("tanggal"),
+            lokasi: queryParams.get("lokasi"),
+            shift: queryParams.get("shift"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            id_control_activity_coal_getting: queryParams.get(
+              "id_control_activity_coal_getting"
+            ),
           },
         }
       )
