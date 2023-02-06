@@ -28,7 +28,7 @@ const MinutesOfMeeting = () => {
         <p className="text-sm pl-5">Lokasi:</p>
       </div>
 
-      {/* Table Peserta */}
+      {/* Table Peserta (Missing Width) */}
       <Table responsive bordered>
         <thead>
           <tr>
@@ -56,7 +56,7 @@ const MinutesOfMeeting = () => {
         <p className="text-sm fw-semibold">Nama Meeting: </p>
       </div>
 
-      {/* Table Content */}
+      {/* Table Content (Missing Width) */}
       <Table responsive bordered hover>
         <thead>
           <tr className="text-center">
