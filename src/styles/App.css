@@ -38,6 +38,10 @@ table {
   }
 }
 
+.table-abu {
+  background-color: #bdcbe2 !important;
+}
+
 /* Styling Excavator Control */
 .header-excavator {
   font-size: 30px;
@@ -81,7 +85,7 @@ hr.solid {
 }
 
 .text-normal {
-  font-weight: var(--main-font);
+  font-family: var(--main-font);
 }
 
 .header-alat-angkut {
