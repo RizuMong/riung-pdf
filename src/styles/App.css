@@ -26,6 +26,7 @@ p {
 
 table {
   margin: 0;
+  margin-bottom: 0 !important;
 }
 
 @media print {

@@ -9,7 +9,7 @@ const ReportPitService = () => {
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
-        <p className="text-end fst-italic">FRM-OPR-018</p>
+        <p className="text-end fst-italic text-sm">FRM-OPR-018</p>
         <div className="border border-3 border-dark">
           <div className="p-1">
             <div className="row align-items-center">
@@ -18,7 +18,7 @@ const ReportPitService = () => {
                 <thead>
                   <th className="col-3">
                     {" "}
-                    <div className="d-flex gap-3 mb-3">
+                    <div className="d-flex gap-3 ">
                       <img
                         className="pl-2"
                         src={LogoRiung}
@@ -28,25 +28,23 @@ const ReportPitService = () => {
                       />
                       <h5 className="fw-bold text-lg">
                         PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                        ...........................
+                        RMGM
                       </h5>
                     </div>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 60 }}></div>
                   <th className="col-6">
-                    <h1 className="header-report-pit mb-6">
+                    <h1 className="header-report-pit mb-3">
                       HANDOVER REPORT FOR PIT SERVICE ACTIVITY
                     </h1>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 60 }}></div>
                   <th className="col-3">
-                    <div className="mb-4">
-                      <p className="mb-2 px-2 text-serif fw-semibold text-alat">
+                    <div className="mb-2">
+                      <p className="mb-2 px-2 fw-semibold text-alat">
                         Hari/Tanggal:{" "}
                       </p>
-                      <p className="mb-2 px-2 text-serif fw-semibold text-alat">
-                        Shift:{" "}
-                      </p>
+                      <p className="mb-2 px-2 fw-semibold text-alat">SHIFT: </p>
                     </div>
                   </th>
                 </thead>
@@ -55,7 +53,7 @@ const ReportPitService = () => {
             <hr className="w-100 solid" />
 
             {/* Table Content */}
-            <Table bordered hover className="text-center mt-3">
+            <Table bordered hover className="text-center">
               <thead>
                 <tr>
                   <th scope="col" className="header-table-pit">
@@ -81,91 +79,11 @@ const ReportPitService = () => {
               <tbody className="text-start">
                 <tr>
                   <td className="text-center">1</td>
-                  <td>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </td>
-                  <td>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </td>
-                  <td>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </td>
-                  <td>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </td>
-                  <td>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
               </tbody>
             </Table>
@@ -173,22 +91,22 @@ const ReportPitService = () => {
             <hr className="w-100 solid m-0" />
 
             {/* Content Bottom */}
-            <div className="container px-5 pt-3">
+            <div className="container px-5 mt-2">
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
-                  <p>Dibuat oleh,</p>
-                  <p className="mt-5">()</p>
-                  <p>Pit Service Group Leader</p>
+                  <p className="text-sm">Dibuat oleh,</p>
+                  <p className="mt-4">()</p>
+                  <p className="text-sm">Pit Service Group Leader</p>
                 </div>
                 <div className="col-4 text-center gap-5">
-                  <p>Diserahkan oleh:</p>
-                  <p className="mt-5">()</p>
-                  <p>Prod. Dept/Section Head</p>
+                  <p className="text-sm">Diserahkan oleh:</p>
+                  <p className="mt-4">()</p>
+                  <p className="text-sm">Prod. Dept/Section Head</p>
                 </div>
                 <div className="col-4 text-center">
-                  <p>Diterima oleh,</p>
-                  <p className="mt-5">()</p>
-                  <p>Pit Service Group Leader</p>
+                  <p className="text-sm">Diterima oleh,</p>
+                  <p className="mt-4">()</p>
+                  <p className="text-sm">Pit Service Group Leader</p>
                 </div>
               </div>
             </div>
