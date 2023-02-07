@@ -17,7 +17,7 @@ const RoadMaintenanceHandover = () => {
               <thead>
                 <th className="col-4">
                   {" "}
-                  <div className="d-flex gap-3 mb-3">
+                  <div className="d-flex gap-3 mb-2 align-items-center">
                     <img
                       className="pl-2"
                       src={LogoRiung}
@@ -25,21 +25,21 @@ const RoadMaintenanceHandover = () => {
                       height="60"
                       alt="Logo RIUNG"
                     />
-                    <h5 className="fw-bold header-road">
+                    <h5 className="fw-bold header-road text-base">
                       PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
                       ...........................
                     </h5>
                   </div>
                 </th>
-                <div className="vr" style={{ height: 100 }}></div>
+                <div className="vr" style={{ height: 70 }}></div>
                 <th className="col-5">
-                  <h1 className="header-production-control mb-7">
+                  <h1 className="header-production-control mb-4">
                     ROAD MAINTENANCE HANDOVER
                   </h1>
                 </th>
-                <div className="vr" style={{ height: 100 }}></div>
+                <div className="vr" style={{ height: 70 }}></div>
                 <th className="col-3">
-                  <div className="mb-4">
+                  <div className="mb-3">
                     <p className="mb-3 px-2 fw-semibold text-alat">
                       Hari/Tanggal:{" "}
                     </p>
@@ -52,7 +52,7 @@ const RoadMaintenanceHandover = () => {
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}
             {/* Table Kegiatatan */}
-            <table class="table table-bordered caption-top mt-4">
+            <table class="table table-bordered caption-top mt-3">
               <caption className="text-black fw-semibold">Kegiatan</caption>
               <thead className="text-center">
                 <tr>
@@ -76,24 +76,16 @@ const RoadMaintenanceHandover = () => {
             </table>
 
             {/* Table Material ( Patching / resheeting ) */}
-            <table class="table table-bordered caption-top mt-5">
+            <table class="table table-bordered caption-top mt-3">
               <caption className="text-black fw-semibold">
                 Material ( Patching / resheeting )
               </caption>
               <thead className="text-center">
                 <tr>
-                  <th
-                    rowSpan={2}
-                    scope="col"
-                    style={{ verticalAlign: "middle" }}
-                  >
+                  <th rowSpan={2} scope="col" className="align-middle">
                     Jenis Material
                   </th>
-                  <th
-                    rowSpan={2}
-                    scope="col"
-                    style={{ verticalAlign: "middle" }}
-                  >
+                  <th rowSpan={2} scope="col" className="align-middle">
                     Jenis Pekerjaan
                   </th>
                   <th scope="col">Pengangkutan</th>
@@ -121,7 +113,7 @@ const RoadMaintenanceHandover = () => {
             </table>
 
             {/* Table A2B & Water Trailler */}
-            <table class="table table-bordered caption-top mt-5">
+            <table class="table table-bordered caption-top mt-3">
               <caption className="text-black fw-semibold">
                 A2B & Water Trailler
               </caption>
@@ -142,12 +134,12 @@ const RoadMaintenanceHandover = () => {
             </table>
 
             {/* Catatan Problem */}
-            <div className="w-100 p-2 border h-100 mt-5 mb-5">
+            <div className="w-100 p-2 border h-100 mt-3 mb-3">
               <p className="fw-semibold problem-note fs-5">Catatan Problem:</p>
             </div>
 
             {/* Content Bottom */}
-            <div className="container px-5 pt-3 pb-4">
+            <div className="container px-5 mt-3 pb-4">
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-normal">Dibuat oleh,</p>
