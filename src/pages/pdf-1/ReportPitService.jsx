@@ -26,7 +26,7 @@ const ReportPitService = () => {
                         height="40"
                         alt="Logo RIUNG"
                       />
-                      <h5 className="fw-bold text-lg">
+                      <h5 className="fw-bold text-lg mb-4">
                         PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
                         RMGM
                       </h5>
@@ -34,7 +34,7 @@ const ReportPitService = () => {
                   </th>
                   <div className="vr" style={{ height: 60 }}></div>
                   <th className="col-6">
-                    <h1 className="header-report-pit mb-3">
+                    <h1 className="header-report-pit mb-4">
                       HANDOVER REPORT FOR PIT SERVICE ACTIVITY
                     </h1>
                   </th>
