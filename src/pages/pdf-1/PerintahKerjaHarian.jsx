@@ -1,10 +1,91 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const PerintahKerjaHarian = () => {
+  const [datas, setDatas] = useState([]);
+  const [jobsite, setJobsite] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [lokasi, setLokasi] = useState("");
+  const [dibuat, setDibuat] = useState("");
+  const [dilaporkan, setDilaporkan] = useState("");
+  const [dilaksanakan, setDilaksanakan] = useState("");
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/instruksi-kerja/pkh",
+        {
+          data: {
+            _id: queryParams.get("_id"),
+            company_id: queryParams.get("company_id"),
+            created_at: queryParams.get("created_at"),
+            created_by: queryParams.get("created_by"),
+            dibuat: {
+              company_user_id: queryParams.get("dibuat.company_user_id"),
+              email: queryParams.get("dibuat.email"),
+              name: queryParams.get("dibuat.name"),
+              photo: queryParams.get("dibuat.photo"),
+            },
+            dilaksanakan: {
+              company_user_id: queryParams.get("dilaksanakan.company_user_id"),
+              email: queryParams.get("dilaksanakan.email"),
+              name: queryParams.get("dilaksanakan.name"),
+              photo: queryParams.get("dilaksanakan.photo"),
+            },
+            dilaporkan: {
+              company_user_id: queryParams.get("dilaporkan.company_user_id"),
+              email: queryParams.get("dilaporkan.email"),
+              name: queryParams.get("dilaporkan.name"),
+              photo: queryParams.get("dilaporkan.photo"),
+            },
+            id: queryParams.get("id"),
+            id_lokasi_pkh: queryParams.get("id_lokasi_pkh"),
+            jobsite: {
+              id: queryParams.get("jobsite.id"),
+              name: queryParams.get("jobsite.name"),
+            },
+            jobsite_text: queryParams.get("jobsite_text"),
+            kategori: queryParams.get("kategori"),
+            logbook_id: queryParams.get("logbook_id"),
+            lokasi: queryParams.get("lokasi"),
+            penerima_pkh: {
+              company_user_id: queryParams.get("penerima_pkh.company_user_id"),
+              email: queryParams.get("penerima_pkh.email"),
+              name: queryParams.get("penerima_pkh.name"),
+              photo: queryParams.get("penerima_pkh.photo"),
+            },
+            pkh_id: queryParams.get("pkh_id"),
+            plan_productivity: queryParams.get("plan_productivity"),
+            shift: queryParams.get("shift"),
+            tanggal: queryParams.get("tanggal"),
+            updated_at: queryParams.get("updated_at"),
+            updated_by: queryParams.get("updated_by"),
+          },
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+        setDatas(data);
+        setJobsite(data[0].jobsite);
+        setTanggal(data[0].tanggal);
+        setLokasi(data[0].lokasi);
+        setDibuat(data[0].dibuat);
+        setDilaporkan(data[0].dilaporkan);
+        setDilaksanakan(data[0].dilaksanakan);
+      });
+  };
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
@@ -61,13 +142,13 @@ const PerintahKerjaHarian = () => {
                   <th className="col-4">
                     <div className="mb-3">
                       <p className="mb-2 mt px-2 fw-normal text-alat">
-                        Jobsite: SMU
+                        Jobsite: {jobsite}
                       </p>
                       <p className="mb-2 px-2 fw-normal text-alat">
-                        Hari/Tanggal: Senin, 23 Mei 2022
+                        Hari/Tanggal: {tanggal}
                       </p>
                       <p className="mb-2 px-2 fw-normal text-alat">
-                        Area: Disposal Void Central Selatan
+                        Area: {lokasi}
                       </p>
                     </div>
                   </th>
@@ -78,65 +159,40 @@ const PerintahKerjaHarian = () => {
 
             {/* Table Content */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-2">
+              <table class="table table-bordered caption-top mt-1 ">
                 <thead className="text-center">
                   <tr>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="5%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="5%" scope="col" className="fs-6 align-middle">
                       NO
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="20%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="20%" scope="col" className="fs-6 align-middle">
                       LOKASI
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="25%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="25%" scope="col" className="fs-6 align-middle">
                       INSTRUKSI KERJA
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="25%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="25%" scope="col" className="fs-6 align-middle">
                       LAPORAN PELAKSANAAN SHIFT 1
                     </th>
-                    <th
-                      style={{ verticalAlign: "middle" }}
-                      width="25%"
-                      scope="col"
-                      className="fs-6"
-                    >
+                    <th width="25%" scope="col" className="fs-6 align-middle">
                       LAPORAN PELAKSANAAN SHIFT 2
                     </th>
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  <tr>
-                    <td className="text-sm fw-normal">1</td>
-                    <td className="text-sm fw-normal">
-                      Disposal Void Central Selatan
-                    </td>
-                    <td className="text-sm fw-normal">
-                      -Dumping material FD pembentukan disposal RL +105
-                      (EX510,460) - Dumping material FD RL +10 (Sekatan) (EX
-                      421, 459)
-                    </td>
-                    <td className="text-sm fw-normal"></td>
-                    <td className="text-sm fw-normal"></td>
-                  </tr>
+                  {datas?.map((item, index) => (
+                    <tr>
+                      <td className="text-sm fw-normal">{index + 1}</td>
+                      <td className="text-sm fw-normal">{item.data.lokasi}</td>
+                      <td className="text-sm fw-normal">
+                        {item.data.instruksi_kerja}
+                      </td>
+                      <td className="text-sm fw-normal">
+                        {item.data.laporan_pelaksanaan_1}
+                      </td>
+                      <td className="text-sm fw-normal"></td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -149,9 +205,7 @@ const PerintahKerjaHarian = () => {
                   <p className="mb-2 mt px-2 fw-normal text-alat">
                     Dibuat: Dept. Head
                   </p>
-                  <p className="mb-2 mt px-2 fw-normal text-alat">
-                    Demzy Tendean
-                  </p>
+                  <p className="mb-2 mt px-2 fw-normal text-alat">{dibuat}</p>
                 </div>
 
                 <div className="d-flex gap-2">
@@ -159,7 +213,7 @@ const PerintahKerjaHarian = () => {
                     Dilaporkan: Section Head
                   </p>
                   <p className="mb-2 mt px-2 fw-normal text-alat">
-                    Yosua H Hutagaol
+                    {dilaporkan}
                   </p>
                 </div>
 
@@ -168,11 +222,9 @@ const PerintahKerjaHarian = () => {
                     Dilaksanakan: Group Leader
                   </p>
                   <p className="mb-2 px-2 fw-semibold text-alat">
-                    ( Bambang S)
+                    ({dilaksanakan})
                   </p>
-                  <p className="mb-2 px-2 fw-semibold text-alat px-5">
-                    ( Andika N)
-                  </p>
+                  <p className="mb-2 px-2 fw-semibold text-alat px-5">()</p>
                 </div>
               </div>
             </div>
