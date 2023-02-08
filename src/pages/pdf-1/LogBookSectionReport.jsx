@@ -136,7 +136,9 @@ const LogBookSectionReport = ({}) => {
                       <td className="text-sm fw-normal">{item?.lokasi}</td>
                       <td className="text-sm fw-normal">{item?.cn_hauler}</td>
                       <td className="text-sm fw-normal">{item?.cn_loader}</td>
-                      <td className="text-sm fw-normal">{item?.cn_support?.name}</td>
+                      <td className="text-sm fw-normal">
+                        {item?.cn_support?.name}
+                      </td>
                       <td className="text-sm fw-normal">{item?.aktivitas}</td>
                       <td className="text-sm fw-normal">{item?.sketsa}</td>
                       <td className="text-sm fw-normal">{item?.status_pkh}</td>

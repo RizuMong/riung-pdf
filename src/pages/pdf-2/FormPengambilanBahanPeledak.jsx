@@ -20,15 +20,15 @@ const FormPengambilanBahanPeledak = () => {
                 height="60"
                 alt="Logo RIUNG"
               />
-              <h5 className="fw-bold text-xl">
+              <h5 className="fw-bold text-lg">
                 PT. RIUNG MITRA LESTARI <br /> JOB SITE : MGM
               </h5>
             </div>
 
             <div className="d-flex justify-content-center py-5">
-              <h1 className="border p-2 w-75 text-center fw-normal">
+              <h2 className="border p-2 w-75 text-center fw-normal">
                 FORMULIR PENGAMBILAN BAHAN PELEDAK
-              </h1>
+              </h2>
             </div>
 
             <hr className="w-100 solid" />
@@ -86,7 +86,10 @@ const FormPengambilanBahanPeledak = () => {
                       Ammonium Nitrate (kg)
                     </th>
                     <th rowSpan={3} className="fw-normal align-middle">
-                      Primer Booster (kg)
+                      Primer Booster (pcs)
+                    </th>
+                    <th rowSpan={3} className="fw-normal align-middle">
+                      Power Gel (kg)
                     </th>
                     <th rowSpan={3} className="fw-normal align-middle">
                       Electric Det. No.8 Inst. (EA)
