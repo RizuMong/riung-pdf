@@ -17,7 +17,7 @@ const DrillingReport = () => {
                 <thead>
                   <th className="col-4">
                     {" "}
-                    <div className="d-flex gap-3 align-items-center mb-4">
+                    <div className="d-flex gap-3 align-items-center mb-6">
                       <img
                         className="pl-2"
                         src={LogoRiung}
@@ -33,9 +33,9 @@ const DrillingReport = () => {
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-5">
-                    <h1 className="header-drill fw-bold mb-6">
+                    <h2 className="header-drill fw-bold mb-7">
                       DRILLING REPORT
-                    </h1>
+                    </h2>
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-3">
