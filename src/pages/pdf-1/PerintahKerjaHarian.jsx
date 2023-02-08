@@ -77,12 +77,12 @@ const PerintahKerjaHarian = () => {
       .then((res) => {
         const { data } = res;
         setDatas(data);
-        setJobsite(data[0].jobsite);
-        setTanggal(data[0].tanggal);
-        setLokasi(data[0].lokasi);
-        setDibuat(data[0].dibuat);
-        setDilaporkan(data[0].dilaporkan);
-        setDilaksanakan(data[0].dilaksanakan);
+        setJobsite(data[0]?.jobsite);
+        setTanggal(data[0]?.tanggal);
+        setLokasi(data[0]?.lokasi);
+        setDibuat(data[0]?.dibuat);
+        setDilaporkan(data[0]?.dilaporkan);
+        setDilaksanakan(data[0]?.dilaksanakan);
       })
       .catch((err) => {
         alert(err);
