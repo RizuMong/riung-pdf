@@ -58,9 +58,6 @@ const ProductionReport = () => {
       .then((res) => {
         const { data } = res;
         setDatas(data);
-        if (res.data && res.data[0] && res.data[0].diterima) {
-          setDiterima(res.data[0].diterima);
-        }
         if (res.data && res.data[0] && res.data[0].tanggal) {
           setTanggal(res.data[0].tanggal);
         }
