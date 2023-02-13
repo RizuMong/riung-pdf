@@ -182,6 +182,7 @@ const LogBookSectionReport = ({}) => {
                     {datas?.unit_stb}
                   </td>
                   <td className="text-sm fw-semibold border border-1">
+                    {datas?.catatan}
                     <br />
                     <br />
                     <br />
