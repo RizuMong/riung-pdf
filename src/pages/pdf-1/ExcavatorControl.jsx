@@ -52,9 +52,9 @@ const ExcavatorControl = () => {
         }
         if (res.data && res.data[0] && res.data[0].shift) {
           setShift(res.data[0].shift);
-        }
-        setPenerima(data[0]?.penerima);
-        setPit(data[0]?.pit);
+        } 
+        setPenerima(res.data[0]?.penerima);
+        setPit(res.data[0]?.pit);
       })
       .catch((err) => {
         alert(err);
