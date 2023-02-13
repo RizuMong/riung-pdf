@@ -12,6 +12,10 @@ const ProductionReport = () => {
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
   const [jobsite, setJobsite] = useState("");
+  const [unit_bd, setUnitBD] = useState("");
+  const [unit_sb, setUnitSB] = useState("");
+  const [catatan, setCatatan] = useState("");
+  
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -62,6 +66,9 @@ const ProductionReport = () => {
           setShift(res.data[0].shift);
         }
         setJobsite(data[0]?.jobsite);
+        setUnitBD(data[0]?.unit_breakdown)
+        setUnitSB(data[0]?.unit_standby)
+        setCatatan(data[0]?.catatan)
       })
       .catch((err) => {
         alert(err);
@@ -478,13 +485,13 @@ const ProductionReport = () => {
               </thead>
               <tbody className="text-center">
                 <td className="text-sm fw-semibold border border-1">
-                  {datas?.unit_breakdown}
+                  {unit_bd}
                 </td>
                 <td className="text-sm fw-semibold border border-1">
-                  {datas?.unit_standby}
+                  {unit_sb}
                 </td>
                 <td className="text-sm fw-semibold border border-1">
-                  {datas?.catatan}
+                  {catatan}
                   <br />
                   <br />
                   <br />
