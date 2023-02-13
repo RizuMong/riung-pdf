@@ -21,11 +21,17 @@ const LogBookSectionReport = ({}) => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
         {
           id_logbook: queryParams.get("id_logbook"),
+          // id_logbook: "5_R_qgJVR",
         }
       )
       .then((res) => {
         const { data } = res;
         setDatas(data);
+
+        console.log(data);  
+        console.log({
+          sketsa: data.line[0].sketsa[0][0].url,
+        });
       })
       .catch((err) => {
         alert(err);
@@ -140,7 +146,10 @@ const LogBookSectionReport = ({}) => {
                         {item?.cn_support?.name}
                       </td>
                       <td className="text-sm fw-normal">{item?.aktivitas}</td>
-                      <td className="text-sm fw-normal">{item?.sketsa}</td>
+                      <td className="text-sm fw-normal">
+                        <img src={item?.sketsa[0][0].url} alt="Riung" width="200" />
+                      </td>
+                      {/* <td className="text-sm fw-normal">sketsa</td> */}
                       <td className="text-sm fw-normal">{item?.status_pkh}</td>
                       <td className="text-sm fw-normal">{item?.problem}</td>
                       <td className="text-sm fw-normal">
