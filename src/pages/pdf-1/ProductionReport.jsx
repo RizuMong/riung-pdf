@@ -8,7 +8,6 @@ import "../../styles/App.css";
 
 const ProductionReport = () => {
   const [datas, setDatas] = useState([]);
-  const [diterima, setDiterima] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
   const [jobsite, setJobsite] = useState("");
@@ -16,7 +15,10 @@ const ProductionReport = () => {
   const [unit_sb, setUnitSB] = useState("");
   const [catatan, setCatatan] = useState("");
   
-
+  const [dibuat, setDibuat] = useState("");
+  const [diserahkan, setDiserahkan] = useState("");
+  const [diterima, setDiterima] = useState("");
+  
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
 
@@ -70,7 +72,9 @@ const ProductionReport = () => {
         setUnitSB(res.data[0]?.unit_standby)
         setCatatan(res.data[0]?.catatan)
 
-        console.log(data[0]?.catatan);
+        setDibuat(res.data[0]?.dibuat_oleh)
+        setDiserahkan(res.data[0]?.diserahkan)
+        setDiterima(res.data[0]?.diterima)
       })
       .catch((err) => {
         alert(err);
@@ -510,12 +514,12 @@ const ProductionReport = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Dibuat oleh,</p>
-                  <p className="mt-5">()</p>
+                  <p className="mt-5">({dibuat})</p>
                   <p className="fw-bold">Group Leader</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan,</p>
-                  <p className="mt-5">()</p>
+                  <p className="mt-5">({diserahkan})</p>
                   <p className="fw-bold">Section Head</p>
                 </div>
                 <div className="col-4 text-center">
