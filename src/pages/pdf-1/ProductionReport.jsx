@@ -65,10 +65,12 @@ const ProductionReport = () => {
         if (res.data && res.data[0] && res.data[0].shift) {
           setShift(res.data[0].shift);
         }
-        setJobsite(data[0]?.jobsite);
-        setUnitBD(data[0]?.unit_breakdown)
-        setUnitSB(data[0]?.unit_standby)
-        setCatatan(data[0]?.catatan)
+        setJobsite(res.data[0]?.jobsite);
+        setUnitBD(res.data[0]?.unit_breakdown)
+        setUnitSB(res.data[0]?.unit_standby)
+        setCatatan(res.data[0]?.catatan)
+
+        console.log(data[0]?.catatan);
       })
       .catch((err) => {
         alert(err);
