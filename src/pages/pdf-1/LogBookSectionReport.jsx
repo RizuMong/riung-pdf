@@ -147,7 +147,7 @@ const LogBookSectionReport = ({}) => {
                       </td>
                       <td className="text-sm fw-normal">{item?.aktivitas}</td>
                       <td className="text-sm fw-normal">
-                        <img src={item?.sketsa[0][0].url} alt="Riung" width="200" />
+                        <img src={item?.sketsa[0][0].url} alt="Riung" width="150" />
                       </td>
                       {/* <td className="text-sm fw-normal">sketsa</td> */}
                       <td className="text-sm fw-normal">{item?.status_pkh}</td>
