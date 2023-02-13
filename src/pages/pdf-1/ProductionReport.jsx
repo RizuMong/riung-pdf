@@ -37,10 +37,10 @@ const ProductionReport = () => {
             lokasi: queryParams.get("lokasi"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             penerima_hop: {
-              company_user_id: queryParams.get("company_user_id"),
-              email: queryParams.get("email"),
-              name: queryParams.get("name"),
-              photo: queryParams.get("photo"),
+              company_user_id: queryParams.get("penerima_hop.company_user_id"),
+              email: queryParams.get("penerima_hop.email"),
+              name: queryParams.get("penerima_hop.name"),
+              photo: queryParams.get("penerima_hop.photo"),
             },
             pkh_id: queryParams.get("pkh_id"),
             shift: queryParams.get("shift"),
@@ -61,7 +61,7 @@ const ProductionReport = () => {
         if (res.data && res.data[0] && res.data[0].shift) {
           setShift(res.data[0].shift);
         }
-        setJobsite(data[0]?.jobsite)
+        setJobsite(data[0]?.jobsite);
       })
       .catch((err) => {
         alert(err);
@@ -89,8 +89,8 @@ const ProductionReport = () => {
                         alt="Logo RIUNG"
                       />
                       <h5 className="fw-bold text-lg">
-                        PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                        {" "} {jobsite}
+                        PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
+                        {jobsite}
                       </h5>
                     </div>
                   </th>
@@ -478,20 +478,13 @@ const ProductionReport = () => {
               </thead>
               <tbody className="text-center">
                 <td className="text-sm fw-semibold border border-1">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
+                  {datas?.unit_breakdown}
                 </td>
                 <td className="text-sm fw-semibold border border-1">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
+                  {datas?.unit_standby}
                 </td>
                 <td className="text-sm fw-semibold border border-1">
+                  {datas?.catatan}
                   <br />
                   <br />
                   <br />
