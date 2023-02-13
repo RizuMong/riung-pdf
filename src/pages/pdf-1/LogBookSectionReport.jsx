@@ -176,18 +176,10 @@ const LogBookSectionReport = ({}) => {
                 </thead>
                 <tbody className="text-center">
                   <td className="text-sm fw-semibold border border-1">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    {datas?.unit_breakdown}
                   </td>
                   <td className="text-sm fw-semibold border border-1">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    {datas?.unit_stb}
                   </td>
                   <td className="text-sm fw-semibold border border-1">
                     <br />
@@ -213,7 +205,7 @@ const LogBookSectionReport = ({}) => {
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
                   <p className="fw-bold mt-5">({datas?.diterima_oleh})</p>
-                  <p className="fw-bold m">Koordinator Shift 2</p>
+                  <p className="fw-bold m">Section Shift 2</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diketahui,</p>
