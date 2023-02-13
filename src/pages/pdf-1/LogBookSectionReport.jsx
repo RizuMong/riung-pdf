@@ -7,6 +7,7 @@ import "../../styles/App.css";
 
 const LogBookSectionReport = ({}) => {
   const [datas, setDatas] = useState([]);
+  const [image, setImage] = useState([]);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -21,17 +22,12 @@ const LogBookSectionReport = ({}) => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
         {
           id_logbook: queryParams.get("id_logbook"),
-          // id_logbook: "5_R_qgJVR",
         }
       )
       .then((res) => {
         const { data } = res;
         setDatas(data);
-
-        console.log(data);  
-        console.log({
-          sketsa: data.line[0].sketsa[0][0].url,
-        });
+        setImage();
       })
       .catch((err) => {
         alert(err);
@@ -136,28 +132,35 @@ const LogBookSectionReport = ({}) => {
                 </thead>
 
                 <tbody className="text-center">
-                  {datas.line?.map((item, index) => (
-                    <tr key={index}>
-                      <td className="text-sm fw-normal">{index + 1}</td>
-                      <td className="text-sm fw-normal">{item?.lokasi}</td>
-                      <td className="text-sm fw-normal">{item?.cn_hauler}</td>
-                      <td className="text-sm fw-normal">{item?.cn_loader}</td>
-                      <td className="text-sm fw-normal">
-                        {item?.cn_support?.name}
-                      </td>
-                      <td className="text-sm fw-normal">{item?.aktivitas}</td>
-                      <td className="text-sm fw-normal">
-                        <img src={item?.sketsa[0][0].url} alt="Riung" width="150" />
-                      </td>
-                      {/* <td className="text-sm fw-normal">sketsa</td> */}
-                      <td className="text-sm fw-normal">{item?.status_pkh}</td>
-                      <td className="text-sm fw-normal">{item?.problem}</td>
-                      <td className="text-sm fw-normal">
-                        {item?.corrective_action}
-                      </td>
-                      <td className="text-sm fw-normal">{item?.paraf}</td>
-                    </tr>
-                  ))}
+                  {datas.line?.map((item, index) => {
+                    return (
+                      <tr key={index}>
+                        <td className="text-sm fw-normal">{index + 1}</td>
+                        <td className="text-sm fw-normal">{item?.lokasi}</td>
+                        <td className="text-sm fw-normal">{item?.cn_hauler}</td>
+                        <td className="text-sm fw-normal">{item?.cn_loader}</td>
+                        <td className="text-sm fw-normal">
+                          {item?.cn_support?.name}
+                        </td>
+                        <td className="text-sm fw-normal">{item?.aktivitas}</td>
+                        <td className="text-sm fw-normal">
+                          <img
+                            src={item?.sketsa.url}
+                            alt={item?.sketsa.name}
+                            width="150"
+                          />
+                        </td>
+                        <td className="text-sm fw-normal">
+                          {item?.status_pkh}
+                        </td>
+                        <td className="text-sm fw-normal">{item?.problem}</td>
+                        <td className="text-sm fw-normal">
+                          {item?.corrective_action}
+                        </td>
+                        <td className="text-sm fw-normal">{item?.paraf}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
 
