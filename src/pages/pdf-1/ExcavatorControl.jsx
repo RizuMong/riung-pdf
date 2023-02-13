@@ -12,6 +12,7 @@ const ExcavatorControl = () => {
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
   const [penerima, setPenerima] = useState("");
+  const [pit, setPit] = useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -53,6 +54,7 @@ const ExcavatorControl = () => {
           setShift(res.data[0].shift);
         }
         setPenerima(data[0]?.penerima);
+        setPit(data[0]?.pit);
       })
       .catch((err) => {
         alert(err);
@@ -93,7 +95,7 @@ const ExcavatorControl = () => {
                 <p className="mb-2 px-2 fw-semibold text-alat">
                   Shift : {shift}
                 </p>
-                <p className="mb-2 px-2 fw-semibold text-alat">PIT : </p>
+                <p className="mb-2 px-2 fw-semibold text-alat">PIT : {pit}</p>
               </div>
             </div>
 
