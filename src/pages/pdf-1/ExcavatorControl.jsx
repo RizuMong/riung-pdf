@@ -132,7 +132,7 @@ const ExcavatorControl = () => {
                     <tr key={index}>
                       <td>{item?.line.jam}</td>
                       <td>{item?.line.cn_loader}</td>
-                      <td>{item?.line.productivity}</td>
+                      <td>{item?.line.actual_productivity}</td>
                       <td>{item?.line.minute}</td>
                       <td>{item?.line.production}</td>
                       <td>
