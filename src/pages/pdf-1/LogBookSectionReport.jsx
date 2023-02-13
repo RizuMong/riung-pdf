@@ -7,7 +7,6 @@ import "../../styles/App.css";
 
 const LogBookSectionReport = ({}) => {
   const [datas, setDatas] = useState([]);
-  const [image, setImage] = useState([]);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
