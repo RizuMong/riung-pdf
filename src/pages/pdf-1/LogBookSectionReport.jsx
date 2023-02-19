@@ -26,7 +26,7 @@ const LogBookSectionReport = ({}) => {
       .then((res) => {
         const { data } = res;
         setDatas(data);
-        setImage();
+        // setImage();
       })
       .catch((err) => {
         alert(err);

@@ -72,6 +72,10 @@ table {
   margin-top: 36px;
 }
 
+.mb-4-5 {
+  margin-bottom: 30px !important;
+}
+
 /* Styling Daftar Periksa Alat Angkut Barang */
 .header-pt {
   font-size: 16px;

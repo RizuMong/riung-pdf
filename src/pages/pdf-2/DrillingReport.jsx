@@ -17,7 +17,7 @@ const DrillingReport = () => {
                 <thead>
                   <th className="col-4">
                     {" "}
-                    <div className="d-flex gap-3 align-items-center mb-6">
+                    <div className="d-flex gap-3 align-items-center mb-4">
                       <img
                         className="pl-2"
                         src={LogoRiung}
@@ -31,24 +31,24 @@ const DrillingReport = () => {
                       </h5>
                     </div>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 80 }}></div>
                   <th className="col-5">
-                    <h2 className="header-drill fw-bold mb-7">
+                    <h2 className="header-drill fw-bold mb-4-5">
                       DRILLING REPORT
                     </h2>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 80 }}></div>
                   <th className="col-3">
                     <div className="mb-2">
-                      <p className="mb-2 px-2 text-serif fw-normal align-middle text-alat border-bottom border-1 pb-2">
+                      <p className="mb-2 px-2 fw-normal align-middle text-alat border-bottom border-1">
                         PIT: <span className="text-black">EAST KAWI</span>
                       </p>
-                      <p className="mb-2 px-2 text-serif fw-normal align-middle text-alat border-bottom border-1 pb-2">
+                      <p className="mb-2 px-2 fw-normal align-middle text-alat border-bottom border-1">
                         Tanggal:{" "}
                         <span className="text-black">8 - 11 - 2022</span>
                       </p>
-                      <p className="mb-2 px-2 text-serif fw-normal align-middle text-alat border-bottom border-1 pb-1">
-                        SHIFT: <span className="text-black">1</span>
+                      <p className="mb-2 px-2 fw-normal align-middle text-alat border-bottom border-1">
+                        SHIFT: <span className="text-black ">1</span>
                       </p>
                     </div>
                   </th>
@@ -207,14 +207,14 @@ const DrillingReport = () => {
               <div className="container px-4">
                 <div className="row border border-1 align-items-center">
                   <div className="col-3 text-center gap-5">
-                    <p className="fw-bold">Diserahkan Oleh,</p>
-                    <p className="fw-bold mt-5">(Data)</p>
-                    <p className="fw-bold">Section Shift 1</p>
+                    <p className="fw-normal">Dibuat Oleh,</p>
+                    <p className="fw-normal mt-5">(Data)</p>
+                    <p className="fw-bolnormal">Drilling & Blast GL</p>
                   </div>
                   <div className="col-3 text-center gap-5">
-                    <p className="fw-bold">Diterima Oleh,</p>
-                    <p className="fw-bold mt-5">(Data)</p>
-                    <p className="fw-bold">Koordinator Shift 2</p>
+                    <p className="fw-normal">Diperiksa Oleh,</p>
+                    <p className="fw-normal mt-5">(Data)</p>
+                    <p className="fw-normal">Prod Dept/Sect. Head</p>
                   </div>
                   <div className="col-6">
                     <div className="d-flex justify-content-between">

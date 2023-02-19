@@ -12,7 +12,8 @@ const PerintahKerjaHarian = () => {
   const [lokasi, setLokasi] = useState("");
   const [dibuat, setDibuat] = useState("");
   const [dilaporkan, setDilaporkan] = useState("");
-  const [dilaksanakan, setDilaksanakan] = useState("");
+  const [dilaksanakan1, setDilaksanakan1] = useState("");
+  const [dilaksanakan2, setDilaksanakan2] = useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -82,7 +83,8 @@ const PerintahKerjaHarian = () => {
         setLokasi(data[0]?.lokasi);
         setDibuat(data[0]?.dibuat);
         setDilaporkan(data[0]?.dilaporkan);
-        setDilaksanakan(data[0]?.dilaksanakan);
+        setDilaksanakan1(data[0]?.dilaksanakan);
+        setDilaksanakan2(data[0]?.dilaksanakan_2);
       })
       .catch((err) => {
         alert(err);
@@ -225,9 +227,11 @@ const PerintahKerjaHarian = () => {
                     Dilaksanakan: Group Leader
                   </p>
                   <p className="mb-2 px-2 fw-semibold text-alat">
-                    ({dilaksanakan})
+                    ({dilaksanakan1})
                   </p>
-                  <p className="mb-2 px-2 fw-semibold text-alat px-5">()</p>
+                  <p className="mb-2 px-2 fw-semibold text-alat px-5">
+                    ({dilaksanakan2})
+                  </p>
                 </div>
               </div>
             </div>
