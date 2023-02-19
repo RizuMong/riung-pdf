@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import LogoRiung from "../../assets/logo-riung3.jpg";
 import "../../styles/App.css";
 
 const FormKehadiran = () => {
+  const [datas, setDatas] = useState([]);
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-hadir",
+        {
+          data: {
+            _id: "63ef2d3d269f8a3681706143",
+            id: "gxPwrJ1VR",
+            id_daftar_hadir: "gxPwrJ1VR",
+          },
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+
+        setDatas(res);
+
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
   return (
     <div className="container-fluid">
       {/* Header */}
