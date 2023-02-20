@@ -8,8 +8,8 @@ import "../../styles/App.css";
 const FormKehadiran = () => {
   const [datas, setDatas] = useState([]);
 
-  const windowUrl = window.location.search;
-  const queryParams = new URLSearchParams(windowUrl);
+  // const windowUrl = window.location.search;
+  // const queryParams = new URLSearchParams(windowUrl);
 
   useEffect(() => {
     fetchData();
