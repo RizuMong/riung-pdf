@@ -1,11 +1,107 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const FormPengambilanBahanPeledak = () => {
+  const [datas, setDatas] = useState([]);
+  const [dikawal, setDikawal] = useState("");
+  const [diketahui, setDiketahui] = useState("");
+  const [disetujui, setDisetujui] = useState("");
+  const [diterima, setDiterima] = useState("");
+  const [driver, setDriver] = useState("");
+  const [jam, setJam] = useState("");
+  const [jobsite, setJobsite] = useState("");
+  const [lokasi_el_obj, setLokasiEL] = useState("");
+  const [lokasi_rl_obj, setLokasiRL] = useState("");
+  const [nomor_mobil, setNomorMobil] = useState("");
+  const [pemohon, setPemohon] = useState("");
+  const [pengambil, setPengambil] = useState("");
+  const [petugas_gudang, setPetugasGudang] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [tableData, setTableData] = useState([]);
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/formulir-pengambilan-bahan-peledak",
+        {
+          data: {
+            _id: queryParams.get("_id"),
+            id: queryParams.get("id"),
+            id_pengambilan_bahan_peledak: queryParams.get(
+              "id_pengambilan_bahan_peledak"
+            ),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            pkh_id: queryParams.get("pkh_id"),
+          },
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+        setDatas(data);
+
+        //Data Luar
+        setDikawal(res?.data[0]?.dikawal);
+        setDiketahui(res?.data[0]?.diketahui);
+        setDisetujui(res?.data[0]?.disetujui);
+        setDiterima(res?.data[0]?.diterima);
+        setDriver(res?.data[0]?.driver);
+        setJam(res?.data[0]?.jam);
+        setJobsite(res?.data[0]?.jobsite);
+        setLokasiEL(res?.data[0]?.lokasi_el_obj);
+        setLokasiRL(res?.data[0]?.lokasi_rl_obj);
+        setNomorMobil(res?.data[0]?.nomor_mobil);
+        setPemohon(res?.data[0]?.pemohon);
+        setPengambil(res?.data[0]?.pengambil);
+        setPetugasGudang(res?.data[0]?.petugas_gudang);
+        setTanggal(res?.data[0]?.tanggal);
+
+        if (res && Array.isArray(res.data) && res.data[0].line) {
+          const data = res.data[0].line.map((item, index) => {
+            const {
+              ammonium_nitrate,
+              electic_det,
+              exel_17,
+              exel_25,
+              exel_42,
+              exel_65,
+              power_gel,
+              prime_booster,
+              ray_det_ms,
+            } = item;
+
+            return {
+              id: index,
+              ammonium_nitrate,
+              electic_det,
+              exel_17,
+              exel_25,
+              exel_42,
+              exel_65,
+              power_gel,
+              prime_booster,
+              ray_det_ms,
+            };
+          });
+          setTableData(data);
+        }
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
@@ -21,7 +117,7 @@ const FormPengambilanBahanPeledak = () => {
                 alt="Logo RIUNG"
               />
               <h5 className="fw-bold text-lg">
-                PT. RIUNG MITRA LESTARI <br /> JOB SITE : MGM
+                PT. RIUNG MITRA LESTARI <br /> JOB SITE : {jobsite}
               </h5>
             </div>
 
@@ -39,35 +135,37 @@ const FormPengambilanBahanPeledak = () => {
                 <thead>
                   <tr>
                     <th className="fw-normal">
-                      TANGGAL :{" "}
-                      <span className="text-black">8 - 11 - 2022</span>
+                      TANGGAL : <span className="text-black">{tanggal}</span>
                     </th>
                     <th className="fw-normal">
                       PETUGAS GUDANG :{" "}
-                      <span className="text-black">Prihanto</span>
+                      <span className="text-black">{petugas_gudang}</span>
                     </th>
                   </tr>
                   <tr>
                     <th className="fw-normal">
-                      PENGAMBIL : <span className="text-black">Heri. P</span>
+                      PENGAMBIL :{" "}
+                      <span className="text-black">{pengambil}</span>
                     </th>
-                    <th className="fw-normal">LOKASI: El: 183 RL: 175</th>
+                    <th className="fw-normal">
+                      LOKASI: El: {lokasi_el_obj} RL: {lokasi_rl_obj}
+                    </th>
                   </tr>
                   <tr>
                     <th className="fw-normal">
-                      DRIVER : <span className="text-black">Adi</span>
+                      DRIVER : <span className="text-black">{driver}</span>
                     </th>
                     <th className="fw-normal">
-                      PEMOHON : <span className="text-black">Heri. P</span>
+                      PEMOHON : <span className="text-black">{pemohon}</span>
                     </th>
                   </tr>
                   <tr>
                     <th className="fw-normal">
                       NOMOR MOBIL :{" "}
-                      <span className="text-black">RML - PRO 01</span>
+                      <span className="text-black">{nomor_mobil}</span>
                     </th>
                     <th className="fw-normal">
-                      JAM : <span className="text-black">07:00 WIB </span>
+                      JAM : <span className="text-black">{jam}</span>
                     </th>
                   </tr>
                 </thead>
@@ -114,17 +212,20 @@ const FormPengambilanBahanPeledak = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="text-center">
-                    <td className="fw-normal">Data</td>
-                    <td className="fw-normal">Data</td>
-                    <td className="fw-normal">Data</td>
-                    <td className="fw-normal">Data</td>
-                    <td className="fw-normal">Data</td>
-                    <td className="fw-normal">Data</td>
-                    <td className="fw-normal">Data</td>
-                    <td className="fw-normal">Data</td>
-                    <td className="fw-normal">Data</td>
-                  </tr>
+                  {tableData.map((item) => (
+                    <tr className="text-center" key={item?.id}>
+                      <td>{item?.id + 1}</td>
+                      <td>{item?.ammonium_nitrate}</td>
+                      <td>{item?.electic_det}</td>
+                      <td>{item?.exel_17}</td>
+                      <td>{item?.exel_25}</td>
+                      <td>{item?.exel_42}</td>
+                      <td>{item?.exel_65}</td>
+                      <td>{item?.power_gel}</td>
+                      <td>{item?.prime_booster}</td>
+                      <td>{item?.ray_det_ms}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -136,7 +237,7 @@ const FormPengambilanBahanPeledak = () => {
                   <th rowSpan={5} className="fw-normal">
                     <p>Pemohon,</p>
                     <p>Jabatan: Drill & Blast GL</p>
-                    <p className="mt-5">(Heri. P)</p>
+                    <p className="mt-5">({pemohon})</p>
                   </th>
                   <th className="fw-normal">Disetujui,</th>
                   <th className="fw-normal">NAMA</th>
@@ -147,10 +248,10 @@ const FormPengambilanBahanPeledak = () => {
                 </tr>
                 <tr className="text-center align-middle">
                   <th className="fw-normal">KEPALA TEKNIK</th>
-                  <th className="fw-normal"></th>
+                  <th className="fw-normal">{disetujui}</th>
                   <th className="fw-normal"></th>
                   <th className="fw-normal">POLISI</th>
-                  <th className="fw-normal"></th>
+                  <th className="fw-normal">{diketahui}</th>
                   <th className="fw-normal"></th>
                 </tr>
                 <tr className="text-center align-middle">
@@ -167,14 +268,14 @@ const FormPengambilanBahanPeledak = () => {
                   <th className="fw-normal">Tanda Tangan</th>
                   <th className="fw-normal">Diterima,</th>
                   <th className="fw-normal">NAMA</th>
-                  <th className="fw-normal"> Tanda Tangan</th>
+                  <th className="fw-normal">Tanda Tangan</th>
                 </tr>
                 <tr className="text-center align-middle">
                   <th className="fw-normal">POLISI</th>
-                  <th className="fw-normal"></th>
+                  <th className="fw-normal">{dikawal}</th>
                   <th className="fw-normal"></th>
                   <th className="fw-normal">Drill & Blast Group Leader</th>
-                  <th className="fw-normal"></th>
+                  <th className="fw-normal">{diterima}</th>
                   <th className="fw-normal"></th>
                 </tr>
               </thead>
