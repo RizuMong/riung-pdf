@@ -82,7 +82,7 @@ const MinutesOfMeeting = () => {
     console.log("masukk");
     console.log(item);
     let tmp = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < item.length; i = i + 11) {
       tmp.push(
         <tr key={i} className="text-center text-sm align-middle">
           <th>{item[i]?.peserta}</th>
