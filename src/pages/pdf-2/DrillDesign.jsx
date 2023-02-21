@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
 import axios from "axios";
 
-import Img_Sketsa from "../../assets/img_sketsa.jpg";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -16,6 +15,25 @@ const DrillDesign = () => {
   const [diketahui, setDiketahui] = useState("");
 
   // Lokasi Drilling
+  const [pit, setPit] = useState("");
+  const [blok, setBlok] = useState("");
+  const [strip, setStrip] = useState("");
+  const [elevation, setElevation] = useState("");
+  const [drilling_rl, setDrilling_rl] = useState("");
+
+  // Dimensi Drilling
+  const [cn_unit, setCn_unit] = useState("");
+  const [hole_diameter, setHole_diameter] = useState("");
+  const [burden, setBurden] = useState("");
+  const [spacing, setSpacing] = useState("");
+  const [hole_depth, setHole_depth] = useState("");
+  const [stemming, setStemming] = useState("");
+  const [subdrill, setSubdrill] = useState("");
+  const [inclination, setInclination] = useState("");
+  const [pattern, setPattern] = useState("");
+  const [no_of_hole, setNo_of_hole] = useState("");
+  const [volume, setVolume] = useState("");
+  const [sketsa, setSketsa] = useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -30,10 +48,10 @@ const DrillDesign = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/drill-design",
         {
           data: {
-            _id: "63f17a86bc9ece316709304e",
-            id: "gMAY5P14g",
-            id_drill_design: "gMAY5P14g",
-            lokasi_pkh_id: "fKdYcP14g",
+            _id: queryParams.get("_id"),
+            id: queryParams.get("id"),
+            id_drill_design: queryParams.get("id_drill_design"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
           },
         }
       )
@@ -48,7 +66,26 @@ const DrillDesign = () => {
         setDibuat(res.data[0]?.dibuat_oleh);
         setDiketahui(res.data[0]?.diketahui_oleh);
 
-        console.log(data);
+        // Lokasi Drilling
+        setPit(res?.data[0]?.pit);
+        setBlok(res?.data[0]?.blok);
+        setStrip(res?.data[0]?.strip);
+        setElevation(res?.data[0]?.elevation);
+        setDrilling_rl(res?.data[0]?.drilling_rl);
+
+        // Dimensi Drilling
+        setCn_unit(res?.data[0].cn_unit);
+        setHole_diameter(res?.data[0].hole_diameter);
+        setBurden(res?.data[0].burden);
+        setSpacing(res?.data[0].spacing);
+        setHole_depth(res?.data[0].hole_depth);
+        setStemming(res?.data[0].stemming);
+        setSubdrill(res?.data[0].subdrill);
+        setInclination(res?.data[0].inclination);
+        setPattern(res?.data[0].pattern);
+        setNo_of_hole(res?.data[0].no_of_hole);
+        setVolume(res?.data[0].volume);
+        setSketsa(res?.data[0].sketsa);
       })
       .catch((err) => {
         alert(err);
@@ -96,7 +133,7 @@ const DrillDesign = () => {
                           Shift: {shift}
                         </p>
                         <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-start border-1 w-50">
-                          Hal:  {" "} /
+                          Hal: /
                         </p>
                       </div>
                       <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-1">
@@ -116,11 +153,11 @@ const DrillDesign = () => {
                           LOKASI <span className="fst-italic">DRILLING</span>
                         </h5>
                         <div className="p-1 fs-6 fw-normal">
-                          <p className="px-3">PIT: EAST KAWI</p>
-                          <p className="px-3">BLOK: -</p>
-                          <p className="px-3">STRIP: -</p>
-                          <p className="px-3">ELEV.: 183</p>
-                          <p className="px-3">RL: 175</p>
+                          <p className="px-3">PIT: {pit}</p>
+                          <p className="px-3">BLOK: {blok}</p>
+                          <p className="px-3">STRIP: {strip}</p>
+                          <p className="px-3">ELEV.: {elevation}</p>
+                          <p className="px-3">RL: {drilling_rl}</p>
                         </div>
                       </th>
                       <th
@@ -129,11 +166,7 @@ const DrillDesign = () => {
                         className="fw-semibold"
                       >
                         <h5 className="fs-6 p-1 fw-semibold">SKETSA</h5>
-                        {/* <img
-                          src={Img_Sketsa}
-                          alt="Gambar Sketsa"
-                          width="60px"
-                        /> */}
+                        <img src={sketsa} alt="Gambar Sketsa" width="600px" />
                       </th>
                     </tr>
                     <tr>
@@ -142,20 +175,24 @@ const DrillDesign = () => {
                           DIMENSI <span className="fst-italic">DRILLING</span>
                         </h5>
                         <div className="p-1 fs-6 fw-normal">
-                          <p className="px-3">BURDEN: 6 (m)</p>
-                          <p className="px-3">SPACING : 7 (m)</p>
-                          <p className="px-3">HOLE DIAMETER : 6 3/4 (inch)</p>
-                          <p className="px-3">HOLE DEPTH : 8 (m)</p>
-                          <p className="px-3">STEMMING : 3.5 (m)</p>
-                          <p className="px-3">SUBDRILL : 0.5 (m)</p>
-                          <p className="px-3">INCLINATION : - (derajat)</p>
-                          <p className="px-3">PATTERN : Echelon</p>
+                          <p className="px-3">BURDEN: {burden} (m)</p>
+                          <p className="px-3">SPACING : {spacing} (m)</p>
+                          <p className="px-3">
+                            HOLE DIAMETER : {hole_diameter} (m)
+                          </p>
+                          <p className="px-3">HOLE DEPTH : {hole_depth} (m)</p>
+                          <p className="px-3">STEMMING : {stemming} (m)</p>
+                          <p className="px-3">SUBDRILL : {subdrill} (m)</p>
+                          <p className="px-3">
+                            INCLINATION : {inclination} (derajat)
+                          </p>
+                          <p className="px-3">PATTERN : {pattern}</p>
                           <p className="px-3">ROW : 4</p>
-                          <p className="px-3">No. Of Hole : 70</p>
-                          <p className="px-3">VOLUME : 23.520 (Bcm)</p>
+                          <p className="px-3">No. Of Hole : {no_of_hole}</p>
+                          <p className="px-3">VOLUME : {volume} (Bcm)</p>
                         </div>
                         <h5 className="fs-6 fw-semibold p-1">
-                          UNIT C/N: DR 103
+                          UNIT C/N: {cn_unit}
                         </h5>
                       </th>
                     </tr>
