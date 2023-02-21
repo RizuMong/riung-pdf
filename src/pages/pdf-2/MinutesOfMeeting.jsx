@@ -1,11 +1,107 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import { Table } from "react-bootstrap";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const MinutesOfMeeting = () => {
+  const [datas, setDatas] = useState([]);
+  const [tanggal, setTanggal] = useState("");
+  const [lokasi, setLokasi] = useState("");
+  const [note, setNote] = useState("");
+  const [meeting, setMeeting] = useState("");
+  const [tablePembahasan, setPembahasan] = useState([]);
+  const [tablePeserta, setPeserta] = useState([]);
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://api-oos.jojonomic.com/23946/rios/generate-pdf/minutes-of-meeting",
+        {
+          data: {
+            _id: queryParams.get("_id"),
+            daftar_hadir_id: queryParams.get("daftar_hadir_id"),
+            id: queryParams.get("id"),
+            id_mom: queryParams.get("id_mom"),
+          },
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+        setDatas(data);
+        setTanggal(res?.data.tanggal);
+        setLokasi(res?.data.lokasi);
+        setNote(res?.data.note);
+        setMeeting(res?.data.nama_meeting);
+
+        // Data Peserta
+        if (res && res.data.peserta) {
+          const hasil = res.data.peserta.map((item, index) => {
+            const { peserta, peserta_text } = item;
+            return {
+              id: index,
+              peserta,
+              peserta_text,
+            };
+          });
+          setPeserta(hasil);
+        }
+
+        // Data Pembahasan
+        if (res && res.data.pembahasan) {
+          const result = res.data.pembahasan.map((item, index) => {
+            const { due_date, materi_pembahasan, pic, progress, status } = item;
+            return {
+              id: index,
+              due_date,
+              materi_pembahasan,
+              pic,
+              progress,
+              status,
+            };
+          });
+          setPembahasan(result);
+        }
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
+  // Render data
+  const renderList = (item) => {
+    console.log("masukk");
+    console.log(item);
+    let tmp = [];
+    for (let i = 0; i < 10; i++) {
+      tmp.push(
+        <tr key={i} className="text-center text-sm align-middle">
+          <th>{item[i]?.peserta}</th>
+          <th>{item[i + 1]?.peserta}</th>
+          <th>{item[i + 2]?.peserta}</th>
+          <th>{item[i + 3]?.peserta}</th>
+          <th>{item[i + 4]?.peserta}</th>
+          <th>{item[i + 5]?.peserta}</th>
+          <th>{item[i + 6]?.peserta}</th>
+          <th>{item[i + 7]?.peserta}</th>
+          <th>{item[i + 8]?.peserta}</th>
+          <th>{item[i + 9]?.peserta}</th>
+          <th>{item[i + 10]?.peserta}</th>
+        </tr>
+      );
+    }
+    return tmp;
+  };
+
   return (
     <div className="border border-1 border-dark p-1">
       {/* Header */}
@@ -24,8 +120,8 @@ const MinutesOfMeeting = () => {
 
       {/* Tanggal dan Lokasi */}
       <div className="d-flex gap-5 mt-3">
-        <p className="text-sm">Tanggal:</p>
-        <p className="text-sm pl-5">Lokasi:</p>
+        <p className="text-sm">Tanggal: {tanggal}</p>
+        <p className="text-sm pl-5">Lokasi: {lokasi}</p>
       </div>
 
       {/* Table Peserta (Missing Width) */}
@@ -36,24 +132,13 @@ const MinutesOfMeeting = () => {
               Peserta:
             </th>
           </tr>
-          <tr className="text-center text-sm align-middle">
-            <th>Absen</th>
-            <th>Absen</th>
-            <th>Absen</th>
-            <th>Absen</th>
-            <th>Absen</th>
-            <th>Absen</th>
-            <th>Absen</th>
-            <th>Absen</th>
-            <th>Absen</th>
-            <th>Absen</th>
-          </tr>
+          {renderList(tablePeserta)}
         </thead>
       </Table>
 
       {/* Nama Meeting */}
       <div className="w-100 border border-1">
-        <p className="text-sm fw-semibold">Nama Meeting: </p>
+        <p className="text-sm fw-semibold">Nama Meeting: {meeting}</p>
       </div>
 
       {/* Table Content (Missing Width) */}
@@ -69,20 +154,22 @@ const MinutesOfMeeting = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className="text-center text-sm">
-            <td>1</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>Data</td>
-          </tr>
+          {tablePembahasan?.map((item) => (
+            <tr key={item?.id} className="text-center text-sm">
+              <td>{item?.id + 1}</td>
+              <td>{item?.materi_pembahasan}</td>
+              <td>{item?.progress}</td>
+              <td>{item?.due_date}</td>
+              <td>{item?.pic}</td>
+              <td>{item?.status}</td>
+            </tr>
+          ))}
         </tbody>
       </Table>
 
       {/* Note */}
       <div className="pl-2">
-        <p className="text-danger fw-bold fs-6">NOTE:</p>
+        <p className="text-danger fw-bold fs-6">NOTE: {note}</p>
       </div>
     </div>
   );
