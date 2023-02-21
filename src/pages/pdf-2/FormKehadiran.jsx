@@ -7,9 +7,15 @@ import "../../styles/App.css";
 
 const FormKehadiran = () => {
   const [datas, setDatas] = useState([]);
+  const [judul, setJudul] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [tempat, setTempat] = useState("");
+  const [fasilitator, setFasilitator] = useState("");
+  const [notulen, setNotulen] = useState("");
+  const [tableData, setTableData] = useState([]);
 
-  // const windowUrl = window.location.search;
-  // const queryParams = new URLSearchParams(windowUrl);
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
 
   useEffect(() => {
     fetchData();
@@ -21,18 +27,35 @@ const FormKehadiran = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-hadir",
         {
           data: {
-            _id: "63ef2d3d269f8a3681706143",
-            id: "gxPwrJ1VR",
-            id_daftar_hadir: "gxPwrJ1VR",
+            _id: queryParams.get("_id"),
+            id: queryParams.get("id"),
+            id_daftar_hadir: queryParams.get("id_daftar_hadir"),
           },
         }
       )
       .then((res) => {
         const { data } = res;
 
-        setDatas(res);
+        setDatas(data);
+        setJudul(res.data.judul);
+        setTanggal(res.data.tanggal);
+        setTempat(res.data.tempat);
+        setFasilitator(res.data.fasilitator);
+        setNotulen(res.data.notulen);
 
-        console.log(data);
+        if (res && res.data.list[0]) {
+          const result = res.data.list.map((item, index) => {
+            const { dept, jabatan, peserta, peserta_text } = item;
+            return {
+              id: index,
+              dept,
+              jabatan,
+              peserta,
+              peserta_text,
+            };
+          });
+          setTableData(result);
+        }
       })
       .catch((err) => {
         alert(err);
@@ -62,19 +85,21 @@ const FormKehadiran = () => {
         <table className="table table-bordered">
           <thead className="bg-table-form">
             <tr>
-              <th className="fw-semibold text-sm">Judul:</th>
+              <th className="fw-semibold text-sm">Judul: {judul}</th>
             </tr>
             <tr>
-              <th className="fw-semibold text-sm">Tanggal:</th>
+              <th className="fw-semibold text-sm">Tanggal: {tanggal}</th>
             </tr>
             <tr>
-              <th className="fw-semibold text-sm">Tempat:</th>
+              <th className="fw-semibold text-sm">Tempat: {tempat}</th>
             </tr>
             <tr>
-              <th className="fw-semibold text-sm">Fasilitator:</th>
+              <th className="fw-semibold text-sm">
+                Fasilitator: {fasilitator}
+              </th>
             </tr>
             <tr>
-              <th className="fw-semibold text-sm">Notulen:</th>
+              <th className="fw-semibold text-sm">Notulen: {notulen}</th>
             </tr>
           </thead>
         </table>
@@ -93,13 +118,15 @@ const FormKehadiran = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="text-center">
-              <th className="fw-normal">1</th>
-              <th className="fw-normal">Data</th>
-              <th className="fw-normal">Data</th>
-              <th className="fw-normal">Data</th>
-              <th className="fw-normal">Data</th>
-            </tr>
+            {tableData?.map((item) => (
+              <tr key={item.id} className="text-center" style={{ height: 40 }}>
+                <th className="fw-normal align-middle">{item.id + 1}</th>
+                <th className="fw-normal align-middle">{item?.peserta}</th>
+                <th className="fw-normal align-middle">{item?.dept}</th>
+                <th className="fw-normal align-middle">{item?.jabatan}</th>
+                <th className="fw-normal align-middle"></th>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

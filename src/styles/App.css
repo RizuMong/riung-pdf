@@ -37,6 +37,15 @@ table {
   .header-excavator {
     font-size: 20px !important;
   }
+
+  .header-drill {
+    font-size: 24px !important;
+    text-align: center;
+  }
+
+  .header-pt2 {
+    font-size: 8px !important;
+  }
 }
 
 .table-abu {
@@ -79,6 +88,10 @@ table {
 /* Styling Daftar Periksa Alat Angkut Barang */
 .header-pt {
   font-size: 16px;
+}
+
+.header-pt2 {
+  font-size: 14px;
 }
 
 hr.solid {
@@ -288,7 +301,7 @@ hr .production {
 
 /* Styling Drill Design */
 .header-drill {
-  font-size: 36px;
+  font-size: 30px;
   text-align: center;
 }
 
