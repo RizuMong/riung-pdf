@@ -1,10 +1,83 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import LogoRiung from "../../assets/logo-riung3.jpg";
 import "../../styles/App.css";
 
 const LembarPica = () => {
+  const [datas, setDatas] = useState([]);
+  const [bagian, setBagian] = useState("");
+  const [jobsite, setJobsite] = useState("");
+  const [lokasi, setLokasi] = useState("");
+  const [proses, setProses] = useState("");
+  const [start_date, setStart_date] = useState("");
+  const [end_date, setEnd_date] = useState("");
+  const [disahkan_oleh, setDisahkan_oleh] = useState("");
+  const [disiapkan_oleh, setDisiapkan_oleh] = useState("");
+  const [tablePICA, setTablePICA] = useState([]);
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post("https://api-oos.jojonomic.com/23946/rios/generate-pdf/pica", {
+        data: {
+          _id: queryParams.get("_id"),
+          id: queryParams.get("id"),
+          id_pica: queryParams.get("id_pica"),
+        },
+      })
+      .then((res) => {
+        const { data } = res;
+        setDatas(data);
+
+        // Data Luar
+        setBagian(res.data.bagian);
+        setJobsite(res.data.jobsite);
+        setLokasi(res.data.lokasi);
+        setProses(res.data.proses);
+        setStart_date(res.data.start_date);
+        setEnd_date(res.data.end_date);
+        setDisahkan_oleh(res.data.disahkan_oleh);
+        setDisiapkan_oleh(res.data.disiapkan_oleh);
+
+        console.log(data);
+
+        // Data PICA
+        if (res && res.data.pica) {
+          const result = res.data.pica.map((item, index) => {
+            const {
+              cause,
+              corrective_prevention_action,
+              due_date,
+              pic,
+              problem,
+              status,
+            } = item;
+            return {
+              id: index,
+              cause,
+              corrective_prevention_action,
+              due_date,
+              pic,
+              problem,
+              status,
+            };
+          });
+          setTablePICA(result);
+        }
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
   return (
     <div className="border border-2 border-dark p-1">
       {/* Header Form */}
@@ -22,14 +95,16 @@ const LembarPica = () => {
 
       {/* Header */}
       <div className="mt-2">
-        <pre className="text-normal m-0">Jobsite :</pre>
-        <pre className="text-normal m-0">Bagian/departemen :</pre>
+        <pre className="text-normal m-0">Jobsite : {jobsite}</pre>
+        <pre className="text-normal m-0">Bagian/departemen : {bagian}</pre>
         <div className="d-flex justify-content-between">
-          <pre className="text-normal m-0">Proses/kegiatan :</pre>
+          <pre className="text-normal m-0">Proses/kegiatan : {proses}</pre>
           <p className="text-sm">FRM-MRE-001</p>
         </div>
         <div className="d-flex justify-content-between">
-          <pre className="text-normal m-0">Periode :</pre>
+          <pre className="text-normal m-0">
+            Periode : {start_date} - {end_date}
+          </pre>
           <p>Rev. 1</p>
         </div>
       </div>
@@ -49,32 +124,34 @@ const LembarPica = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="text-center">
-              <td>1</td>
-              <td>Data</td>
-              <td>Data</td>
-              <td>Data</td>
-              <td>Data</td>
-              <td>Data</td>
-              <td>Data</td>
-            </tr>
+            {tablePICA?.map((item) => (
+              <tr className="text-center">
+                <td>{item?.id + 1}</td>
+                <td>{item?.problem}</td>
+                <td>{item?.cause}</td>
+                <td>{item?.corrective_prevention_action}</td>
+                <td>{item?.pic}</td>
+                <td>{item?.due_date}</td>
+                <td>{item?.status}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
 
       {/* Content Bottom */}
       <div className="d-flex justify-content-between px-5 mt-4">
-        <div className="mt-2">
+        <div className="mt-2 align-content-center">
           <p>Disahkan oleh,</p>
           <p className="mt-5 text-center border-bottom border-1 border-dark">
-            (Casey Khaled)
+            ({disahkan_oleh})
           </p>
         </div>
         <div>
-          <p>lokasi, ..../..../.....</p>
+          <p>lokasi, {lokasi}</p>
           <p>Di siapkan oleh</p>
           <p className="mt-6 text-center border-bottom border-1 border-dark">
-            (Casey Khaled)
+            ({disiapkan_oleh})
           </p>
         </div>
       </div>
