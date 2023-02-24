@@ -10,7 +10,7 @@ const DrillDesign = () => {
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
-  // const [kepada, setKepada] = useState("");
+  const [kepada, setKepada] = useState("");
   const [dibuat, setDibuat] = useState("");
   const [diketahui, setDiketahui] = useState("");
 
