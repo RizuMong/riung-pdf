@@ -126,18 +126,18 @@ const DrillDesign = () => {
                   <th className="col-3">
                     <div className="mb-2">
                       <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-1">
-                        Hari/Tanggal: {tanggal}
+                        Hari/Tanggal: <span className="fw-normal">{tanggal}</span>
                       </p>
                       <div className="d-flex">
                         <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-1">
-                          Shift: {shift}
+                          Shift: <span className="fw-normal">{shift}</span>
                         </p>
                         <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-start border-1 w-50">
                           Hal: /
                         </p>
                       </div>
                       <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-1">
-                        Kepada:{" "} {kepada}
+                        Kepada:{" "}  <span className="fw-normal">{kepada}</span>
                       </p>
                     </div>
                   </th>
