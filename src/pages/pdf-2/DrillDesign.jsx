@@ -62,7 +62,7 @@ const DrillDesign = () => {
         setJobsite(res.data[0]?.jobsite);
         setTanggal(res.data[0]?.tanggal);
         setShift(res.data[0]?.shift);
-        // setKepada(res.data[0]?.kepada)
+        setKepada(res.data[0]?.kepada)
         setDibuat(res.data[0]?.dibuat_oleh);
         setDiketahui(res.data[0]?.diketahui_oleh);
 
@@ -137,7 +137,7 @@ const DrillDesign = () => {
                         </p>
                       </div>
                       <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-1">
-                        Kepada:{" "}
+                        Kepada:{" "} {kepada}
                       </p>
                     </div>
                   </th>
