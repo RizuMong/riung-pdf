@@ -10,6 +10,7 @@ import "../../styles/App.css";
 
 const BlastDesign = () => {
   const [datas, setDatas] = useState([]);
+  const [tableInhale, setTableInhale] = useState([]);
 
   // Data Luar
   const [tanggal, setTanggal] = useState("");
@@ -48,9 +49,9 @@ const BlastDesign = () => {
   const [exel_42_pcs, setExel42pcs] = useState("");
   const [exel_65_m, setExel65m] = useState("");
   const [exel_65_pcs, setExel65pcs] = useState("");
-  const [powder_factor_plan, setPowderFactorPlan] = useState("");
 
-  // Keterangan
+  // Powder Faktor
+  const [powder_factor_plan, setPowderFactorPlan] = useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -65,11 +66,11 @@ const BlastDesign = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/blast-design",
         {
           data: {
-            _id: "63f17a88bc9ece31670932e8",
-            id: "P4bL5PJ4g",
-            id_blast_design: "P4bL5PJ4g",
-            lokasi_pkh_id: "fKdYcP14g",
-            pkh_id: "vADY5E14R",
+            _id: queryParams.get("_id"),
+            id: queryParams.get("id"),
+            id_blast_design: queryParams.get("id_blast_design"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            pkh_id: queryParams.get("pkh_id"),
           },
         }
       )
@@ -79,8 +80,59 @@ const BlastDesign = () => {
         setDatas(data);
 
         // Data Luar
+        setTanggal(data[0]?.tanggal);
+        setJam(data[0]?.jam);
+        setDibuat(data[0]?.dibuat_oleh);
+        setDiterima(data[0]?.diterima_oleh);
 
-        console.log(data);
+        // Lokasi Drilling
+        setPit(data[0]?.pit);
+        setBlok(data[0]?.blok);
+        setStrip(data[0]?.blok_seam);
+        setElev(data[0]?.elv_aktual);
+        setRl(data[0]?.rl);
+
+        // Geometri Peledakan
+        setHoleDiameter(data[0]?.hole_diameter);
+        setDepth(data[0]?.depth);
+        setBurden(data[0]?.burden);
+        setSpacing(data[0]?.spacing);
+        setSteaming(data[0]?.steaming);
+        setSubdrill(data[0]?.subdrill);
+        setDelay_pattern(data[0]?.delay_pattern);
+        setTotal_hole(data[0]?.total_hole);
+
+        // Bahan Peledak Yang akan digunakan
+        setAmmoniumNitrate(data[0]?.ammonium_nitrate);
+        setEmulsion(data[0]?.emulsion);
+        setPrimerBooster(data[0]?.primer_booster);
+        setPowerGel(data[0]?.power_gel);
+        setElecDetonator(data[0]?.elec_detonator);
+        setExel17m(data[0]?.exel_17_m);
+        setExel17pcs(data[0]?.exel_17_pcs);
+        setExel25ms(data[0]?.exel_25_ms);
+        setExel25pcs(data[0]?.exel_25_pcs);
+        setExel42m(data[0]?.exel_42_m);
+        setExel42pcs(data[0]?.exel_42_pcs);
+        setExel65m(data[0]?.exel_65_m);
+        setExel65pcs(data[0]?.exel_65_pcs);
+
+        // Powder Faktor
+        setPowderFactorPlan(data[0].powder_factor_plan);
+
+        // Table Inhole Delay
+        if (data && data[0].inhole_delay) {
+          const result = data[0].inhole_delay.map((item, index) => {
+            const { exel_det_m, exel_det_pcs, exel_detonator_d } = item;
+            return {
+              id: index,
+              exel_det_m,
+              exel_det_pcs,
+              exel_detonator_d,
+            };
+          });
+          setTableInhale(result);
+        }
       })
       .catch((err) => {
         alert(err);
@@ -124,10 +176,10 @@ const BlastDesign = () => {
                         WAKTU PELEDAKAN
                       </p>
                       <p className="mb-2 px-2 fw-normal text-alat border-bottom border-1 pb-2">
-                        Tanggal:{" "}
+                        Tanggal: {tanggal}
                       </p>
                       <p className="mb-2 px-2 fw-normal text-alat border-bottom border-1 pb-1">
-                        Jam:{" "}
+                        Jam: {jam}
                       </p>
                     </div>
                   </th>
@@ -143,11 +195,11 @@ const BlastDesign = () => {
                           LOKASI <span className="fst-italic">DRILLING</span>
                         </h5>
                         <div className="p-1 fs-6 fw-normal">
-                          <p className="px-3">PIT: EAST KAWI</p>
-                          <p className="px-3">BLOK: -</p>
-                          <p className="px-3">STRIP: -</p>
-                          <p className="px-3">ELEV.: 183</p>
-                          <p className="px-3 pb-1">RL: 175</p>
+                          <p className="px-3">PIT: {pit}</p>
+                          <p className="px-3">BLOK: {blok}</p>
+                          <p className="px-3">STRIP: {strip}</p>
+                          <p className="px-3">ELEV.: {elev}</p>
+                          <p className="px-3 pb-1">RL: {rl}</p>
                         </div>
                       </th>
                       <th
@@ -157,9 +209,9 @@ const BlastDesign = () => {
                       >
                         <h5 className="fs-6 p-1 fw-semibold">SKETSA</h5>
                         {/* <img
-                          src={Img_Sketsa}
+                          src={sketsa}
                           alt="Gambar Sketsa"
-                          width="1000px"
+                          width="100px"
                         /> */}
                       </th>
                     </tr>
@@ -172,19 +224,27 @@ const BlastDesign = () => {
                         <div className="d-flex gap-4 pb-1">
                           <div className="p-1 fs-6 fw-normal">
                             <p className="px-3 text-sm">
-                              Hole Diameter : 6 ¾ Inch
+                              Hole Diameter : {hole_diameter}
                             </p>
-                            <p className="px-3 text-sm">Burden : 6 M</p>
-                            <p className="px-3 text-sm">Steaming : 3.5 M</p>
+                            <p className="px-3 text-sm">Burden : {burden} M</p>
                             <p className="px-3 text-sm">
-                              Delay Pattern : Echelon
+                              Steaming : {steaming} M
+                            </p>
+                            <p className="px-3 text-sm">
+                              Delay Pattern : {delay_pattern}
                             </p>
                           </div>
                           <div className="p-1 fs-6 fw-normal">
-                            <p className="px-3 text-sm">Depth : 8 M</p>
-                            <p className="px-3 text-sm">Spacing : 7 M</p>
-                            <p className="px-3 text-sm">Sub drill : 0.5 M</p>
-                            <p className="px-3 text-sm">Total Holes : 70</p>
+                            <p className="px-3 text-sm">Depth : {depth} M</p>
+                            <p className="px-3 text-sm">
+                              Spacing : {spacing} M
+                            </p>
+                            <p className="px-3 text-sm">
+                              Sub drill : {subdrill} M
+                            </p>
+                            <p className="px-3 text-sm">
+                              Total Holes : {total_hole}
+                            </p>
                           </div>
                         </div>
                       </th>
@@ -195,58 +255,63 @@ const BlastDesign = () => {
                           BAHAN PELEDAK YANG AKAN DIGUNAKAN
                         </h5>
                         <p className="px-3 text-sm">
-                          Ammonium Nitrate: 4.800 Kg
+                          Ammonium Nitrate: {ammonium_nitrate} Kg
                         </p>
-                        <p className="px-3 text-sm pb-3">Emulsion: - Kg</p>
-
-                        <p className="px-3 text-sm pb-3">Primer (Boster): 70</p>
-                        <p className="px-3 text-sm pb-3">Power Gel: 70 kg</p>
+                        <p className="px-3 text-sm pb-3">
+                          Emulsion: {emulsion} Kg
+                        </p>
 
                         <p className="px-3 text-sm pb-3">
-                          Electric Detonator: 1 pcs
+                          Primer (Boster): {primer_booster}
+                        </p>
+                        <p className="px-3 text-sm pb-3">
+                          Power Gel: {power_gel} kg
                         </p>
 
-                        <p className="px-3 text-sm pb-1">Surface Delay TLD:</p>
+                        <p className="px-3 text-sm pb-3">
+                          Electric Detonator: {elec_detonator} pcs
+                        </p>
+
+                        <p className="px-3 text-sm pb-1">Surface Delay TLD: </p>
                         <div>
                           <p className="px-3 text-sm px-5 pb-2">
-                            Exel 17 ms 9 M : 20 pcs
+                            Exel 17 ms {exel_17_m} M : {exel_17_pcs} pcs
                           </p>
                           <p className="px-3 text-sm px-5 pb-2">
-                            Exel 25 ms 9 M : 50 pcs
+                            Exel 25 ms {exel_25_ms} M : {exel_25_pcs} pcs
                           </p>
                           <p className="px-3 text-sm px-5 pb-2">
-                            Exel 42 ms …M : ……… pcs
+                            Exel 42 ms {exel_42_m} M : {exel_42_pcs} pcs
                           </p>
                           <p className="px-3 text-sm px-5 pb-2">
-                            Exel 65 ms …M : ……… pcs
+                            Exel 65 ms {exel_65_m} M : {exel_65_pcs} pcs
                           </p>
                         </div>
 
                         <p className="px-3 text-sm">Inhole Delay:</p>
-                        
+
                         {/* Inhole Delay (Mapping) */}
-                        <div className="d-flex gap-4 pb-1">
-                          <div className="p-1 fs-6 fw-normal">
-                            <div>
+                        {tableInhale?.map((item) => (
+                          <div className="d-flex gap-4 pb-1">
+                            <div className="p-1 fs-6 fw-normal">
+                              <div>
+                                <p className="px-3 text-sm">
+                                  Exel Detonator D {item?.exel_detonator_d} ,{" "}
+                                  {item.exel_det_m} M
+                                </p>
+                              </div>
+                            </div>
+                            <div className="p-1 fs-6 fw-normal">
                               <p className="px-3 text-sm">
-                                Exel Detonator D 500 , 9 M
-                              </p>
-                              <p className="px-3 text-sm">
-                                Exel Detonator D …., … M
-                              </p>
-                              <p className="px-3 text-sm">
-                                Exel Detonator D …., … M
+                                : {item?.exel_det_pcs} Pcs
                               </p>
                             </div>
                           </div>
-                          <div className="p-1 fs-6 fw-normal">
-                            <p className="px-3 text-sm">: 70 Pcs</p>
-                            <p className="px-3 text-sm">: ……… Pcs</p>
-                            <p className="px-3 text-sm">: ……… Pcs</p>
-                          </div>
-                        </div>
+                        ))}
 
-                        <p className="px-3 text-sm">Cordtex : ……… Mtr</p>
+                        <p className="px-3 text-sm">
+                          Cordtex : {powder_factor_plan} Mtr
+                        </p>
                       </th>
                     </tr>
 
@@ -254,13 +319,13 @@ const BlastDesign = () => {
                       <th className="text-center d-flex justify-content-evenly gap-5">
                         <div className="mt-5 mb-5">
                           <p className="fw-normal">Dibuat Oleh,</p>
-                          <p className="fw-normal mt-5">(M. Arif)</p>
+                          <p className="fw-normal mt-5">({dibuat})</p>
                           <p>Drill & Blast Eng</p>
                         </div>
 
                         <div className="mb-5 mt-5">
                           <p className="fw-normal">Diterima Oleh,</p>
-                          <p className="fw-normal mt-5">(M. Arif)</p>
+                          <p className="fw-normal mt-5">({diterima})</p>
                           <p>Drill & Blast GL</p>
                         </div>
                       </th>
@@ -297,6 +362,7 @@ const BlastDesign = () => {
                               <p>Lubang Rusak</p>
                             </div>
                           </div>
+                          {/* Volume (Missing) */}
                           <div>
                             <table className="table table-bordered">
                               <thead className="text-center">
