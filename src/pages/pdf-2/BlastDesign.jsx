@@ -121,6 +121,7 @@ const BlastDesign = () => {
                         <p className="px-3 text-sm pb-3">Emulsion: - Kg</p>
 
                         <p className="px-3 text-sm pb-3">Primer (Boster): 70</p>
+                        <p className="px-3 text-sm pb-3">Power Gel: 70 kg</p>
 
                         <p className="px-3 text-sm pb-3">
                           Electric Detonator: 1 pcs
