@@ -77,43 +77,43 @@ const PemeriksaanKondisiLubangLedak = () => {
         const { data } = res;
         setDatas(data);
 
-        setPit(res.data[0].pit);
-        setTanggal(res.data[0].tanggal);
-        setShift(res.data[0].shift);
-        setDisetujui(res.data[0].disetujui_oleh);
-        setDibuat(res.data[0].dibuat_oleh);
-        setSketsa(res.data[0].data.sketsa);
-        setCatatan(res.data[0].data.catatan);
+        setPit(res?.data[0]?.pit);
+        setTanggal(res?.data[0]?.tanggal);
+        setShift(res?.data[0]?.shift);
+        setDisetujui(res?.data[0]?.disetujui_oleh);
+        setDibuat(res?.data[0]?.dibuat_oleh);
+        setSketsa(res?.data[0]?.data.sketsa);
+        setCatatan(res?.data[0]?.data.catatan);
 
         // Hasil Pemeriksaan
-        setPlanRl(res.data[0].data.plan_rl);
-        setActual_rl(res.data[0].data.actual_rl);
-        setKeterangan_rl(res.data[0].data.keterangan_rl);
+        setPlanRl(res?.data[0]?.data.plan_rl);
+        setActual_rl(res?.data[0]?.data.actual_rl);
+        setKeterangan_rl(res?.data[0]?.data.keterangan_rl);
 
-        setDiameter(res.data[0].data.plan_diameter);
-        setActualDiameterHole(res.data[0].data.actual_diameter_hole);
-        setKeteranganDiameter(res.data[0].data.keterangan_diameter);
+        setDiameter(res?.data[0]?.data.plan_diameter);
+        setActualDiameterHole(res?.data[0]?.data.actual_diameter_hole);
+        setKeteranganDiameter(res?.data[0]?.data.keterangan_diameter);
 
-        setPlanSpacing(res.data[0].data.plan_spacing);
-        setActualSpacing(res.data[0].data.actual_spacing);
-        setKeteranganSpacing(res.data[0].data.keterangan_spacing);
+        setPlanSpacing(res?.data[0]?.data.plan_spacing);
+        setActualSpacing(res?.data[0]?.data.actual_spacing);
+        setKeteranganSpacing(res?.data[0]?.data.keterangan_spacing);
 
-        setPlanBurden(res.data[0].data.plan_burden);
-        setActualBurden(res.data[0].data.actual_burden);
-        setKeteranganBurden(res.data[0].data.keterangan_burden);
+        setPlanBurden(res?.data[0]?.data.plan_burden);
+        setActualBurden(res?.data[0]?.data.actual_burden);
+        setKeteranganBurden(res?.data[0]?.data.keterangan_burden);
 
-        setTotalHole(res.data[0].data.plan_total_hole);
-        setActualTotalHole(res.data[0].data.actual_total_hole);
-        setKeteranganTotalHole(res.data[0].data.keterangan_total_hole);
+        setTotalHole(res?.data[0]?.data.plan_total_hole);
+        setActualTotalHole(res?.data[0]?.data.actual_total_hole);
+        setKeteranganTotalHole(res?.data[0]?.data.keterangan_total_hole);
 
-        setActualWet(res.data[0].data.actual_wet);
-        setKeteranganWet(res.data[0].data.keterangan_wet);
+        setActualWet(res?.data[0]?.data.actual_wet);
+        setKeteranganWet(res?.data[0]?.data.keterangan_wet);
 
-        setActualDry(res.data[0].data.actual_dry);
-        setKeteranganDry(res.data[0].data.keterangan_dry);
+        setActualDry(res?.data[0]?.data.actual_dry);
+        setKeteranganDry(res?.data[0]?.data.keterangan_dry);
 
-        setActualBroker(res.data[0].data.actual_broken);
-        setKeteranganBroken(res.data[0].data.keterangan_broken);
+        setActualBroker(res?.data[0]?.data.actual_broken);
+        setKeteranganBroken(res?.data[0]?.data.keterangan_broken);
 
         console.log(res.data[0].data.plan_rl_obj);
         console.log(data);
