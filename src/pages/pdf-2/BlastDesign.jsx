@@ -292,7 +292,7 @@ const BlastDesign = () => {
 
                         {/* Inhole Delay (Mapping) */}
                         {tableInhale?.map((item) => (
-                          <div className="d-flex gap-4 pb-1">
+                          <div className="d-flex pb-1 gap-2">
                             <div className="p-1 fs-6 fw-normal">
                               <div>
                                 <p className="px-3 text-sm">
@@ -316,7 +316,7 @@ const BlastDesign = () => {
                     </tr>
 
                     <tr style={{ width: "40%" }}>
-                      <th className="text-center d-flex justify-content-evenly gap-5">
+                      <th className="text-center d-flex justify-content-evenly gap-2">
                         <div className="mt-5 mb-5">
                           <p className="fw-normal">Dibuat Oleh,</p>
                           <p className="fw-normal mt-5">({dibuat})</p>
