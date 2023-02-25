@@ -151,9 +151,9 @@ const BlastDesign = () => {
                 <thead>
                   <th className="col-4">
                     {" "}
-                    <div className="d-flex gap-3 align-items-center mb-4">
+                    <div className="d-flex gap-3 align-items-center mb-6">
                       <img
-                        className="pl-2"
+                        className="pl-2 logo-riung"
                         src={LogoRiung}
                         width="120"
                         height="60"
@@ -167,7 +167,7 @@ const BlastDesign = () => {
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-5">
-                    <h1 className="header-drill mb-6">BLAST DESIGN</h1>
+                    <h1 className="header-drill mb-5">BLAST DESIGN</h1>
                   </th>
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-3">
@@ -377,10 +377,10 @@ const BlastDesign = () => {
                                 </tr>
                                 <tr>
                                   <th className="fw-normal text-black fs-5">
-                                    <br/> 
+                                    <br />
                                   </th>
                                   <th className="fw-normal text-black fs-5">
-                                    <br/>
+                                    <br />
                                   </th>
                                 </tr>
                                 <tr>
@@ -394,10 +394,10 @@ const BlastDesign = () => {
                                 </tr>
                                 <tr>
                                   <th className="fw-normal text-black fs-5">
-                                    <br/>
+                                    <br />
                                   </th>
                                   <th className="fw-normal text-black fs-5">
-                                    <br/>
+                                    <br />
                                   </th>
                                 </tr>
                               </thead>

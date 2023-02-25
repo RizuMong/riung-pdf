@@ -85,7 +85,7 @@ const DrillDesign = () => {
         setPattern(res?.data[0].pattern);
         setNo_of_hole(res?.data[0].no_of_hole);
         setVolume(res?.data[0].volume);
-        setSketsa(res?.data[0].sketsa);
+        setSketsa(res?.data[0]?.sketsa || '');
       })
       .catch((err) => {
         alert(err);
@@ -106,7 +106,7 @@ const DrillDesign = () => {
                     {" "}
                     <div className="d-flex gap-3 align-items-center mb-4">
                       <img
-                        className="pl-2"
+                        className="pl-2 logo-riung"
                         src={LogoRiung}
                         width="120"
                         height="60"
@@ -187,7 +187,7 @@ const DrillDesign = () => {
                             INCLINATION : {inclination} (derajat)
                           </p>
                           <p className="px-3">PATTERN : {pattern}</p>
-                          <p className="px-3">ROW : 4</p>
+                          <p className="px-3">ROW : </p>
                           <p className="px-3">No. Of Hole : {no_of_hole}</p>
                           <p className="px-3">VOLUME : {volume} (Bcm)</p>
                         </div>
@@ -199,14 +199,14 @@ const DrillDesign = () => {
                     <tr>
                       <th className="text-center d-flex justify-content-evenly gap-5">
                         <div className="mt-5 mb-5">
-                          <p className="fw-normal">Dibuat Oleh,</p>
+                          <p className="fw-normal dibuat">Dibuat Oleh,</p>
                           <p className="fw-normal mt-5">({dibuat})</p>
-                          <p>Drill & Blast Eng</p>
+                          <p className="dibuat">Drill & Blast Eng</p>
                         </div>
                         <div className="mb-5 mt-5">
-                          <p className="fw-normal">Diketahui Oleh,</p>
+                          <p className="fw-normal dibuat">Diketahui Oleh,</p>
                           <p className="fw-normal mt-5">({diketahui})</p>
-                          <p>Prod Dept/Sect Head</p>
+                          <p className="diketahui">Prod Dept/Sect Head</p>
                         </div>
                       </th>
                     </tr>

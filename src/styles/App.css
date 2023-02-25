@@ -30,8 +30,21 @@ table {
 }
 
 @media print {
+  table {
+		page-break-inside: avoid !important;
+	}
+
   body {
     width: 100%;
+  }
+
+  .logo-riung {
+    width: 80px !important;
+    height: 40px !important;
+  }
+
+  .diketahui, .dibuat {
+    font-size: 14px !important;
   }
 
   .header-excavator {
@@ -45,6 +58,10 @@ table {
 
   .header-pt2 {
     font-size: 8px !important;
+  }
+
+  .header-pt {
+    font-size: 10px !important;
   }
 }
 
