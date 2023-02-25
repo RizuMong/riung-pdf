@@ -376,12 +376,8 @@ const BlastDesign = () => {
                                   <th className="fw-normal">Actual</th>
                                 </tr>
                                 <tr>
-                                  <th className="fw-normal text-black fs-5">
-                                    23.500
-                                  </th>
-                                  <th className="fw-normal text-black fs-5">
-                                    23.520
-                                  </th>
+                                  <th className="fw-normal text-black fs-5"></th>
+                                  <th className="fw-normal text-black fs-5"></th>
                                 </tr>
                                 <tr>
                                   <th className="fw-normal" colSpan={2}>
@@ -393,12 +389,8 @@ const BlastDesign = () => {
                                   <th className="fw-normal">Actual</th>
                                 </tr>
                                 <tr>
-                                  <th className="fw-normal text-black fs-5">
-                                    0.23
-                                  </th>
-                                  <th className="fw-normal text-black fs-5">
-                                    0.20
-                                  </th>
+                                  <th className="fw-normal text-black fs-5"></th>
+                                  <th className="fw-normal text-black fs-5"></th>
                                 </tr>
                               </thead>
                             </table>
