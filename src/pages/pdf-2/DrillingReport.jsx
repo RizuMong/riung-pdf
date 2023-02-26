@@ -141,7 +141,7 @@ const DrillingReport = () => {
     return (
       <h2
         id="loading"
-        className="text-secondary font-medium text-lg bg-white text-center mt-80"
+        className="fw-normal p-5"
       >
         Loading Content...
       </h2>
