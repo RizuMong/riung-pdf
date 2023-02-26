@@ -134,15 +134,15 @@ const DrillingReport = () => {
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
   if (loading) {
     return (
-      <h2
-        id="loading"
-        className="fw-normal p-5"
-      >
+      <h2 id="loading" className="fw-normal p-5">
         Loading Content...
       </h2>
     );
