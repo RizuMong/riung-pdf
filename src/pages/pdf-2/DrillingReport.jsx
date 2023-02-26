@@ -1,10 +1,151 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const DrillingReport = () => {
+  const [datas, setDatas] = useState([]);
+  const [tableInhole, setTableInhole] = useState([]);
+
+  // Data Luar
+  const [pit, setPit] = useState("");
+  const [jobsite, setJobsite] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [shift, setShift] = useState("");
+  const [dibuat, setDibuat] = useState("");
+  const [diperiksa, setDiperiksa] = useState("");
+
+  // Data Total
+  const [total_of_hole, setTotalHole] = useState("");
+  const [avg_depth, setDepth] = useState("");
+  const [total_d01, setTotal_d01] = useState("");
+  const [total_d02, setTotal_d02] = useState("");
+  const [total_d03, setTotal_d03] = useState("");
+  const [total_d04, setTotal_d04] = useState("");
+  const [total_d05, setTotal_d05] = useState("");
+  const [total_d06, setTotal_d06] = useState("");
+  const [total_d07, setTotal_d07] = useState("");
+  const [total_d08, setTotal_d08] = useState("");
+  const [total_d09, setTotal_d09] = useState("");
+  const [total_d10, setTotal_d10] = useState("");
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/drilling-report",
+        {
+          data: {
+            // _id: "63e34712269f8a3681afaccc",
+            // id: "G_0ZYl0Vg",
+            id_drilling_report: queryParams.get("id_drilling_report"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            // pkh_id: "gnPRYl0Vg",
+          },
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+        setDatas(data);
+
+        // Data Luar
+        setPit(data?.pit);
+        setJobsite(data?.jobsite);
+        setTanggal(data?.tanggal);
+        setShift(data?.shift.slice(-1));
+        setDibuat(data?.dibuat_oleh);
+        setDiperiksa(data?.diperiksa_oleh);
+
+        // Data Total
+        setTotalHole(data?.total_no_of_hole);
+        setDepth(data?.avg_depth);
+        setTotal_d01(data?.total_d01);
+        setTotal_d02(data?.total_d02);
+        setTotal_d03(data?.total_d03);
+        setTotal_d04(data?.total_d04);
+        setTotal_d05(data?.total_d05);
+        setTotal_d06(data?.total_d06);
+        setTotal_d07(data?.total_d07);
+        setTotal_d08(data?.total_d08);
+        setTotal_d09(data?.total_d09);
+        setTotal_d10(data?.total_d10);
+
+        // Table Inhole
+        if (data && data.detail) {
+          const result = data.detail.map((item, index) => {
+            const {
+              cn_unit,
+              lokasi_blok,
+              lokasi_strip,
+              elv_actual,
+              elv_plan,
+              work,
+              d01,
+              d02,
+              d03,
+              d04,
+              d05,
+              d06,
+              d07,
+              d08,
+              d09,
+              d10,
+              i01,
+              i02,
+              i03,
+              n01,
+              s01,
+              keterangan,
+            } = item;
+            return {
+              id: index,
+              cn_unit,
+              lokasi_blok,
+              lokasi_strip,
+              elv_actual,
+              elv_plan,
+              work,
+              d01,
+              d02,
+              d03,
+              d04,
+              d05,
+              d06,
+              d07,
+              d08,
+              d09,
+              d10,
+              i01,
+              i02,
+              i03,
+              n01,
+              s01,
+              keterangan,
+            };
+          });
+          setTableInhole(result);
+        }
+
+        console.log({
+          table: tableInhole,
+        });
+
+        console.log(data);
+        console.log(data.detail[0].d01);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
@@ -26,8 +167,8 @@ const DrillingReport = () => {
                         alt="Logo RIUNG"
                       />
                       <h5 className="fw-bold header-pt">
-                        PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE
-                        MGM
+                        PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
+                        {jobsite}
                       </h5>
                     </div>
                   </th>
@@ -41,14 +182,13 @@ const DrillingReport = () => {
                   <th className="col-3">
                     <div className="mb-2">
                       <p className="mb-2 px-2 fw-normal align-middle text-alat border-bottom border-1">
-                        PIT: <span className="text-black">EAST KAWI</span>
+                        PIT: <span className="text-black">{pit}</span>
                       </p>
                       <p className="mb-2 px-2 fw-normal align-middle text-alat border-bottom border-1">
-                        Tanggal:{" "}
-                        <span className="text-black">8 - 11 - 2022</span>
+                        Tanggal: <span className="text-black">{tanggal}</span>
                       </p>
                       <p className="mb-2 px-2 fw-normal align-middle text-alat border-bottom border-1">
-                        SHIFT: <span className="text-black ">1</span>
+                        SHIFT: <span className="text-black ">{shift}</span>
                       </p>
                     </div>
                   </th>
@@ -95,7 +235,7 @@ const DrillingReport = () => {
                       <th rowSpan={2} className="fw-semibold align-middle">
                         STRIP
                       </th>
-                      <th colspan={2} className="fw-semibold align-middle">
+                      <th colSpan={2} className="fw-semibold align-middle">
                         ELV
                       </th>
                       <th rowSpan={2} className="fw-semibold align-middle">
@@ -126,7 +266,7 @@ const DrillingReport = () => {
                         D09
                       </th>
                       <th rowSpan={2} className="fw-semibold align-middle">
-                        D010
+                        D10
                       </th>
                       <th rowSpan={2} className="fw-semibold align-middle">
                         I01
@@ -145,60 +285,66 @@ const DrillingReport = () => {
                       </th>
                     </tr>
                     <tr className="text-center fs-6">
-                      <th className="fw-semibold align-middle">BLOK</th>
-                      <th className="fw-semibold align-middle">STRIP</th>
+                      <th className="fw-semibold align-middle">ACT</th>
+                      <th className="fw-semibold align-middle">PLAN</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center text-black">
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                    </tr>
-                    <tr className="text-center">
+                    {/* Data Detail */}
+                    {tableInhole.map((item) => (
+                      <tr
+                        key={item?.id}
+                        className="text-center text-black align-middle"
+                      >
+                        <td>{item?.cn_unit}</td>
+                        <td>{item?.lokasi_blok}</td>
+                        <td>{item?.lokasi_strip}</td>
+                        <td>{item?.elv_actual}</td>
+                        <td>{item?.elv_plan}</td>
+                        <td>{item?.no_of_hole}</td>
+                        <td>{item?.depth}</td>
+                        <td>{item?.work}</td>
+                        <td>{item?.d01}</td>
+                        <td>{item?.d02}</td>
+                        <td>{item?.d03}</td>
+                        <td>{item?.d04}</td>
+                        <td>{item?.d05}</td>
+                        <td>{item?.d06}</td>
+                        <td>{item?.d07}</td>
+                        <td>{item?.d08}</td>
+                        <td>{item?.d09}</td>
+                        <td>{item?.d10}</td>
+                        <td>{item?.i01}</td>
+                        <td>{item?.i02}</td>
+                        <td>{item?.i03}</td>
+                        <td>{item?.n01}</td>
+                        <td>{item?.s01}</td>
+                        <td>{item?.keterangan}</td>
+                      </tr>
+                    ))}
+                    <tr className="text-center align-middle">
                       <td colSpan={5} className="text-center fs-5 fw-semibold">
                         TOTAL
                       </td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
+                      <td>{total_of_hole}</td>
+                      <td>{avg_depth}</td>
+                      <td></td>
+                      <td>{total_d01}</td>
+                      <td>{total_d02}</td>
+                      <td>{total_d03}</td>
+                      <td>{total_d04}</td>
+                      <td>{total_d05}</td>
+                      <td>{total_d06}</td>
+                      <td>{total_d07}</td>
+                      <td>{total_d08}</td>
+                      <td>{total_d09}</td>
+                      <td>{total_d10}</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>
@@ -208,12 +354,12 @@ const DrillingReport = () => {
                 <div className="row border border-1 align-items-center">
                   <div className="col-3 text-center gap-5">
                     <p className="fw-normal">Dibuat Oleh,</p>
-                    <p className="fw-normal mt-5">(Data)</p>
+                    <p className="fw-normal mt-5">({dibuat})</p>
                     <p className="fw-bolnormal">Drilling & Blast GL</p>
                   </div>
                   <div className="col-3 text-center gap-5">
                     <p className="fw-normal">Diperiksa Oleh,</p>
-                    <p className="fw-normal mt-5">(Data)</p>
+                    <p className="fw-normal mt-5">({diperiksa})</p>
                     <p className="fw-normal">Prod Dept/Sect. Head</p>
                   </div>
                   <div className="col-6">

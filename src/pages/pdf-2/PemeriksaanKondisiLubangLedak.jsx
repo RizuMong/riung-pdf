@@ -114,9 +114,6 @@ const PemeriksaanKondisiLubangLedak = () => {
 
         setActualBroker(res?.data[0]?.data.actual_broken);
         setKeteranganBroken(res?.data[0]?.data.keterangan_broken);
-
-        console.log(res.data[0].data.plan_rl_obj);
-        console.log(data);
       })
       .catch((err) => {
         alert(err);
