@@ -142,14 +142,6 @@ const DrillingReport = () => {
 
   if (loading) {
     return (
-      // <div class="container p-5 d-flex align-items-center">
-      //   <p className="fw-semibold fs-6">Loading Content...</p>
-      //   <div
-      //     class="spinner-border text-warning ms-auto"
-      //     role="status"
-      //     aria-hidden="true"
-      //   ></div>
-      // </div>
       <div class="text-center pt-5">
         <div
           class="spinner-border text-warning"
