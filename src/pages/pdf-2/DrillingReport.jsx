@@ -8,6 +8,7 @@ import "../../styles/App.css";
 const DrillingReport = () => {
   const [datas, setDatas] = useState([]);
   const [tableInhole, setTableInhole] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // Data Luar
   const [pit, setPit] = useState("");
@@ -44,11 +45,8 @@ const DrillingReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/drilling-report",
         {
           data: {
-            // _id: "63e34712269f8a3681afaccc",
-            // id: "G_0ZYl0Vg",
             id_drilling_report: queryParams.get("id_drilling_report"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            // pkh_id: "gnPRYl0Vg",
           },
         }
       )
@@ -133,18 +131,22 @@ const DrillingReport = () => {
           });
           setTableInhole(result);
         }
-
-        console.log({
-          table: tableInhole,
-        });
-
-        console.log(data);
-        console.log(data.detail[0].d01);
       })
       .catch((err) => {
         alert(err);
       });
   };
+
+  if (loading) {
+    return (
+      <h2
+        id="loading"
+        className="text-secondary font-medium text-lg bg-white text-center mt-80"
+      >
+        Loading Content...
+      </h2>
+    );
+  }
 
   return (
     <div className="container-fluid">
