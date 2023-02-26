@@ -142,7 +142,7 @@ const DrillingReport = () => {
 
   if (loading) {
     return (
-      <div class="container d-flex align-items-center">
+      <div class="container p-5 d-flex align-items-center">
         <strong>Loading...</strong>
         <div
           class="spinner-border text-warning ms-auto"
