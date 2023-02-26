@@ -142,9 +142,11 @@ const DrillingReport = () => {
 
   if (loading) {
     return (
-      <h2 id="loading" className="fw-normal p-5">
-        Loading Content...
-      </h2>
+      <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
     );
   }
 
