@@ -78,8 +78,10 @@ const BlastingReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/blasting-report",
         {
           data: {
-            id_blasting_report: queryParams.get("id_blasting_report"),
-            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            // id_blasting_report: queryParams.get("id_blasting_report"),
+            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            id_blasting_report: "OBxLcPJVR",
+            lokasi_pkh_id: "fKdYcP14g",
           },
         }
       )
@@ -241,6 +243,8 @@ const BlastingReport = () => {
             setOthers6("✓");
           }
         }
+
+        console.log(data.note);
       })
       .catch((err) => {
         alert(err);
@@ -492,8 +496,8 @@ const BlastingReport = () => {
                                     <p>air wave</p>
                                   </div>
                                 </ul>
-                                <p className="text-decoration-underline fw-normal">
-                                  Note: <span className="text-decoration-none fw-normal">{data.note}</span>
+                                <p className="fw-normal">
+                                  <u>Note:</u> {data.note}
                                 </p>
                               </div>
                             </div>
