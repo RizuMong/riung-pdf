@@ -190,7 +190,7 @@ const PemeriksaanKondisiLubangLedak = () => {
                     <tr className="text-center align-middle">
                       {/* <th>Sketsa</th> */}
                       <th width="60%" rowSpan={15}>
-                        <img src={sketsa} alt="Gambar Sketsa" width="300" />
+                        <img src={sketsa} width="300" />
                       </th>
                       <th width="16%">HASIL PEMERIKSAAN</th>
                       <th width="5%">PLAN</th>
