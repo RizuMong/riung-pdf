@@ -78,11 +78,9 @@ const BlastingReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/blasting-report",
         {
           data: {
-            // id_blasting_report: queryParams.get("id_blasting_report"),
-            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            id_blasting_report: "OBxLcPJVR",
-            lokasi_pkh_id: "fKdYcP14g",
-          },
+            id_blasting_report: queryParams.get("id_blasting_report"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+          }
         }
       )
       .then((res) => {
