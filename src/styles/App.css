@@ -63,6 +63,11 @@ table {
   .header-pt {
     font-size: 10px !important;
   }
+
+  .header-drill {
+    font-size: 24px !important;
+    text-align: center;
+  }
 }
 
 .table-abu {
