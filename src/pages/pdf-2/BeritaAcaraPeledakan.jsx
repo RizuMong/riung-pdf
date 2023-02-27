@@ -166,8 +166,6 @@ const BeritaAcaraPeledakan = () => {
           pelaksanaan_jumlah_lubang: data.detail.pelaksanaan_jumlah_lubang,
           pelaksanaan_power_gel: data.detail.pelaksanaan_power_gel,
         }));
-
-        console.log(data);
       })
       .catch((err) => {
         alert(err);

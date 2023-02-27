@@ -29,6 +29,10 @@ table {
   margin-bottom: 0 !important;
 }
 
+[src=''] {
+  visibility: hidden;
+}
+
 @media print {
   table {
 		page-break-inside: avoid !important;
