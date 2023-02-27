@@ -13,6 +13,7 @@ const DrillDesign = () => {
   const [kepada, setKepada] = useState("");
   const [dibuat, setDibuat] = useState("");
   const [diketahui, setDiketahui] = useState("");
+  const [loading, setLoading] = useState(true);
 
   // Lokasi Drilling
   const [pit, setPit] = useState("");

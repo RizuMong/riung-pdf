@@ -16,6 +16,7 @@ const LembarPica = () => {
   const [disahkan_oleh, setDisahkan_oleh] = useState("");
   const [disiapkan_oleh, setDisiapkan_oleh] = useState("");
   const [tablePICA, setTablePICA] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -75,9 +76,21 @@ const LembarPica = () => {
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
+  if (loading) {
+    return (
+      <div class="text-center pt-5">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="border border-2 border-dark p-1">
       {/* Header Form */}

@@ -15,6 +15,7 @@ const CheckAktivitasPeledakan = () => {
   const [dibuat, setDibuat] = useState("");
   const [diketahui, setDiketahui] = useState("");
   const [rl, setRl] = useState("");
+  const [loading, setLoading] = useState(true);
 
   // Data Sebelum 1
   const [q1_sebelum1a, setQ1Sebelum1a] = useState("");
@@ -247,8 +248,21 @@ const CheckAktivitasPeledakan = () => {
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false)
       });
   };
+
+  if (loading) {
+    return (
+      <div class="text-center pt-5">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">

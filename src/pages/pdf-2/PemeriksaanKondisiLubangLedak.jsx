@@ -10,6 +10,7 @@ import "../../styles/App.css";
 
 const PemeriksaanKondisiLubangLedak = () => {
   const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // Data Header
   const [pit, setPit] = useState("");
@@ -117,8 +118,21 @@ const PemeriksaanKondisiLubangLedak = () => {
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div class="text-center pt-5">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">

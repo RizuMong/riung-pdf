@@ -23,6 +23,7 @@ const FormPengambilanBahanPeledak = () => {
   const [petugas_gudang, setPetugasGudang] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [tableData, setTableData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -99,8 +100,23 @@ const FormPengambilanBahanPeledak = () => {
       })
       .catch((err) => {
         alert(err);
-      });
+      }) .finally(() => {
+        setLoading(false);
+      });;
   };
+
+  if (loading) {
+    return (
+      <div class="text-center pt-5">
+        <div
+          class="spinner-border text-warning"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">

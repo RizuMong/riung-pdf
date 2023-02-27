@@ -11,6 +11,7 @@ import "../../styles/App.css";
 const BlastDesign = () => {
   const [datas, setDatas] = useState([]);
   const [tableInhale, setTableInhale] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // Data Luar
   const [tanggal, setTanggal] = useState("");
@@ -136,8 +137,21 @@ const BlastDesign = () => {
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div class="text-center pt-5">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">
