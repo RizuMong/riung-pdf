@@ -241,8 +241,6 @@ const BlastingReport = () => {
             setOthers6("✓");
           }
         }
-
-        console.log(data.note);
       })
       .catch((err) => {
         alert(err);
