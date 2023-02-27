@@ -9,6 +9,7 @@ const BlastingReport = () => {
   const [dataluar, setDataLuar] = useState({});
   const [data, setData] = useState({});
   const [detail, setDetail] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -35,8 +36,21 @@ const BlastingReport = () => {
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div class="text-center pt-5">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">
