@@ -195,7 +195,7 @@ const DrillingReport = () => {
                         Tanggal: <span className="text-black">{tanggal}</span>
                       </p>
                       <p className="mb-2 px-2 fw-normal align-middle text-alat border-bottom border-1">
-                        SHIFT: <span className="text-black ">{shift.slice(-1)}</span>
+                        SHIFT: <span className="text-black ">{shift}</span>
                       </p>
                     </div>
                   </th>
