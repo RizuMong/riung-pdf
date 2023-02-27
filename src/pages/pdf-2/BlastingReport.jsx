@@ -493,7 +493,7 @@ const BlastingReport = () => {
                                   </div>
                                 </ul>
                                 <p className="text-decoration-underline fw-normal">
-                                  Note: {data.note}
+                                  Note: <span className="text-decoration-none fw-normal">{data.note}</span>
                                 </p>
                               </div>
                             </div>
