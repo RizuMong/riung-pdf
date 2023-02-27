@@ -58,7 +58,7 @@ const DrillingReport = () => {
         setPit(data?.pit);
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);
-        setShift(data?.shift.slice(-1));
+        setShift(data?.shift);
         setDibuat(data?.dibuat_oleh);
         setDiperiksa(data?.diperiksa_oleh);
 
@@ -195,7 +195,7 @@ const DrillingReport = () => {
                         Tanggal: <span className="text-black">{tanggal}</span>
                       </p>
                       <p className="mb-2 px-2 fw-normal align-middle text-alat border-bottom border-1">
-                        SHIFT: <span className="text-black ">{shift}</span>
+                        SHIFT: <span className="text-black ">{shift.slice(-1)}</span>
                       </p>
                     </div>
                   </th>
