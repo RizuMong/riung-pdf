@@ -167,7 +167,7 @@ const DrillDesign = () => {
                         className="fw-semibold"
                       >
                         <h5 className="fs-6 p-1 fw-semibold">SKETSA</h5>
-                        <img src={sketsa} alt="Gambar Sketsa" width="600px" />
+                        <img src={sketsa} width="600px" />
                       </th>
                     </tr>
                     <tr>
