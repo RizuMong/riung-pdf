@@ -11,6 +11,17 @@ const ProductControl = () => {
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [lokasi, setLokasi] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  // Shift 1
+  const [jam_1a, setJam_1a] = useState("");
+  const [produksi_plan_1a, SetProduksi_plan_1a] = useState("");
+  const [produksi_aktual_1a, setProduksi_aktual_1a] = useState("");
+  const [akumumulasi_plan_1a, SetAkumumulasi_plan_1a] = useState("");
+  const [akumumulasi_aktual_1a, SetAkumumulasi_aktual_1a] = useState("");
+  const [keterangan_1a, setKeterangan_1a] = useState("");
+
+  // Shift 2
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -27,30 +38,44 @@ const ProductControl = () => {
           data: {
             // id_production_control: queryParams.get("id_production_control"),
             // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            // pkh: queryParams.get("pkh")
-            id_production_control: queryParams.get("id_production_control"),
-            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            pkh: queryParams.get("pkh")
+            // pkh: queryParams.get("pkh"),
+            id_production_control: "vVoddQJ4R",
+            lokasi_pkh_id: "VbVdOQJ4g",
+            pkh: "mhnOdQ1VR",
           },
         }
       )
       .then((res) => {
         const { data } = res;
         setDatas(data);
-        if (res.data && res.data[0] && res.data[0].jobsite) {
-          setJobsite(res.data[0].jobsite);
-        }
-        if (res.data && res.data[0] && res.data[0].tanggal) {
-          setTanggal(res.data[0].tanggal);
-        }
-        if (res.data && res.data[0] && res.data[0].lokasi) {
-          setLokasi(res.data[0].lokasi);
-        }
+
+        setJobsite(data?.jobsite);
+        setTanggal(data?.tanggal);
+        setLokasi(data?.lokasi);
+
+        console.log({
+          // jam: data.detail[0]
+        });
+
+        console.log(produksi_plan_1a);
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">
@@ -145,16 +170,7 @@ const ProductControl = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
-                {/* {datas?.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item?.line.jam}</td>
-                    <td>{item?.line.produksi_plan}</td>
-                    <td>{item?.line.produksi_aktual}</td>
-                    <td>{item?.line.akumulasi_plan}</td>
-                    <td>{item?.line.akumulasi_aktual}</td>
-                    <td>{item?.line.keterangan}</td>
-                  </tr>
-                ))} */}
+                {/* Shift 1 */}
                 <tr>
                   <td>07:00 - 08:00</td>
                   <td></td>
@@ -251,6 +267,7 @@ const ProductControl = () => {
                   <td></td>
                   <td></td>
                 </tr>
+                {/* Shift 2 */}
                 <tr>
                   <td>19:00 - 20:00</td>
                   <td></td>
@@ -369,6 +386,7 @@ const ProductControl = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
+                {/* Shift 1 */}
                 <tr>
                   <th className="text-serif align-middle" scope="row">
                     I
@@ -376,22 +394,17 @@ const ProductControl = () => {
                   <td>
                     <br />
                     <br />
-                    <br />
-                    <br />
                   </td>
                   <td>
                     <br />
                     <br />
-                    <br />
-                    <br />
                   </td>
                   <td>
-                    <br />
-                    <br />
                     <br />
                     <br />
                   </td>
                 </tr>
+                {/* Shift 2 */}
                 <tr>
                   <th className="text-serif align-middle" scope="row">
                     II
@@ -399,18 +412,12 @@ const ProductControl = () => {
                   <td>
                     <br />
                     <br />
-                    <br />
-                    <br />
                   </td>
                   <td>
                     <br />
                     <br />
-                    <br />
-                    <br />
                   </td>
                   <td>
-                    <br />
-                    <br />
                     <br />
                     <br />
                   </td>
