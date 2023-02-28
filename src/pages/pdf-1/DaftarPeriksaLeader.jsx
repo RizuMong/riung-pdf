@@ -6,13 +6,125 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const DaftarPeriksaLeader = () => {
-  const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [lokasi, setLokasi] = useState("");
   const [shift, setShift] = useState("");
   const [diperiksa, setDiperiksa] = useState("");
   const [disetujui, setDisetujui] = useState("");
+  // const [catatan, setCatatan] = useState("");
+  
+  // Loading Area
+  const [loading_area_bebas_genang, SetLoading_area_bebas_genang] = useState("");
+  const [loading_area_bebas_genang_note, SetLoading_area_bebas_genang_note] = useState("");
+  const [loading_area_blasting, SetLoading_area_blasting] = useState("");
+  const [loading_area_blasting_note, SetLoading_area_blasting_note] = useState("");
+  const [loading_area_buldozer, SetLoading_area_buldozer] = useState("");
+  const [loading_area_buldozer_note, SetLoading_area_buldozer_note] = useState("");
+  const [loading_area_cara_kerja, SetLoading_area_cara_kerja] = useState("");
+  const [loading_area_cara_kerja_note, SetLoading_area_cara_kerja_note] = useState("");
+  const [loading_area_grade, SetLoading_area_grade] = useState("");
+  const [loading_area_grade_note, SetLoading_area_grade_note] = useState("");
+  const [loading_area_lebar_tinggi, Setloading_area_lebar_tinggi] = useState("");
+  const [loading_area_lebar_tinggi_note, SetLoading_area_lebar_tinggi_note] = useState("");
+  const [loading_area_longsor, SetLoading_area_longsor] = useState("");
+  const [loading_area_longsor_note, SetLoading_area_longsor_note] = useState("");
+  const [loading_area_patok, SetLoading_area_patok] = useState("");
+  const [loading_area_patok_note, SetLoading_area_patok_note] = useState("");
+  const [loading_area_penerangan, SetLoading_area_penerangan] = useState("");
+  const [loading_area_penerangan_note, SetLoading_area_penerangan_note] = useState("");
+  const [loading_area_penggalian, SetLoading_area_penggalian] = useState("");
+  const [loading_area_penggalian_note, SetLoading_area_penggalian_note] = useState("");
+  const [loading_area_rata_bebas, SetLoading_area_rata_bebas] = useState("");
+  const [loading_area_rata_bebas_note, SetLoading_area_rata_bebas_note] = useState("");
+  const [loading_area_volume, SetLoading_area_volume] = useState("");
+  const [loading_area_volume_note, SetLoading_area_volume_note] = useState("");
+
+  // Jalan
+  const [jalan_aman_resiko, SetJalan_aman_resiko] = useState("");
+  const [jalan_aman_resiko_note, SetJalan_aman_resiko_note] = useState("");
+  const [jalan_bebas_debu, SetJalan_bebas_debu] = useState("");
+  const [jalan_bebas_debu_note, SetJalan_bebas_debu_note] = useState("");
+  const [jalan_cara_kerja, SetJalan_cara_kerja] = useState("");
+  const [jalan_cara_kerja_note, SetJalan_cara_kerja_note] = useState("");
+  const [jalan_driver_patuh_rambu, SetJalan_driver_patuh_rambu] = useState("");
+  const [jalan_driver_patuh_rambu_note, SetJalan_driver_patuh_rambu_note] = useState("");
+  const [jalan_grader, SetJalan_grader] = useState("");
+  const [jalan_grader_note, SetJalan_grader_note] = useState("");
+  const [jalan_lebar_grade, SetJalan_lebar_grade] = useState("");
+  const [jalan_lebar_grade_note, SetJalan_lebar_grade_note] = useState("");
+  const [jalan_rambu, SetJalan_rambu] = useState("");
+  const [jalan_rambu_note, SetJalan_rambu_note] = useState("");
+  const [jalan_rata_bebas, SetJalan_rata_bebas] = useState("");
+  const [jalan_rata_bebas_note, SetJalan_rata_bebas_note] = useState("");
+  const [jalan_safety_berm, SetJalan_safety_berm] = useState("");
+  const [jalan_safety_berm_note, SetJalan_safety_berm_note] = useState("");
+
+  // Dumping Area
+  const [dumping_area_alat_penunjang, setDumping_area_alat_penunjang] = useState("");
+  const [dumping_area_alat_penunjang_note, setDumping_area_alat_penunjang_note] = useState("");
+  const [dumping_area_alokasi, setDumping_area_alokasi] = useState("");
+  const [dumping_area_alokasi_note, setDumping_area_alokasi_note] = useState("");
+  const [dumping_area_bebas_debu, setDumping_area_bebas_debu] = useState("");
+  const [dumping_area_bebas_debu_note, setDumping_area_bebas_debu_note] = useState("");
+  const [dumping_area_bebas_genang, setDumping_area_bebas_genang] = useState("");
+  const [dumping_area_bebas_genang_note, setDumping_area_bebas_genang_note] = useState("");
+  const [dumping_area_cara_kerja, setDumping_area_cara_kerja] = useState("");
+  const [dumping_area_cara_kerja_note, setDumping_area_cara_kerja_note] = useState("");
+  const [dumping_area_jalan_rata, setDumping_area_jalan_rata] = useState("");
+  const [dumping_area_jalan_rata_note, setDumping_area_jalan_rata_note] = useState("");
+  const [dumping_area_lebar_standar, setDumping_area_lebar_standar] = useState("");
+  const [dumping_area_lebar_standar_note, setDumping_area_lebar_standar_note] = useState("");
+  const [dumping_area_longsor, setDumping_area_longsor] = useState("");
+  const [dumping_area_longsor_note, setDumping_area_longsor_note] = useState("");
+  const [dumping_area_patok, setDumping_area_patok] = useState("");
+  const [dumping_area_patok_note, setDumping_area_patok_note] = useState("");
+  const [dumping_area_penerangan, setDumping_area_penerangan] = useState("");
+  const [dumping_area_penerangan_note, setDumping_area_penerangan_note] = useState("");
+
+  // Drainage
+  const [drainage_saluran_pit, setDrainage_saluran_pit] = useState("");
+  const [drainage_saluran_pit_note, setDrainage_saluran_pit_note] = useState("");
+  const [drainage_gorong, setDrainage_gorong] = useState("");
+  const [drainage_gorong_note, setDrainage_gorong_note] = useState("");
+  const [drainage_saluran_air, setDrainage_saluran_air] = useState("");
+  const [drainage_saluran_air_note, setDrainage_saluran_air_note] = useState("");
+
+  // Dewatering
+  const [dewatering_air_tambang, setDewatering_air_tambang] = useState("");
+  const [dewatering_air_tambang_note, setDewatering_air_tambang_note] = useState("");
+  // const [dewatering_air_sendiment, setDewatering_air_sendiment] = useState("");
+  // const [dewatering_air_sendiment_note, setDewatering_air_sendiment_note] = useState("");
+  const [dewatering_fungsi_pompa, setDewatering_fungsi_pompa] = useState("");
+  const [dewatering_fungsi_pompa_note, setDewatering_fungsi_pompa_note] = useState("");
+  const [dewatering_fungsi_pond, setDewatering_fungsi_pond] = useState("");
+  const [dewatering_fungsi_pond_note, setDewatering_fungsi_pond_note] = useState("");
+  const [dewatering_instalasi_pompa, setDewatering_instalasi_pompa] = useState("");
+  const [dewatering_instalasi_pompa_note, setDewatering_instalasi_pompa_note] = useState("");
+  const [dewatering_penerangan, setDewatering_penerangan] = useState("");
+  const [dewatering_penerangan_note, setDewatering_penerangan_note] = useState("");
+  const [dewatering_sump, setDewatering_sump] = useState("");
+  const [dewatering_sump_note, setDewatering_sump_note] = useState("");
+  
+  // Komoditas
+  const [komoditas_kontaminasi, setKomoditas_kontaminasi] = useState("");
+  const [komoditas_kontaminasi_note, setKomoditas_kontaminasi_note] = useState("");
+  const [komoditas_tipe, setKomoditas_tipe] = useState("");
+  const [komoditas_tipe_note, setKomoditas_tipe_note] = useState("");
+  const [komoditas_volume, setKomoditas_volume] = useState("");
+  const [komoditas_volume_note, setKomoditas_volume_note] = useState("");
+
+  // Stockpile
+  const [stockpile_balance, setStockpile_balance] = useState("");
+  const [stockpile_balance_note, setStockpile_balance_note] = useState("");
+  const [stockpile_op, setStockpile_op] = useState("");
+  const [stockpile_op_note, setStockpile_op_note] = useState("");
+  const [stockpile_penerangan, setStockpile_penerangan] = useState("");
+  const [stockpile_penerangan_note, setStockpile_penerangan_note] = useState("");
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
 
   useEffect(() => {
     fetchData();
@@ -24,31 +136,157 @@ const DaftarPeriksaLeader = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/group-leader",
         {
           data: {
-            _id: "63ecafe7269f8a3681aae579",
-            id: "WrA4zp14g",
-            id_dpgl: "WrA4zp14g",
-            lokasi_pkh_id: "eMvVzt1Vg",
-            pkh_id: "qBI4ztJVR",
+            id_dpgl: queryParams.get("id_dpgl"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
           },
         }
       )
       .then((res) => {
         const { data } = res;
-        setDatas(data);
 
-        setJobsite(res?.data[0]?.jobsite);
-        setTanggal(res?.data[0]?.tanggal);
-        setShift(res?.data[0]?.shift);
-        setLokasi(res?.data[0]?.lokasi);
-        setDiperiksa(res?.data[0]?.diperiksa);
-        setDisetujui(res?.data[0]?.disetujui);
+        setJobsite(data?.jobsite);
+        setTanggal(data?.tanggal);
+        setShift(data?.shift);
+        setLokasi(data?.lokasi);
+        setDiperiksa(data?.diperiksa);
+        setDisetujui(data?.disetujui);
 
-        console.log(data);
+        // Check Data True
+        const checkData = (data, set) => {
+          if (data == null) {
+            set(" ");
+            return 1;
+          } else if (data) {
+            set("✓");
+            return 1;
+          }
+          set("X");
+          return 1;
+        };
+
+        // Loading Area
+        checkData(data.detail.loading_area_bebas_genang, SetLoading_area_bebas_genang);
+        SetLoading_area_bebas_genang_note(data.detail.loading_area_bebas_genang_note);
+        checkData(data.detail.loading_area_blasting, SetLoading_area_blasting);
+        SetLoading_area_blasting_note(data.detail.loading_area_blasting_note);
+        checkData(data.detail.loading_area_buldozer, SetLoading_area_buldozer);
+        SetLoading_area_buldozer_note(data.detail.loading_area_buldozer_note);
+        checkData(data.detail.loading_area_cara_kerja, SetLoading_area_cara_kerja);
+        SetLoading_area_cara_kerja_note(data.detail.loading_area_cara_kerja_note);
+        checkData(data.detail.loading_area_grade, SetLoading_area_grade);
+        SetLoading_area_grade_note(data.detail.loading_area_grade_note);
+        checkData(data.detail.loading_area_lebar_tinggi, Setloading_area_lebar_tinggi);
+        SetLoading_area_lebar_tinggi_note(data.detail.loading_area_lebar_tinggi_note);
+        checkData(data.detail.loading_area_longsor, SetLoading_area_longsor);
+        SetLoading_area_longsor_note(data.detail.loading_area_longsor_note);
+        checkData(data.detail.loading_area_patok, SetLoading_area_patok);
+        SetLoading_area_patok_note(data.detail.loading_area_patok_note);
+        checkData(data.detail.loading_area_penerangan, SetLoading_area_penerangan);
+        SetLoading_area_penerangan_note(data.detail.loading_area_penerangan_note);
+        checkData(data.detail.loading_area_penggalian, SetLoading_area_penggalian);
+        SetLoading_area_penggalian_note(data.detail.loading_area_penggalian_note);
+        checkData(data.detail.loading_area_rata_bebas, SetLoading_area_rata_bebas);
+        SetLoading_area_rata_bebas_note(data.detail.loading_area_rata_bebas_note);
+        checkData(data.detail.loading_area_volume, SetLoading_area_volume);
+        SetLoading_area_volume_note(data.detail.loading_area_volume_note);
+
+        // Jalan
+        checkData(data.detail.jalan_aman_resiko, SetJalan_aman_resiko);
+        SetJalan_aman_resiko_note(data.detail.jalan_aman_resiko_note);
+        checkData(data.detail.jalan_bebas_debu, SetJalan_bebas_debu);
+        SetJalan_bebas_debu_note(data.detail.jalan_bebas_debu_note);
+        checkData(data.detail.jalan_cara_kerja, SetJalan_cara_kerja);
+        SetJalan_cara_kerja_note(data.detail.jalan_cara_kerja_note);
+        checkData(data.detail.jalan_driver_patuh_rambu, SetJalan_driver_patuh_rambu);
+        SetJalan_driver_patuh_rambu_note(data.detail.jalan_driver_patuh_rambu_note);
+        checkData(data.detail.jalan_grader, SetJalan_grader);
+        SetJalan_grader_note(data.detail.jalan_grader_note);
+        checkData(data.detail.jalan_lebar_grade, SetJalan_lebar_grade);
+        SetJalan_lebar_grade_note(data.detail.jalan_lebar_grade_note);
+        checkData(data.detail.jalan_rambu, SetJalan_rambu);
+        SetJalan_rambu_note(data.detail.jalan_rambu_note);
+        checkData(data.detail.jalan_rata_bebas, SetJalan_rata_bebas);
+        SetJalan_rata_bebas_note(data.detail.jalan_rata_bebas_note);
+        checkData(data.detail.jalan_safety_berm, SetJalan_safety_berm);
+        SetJalan_safety_berm_note(data.detail.jalan_safety_berm_note);
+
+        // Dumping Area
+        checkData(data.detail.dumping_area_alat_penunjang, setDumping_area_alat_penunjang);
+        setDumping_area_alat_penunjang_note(data.detail.dumping_area_alat_penunjang_note);
+        checkData(data.detail.dumping_area_alokasi, setDumping_area_alokasi);
+        setDumping_area_alokasi_note(data.detail.dumping_area_alokasi_note);
+        checkData(data.detail.dumping_area_bebas_debu, setDumping_area_bebas_debu);
+        setDumping_area_bebas_debu_note(data.detail.dumping_area_bebas_debu_note);
+        checkData(data.detail.dumping_area_bebas_genang, setDumping_area_bebas_genang);
+        setDumping_area_bebas_genang_note(data.detail.dumping_area_bebas_genang_note);
+        checkData(data.detail.dumping_area_cara_kerja, setDumping_area_cara_kerja);
+        setDumping_area_cara_kerja_note(data.detail.dumping_area_cara_kerja_note);
+        checkData(data.detail.dumping_area_jalan_rata, setDumping_area_jalan_rata);
+        setDumping_area_jalan_rata_note(data.detail.dumping_area_jalan_rata_note);
+        checkData(data.detail.dumping_area_lebar_standar, setDumping_area_lebar_standar);
+        setDumping_area_lebar_standar_note(data.detail.dumping_area_lebar_standar_note);
+        checkData(data.detail.dumping_area_longsor, setDumping_area_longsor);
+        setDumping_area_longsor_note(data.detail.dumping_area_longsor_note);
+        checkData(data.detail.dumping_area_patok, setDumping_area_patok);
+        setDumping_area_patok_note(data.detail.dumping_area_patok_note);
+        checkData(data.detail.dumping_area_penerangan, setDumping_area_penerangan);
+        setDumping_area_penerangan_note(data.detail.dumping_area_penerangan_note);
+
+        // Drainage
+        checkData(data.detail.drainage_gorong, setDrainage_gorong);
+        setDrainage_gorong_note(data.detail.drainage_gorong_note);
+        checkData(data.detail.drainage_saluran_air, setDrainage_saluran_air);
+        setDrainage_saluran_air_note(data.detail.drainage_saluran_air_note);
+        checkData(data.detail.drainage_saluran_pit, setDrainage_saluran_pit);
+        setDrainage_saluran_pit_note(data.detail.drainage_saluran_pit_note);
+
+        // Dewatering
+        checkData(data.detail.dewatering_air_tambang, setDewatering_air_tambang);
+        setDewatering_air_tambang_note(data.detail.dewatering_air_tambang_note);
+        checkData(data.detail.dewatering_fungsi_pompa, setDewatering_fungsi_pompa);
+        setDewatering_fungsi_pompa_note(data.detail.dewatering_fungsi_pompa_note);
+        checkData(data.detail.dewatering_fungsi_pond, setDewatering_fungsi_pond);
+        setDewatering_fungsi_pond_note(data.detail.dewatering_fungsi_pond_note);
+        checkData(data.detail.dewatering_instalasi_pompa, setDewatering_instalasi_pompa);
+        setDewatering_instalasi_pompa_note(data.detail.dewatering_instalasi_pompa_note);
+        checkData(data.detail.dewatering_penerangan, setDewatering_penerangan);
+        setDewatering_penerangan_note(data.detail.dewatering_penerangan_note);
+        checkData(data.detail.dewatering_sump, setDewatering_sump);
+        setDewatering_sump_note(data.detail.dewatering_sump_note);
+
+        // Komoditas
+        checkData(data.detail.komoditas_kontaminasi, setKomoditas_kontaminasi);
+        setKomoditas_kontaminasi_note(data.detail.komoditas_kontaminasi_note);
+        checkData(data.detail.komoditas_tipe, setKomoditas_tipe);
+        setKomoditas_tipe_note(data.detail.komoditas_tipe_note);
+        checkData(data.detail.komoditas_volume, setKomoditas_volume);
+        setKomoditas_volume_note(data.detail.komoditas_volume_note);
+
+        // Stockpile
+        checkData(data.detail.stockpile_balance, setStockpile_balance);
+        setStockpile_balance_note(data.detail.stockpile_balance_note);
+        checkData(data.detail.stockpile_op, setStockpile_op);
+        setStockpile_op_note(data.detail.stockpile_op_note);
+        checkData(data.detail.stockpile_penerangan, setStockpile_penerangan);
+        setStockpile_penerangan_note(data.detail.stockpile_penerangan_note);
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">
@@ -70,7 +308,7 @@ const DaftarPeriksaLeader = () => {
                         height="60"
                         alt="Logo RIUNG"
                       />
-                      <h5 className="fw-bold text-serif fs-5">
+                      <h5 className="fw-bold text-serif fs-5 header-pt">
                         PT. RIUNG MITRA LESTARI <br /> JOB SITE : {jobsite}
                       </h5>
                     </div>
@@ -83,7 +321,7 @@ const DaftarPeriksaLeader = () => {
                   </th>
                   <div className="vr" style={{ height: 95 }}></div>
                   <th className="col-3">
-                    <div className="mb-0">
+                    <div className="margin-dpgl">
                       <p className="px-2 fw-normal text-serif text-alat border-bottom">
                         No. Dokumen:{" "}
                         <span className="fw-bold">FRM-OPR-005</span>
@@ -160,18 +398,18 @@ const DaftarPeriksaLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_grade || loading_area_grade_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_lebar_tinggi || loading_area_lebar_tinggi_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_rata_bebas || loading_area_rata_bebas_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_bebas_genang || loading_area_bebas_genang_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_buldozer || loading_area_buldozer_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_cara_kerja || loading_area_cara_kerja_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_patok || loading_area_patok_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_penggalian || loading_area_penggalian_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_longsor || loading_area_longsor_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_penerangan || loading_area_penerangan_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_blasting || loading_area_blasting_note}</td>
+                    <td className="text-serif text-sm fw-bold">{loading_area_volume || loading_area_volume_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -228,15 +466,15 @@ const DaftarPeriksaLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_lebar_grade || jalan_lebar_grade_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_rata_bebas || jalan_rata_bebas_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_bebas_debu || jalan_bebas_debu_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_grader || jalan_grader_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_cara_kerja || jalan_cara_kerja_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_aman_resiko || jalan_aman_resiko_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_safety_berm || jalan_safety_berm_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_rambu || jalan_rambu_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_driver_patuh_rambu || jalan_driver_patuh_rambu_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -287,16 +525,16 @@ const DaftarPeriksaLeader = () => {
                     <td className="text-serif text-sm">Cukup penerangan</td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_jalan_rata || dumping_area_jalan_rata_note}</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_bebas_debu || dumping_area_bebas_debu_note}</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_bebas_genang || dumping_area_bebas_genang_note}</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_lebar_standar || dumping_area_lebar_standar_note}</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_alat_penunjang || dumping_area_alat_penunjang_note}</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_cara_kerja || dumping_area_cara_kerja_note}</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_patok || dumping_area_patok_note}</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_alokasi || dumping_area_alokasi_note}</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_longsor || dumping_area_longsor_note}</td>
+                    <td className="text-serif text-sm fw-bold">{dumping_area_penerangan || dumping_area_penerangan_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -324,9 +562,9 @@ const DaftarPeriksaLeader = () => {
                   </thead>
                   <tbody className="text-center">
                     <tr>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
-                      <td className="text-serif text-sm fw-bold">Tidak</td>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
+                      <td className="text-serif text-sm fw-bold">{drainage_saluran_pit || drainage_saluran_pit_note}</td>
+                      <td className="text-serif text-sm fw-bold">{drainage_gorong || drainage_gorong_note}</td>
+                      <td className="text-serif text-sm fw-bold">{drainage_saluran_air || drainage_saluran_air_note}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -384,13 +622,13 @@ const DaftarPeriksaLeader = () => {
                   </thead>
                   <tbody className="text-center">
                     <tr>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
-                      <td className="text-serif text-sm fw-bold">Tidak</td>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
-                      <td className="text-serif text-sm fw-bold">Tidak</td>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
+                      <td className="text-serif text-sm fw-bold">{dewatering_sump || dewatering_sump_note}</td>
+                      <td className="text-serif text-sm fw-bold">{dewatering_fungsi_pompa || dewatering_fungsi_pompa_note}</td>
+                      <td className="text-serif text-sm fw-bold">{dewatering_instalasi_pompa || dewatering_instalasi_pompa_note}</td>
+                      <td className="text-serif text-sm fw-bold">{dewatering_penerangan || dewatering_penerangan_note}</td>
+                      <td className="text-serif text-sm fw-bold">{dewatering_fungsi_pond || dewatering_fungsi_pond_note}</td>
+                      <td className="text-serif text-sm fw-bold"></td>
+                      <td className="text-serif text-sm fw-bold">{dewatering_air_tambang || dewatering_air_tambang_note}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -421,9 +659,9 @@ const DaftarPeriksaLeader = () => {
                   </thead>
                   <tbody className="text-center">
                     <tr>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
-                      <td className="text-serif text-sm fw-bold">Tidak</td>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
+                      <td className="text-serif text-sm fw-bold">{komoditas_kontaminasi || komoditas_kontaminasi_note}</td>
+                      <td className="text-serif text-sm fw-bold">{komoditas_tipe || komoditas_tipe_note}</td>
+                      <td className="text-serif text-sm fw-bold">{komoditas_volume || komoditas_volume_note}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -449,9 +687,9 @@ const DaftarPeriksaLeader = () => {
                   </thead>
                   <tbody className="text-center">
                     <tr>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
-                      <td className="text-serif text-sm fw-bold">Tidak</td>
-                      <td className="text-serif text-sm fw-bold">Ya</td>
+                      <td className="text-serif text-sm fw-bold">{stockpile_balance || stockpile_balance_note}</td>
+                      <td className="text-serif text-sm fw-bold">{stockpile_op || stockpile_op_note}</td>
+                      <td className="text-serif text-sm fw-bold">{stockpile_penerangan || stockpile_penerangan_note}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -484,7 +722,9 @@ const DaftarPeriksaLeader = () => {
             {/* PICA */}
             <div className="mb-3 mt-5 w-75">
               <h5 className="header-leader text-serif">8. CATATAN</h5>
-              <p className="border-bottom border-dark">Content...</p>
+              <p className="border-bottom border-dark">-</p>
+              <p className="border-bottom border-dark">-</p>
+              <p className="border-bottom border-dark">-</p>
             </div>
           </div>
         </div>

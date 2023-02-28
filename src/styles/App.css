@@ -42,6 +42,26 @@ table {
     width: 100%;
   }
 
+  .header-production-control {
+    font-size: 28px !important;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .text-alat {
+    font-size: 10px !important;
+  }
+
+  .margin-dpgl {
+    margin-bottom: 20px !important;
+  }
+
+  .header-production-control2 {
+    font-size: 22px !important;
+    text-align: center;
+    font-weight: 800;
+  }
+
   .logo-riung {
     width: 80px !important;
     height: 40px !important;
@@ -238,6 +258,12 @@ hr .production {
 }
 
 .header-production-control {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.header-production-control2 {
   font-size: 32px;
   text-align: center;
   font-weight: 800;

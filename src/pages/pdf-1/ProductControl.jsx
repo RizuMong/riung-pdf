@@ -25,19 +25,12 @@ const ProductControl = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/production-control-page",
         {
           data: {
-            _id: queryParams.get("_id"),
-            company_id: queryParams.get("company_id"),
-            created_at: queryParams.get("created_at"),
-            created_by: queryParams.get("created_by"),
-            id: queryParams.get("id"),
+            // id_production_control: queryParams.get("id_production_control"),
+            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            // pkh: queryParams.get("pkh")
             id_production_control: queryParams.get("id_production_control"),
-            lokasi: queryParams.get("lokasi"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            pkh: queryParams.get("pkh"),
-            shift: queryParams.get("shift"),
-            tanggal: queryParams.get("tanggal"),
-            updated_at: queryParams.get("updated_at"),
-            updated_by: queryParams.get("updated_by"),
+            pkh: queryParams.get("pkh")
           },
         }
       )
@@ -71,7 +64,7 @@ const ProductControl = () => {
               <thead>
                 <th className="col-4">
                   {" "}
-                  <div className="d-flex gap-3 mb-3">
+                  <div className="d-flex gap-3 mb-2 align-items-center">
                     <img
                       className="pl-2"
                       src={LogoRiung}
@@ -85,16 +78,16 @@ const ProductControl = () => {
                     </h5>
                   </div>
                 </th>
-                <div className="vr" style={{ height: 100 }}></div>
+                <div className="vr" style={{ height: 80 }}></div>
                 <th className="col-5">
-                  <h1 className="header-production-control text-serif mb-7">
+                  <h5 className="header-production-control2 text-serif mb-4">
                     PRODUCTION CONTROL
-                  </h1>
+                  </h5>
                 </th>
-                <div className="vr" style={{ height: 100 }}></div>
+                <div className="vr" style={{ height: 80 }}></div>
                 <th className="col-3">
-                  <div className="mb-4">
-                    <p className="mb-3 px-2 text-serif fw-semibold text-alat">
+                  <div className="mb-3">
+                    <p className="mb-2 px-2 text-serif fw-semibold text-alat">
                       Hari/Tanggal: {tanggal}
                     </p>
                     <hr className="w-100" />
@@ -108,7 +101,7 @@ const ProductControl = () => {
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}
-            <Table responsive striped bordered>
+            <Table responsive bordered>
               <thead className="text-center">
                 <tr>
                   <th
@@ -152,7 +145,7 @@ const ProductControl = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
-                {datas?.map((item, index) => (
+                {/* {datas?.map((item, index) => (
                   <tr key={index}>
                     <td>{item?.line.jam}</td>
                     <td>{item?.line.produksi_plan}</td>
@@ -161,8 +154,8 @@ const ProductControl = () => {
                     <td>{item?.line.akumulasi_aktual}</td>
                     <td>{item?.line.keterangan}</td>
                   </tr>
-                ))}
-                {/* <tr>
+                ))} */}
+                <tr>
                   <td>07:00 - 08:00</td>
                   <td></td>
                   <td></td>
@@ -353,7 +346,7 @@ const ProductControl = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                </tr> */}
+                </tr>
               </tbody>
             </Table>
 
