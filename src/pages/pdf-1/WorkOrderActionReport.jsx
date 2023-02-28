@@ -1,11 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import { Table } from "react-bootstrap";
 import LogoRiung from "../../assets/logo-riung2.jpg";
 import "../../styles/App.css";
 
 const WorkOrderActionReport = () => {
+  const [loading, setLoading] = useState(true);
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order",
+        {
+          data: {
+            id_work_order: "I275ieJVg"
+          }
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  if (loading) {
+    return (
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">

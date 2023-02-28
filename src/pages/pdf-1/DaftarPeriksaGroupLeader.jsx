@@ -16,8 +16,6 @@ const DaftarPeriksaGroupLeader = () => {
   });
   const [loading, setLoading] = useState(true);
 
-  
-
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
 
