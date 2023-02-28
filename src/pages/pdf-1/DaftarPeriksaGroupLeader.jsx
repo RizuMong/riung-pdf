@@ -1,10 +1,74 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
+import axios from "axios";
 
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const DaftarPeriksaGroupLeader = () => {
+  const [data, setData] = useState({
+    jobsite: "",
+    tanggal: "",
+    lokasi: "",
+    shift: "",
+    diperiksa: "",
+    disetujui: "",
+  });
+  const [loading, setLoading] = useState(true);
+
+  
+
+  const windowUrl = window.location.search;
+  const queryParams = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .post(
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/group-leader-open-channel",
+        {
+          data: {
+            id_dpgl_open_channel: "8hxsn8AVg",
+            lokasi_pkh_id: "sicsn8A4R",
+            pkh_id: "O6dynUAVR",
+          },
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+
+        setData({
+          jobsite: data.jobsite,
+          tanggal: data.tanggal,
+          lokasi: data.lokasi,
+          shift: data.shift,
+          diperiksa: data.diperiksa,
+          disetujui: data.disetujui,
+        });
+
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  if (loading) {
+    return (
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
@@ -17,7 +81,7 @@ const DaftarPeriksaGroupLeader = () => {
                 <thead>
                   <th className="col-4">
                     {" "}
-                    <div className="d-flex gap-3 mb-3">
+                    <div className="d-flex gap-3 mb-4 align-items-center">
                       <img
                         className="pl-2"
                         src={LogoRiung}
@@ -25,24 +89,33 @@ const DaftarPeriksaGroupLeader = () => {
                         height="60"
                         alt="Logo RIUNG"
                       />
-                      <h5 className="fw-bold text-serif">
-                        PT. RIUNG MITRA LESTARI <br /> JOB SITE : KRASSI
+                      <h5 className="fw-bold text-serif header-pt">
+                        PT. RIUNG MITRA LESTARI <br /> JOB SITE : {data.jobsite}
                       </h5>
                     </div>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 95 }}></div>
                   <th className="col-5">
-                    <h1 className="header-production-control mb-3">
+                    <h1 className="header-production-control mb-4">
                       DAFTAR PERIKSA <br /> GROUP LEADER OPEN CHANNEL
                     </h1>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 95 }}></div>
                   <th className="col-3">
-                    <div className="mb-4">
-                      <p className="mb-3 px-2 fw-semibold text-alat">
-                        Hari/Tanggal:{" "}
+                    <div className="margin-dpgl">
+                      <p className="px-2 fw-normal text-serif text-alat border-bottom">
+                        No. Dokumen:{" "}
+                        <span className="fw-normal">FRM-OPR-020</span>
                       </p>
-                      <p className="px-2 fw-semibold text-alat">Shift: </p>
+                      <p className="px-2 fw-normal text-serif text-alat border-bottom mb-1">
+                        Hari/Tanggal/Shift: {data.tanggal} / {data.shift}
+                      </p>
+                      <p className="px-2 fw-normal text-serif text-alat border-bottom mb-1">
+                        Lokasi: {data.lokasi}
+                      </p>
+                      <p className="px-2 fw-normal text-serif text-alat border-bottom mb-1">
+                        Halaman:{" "}
+                      </p>
                     </div>
                   </th>
                 </thead>
@@ -53,7 +126,7 @@ const DaftarPeriksaGroupLeader = () => {
             {/* Content Table */}
             {/* JALAN/ACCES LV & ORANG & UNIT */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-4">
+              <table class="table table-bordered caption-top mt-0">
                 <caption className="text-black text-serif header-leader">
                   1. JALAN/ACCES LV & ORANG & UNIT
                 </caption>
@@ -160,32 +233,26 @@ const DaftarPeriksaGroupLeader = () => {
 
             {/* Peralatan */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-4">
+              <table class="table table-bordered caption-top mt-2">
                 <caption className="text-black text-serif header-leader">
                   2. PERALATAN
                 </caption>
                 <thead className="text-center">
                   <tr>
-                    <th
-                      scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
-                    >
+                    <th scope="col-2" className="text-serif fs-5 align-middle">
                       Kondisi unit Sarana/LV
                     </th>
                     <th
                       colSpan={2}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Kondisi Unit Kerja
                     </th>
                     <th
                       colSpan={2}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Kondisi Stock Fuel & Drum
                     </th>
@@ -193,10 +260,7 @@ const DaftarPeriksaGroupLeader = () => {
                 </thead>
                 <tbody className="text-center">
                   <tr>
-                    <td
-                      className="text-serif text-sm"
-                      style={{ verticalAlign: "middle" }}
-                    >
+                    <td className="text-serif text-sm align-middle">
                       Status unit LV ready
                     </td>
                     <td className="text-serif text-sm">
@@ -224,7 +288,7 @@ const DaftarPeriksaGroupLeader = () => {
 
             {/* LAND CLEARING */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-4">
+              <table class="table table-bordered caption-top mt-2">
                 <caption className="text-black text-serif header-leader">
                   3. LAND CLEARING
                 </caption>
@@ -328,7 +392,7 @@ const DaftarPeriksaGroupLeader = () => {
 
             {/* PENGGALIAN CHANNEL */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-4">
+              <table class="table table-bordered caption-top mt-2">
                 <caption className="text-black text-serif header-leader">
                   4. PENGGALIAN CHANNEL
                 </caption>
@@ -423,7 +487,7 @@ const DaftarPeriksaGroupLeader = () => {
 
             {/* PERAWATAN CHANNEL / MAINTENANCE & PENDALAMAN */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-4">
+              <table class="table table-bordered caption-top mt-2">
                 <caption className="text-black text-serif header-leader">
                   5. PERAWATAN CHANNEL/MAINTENANCE & PENDALAMAN
                 </caption>
@@ -432,24 +496,21 @@ const DaftarPeriksaGroupLeader = () => {
                     <th
                       colSpan={2}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Kondisi Area Kerja
                     </th>
                     <th
                       colSpan={2}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Unit Kerja
                     </th>
                     <th
                       colSpan={2}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Safety
                     </th>
@@ -492,7 +553,7 @@ const DaftarPeriksaGroupLeader = () => {
             {/* Table & Section Bottom */}
             <div className="row align-items-center mb-5">
               <div className="col-8">
-                <table class="table table-bordered caption-top mt-4">
+                <table class="table table-bordered caption-top mt-2">
                   <caption className="text-black text-serif header-leader">
                     6. TIME SHEET DAY WORK & PELAPORAN PEMAKAIAN FUEL
                   </caption>
@@ -528,7 +589,9 @@ const DaftarPeriksaGroupLeader = () => {
                 {/* PICA */}
                 <div className="mb-3 mt-5">
                   <h5 className="header-leader text-serif">7. PICA</h5>
-                  <p className="border-bottom border-dark">Content...</p>
+                  <p className="border-bottom border-dark">-</p>
+                  <p className="border-bottom border-dark">-</p>
+                  <p className="border-bottom border-dark">-</p>
                 </div>
               </div>
 
@@ -539,7 +602,10 @@ const DaftarPeriksaGroupLeader = () => {
                     <p className="fw-normal text-serif fw-semibold">
                       Diperiksa oleh,
                     </p>
-                    <p className="mt-5 border-top border-dark text-serif fw-semibold">
+                    <p className="mt-5 text-serif fw-normal">
+                      {data.diperiksa}
+                    </p>
+                    <p className="border-top border-dark text-serif fw-semibold">
                       Group Leader
                     </p>
                   </div>
@@ -547,7 +613,10 @@ const DaftarPeriksaGroupLeader = () => {
                     <p className="fw-normal text-serif fw-semibold">
                       Disetujui oleh,
                     </p>
-                    <p className="mt-5 border-top border-dark text-serif fw-semibold">
+                    <p className="mt-5 text-serif fw-normal">
+                      {data.diperiksa}
+                    </p>
+                    <p className="border-top border-dark text-serif fw-semibold">
                       Section Head
                     </p>
                   </div>
