@@ -308,7 +308,7 @@ const DaftarPeriksaLeader = () => {
                         height="60"
                         alt="Logo RIUNG"
                       />
-                      <h5 className="fw-bold text-serif fs-5 header-pt">
+                      <h5 className="fw-bold text-serif header-pt">
                         PT. RIUNG MITRA LESTARI <br /> JOB SITE : {jobsite}
                       </h5>
                     </div>
@@ -636,7 +636,6 @@ const DaftarPeriksaLeader = () => {
             </div>
 
             {/* Komoditas & Stockpile */}
-
             {/* Table & Section Bottom */}
             <div className="row align-items-center mb-5">
               <div className="col-4 table-responsive">
