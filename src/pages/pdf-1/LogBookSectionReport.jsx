@@ -26,6 +26,8 @@ const LogBookSectionReport = ({}) => {
       .then((res) => {
         const { data } = res;
         setDatas(data);
+
+        console.log(data);
       })
       .catch((err) => {
         alert(err);
@@ -138,7 +140,7 @@ const LogBookSectionReport = ({}) => {
                         <td className="text-sm fw-normal">{item?.cn_hauler}</td>
                         <td className="text-sm fw-normal">{item?.cn_loader}</td>
                         <td className="text-sm fw-normal">
-                          {item?.cn_support?.name}
+                          {item?.cn_support}
                         </td>
                         <td className="text-sm fw-normal">{item?.aktivitas}</td>
                         <td className="text-sm fw-normal">
