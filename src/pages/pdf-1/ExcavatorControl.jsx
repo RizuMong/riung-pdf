@@ -52,14 +52,27 @@ const ExcavatorControl = () => {
         }
         if (res.data && res.data[0] && res.data[0].shift) {
           setShift(res.data[0].shift);
-        } 
+        }
         setPenerima(res.data[0]?.penerima);
         setPit(res.data[0]?.pit);
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div class="text-center pt-5">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">
@@ -129,7 +142,7 @@ const ExcavatorControl = () => {
               <tbody>
                 {datas &&
                   datas?.map((item, index) => (
-                    <tr key={index}>
+                    <tr className="align-middle" key={index}>
                       <td>{item?.line.jam}</td>
                       <td>{item?.line.cn_loader}</td>
                       <td>{item?.line.actual_productivity}</td>
