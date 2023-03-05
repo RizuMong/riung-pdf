@@ -116,6 +116,14 @@ const DaftarPeriksaGroupLeader = () => {
   const [perawatan_channel_lampu_kerja, Setperawatan_channel_lampu_kerja] = useState("");
   const [perawatan_channel_lampu_kerja_note, Setperawatan_channel_lampu_kerja_note] = useState("");
 
+  // TIME SHEET DAY WORK & PELAPORAN PEMAKAIAN FUEL
+  const [time_sheet_area_kerja, Settime_sheet_area_kerja] = useState("");
+  const [time_sheet_area_kerja_note, Settime_sheet_area_kerja_note] = useState("");
+  const [time_sheet_tanda_tangan, Settime_sheet_tanda_tangan] = useState("");
+  const [time_sheet_tanda_tangan_note, Settime_sheet_tanda_tangan_note] = useState("");
+  const [time_sheet_pelaporan, Settime_sheet_pelaporan] = useState("");
+  const [time_sheet_pelaporan_note, Settime_sheet_pelaporan_note] = useState("");
+
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
 
@@ -129,9 +137,9 @@ const DaftarPeriksaGroupLeader = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/group-leader-open-channel",
         {
           data: {
-            id_dpgl_open_channel: "9C4bYI1Vg",
-            lokasi_pkh_id: "30E1LI1VR",
-            pkh_id: "DkB1LI14R",
+            id_dpgl_open_channel: queryParams.get("id_dpgl_open_channel"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            pkh_id: queryParams.get("pkh_id"),
           },
         }
       )
@@ -202,11 +210,71 @@ const DaftarPeriksaGroupLeader = () => {
       checkData(data.detail.peralatan_jadwal, setPeralatan_jadwal);
       setPeralatan_jadwal_note(data.detail.peralatan_jadwal_note);
 
+      // LAND CLEARING
+      checkData(data.detail.land_clearing_lokasi_unit, setLand_clearing_lokasi_unit);
+      setLand_clearing_lokasi_unit_note(data.detail.land_clearing_lokasi_unit_note);
+      checkData(data.detail.land_clearing_alat_kerja, setLand_clearing_alat_kerja);
+      setLand_clearing_alat_kerja_note(data.detail.land_clearing_alat_kerja_note);
+      checkData(data.detail.land_clearing_jalur_land_clearing, setLand_clearing_jalur_land_clearing);
+      setLand_clearing_jalur_land_clearing_note(data.detail.land_clearing_jalur_land_clearing_note);
+      checkData(data.detail.land_clearing_patok, setLand_clearing_patok);
+      setLand_clearing_patok_note(data.detail.land_clearing_patok_note);
+      checkData(data.detail.land_clearing_patok_gps, setLand_clearing_patok_gps);
+      setLand_clearing_patok_gps_note(data.detail.land_clearing_patok_gps_note);
+      checkData(data.detail.land_clearing_kondisi_area, setLand_clearing_kondisi_area);
+      setLand_clearing_kondisi_area_note(data.detail.land_clearing_kondisi_area_note);
+      checkData(data.detail.land_clearing_area_kerja, setLand_clearing_area_kerja);
+      setLand_clearing_area_kerja_note(data.detail.land_clearing_area_kerja_note);
+      checkData(data.detail.land_clearing_longsor, setLand_clearing_longsor);
+      setLand_clearing_longsor_note(data.detail.land_clearing_longsor_note);
+      checkData(data.detail.land_clearing_long_arm, setLand_clearing_long_arm);
+      setLand_clearing_long_arm_note(data.detail.land_clearing_long_arm_note);
+      checkData(data.detail.land_clearing_kayu_kering, setLand_clearing_kayu_kering);
+      setLand_clearing_kayu_kering_note(data.detail.land_clearing_kayu_kering_note);
 
-      
-      console.log({
-        data: data.detail.jalan_soil_lumpur_note
-      });
+      // PENGGALIAN CHANNEL
+      checkData(data.detail.penggalian_channel_gali_primer, Setpenggalian_channel_gali_primer);
+      Setpenggalian_channel_gali_primer_note(data.detail.penggalian_channel_gali_primer_note);
+      checkData(data.detail.penggalian_channel_unit_track, Setpenggalian_channel_unit_track);
+      Setpenggalian_channel_unit_track_note(data.detail.penggalian_channel_unit_track_note);
+      checkData(data.detail.penggalian_channel_unit_amphibi, Setpenggalian_channel_unit_amphibi);
+      Setpenggalian_channel_unit_amphibi_note(data.detail.penggalian_channel_unit_amphibi_note);
+      checkData(data.detail.penggalian_channel_alokasi, Setpenggalian_channel_alokasi);
+      Setpenggalian_channel_alokasi_note(data.detail.penggalian_channel_alokasi_note);
+      checkData(data.detail.penggalian_channel_alat_kerja, Setpenggalian_channel_alat_kerja);
+      Setpenggalian_channel_alat_kerja_note(data.detail.penggalian_channel_alat_kerja_note);
+      checkData(data.detail.penggalian_channel_pita_survey, Setpenggalian_channel_pita_survey);
+      Setpenggalian_channel_pita_survey_note(data.detail.penggalian_channel_pita_survey_note);
+      checkData(data.detail.penggalian_channel_longsor, Setpenggalian_channel_longsor);
+      Setpenggalian_channel_longsor_note(data.detail.penggalian_channel_longsor_note);
+      checkData(data.detail.penggalian_channel_unit_aman, Setpenggalian_channel_unit_aman);
+      Setpenggalian_channel_unit_aman_note(data.detail.penggalian_channel_unit_aman_note);
+      checkData(data.detail.penggalian_channel_operator_penggalian, Setpenggalian_channel_operator_penggalian);
+      Setpenggalian_channel_operator_penggalian_note(data.detail.penggalian_channel_operator_penggalian_note);
+      checkData(data.detail.penggalian_channel_lampu_kerja, Setpenggalian_channel_lampu_kerja);
+      Setpenggalian_channel_lampu_kerja_note(data.detail.penggalian_channel_lampu_kerja_note);
+
+      // PERAWATAN CHANNEL / MAINTENANCE & PENDALAMAN
+      checkData(data.detail.perawatan_channel_kedalaman, Setperawatan_channel_kedalaman);
+      Setperawatan_channel_kedalaman_note(data.detail.perawatan_channel_kedalaman_note);
+      checkData(data.detail.perawatan_channel_genangan, Setperawatan_channel_genangan);
+      Setperawatan_channel_genangan_note(data.detail.perawatan_channel_genangan_note);
+      checkData(data.detail.perawatan_channel_alokasi, Setperawatan_channel_alokasi);
+      Setperawatan_channel_alokasi_note(data.detail.perawatan_channel_alokasi_note);
+      checkData(data.detail.perawatan_channel_alat_kerja, Setperawatan_channel_alat_kerja);
+      Setperawatan_channel_alat_kerja_note(data.detail.perawatan_channel_alat_kerja_note);
+      checkData(data.detail.perawatan_channel_longsor, Setperawatan_channel_longsor);
+      Setperawatan_channel_longsor_note(data.detail.perawatan_channel_longsor_note);
+      checkData(data.detail.perawatan_channel_lampu_kerja, Setperawatan_channel_lampu_kerja);
+      Setperawatan_channel_lampu_kerja_note(data.detail.perawatan_channel_lampu_kerja_note);
+
+      // TIME SHEET DAY WORK & PELAPORAN PEMAKAIAN FUEL
+      checkData(data.detail.time_sheet_area_kerja, Settime_sheet_area_kerja);
+      Settime_sheet_area_kerja_note(data.detail.time_sheet_area_kerja_note);
+      checkData(data.detail.time_sheet_tanda_tangan, Settime_sheet_tanda_tangan);
+      Settime_sheet_tanda_tangan_note(data.detail.time_sheet_tanda_tangan_note);
+      checkData(data.detail.time_sheet_pelaporan, Settime_sheet_pelaporan);
+      Settime_sheet_pelaporan_note(data.detail.time_sheet_pelaporan_note);
       })
       .catch((err) => {
         alert(err);
@@ -507,13 +575,13 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_lokasi_unit || land_clearing_lokasi_unit_note}</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_alat_kerja || land_clearing_alat_kerja_note}</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_jalur_land_clearing || land_clearing_jalur_land_clearing_note}</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_patok || land_clearing_patok_note}</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_patok_gps || land_clearing_patok_gps_note}</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_kondisi_area || land_clearing_kondisi_area_note}</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_area_kerja || land_clearing_area_kerja_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -541,9 +609,9 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_longsor || land_clearing_longsor_note}</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_long_arm || land_clearing_long_arm_note}</td>
+                    <td className="text-serif text-sm fw-bold">{land_clearing_kayu_kering || land_clearing_kayu_kering_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -599,12 +667,12 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_gali_primer || penggalian_channel_gali_primer_note}</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_unit_track || penggalian_channel_unit_track_note}</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_unit_amphibi || penggalian_channel_unit_amphibi_note}</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_alokasi || penggalian_channel_alokasi_note}</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_alat_kerja || penggalian_channel_alat_kerja_note}</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_pita_survey || penggalian_channel_pita_survey_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -635,10 +703,10 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_longsor || penggalian_channel_longsor_note}</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_unit_aman || penggalian_channel_unit_aman_note}</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_operator_penggalian || penggalian_channel_operator_penggalian_note}</td>
+                    <td className="text-serif text-sm fw-bold">{penggalian_channel_lampu_kerja || penggalian_channel_lampu_kerja_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -698,12 +766,12 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">{perawatan_channel_kedalaman || perawatan_channel_kedalaman_note}</td>
+                    <td className="text-serif text-sm fw-bold">{perawatan_channel_genangan || perawatan_channel_genangan_note}</td>
+                    <td className="text-serif text-sm fw-bold">{perawatan_channel_alokasi || perawatan_channel_alokasi_note}</td>
+                    <td className="text-serif text-sm fw-bold">{perawatan_channel_alat_kerja || perawatan_channel_alat_kerja_note}</td>
+                    <td className="text-serif text-sm fw-bold">{perawatan_channel_longsor || perawatan_channel_longsor_note}</td>
+                    <td className="text-serif text-sm fw-bold">{perawatan_channel_lampu_kerja || perawatan_channel_lampu_kerja_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -738,9 +806,9 @@ const DaftarPeriksaGroupLeader = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className="text-serif text-sm fw-semibold">Ya</td>
-                      <td className="text-serif text-sm fw-semibold">Tidak</td>
-                      <td className="text-serif text-sm fw-semibold">Ya</td>
+                      <td className="text-serif text-sm fw-semibold">{time_sheet_area_kerja || time_sheet_area_kerja_note}</td>
+                      <td className="text-serif text-sm fw-semibold">{time_sheet_tanda_tangan || time_sheet_tanda_tangan_note}</td>
+                      <td className="text-serif text-sm fw-semibold">{time_sheet_pelaporan || time_sheet_pelaporan_note}</td>
                     </tr>
                   </tbody>
                 </table>
