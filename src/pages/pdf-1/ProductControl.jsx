@@ -7,21 +7,12 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const ProductControl = () => {
-  const [datas, setDatas] = useState([]);
+  const [data, setData] = useState([]);
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [lokasi, setLokasi] = useState("");
+  const [catatan, setCatatan] = useState("");
   const [loading, setLoading] = useState(true);
-
-  // Shift 1
-  const [jam_1a, setJam_1a] = useState("");
-  const [produksi_plan_1a, SetProduksi_plan_1a] = useState("");
-  const [produksi_aktual_1a, setProduksi_aktual_1a] = useState("");
-  const [akumumulasi_plan_1a, SetAkumumulasi_plan_1a] = useState("");
-  const [akumumulasi_aktual_1a, SetAkumumulasi_aktual_1a] = useState("");
-  const [keterangan_1a, setKeterangan_1a] = useState("");
-
-  // Shift 2
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -36,28 +27,26 @@ const ProductControl = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/production-control-page",
         {
           data: {
-            // id_production_control: queryParams.get("id_production_control"),
-            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            // pkh: queryParams.get("pkh"),
-            id_production_control: "vVoddQJ4R",
-            lokasi_pkh_id: "VbVdOQJ4g",
-            pkh: "mhnOdQ1VR",
+            id_production_control: queryParams.get("id_production_control"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            pkh: queryParams.get("pkh"),
+            // id_production_control: "vVoddQJ4R",
+            // lokasi_pkh_id: "VbVdOQJ4g",
+            // pkh: "mhnOdQ1VR",
           },
         }
       )
       .then((res) => {
         const { data } = res;
-        setDatas(data);
+        setData(data);
 
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);
         setLokasi(data?.lokasi);
+        setCatatan(data?.catatan);
 
-        console.log({
-          // jam: data.detail[0]
-        });
-
-        console.log(produksi_plan_1a);
+        console.log(typeof data);
+        console.log(data);
       })
       .catch((err) => {
         alert(err);
@@ -65,6 +54,12 @@ const ProductControl = () => {
       .finally(() => {
         setLoading(false);
       });
+  };
+
+  // fungsi untuk mengecek jam dan mengembalikan data yang cocok
+  const getDataByJam = (jam) => {
+    const detail = data?.detail || []; // default ke array kosong jika data belum ada
+    return detail.find((d) => d.jam === jam) || {}; // default ke objek kosong jika data tidak ditemukan
   };
 
   if (loading) {
@@ -173,196 +168,196 @@ const ProductControl = () => {
                 {/* Shift 1 */}
                 <tr>
                   <td>07:00 - 08:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("07:00 - 08:00").produksi_aktual}</td>
+                  <td>{getDataByJam("07:00 - 08:00").produksi_plan}</td>
+                  <td>{getDataByJam("07:00 - 08:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("07:00 - 08:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("07:00 - 08:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>08:00 - 09:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("08:00 - 09:00").produksi_aktual}</td>
+                  <td>{getDataByJam("08:00 - 09:00").produksi_plan}</td>
+                  <td>{getDataByJam("08:00 - 09:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("08:00 - 09:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("08:00 - 09:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>09:00 - 10:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("09:00 - 10:00").produksi_aktual}</td>
+                  <td>{getDataByJam("09:00 - 10:00").produksi_plan}</td>
+                  <td>{getDataByJam("09:00 - 10:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("09:00 - 10:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("09:00 - 10:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>10:00 - 11:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("10:00 - 11:00").produksi_aktual}</td>
+                  <td>{getDataByJam("10:00 - 11:00").produksi_plan}</td>
+                  <td>{getDataByJam("10:00 - 11:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("10:00 - 11:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("10:00 - 11:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>11:00 - 12:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("11:00 - 12:00").produksi_aktual}</td>
+                  <td>{getDataByJam("11:00 - 12:00").produksi_plan}</td>
+                  <td>{getDataByJam("11:00 - 12:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("11:00 - 12:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("11:00 - 12:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>12:00 - 13:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("12:00 - 13:00").produksi_aktual}</td>
+                  <td>{getDataByJam("12:00 - 13:00").produksi_plan}</td>
+                  <td>{getDataByJam("12:00 - 13:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("12:00 - 13:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("12:00 - 13:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>13:00 - 14:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("13:00 - 14:00").produksi_aktual}</td>
+                  <td>{getDataByJam("13:00 - 14:00").produksi_plan}</td>
+                  <td>{getDataByJam("13:00 - 14:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("13:00 - 14:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("13:00 - 14:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>14:00 - 15:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("14:00 - 15:00").produksi_aktual}</td>
+                  <td>{getDataByJam("14:00 - 15:00").produksi_plan}</td>
+                  <td>{getDataByJam("14:00 - 15:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("14:00 - 15:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("14:00 - 15:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>15:00 - 16:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("15:00 - 16:00").produksi_aktual}</td>
+                  <td>{getDataByJam("15:00 - 16:00").produksi_plan}</td>
+                  <td>{getDataByJam("15:00 - 16:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("15:00 - 16:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("15:00 - 16:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>16:00 - 17:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("16:00 - 17:00").produksi_aktual}</td>
+                  <td>{getDataByJam("16:00 - 17:00").produksi_plan}</td>
+                  <td>{getDataByJam("16:00 - 17:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("16:00 - 17:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("16:00 - 17:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>17:00 - 18:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("17:00 - 18:00").produksi_aktual}</td>
+                  <td>{getDataByJam("17:00 - 18:00").produksi_plan}</td>
+                  <td>{getDataByJam("17:00 - 18:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("17:00 - 18:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("17:00 - 18:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>18:00 - 19:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("18:00 - 19:00").produksi_aktual}</td>
+                  <td>{getDataByJam("18:00 - 19:00").produksi_plan}</td>
+                  <td>{getDataByJam("18:00 - 19:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("18:00 - 19:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("18:00 - 19:00").keterangan}</td>
                 </tr>
                 {/* Shift 2 */}
                 <tr>
                   <td>19:00 - 20:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("19:00 - 20:00").produksi_aktual}</td>
+                  <td>{getDataByJam("19:00 - 20:00").produksi_plan}</td>
+                  <td>{getDataByJam("19:00 - 20:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("19:00 - 20:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("19:00 - 20:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>20:00 - 21:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("20:00 - 21:00").produksi_aktual}</td>
+                  <td>{getDataByJam("20:00 - 21:00").produksi_plan}</td>
+                  <td>{getDataByJam("20:00 - 21:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("20:00 - 21:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("20:00 - 21:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>21:00 - 22:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("21:00 - 22:00").produksi_aktual}</td>
+                  <td>{getDataByJam("21:00 - 22:00").produksi_plan}</td>
+                  <td>{getDataByJam("21:00 - 22:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("21:00 - 22:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("21:00 - 22:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>22:00 - 23:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("22:00 - 23:00").produksi_aktual}</td>
+                  <td>{getDataByJam("22:00 - 23:00").produksi_plan}</td>
+                  <td>{getDataByJam("22:00 - 23:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("22:00 - 23:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("22:00 - 23:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>23:00 - 24:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("23:00 - 24:00").produksi_aktual}</td>
+                  <td>{getDataByJam("23:00 - 24:00").produksi_plan}</td>
+                  <td>{getDataByJam("23:00 - 24:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("23:00 - 24:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("23:00 - 24:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>00:00 - 01:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("00:00 - 01:00").produksi_aktual}</td>
+                  <td>{getDataByJam("00:00 - 01:00").produksi_plan}</td>
+                  <td>{getDataByJam("00:00 - 01:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("00:00 - 01:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("00:00 - 01:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>01:00 - 02:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("01:00 - 02:00").produksi_aktual}</td>
+                  <td>{getDataByJam("01:00 - 02:00").produksi_plan}</td>
+                  <td>{getDataByJam("01:00 - 02:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("01:00 - 02:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("01:00 - 02:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>02:00 - 03:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("02:00 - 03:00").produksi_aktual}</td>
+                  <td>{getDataByJam("02:00 - 03:00").produksi_plan}</td>
+                  <td>{getDataByJam("02:00 - 03:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("02:00 - 03:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("02:00 - 03:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>03:00 - 04:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("03:00 - 04:00").produksi_aktual}</td>
+                  <td>{getDataByJam("03:00 - 04:00").produksi_plan}</td>
+                  <td>{getDataByJam("03:00 - 04:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("03:00 - 04:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("03:00 - 04:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>04:00 - 05:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("04:00 - 05:00").produksi_aktual}</td>
+                  <td>{getDataByJam("04:00 - 05:00").produksi_plan}</td>
+                  <td>{getDataByJam("04:00 - 05:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("04:00 - 05:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("04:00 - 05:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>05:00 - 06:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("05:00 - 06:00").produksi_aktual}</td>
+                  <td>{getDataByJam("05:00 - 06:00").produksi_plan}</td>
+                  <td>{getDataByJam("05:00 - 06:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("05:00 - 06:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("05:00 - 06:00").keterangan}</td>
                 </tr>
                 <tr>
                   <td>06:00 - 07:00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{getDataByJam("06:00 - 07:00").produksi_aktual}</td>
+                  <td>{getDataByJam("06:00 - 07:00").produksi_plan}</td>
+                  <td>{getDataByJam("06:00 - 07:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("06:00 - 07:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("06:00 - 07:00").keterangan}</td>
                 </tr>
               </tbody>
             </Table>
@@ -387,40 +382,22 @@ const ProductControl = () => {
               </thead>
               <tbody className="text-center">
                 {/* Shift 1 */}
-                <tr>
+                <tr className="align-middle" style={{ height: 50 }}>
                   <th className="text-serif align-middle" scope="row">
                     I
                   </th>
-                  <td>
-                    <br />
-                    <br />
-                  </td>
-                  <td>
-                    <br />
-                    <br />
-                  </td>
-                  <td>
-                    <br />
-                    <br />
-                  </td>
+                  <td></td>
+                  <td></td>
+                  <td className="text-sm">{catatan}</td>
                 </tr>
                 {/* Shift 2 */}
-                <tr>
+                <tr className="align-middle" style={{ height: 50 }}>
                   <th className="text-serif align-middle" scope="row">
                     II
                   </th>
-                  <td>
-                    <br />
-                    <br />
-                  </td>
-                  <td>
-                    <br />
-                    <br />
-                  </td>
-                  <td>
-                    <br />
-                    <br />
-                  </td>
+                  <td></td>
+                  <td></td>
+                  <td className="text-sm"></td>
                 </tr>
               </tbody>
             </table>

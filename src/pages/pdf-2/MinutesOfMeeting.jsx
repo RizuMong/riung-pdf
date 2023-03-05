@@ -93,8 +93,6 @@ const MinutesOfMeeting = () => {
 
   // Render data
   const renderList = (item) => {
-    console.log("masukk");
-    console.log(item);
     let tmp = [];
     for (let i = 0; i < item.length; i = i + 11) {
       tmp.push(
