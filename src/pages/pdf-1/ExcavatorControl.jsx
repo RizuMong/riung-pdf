@@ -8,6 +8,7 @@ import "../../styles/App.css";
 
 const ExcavatorControl = () => {
   const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
