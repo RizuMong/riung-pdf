@@ -16,6 +16,106 @@ const DaftarPeriksaGroupLeader = () => {
   });
   const [loading, setLoading] = useState(true);
 
+  // JALAN/ACCES LV & ORANG & UNIT
+  const [jalan_lebar_grade, setJalan_lebar_grade] = useState("");
+  const [jalan_lebar_grade_note, setJalan_lebar_grade_note] = useState("");
+  const [jalan_rata_bebas, setJalan_rata_bebas] = useState("");
+  const [jalan_rata_bebas_note, setJalan_rata_bebas_note] = useState("");
+  const [jalan_bebas_debu, setJalan_bebas_debu] = useState("");
+  const [jalan_bebas_debu_note, setJalan_bebas_debu_note] = useState("");
+  const [jalan_pintas, setJalan_pintas] = useState("");
+  const [jalan_pintas_note, setJalan_pintas_note] = useState("");
+  const [jalan_batang_kayu, setJalan_batang_kayu] = useState("");
+  const [jalan_batang_kayu_note, setJalan_batang_kayu_note] = useState("");
+  const [jalan_longsor, setJalan_longsor] = useState("");
+  const [jalan_longsor_note, setJalan_longsor_note] = useState("");
+  const [jalan_driver, setJalan_driver] = useState("");
+  const [jalan_driver_note, setJalan_driver_note] = useState("");
+  const [jalan_dua_batang_kayu, setJalan_dua_batang_kayu] = useState("");
+  const [jalan_dua_batang_kayu_note, setJalan_dua_batang_kayu_note] = useState("");
+  const [jalan_track_kering, setJalan_track_kering] = useState("");
+  const [jalan_track_kering_note, setJalan_track_kering_note] = useState("");
+  const [jalan_track_basah, setJalan_track_basah] = useState("");
+  const [jalan_track_basah_note, setJalan_track_basah_note] = useState("");
+  const [jalan_soil_lumpur, setJalan_soil_lumpur] = useState("");
+  const [jalan_soil_lumpur_note, setJalan_soil_lumpur_note] = useState("");
+  const [jalan_aman_amblas, setJalan_aman_amblas] = useState("");
+  const [jalan_aman_amblas_note, setJalan_aman_amblas_note] = useState("");
+  const [jalan_unit_travel, setJalan_unit_travel] = useState("");
+  const [jalan_unit_travel_note, setJalan_unit_travel_note] = useState("");
+  const [jalan_jarak_lapuk, setJalan_jarak_lapuk] = useState("");
+  const [jalan_jarak_lapuk_note, setJalan_jarak_lapuk_note] = useState("");
+  
+  // PERALATAN
+  const [peralatan_status_unit, setPeralatan_status_unit] = useState("");
+  const [peralatan_status_unit_note, setPeralatan_status_unit_note] = useState("");
+  const [peralatan_long_arm, setPeralatan_long_arm] = useState("");
+  const [peralatan_long_arm_note, setPeralatan_long_arm_note] = useState("");
+  const [peralatan_amphibi, setPeralatan_amphibi] = useState("");
+  const [peralatan_amphibi_note, setPeralatan_amphibi_note] = useState("");
+  const [peralatan_body, setPeralatan_body] = useState("");
+  const [peralatan_body_note, setPeralatan_body_note] = useState("");
+  const [peralatan_jadwal, setPeralatan_jadwal] = useState("");
+  const [peralatan_jadwal_note, setPeralatan_jadwal_note] = useState("");
+
+  // LAND CLEARING
+  const [land_clearing_lokasi_unit, setLand_clearing_lokasi_unit] = useState("");
+  const [land_clearing_lokasi_unit_note, setLand_clearing_lokasi_unit_note] = useState("");
+  const [land_clearing_alat_kerja, setLand_clearing_alat_kerja] = useState("");
+  const [land_clearing_alat_kerja_note, setLand_clearing_alat_kerja_note] = useState("");
+  const [land_clearing_jalur_land_clearing, setLand_clearing_jalur_land_clearing] = useState("");
+  const [land_clearing_jalur_land_clearing_note, setLand_clearing_jalur_land_clearing_note] = useState("");
+  const [land_clearing_patok, setLand_clearing_patok] = useState("");
+  const [land_clearing_patok_note, setLand_clearing_patok_note] = useState("");
+  const [land_clearing_patok_gps, setLand_clearing_patok_gps] = useState("");
+  const [land_clearing_patok_gps_note, setLand_clearing_patok_gps_note] = useState("");
+  const [land_clearing_kondisi_area, setLand_clearing_kondisi_area] = useState("");
+  const [land_clearing_kondisi_area_note, setLand_clearing_kondisi_area_note] = useState("");
+  const [land_clearing_area_kerja, setLand_clearing_area_kerja] = useState("");
+  const [land_clearing_area_kerja_note, setLand_clearing_area_kerja_note] = useState("");
+  const [land_clearing_longsor, setLand_clearing_longsor] = useState("");
+  const [land_clearing_longsor_note, setLand_clearing_longsor_note] = useState("");
+  const [land_clearing_long_arm, setLand_clearing_long_arm] = useState("");
+  const [land_clearing_long_arm_note, setLand_clearing_long_arm_note] = useState("");
+  const [land_clearing_kayu_kering, setLand_clearing_kayu_kering] = useState("");
+  const [land_clearing_kayu_kering_note, setLand_clearing_kayu_kering_note] = useState("");
+
+  // PENGGALIAN CHANNEL
+  const [penggalian_channel_gali_primer, Setpenggalian_channel_gali_primer] = useState("");
+  const [penggalian_channel_gali_primer_note, Setpenggalian_channel_gali_primer_note] = useState("");
+  const [penggalian_channel_unit_track, Setpenggalian_channel_unit_track] = useState("");
+  const [penggalian_channel_unit_track_note, Setpenggalian_channel_unit_track_note] = useState("");
+  const [penggalian_channel_unit_amphibi, Setpenggalian_channel_unit_amphibi] = useState("");
+  const [penggalian_channel_unit_amphibi_note, Setpenggalian_channel_unit_amphibi_note] = useState("");
+  const [penggalian_channel_alokasi, Setpenggalian_channel_alokasi] = useState("");
+  const [penggalian_channel_alokasi_note, Setpenggalian_channel_alokasi_note] = useState("");
+  const [penggalian_channel_alat_kerja, Setpenggalian_channel_alat_kerja] = useState("");
+  const [penggalian_channel_alat_kerja_note, Setpenggalian_channel_alat_kerja_note] = useState("");
+  const [penggalian_channel_pita_survey, Setpenggalian_channel_pita_survey] = useState("");
+  const [penggalian_channel_pita_survey_note, Setpenggalian_channel_pita_survey_note] = useState("");
+  const [penggalian_channel_longsor, Setpenggalian_channel_longsor] = useState("");
+  const [penggalian_channel_longsor_note, Setpenggalian_channel_longsor_note] = useState("");
+  const [penggalian_channel_unit_aman_note, Setpenggalian_channel_unit_aman_note] = useState("");
+  const [penggalian_channel_unit_aman, Setpenggalian_channel_unit_aman] = useState("");
+  const [penggalian_channel_operator_penggalian, Setpenggalian_channel_operator_penggalian] = useState("");
+  const [penggalian_channel_operator_penggalian_note, Setpenggalian_channel_operator_penggalian_note] = useState("");
+  const [penggalian_channel_lampu_kerja, Setpenggalian_channel_lampu_kerja] = useState("");
+  const [penggalian_channel_lampu_kerja_note, Setpenggalian_channel_lampu_kerja_note] = useState("");
+
+  // PERAWATAN CHANNEL / MAINTENANCE & PENDALAMAN
+  const [perawatan_channel_kedalaman, Setperawatan_channel_kedalaman] = useState("");
+  const [perawatan_channel_kedalaman_note, Setperawatan_channel_kedalaman_note] = useState("");
+  const [perawatan_channel_genangan, Setperawatan_channel_genangan] = useState("");
+  const [perawatan_channel_genangan_note, Setperawatan_channel_genangan_note] = useState("");
+  const [perawatan_channel_alokasi, Setperawatan_channel_alokasi] = useState("");
+  const [perawatan_channel_alokasi_note, Setperawatan_channel_alokasi_note] = useState("");
+  const [perawatan_channel_alat_kerja, Setperawatan_channel_alat_kerja] = useState("");
+  const [perawatan_channel_alat_kerja_note, Setperawatan_channel_alat_kerja_note] = useState("");
+  const [perawatan_channel_longsor, Setperawatan_channel_longsor] = useState("");
+  const [perawatan_channel_longsor_note, Setperawatan_channel_longsor_note] = useState("");
+  const [perawatan_channel_lampu_kerja, Setperawatan_channel_lampu_kerja] = useState("");
+  const [perawatan_channel_lampu_kerja_note, Setperawatan_channel_lampu_kerja_note] = useState("");
+
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
 
@@ -29,9 +129,9 @@ const DaftarPeriksaGroupLeader = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/group-leader-open-channel",
         {
           data: {
-            id_dpgl_open_channel: "8hxsn8AVg",
-            lokasi_pkh_id: "sicsn8A4R",
-            pkh_id: "O6dynUAVR",
+            id_dpgl_open_channel: "9C4bYI1Vg",
+            lokasi_pkh_id: "30E1LI1VR",
+            pkh_id: "DkB1LI14R",
           },
         }
       )
@@ -47,7 +147,66 @@ const DaftarPeriksaGroupLeader = () => {
           disetujui: data.disetujui,
         });
 
-        console.log(data);
+      // Check Data True
+      const checkData = (data, set) => {
+        if (data == null) {
+          set("");
+          return 1;
+        } else if (data) {
+          set("✓");
+          return 1;
+        }
+        set("X");
+        return 1;
+      };
+
+      // JALAN/ACCES LV & ORANG & UNIT
+      checkData(data.detail.jalan_lebar_grade, setJalan_lebar_grade)
+      setJalan_lebar_grade_note(data.detail.jalan_lebar_grade_note)
+      checkData(data.detail.jalan_rata_bebas, setJalan_rata_bebas);
+      setJalan_rata_bebas_note(data.detail.jalan_rata_bebas_note);
+      checkData(data.detail.jalan_bebas_debu, setJalan_bebas_debu);
+      setJalan_bebas_debu_note(data.detail.jalan_bebas_debu_note);
+      checkData(data.detail.jalan_pintas, setJalan_pintas);
+      setJalan_pintas_note(data.detail.jalan_pintas_note);
+      checkData(data.detail.jalan_batang_kayu, setJalan_batang_kayu);
+      setJalan_batang_kayu_note(data.detail.jalan_batang_kayu_note);
+      checkData(data.detail.jalan_longsor, setJalan_longsor);
+      setJalan_longsor_note(data.detail.jalan_longsor_note);
+      checkData(data.detail.jalan_driver, setJalan_driver);
+      setJalan_driver_note(data.detail.jalan_driver_note);
+      checkData(data.detail.jalan_dua_batang_kayu, setJalan_dua_batang_kayu);
+      setJalan_dua_batang_kayu_note(data.detail.jalan_dua_batang_kayu_note);
+      checkData(data.detail.jalan_track_kering, setJalan_track_kering);
+      setJalan_track_kering_note(data.detail.jalan_track_kering_note);
+      checkData(data.detail.jalan_track_basah, setJalan_track_basah);
+      setJalan_track_basah_note(data.detail.jalan_track_basah_note);
+      checkData(data.detail.jalan_soil_lumpur, setJalan_soil_lumpur);
+      setJalan_soil_lumpur_note(data.detail.jalan_soil_lumpur_note);
+      checkData(data.detail.jalan_aman_amblas, setJalan_aman_amblas);
+      setJalan_aman_amblas_note(data.detail.jalan_aman_amblas_note);
+      checkData(data.detail.jalan_unit_travel, setJalan_unit_travel);
+      setJalan_unit_travel_note(data.detail.jalan_unit_travel_note);
+      checkData(data.detail.jalan_jarak_lapuk, setJalan_jarak_lapuk);
+      setJalan_jarak_lapuk_note(data.detail.jalan_jarak_lapuk_note);
+
+      // PERALATAN
+      checkData(data.detail.peralatan_status_unit, setPeralatan_status_unit);
+      setPeralatan_status_unit_note(data.detail.peralatan_status_unit_note);
+      checkData(data.detail.peralatan_long_arm, setPeralatan_long_arm);
+      setPeralatan_long_arm_note(data.detail.peralatan_long_arm_note);
+      checkData(data.detail.peralatan_amphibi, setPeralatan_amphibi);
+      setPeralatan_amphibi_note(data.detail.peralatan_amphibi_note);
+      checkData(data.detail.peralatan_body, setPeralatan_body);
+      setPeralatan_body_note(data.detail.peralatan_body_note);
+      checkData(data.detail.peralatan_jadwal, setPeralatan_jadwal);
+      setPeralatan_jadwal_note(data.detail.peralatan_jadwal_note);
+
+
+      
+      console.log({
+        data: data.detail.jalan_soil_lumpur_note
+      });
       })
       .catch((err) => {
         alert(err);
@@ -56,6 +215,8 @@ const DaftarPeriksaGroupLeader = () => {
         setLoading(false);
       });
   };
+
+  
 
   if (loading) {
     return (
@@ -124,7 +285,7 @@ const DaftarPeriksaGroupLeader = () => {
             {/* Content Table */}
             {/* JALAN/ACCES LV & ORANG & UNIT */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-0">
+              <table className="table table-bordered caption-top mt-0">
                 <caption className="text-black text-serif header-leader">
                   1. JALAN/ACCES LV & ORANG & UNIT
                 </caption>
@@ -167,21 +328,21 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_lebar_grade || jalan_lebar_grade_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_rata_bebas || jalan_rata_bebas_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_bebas_debu || jalan_bebas_debu_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_pintas || jalan_pintas_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_batang_kayu || jalan_batang_kayu_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_longsor || jalan_longsor_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_driver || jalan_driver_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_dua_batang_kayu || jalan_dua_batang_kayu_note}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             {/* Lanjutan*/}
             <div className="table-responsive">
-              <table class="table table-bordered mt-2">
+              <table className="table table-bordered mt-2">
                 <thead className="text-center">
                   <tr>
                     <th colSpan={3} scope="col" className="text-serif fs-5">
@@ -218,12 +379,12 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_track_kering || jalan_track_kering_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_track_basah || jalan_track_basah_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_soil_lumpur || jalan_soil_lumpur_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_aman_amblas || jalan_aman_amblas_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_unit_travel || jalan_unit_travel_note}</td>
+                    <td className="text-serif text-sm fw-bold">{jalan_jarak_lapuk || jalan_jarak_lapuk_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -231,7 +392,7 @@ const DaftarPeriksaGroupLeader = () => {
 
             {/* Peralatan */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-2">
+              <table className="table table-bordered caption-top mt-2">
                 <caption className="text-black text-serif header-leader">
                   2. PERALATAN
                 </caption>
@@ -274,11 +435,11 @@ const DaftarPeriksaGroupLeader = () => {
                     <td className="text-serif text-sm">Di isi sesuai jadwal</td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Ya</td>
-                    <td className="text-serif text-sm fw-bold">Tidak</td>
+                    <td className="text-serif text-sm fw-bold">{peralatan_status_unit || peralatan_status_unit_note}</td>
+                    <td className="text-serif text-sm fw-bold">{peralatan_long_arm || peralatan_long_arm_note}</td>
+                    <td className="text-serif text-sm fw-bold">{peralatan_amphibi || peralatan_amphibi_note}</td>
+                    <td className="text-serif text-sm fw-bold">{peralatan_body || peralatan_body_note}</td>
+                    <td className="text-serif text-sm fw-bold">{peralatan_jadwal || peralatan_jadwal_note}</td>
                   </tr>
                 </tbody>
               </table>
@@ -286,7 +447,7 @@ const DaftarPeriksaGroupLeader = () => {
 
             {/* LAND CLEARING */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-2">
+              <table className="table table-bordered caption-top mt-2">
                 <caption className="text-black text-serif header-leader">
                   3. LAND CLEARING
                 </caption>
@@ -359,7 +520,7 @@ const DaftarPeriksaGroupLeader = () => {
             </div>
             {/* Lanjutan */}
             <div className="table-responsive">
-              <table class="table table-bordered mt-2">
+              <table className="table table-bordered mt-2">
                 <thead className="text-center">
                   <tr>
                     <th colSpan={3} scope="col" className="text-serif fs-5">
@@ -390,7 +551,7 @@ const DaftarPeriksaGroupLeader = () => {
 
             {/* PENGGALIAN CHANNEL */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-2">
+              <table className="table table-bordered caption-top mt-2">
                 <caption className="text-black text-serif header-leader">
                   4. PENGGALIAN CHANNEL
                 </caption>
@@ -450,7 +611,7 @@ const DaftarPeriksaGroupLeader = () => {
             </div>
             {/* Lanjutan */}
             <div className="table-responsive">
-              <table class="table table-bordered mt-2">
+              <table className="table table-bordered mt-2">
                 <thead className="text-center">
                   <tr>
                     <th colSpan={4} scope="col" className="text-serif fs-5">
@@ -485,7 +646,7 @@ const DaftarPeriksaGroupLeader = () => {
 
             {/* PERAWATAN CHANNEL / MAINTENANCE & PENDALAMAN */}
             <div className="table-responsive">
-              <table class="table table-bordered caption-top mt-2">
+              <table className="table table-bordered caption-top mt-2">
                 <caption className="text-black text-serif header-leader">
                   5. PERAWATAN CHANNEL/MAINTENANCE & PENDALAMAN
                 </caption>
@@ -551,7 +712,7 @@ const DaftarPeriksaGroupLeader = () => {
             {/* Table & Section Bottom */}
             <div className="row align-items-center mb-5">
               <div className="col-8">
-                <table class="table table-bordered caption-top mt-2">
+                <table className="table table-bordered caption-top mt-2">
                   <caption className="text-black text-serif header-leader">
                     6. TIME SHEET DAY WORK & PELAPORAN PEMAKAIAN FUEL
                   </caption>
@@ -609,6 +770,7 @@ const DaftarPeriksaGroupLeader = () => {
                   </div>
                   <div className="text-center gap-5">
                     <p className="fw-normal text-serif fw-semibold">
+                      
                       Disetujui oleh,
                     </p>
                     <p className="mt-5 text-serif fw-normal">
