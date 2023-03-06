@@ -29,8 +29,7 @@ const ProductControl = () => {
           data: {
             id_production_control: queryParams.get("id_production_control"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            // id_production_control: "vVoddQJ4R",
-            // lokasi_pkh_id: "VbVdOQJ4g",
+            pkh: queryParams.get("pkh"),
           },
         }
       )
@@ -42,9 +41,6 @@ const ProductControl = () => {
         setTanggal(data?.tanggal);
         setLokasi(data?.lokasi);
         setCatatan(data?.catatan);
-
-        console.log(typeof data);
-        console.log(data);
       })
       .catch((err) => {
         alert(err);

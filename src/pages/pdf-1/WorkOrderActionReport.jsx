@@ -204,16 +204,22 @@ const WorkOrderActionReport = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="text-center">
+              <tbody className="text-center align-middle">
                 <tr>
                   <td className="text-sm">(1)</td>
-                  <td className="text-sm">
-                    Target Include Rain & Slippery: OB: 542, 500 Bcm
+                  <td className="text-sm text-start">
+                    Target Include Rain & Slippery:
+                    <br/> 
+                    OB: 542 Bcm
+                    <br/>
+                    Coal: 500 Ton
                   </td>
                   <td className="text-sm fw-semibold">A2 Utara</td>
                   <td className="text-sm fw-semibold border-end">28/08/21</td>
                   <td className="text-sm">
-                    Actual Production OB: OB: 563, 571 Bcm Coal: 44' 267 Ton
+                    Actual Production OB: 
+                    <br/>
+                    OB: 563, 571 Bcm Coal: 44' 267 Ton
                   </td>
                   <td className="text-sm">Keterangan</td>
                 </tr>
