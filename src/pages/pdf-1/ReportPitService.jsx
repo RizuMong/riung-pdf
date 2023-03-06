@@ -12,6 +12,7 @@ const ReportPitService = () => {
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
   const [penerima, setPenerima] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -58,8 +59,21 @@ const ReportPitService = () => {
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">

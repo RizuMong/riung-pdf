@@ -14,11 +14,12 @@ const ProductionReport = () => {
   const [unit_bd, setUnitBD] = useState("");
   const [unit_sb, setUnitSB] = useState("");
   const [catatan, setCatatan] = useState("");
-  
+  const [loading, setLoading] = useState(true);
+
   const [dibuat, setDibuat] = useState("");
   const [diserahkan, setDiserahkan] = useState("");
   const [diterima, setDiterima] = useState("");
-  
+
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
 
@@ -65,18 +66,31 @@ const ProductionReport = () => {
           setShift(res.data[0].shift);
         }
         setJobsite(res.data[0]?.jobsite);
-        setUnitBD(res.data[0]?.unit_breakdown)
-        setUnitSB(res.data[0]?.unit_standby)
-        setCatatan(res.data[0]?.catatan)
+        setUnitBD(res.data[0]?.unit_breakdown);
+        setUnitSB(res.data[0]?.unit_standby);
+        setCatatan(res.data[0]?.catatan);
 
-        setDibuat(res.data[0]?.dibuat_oleh)
-        setDiserahkan(res.data[0]?.diserahkan)
-        setDiterima(res.data[0]?.diterima)
+        setDibuat(res.data[0]?.dibuat_oleh);
+        setDiserahkan(res.data[0]?.diserahkan);
+        setDiterima(res.data[0]?.diterima);
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">

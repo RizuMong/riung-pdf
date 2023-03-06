@@ -14,6 +14,7 @@ const PerintahKerjaHarian = () => {
   const [dilaporkan, setDilaporkan] = useState("");
   const [dilaksanakan1, setDilaksanakan1] = useState("");
   const [dilaksanakan2, setDilaksanakan2] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -88,8 +89,21 @@ const PerintahKerjaHarian = () => {
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">
