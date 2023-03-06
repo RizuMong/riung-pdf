@@ -8,6 +8,7 @@ import "../../styles/App.css";
 
 const DaftarPeriksaAlatAngkut = () => {
   const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [jobsite, setJobsite] = useState("");
   const [penerima, setPenerima] = useState("");
   const [tanggal, setTanggal] = useState("");
@@ -403,8 +404,21 @@ const DaftarPeriksaAlatAngkut = () => {
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">
