@@ -81,14 +81,14 @@ const WorkOrderActionReport = () => {
                   <th className="col-2">
                     <div className="mb-1">
                       <p className="mb-2 px-2  fw-normal text-alat">
-                        No. Dokumen:{" "}
-                        <span className="fw-semibold fst-italic">
-                          FRM-OPR - 003
+                        NO. :{" "}
+                        <span className="fw-normal">
+                          IV/Eng/WO-Pro/VII/21
                         </span>
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
-                        Hari / Tanggal /Shift:{" "}
+                        PERIODE :{" "}
                       </p>
                       <hr className="w-100" />
                     </div>
@@ -209,17 +209,19 @@ const WorkOrderActionReport = () => {
                   <td className="text-sm">(1)</td>
                   <td className="text-sm text-start">
                     Target Include Rain & Slippery:
-                    <br/> 
+                    <br />
                     OB: 542 Bcm
-                    <br/>
+                    <br />
                     Coal: 500 Ton
                   </td>
                   <td className="text-sm fw-semibold">A2 Utara</td>
                   <td className="text-sm fw-semibold border-end">28/08/21</td>
-                  <td className="text-sm">
-                    Actual Production OB: 
-                    <br/>
-                    OB: 563, 571 Bcm Coal: 44' 267 Ton
+                  <td className="text-sm text-start">
+                    Actual Production OB:
+                    <br />
+                    OB: 563, 571 Bcm
+                    <br />
+                    Coal: 44' 267 Ton
                   </td>
                   <td className="text-sm">Keterangan</td>
                 </tr>
@@ -227,7 +229,7 @@ const WorkOrderActionReport = () => {
               <thead>
                 <tr>
                   <th className="text-sm fw-normal border-top" colSpan={4}>
-                    GAMBAR ACUAN...
+                    GAMBAR ACUAN YANG DIGUNAKAN NO: PPT WO_PRO_WK04_2108 slide 6
                   </th>
                   <th
                     className="fw-semibold border-top"
