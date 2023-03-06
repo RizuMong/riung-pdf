@@ -32,7 +32,8 @@ const DaftarPeriksaGroupLeader = () => {
   const [jalan_driver, setJalan_driver] = useState("");
   const [jalan_driver_note, setJalan_driver_note] = useState("");
   const [jalan_dua_batang_kayu, setJalan_dua_batang_kayu] = useState("");
-  const [jalan_dua_batang_kayu_note, setJalan_dua_batang_kayu_note] = useState("");
+  const [jalan_dua_batang_kayu_note, setJalan_dua_batang_kayu_note] =
+    useState("");
   const [jalan_track_kering, setJalan_track_kering] = useState("");
   const [jalan_track_kering_note, setJalan_track_kering_note] = useState("");
   const [jalan_track_basah, setJalan_track_basah] = useState("");
@@ -45,10 +46,11 @@ const DaftarPeriksaGroupLeader = () => {
   const [jalan_unit_travel_note, setJalan_unit_travel_note] = useState("");
   const [jalan_jarak_lapuk, setJalan_jarak_lapuk] = useState("");
   const [jalan_jarak_lapuk_note, setJalan_jarak_lapuk_note] = useState("");
-  
+
   // PERALATAN
   const [peralatan_status_unit, setPeralatan_status_unit] = useState("");
-  const [peralatan_status_unit_note, setPeralatan_status_unit_note] = useState("");
+  const [peralatan_status_unit_note, setPeralatan_status_unit_note] =
+    useState("");
   const [peralatan_long_arm, setPeralatan_long_arm] = useState("");
   const [peralatan_long_arm_note, setPeralatan_long_arm_note] = useState("");
   const [peralatan_amphibi, setPeralatan_amphibi] = useState("");
@@ -59,70 +61,146 @@ const DaftarPeriksaGroupLeader = () => {
   const [peralatan_jadwal_note, setPeralatan_jadwal_note] = useState("");
 
   // LAND CLEARING
-  const [land_clearing_lokasi_unit, setLand_clearing_lokasi_unit] = useState("");
-  const [land_clearing_lokasi_unit_note, setLand_clearing_lokasi_unit_note] = useState("");
+  const [land_clearing_lokasi_unit, setLand_clearing_lokasi_unit] =
+    useState("");
+  const [land_clearing_lokasi_unit_note, setLand_clearing_lokasi_unit_note] =
+    useState("");
   const [land_clearing_alat_kerja, setLand_clearing_alat_kerja] = useState("");
-  const [land_clearing_alat_kerja_note, setLand_clearing_alat_kerja_note] = useState("");
-  const [land_clearing_jalur_land_clearing, setLand_clearing_jalur_land_clearing] = useState("");
-  const [land_clearing_jalur_land_clearing_note, setLand_clearing_jalur_land_clearing_note] = useState("");
+  const [land_clearing_alat_kerja_note, setLand_clearing_alat_kerja_note] =
+    useState("");
+  const [
+    land_clearing_jalur_land_clearing,
+    setLand_clearing_jalur_land_clearing,
+  ] = useState("");
+  const [
+    land_clearing_jalur_land_clearing_note,
+    setLand_clearing_jalur_land_clearing_note,
+  ] = useState("");
   const [land_clearing_patok, setLand_clearing_patok] = useState("");
   const [land_clearing_patok_note, setLand_clearing_patok_note] = useState("");
   const [land_clearing_patok_gps, setLand_clearing_patok_gps] = useState("");
-  const [land_clearing_patok_gps_note, setLand_clearing_patok_gps_note] = useState("");
-  const [land_clearing_kondisi_area, setLand_clearing_kondisi_area] = useState("");
-  const [land_clearing_kondisi_area_note, setLand_clearing_kondisi_area_note] = useState("");
+  const [land_clearing_patok_gps_note, setLand_clearing_patok_gps_note] =
+    useState("");
+  const [land_clearing_kondisi_area, setLand_clearing_kondisi_area] =
+    useState("");
+  const [land_clearing_kondisi_area_note, setLand_clearing_kondisi_area_note] =
+    useState("");
   const [land_clearing_area_kerja, setLand_clearing_area_kerja] = useState("");
-  const [land_clearing_area_kerja_note, setLand_clearing_area_kerja_note] = useState("");
+  const [land_clearing_area_kerja_note, setLand_clearing_area_kerja_note] =
+    useState("");
   const [land_clearing_longsor, setLand_clearing_longsor] = useState("");
-  const [land_clearing_longsor_note, setLand_clearing_longsor_note] = useState("");
+  const [land_clearing_longsor_note, setLand_clearing_longsor_note] =
+    useState("");
   const [land_clearing_long_arm, setLand_clearing_long_arm] = useState("");
-  const [land_clearing_long_arm_note, setLand_clearing_long_arm_note] = useState("");
-  const [land_clearing_kayu_kering, setLand_clearing_kayu_kering] = useState("");
-  const [land_clearing_kayu_kering_note, setLand_clearing_kayu_kering_note] = useState("");
+  const [land_clearing_long_arm_note, setLand_clearing_long_arm_note] =
+    useState("");
+  const [land_clearing_kayu_kering, setLand_clearing_kayu_kering] =
+    useState("");
+  const [land_clearing_kayu_kering_note, setLand_clearing_kayu_kering_note] =
+    useState("");
 
   // PENGGALIAN CHANNEL
-  const [penggalian_channel_gali_primer, Setpenggalian_channel_gali_primer] = useState("");
-  const [penggalian_channel_gali_primer_note, Setpenggalian_channel_gali_primer_note] = useState("");
-  const [penggalian_channel_unit_track, Setpenggalian_channel_unit_track] = useState("");
-  const [penggalian_channel_unit_track_note, Setpenggalian_channel_unit_track_note] = useState("");
-  const [penggalian_channel_unit_amphibi, Setpenggalian_channel_unit_amphibi] = useState("");
-  const [penggalian_channel_unit_amphibi_note, Setpenggalian_channel_unit_amphibi_note] = useState("");
-  const [penggalian_channel_alokasi, Setpenggalian_channel_alokasi] = useState("");
-  const [penggalian_channel_alokasi_note, Setpenggalian_channel_alokasi_note] = useState("");
-  const [penggalian_channel_alat_kerja, Setpenggalian_channel_alat_kerja] = useState("");
-  const [penggalian_channel_alat_kerja_note, Setpenggalian_channel_alat_kerja_note] = useState("");
-  const [penggalian_channel_pita_survey, Setpenggalian_channel_pita_survey] = useState("");
-  const [penggalian_channel_pita_survey_note, Setpenggalian_channel_pita_survey_note] = useState("");
-  const [penggalian_channel_longsor, Setpenggalian_channel_longsor] = useState("");
-  const [penggalian_channel_longsor_note, Setpenggalian_channel_longsor_note] = useState("");
-  const [penggalian_channel_unit_aman_note, Setpenggalian_channel_unit_aman_note] = useState("");
-  const [penggalian_channel_unit_aman, Setpenggalian_channel_unit_aman] = useState("");
-  const [penggalian_channel_operator_penggalian, Setpenggalian_channel_operator_penggalian] = useState("");
-  const [penggalian_channel_operator_penggalian_note, Setpenggalian_channel_operator_penggalian_note] = useState("");
-  const [penggalian_channel_lampu_kerja, Setpenggalian_channel_lampu_kerja] = useState("");
-  const [penggalian_channel_lampu_kerja_note, Setpenggalian_channel_lampu_kerja_note] = useState("");
+  const [penggalian_channel_gali_primer, Setpenggalian_channel_gali_primer] =
+    useState("");
+  const [
+    penggalian_channel_gali_primer_note,
+    Setpenggalian_channel_gali_primer_note,
+  ] = useState("");
+  const [penggalian_channel_unit_track, Setpenggalian_channel_unit_track] =
+    useState("");
+  const [
+    penggalian_channel_unit_track_note,
+    Setpenggalian_channel_unit_track_note,
+  ] = useState("");
+  const [penggalian_channel_unit_amphibi, Setpenggalian_channel_unit_amphibi] =
+    useState("");
+  const [
+    penggalian_channel_unit_amphibi_note,
+    Setpenggalian_channel_unit_amphibi_note,
+  ] = useState("");
+  const [penggalian_channel_alokasi, Setpenggalian_channel_alokasi] =
+    useState("");
+  const [penggalian_channel_alokasi_note, Setpenggalian_channel_alokasi_note] =
+    useState("");
+  const [penggalian_channel_alat_kerja, Setpenggalian_channel_alat_kerja] =
+    useState("");
+  const [
+    penggalian_channel_alat_kerja_note,
+    Setpenggalian_channel_alat_kerja_note,
+  ] = useState("");
+  const [penggalian_channel_pita_survey, Setpenggalian_channel_pita_survey] =
+    useState("");
+  const [
+    penggalian_channel_pita_survey_note,
+    Setpenggalian_channel_pita_survey_note,
+  ] = useState("");
+  const [penggalian_channel_longsor, Setpenggalian_channel_longsor] =
+    useState("");
+  const [penggalian_channel_longsor_note, Setpenggalian_channel_longsor_note] =
+    useState("");
+  const [
+    penggalian_channel_unit_aman_note,
+    Setpenggalian_channel_unit_aman_note,
+  ] = useState("");
+  const [penggalian_channel_unit_aman, Setpenggalian_channel_unit_aman] =
+    useState("");
+  const [
+    penggalian_channel_operator_penggalian,
+    Setpenggalian_channel_operator_penggalian,
+  ] = useState("");
+  const [
+    penggalian_channel_operator_penggalian_note,
+    Setpenggalian_channel_operator_penggalian_note,
+  ] = useState("");
+  const [penggalian_channel_lampu_kerja, Setpenggalian_channel_lampu_kerja] =
+    useState("");
+  const [
+    penggalian_channel_lampu_kerja_note,
+    Setpenggalian_channel_lampu_kerja_note,
+  ] = useState("");
 
   // PERAWATAN CHANNEL / MAINTENANCE & PENDALAMAN
-  const [perawatan_channel_kedalaman, Setperawatan_channel_kedalaman] = useState("");
-  const [perawatan_channel_kedalaman_note, Setperawatan_channel_kedalaman_note] = useState("");
-  const [perawatan_channel_genangan, Setperawatan_channel_genangan] = useState("");
-  const [perawatan_channel_genangan_note, Setperawatan_channel_genangan_note] = useState("");
-  const [perawatan_channel_alokasi, Setperawatan_channel_alokasi] = useState("");
-  const [perawatan_channel_alokasi_note, Setperawatan_channel_alokasi_note] = useState("");
-  const [perawatan_channel_alat_kerja, Setperawatan_channel_alat_kerja] = useState("");
-  const [perawatan_channel_alat_kerja_note, Setperawatan_channel_alat_kerja_note] = useState("");
-  const [perawatan_channel_longsor, Setperawatan_channel_longsor] = useState("");
-  const [perawatan_channel_longsor_note, Setperawatan_channel_longsor_note] = useState("");
-  const [perawatan_channel_lampu_kerja, Setperawatan_channel_lampu_kerja] = useState("");
-  const [perawatan_channel_lampu_kerja_note, Setperawatan_channel_lampu_kerja_note] = useState("");
+  const [perawatan_channel_kedalaman, Setperawatan_channel_kedalaman] =
+    useState("");
+  const [
+    perawatan_channel_kedalaman_note,
+    Setperawatan_channel_kedalaman_note,
+  ] = useState("");
+  const [perawatan_channel_genangan, Setperawatan_channel_genangan] =
+    useState("");
+  const [perawatan_channel_genangan_note, Setperawatan_channel_genangan_note] =
+    useState("");
+  const [perawatan_channel_alokasi, Setperawatan_channel_alokasi] =
+    useState("");
+  const [perawatan_channel_alokasi_note, Setperawatan_channel_alokasi_note] =
+    useState("");
+  const [perawatan_channel_alat_kerja, Setperawatan_channel_alat_kerja] =
+    useState("");
+  const [
+    perawatan_channel_alat_kerja_note,
+    Setperawatan_channel_alat_kerja_note,
+  ] = useState("");
+  const [perawatan_channel_longsor, Setperawatan_channel_longsor] =
+    useState("");
+  const [perawatan_channel_longsor_note, Setperawatan_channel_longsor_note] =
+    useState("");
+  const [perawatan_channel_lampu_kerja, Setperawatan_channel_lampu_kerja] =
+    useState("");
+  const [
+    perawatan_channel_lampu_kerja_note,
+    Setperawatan_channel_lampu_kerja_note,
+  ] = useState("");
 
   // TIME SHEET DAY WORK & PELAPORAN PEMAKAIAN FUEL
   const [time_sheet_area_kerja, Settime_sheet_area_kerja] = useState("");
-  const [time_sheet_area_kerja_note, Settime_sheet_area_kerja_note] = useState("");
+  const [time_sheet_area_kerja_note, Settime_sheet_area_kerja_note] =
+    useState("");
   const [time_sheet_tanda_tangan, Settime_sheet_tanda_tangan] = useState("");
-  const [time_sheet_tanda_tangan_note, Settime_sheet_tanda_tangan_note] = useState("");
+  const [time_sheet_tanda_tangan_note, Settime_sheet_tanda_tangan_note] =
+    useState("");
   const [time_sheet_pelaporan, Settime_sheet_pelaporan] = useState("");
-  const [time_sheet_pelaporan_note, Settime_sheet_pelaporan_note] = useState("");
+  const [time_sheet_pelaporan_note, Settime_sheet_pelaporan_note] =
+    useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -155,126 +233,249 @@ const DaftarPeriksaGroupLeader = () => {
           disetujui: data.disetujui,
         });
 
-      // Check Data True
-      const checkData = (data, set) => {
-        if (data == null) {
-          set("");
+        // Check Data True
+        const checkData = (data, set) => {
+          if (data == null) {
+            set("");
+            return 1;
+          } else if (data) {
+            set("✓");
+            return 1;
+          }
+          set("X");
           return 1;
-        } else if (data) {
-          set("✓");
-          return 1;
-        }
-        set("X");
-        return 1;
-      };
+        };
 
-      // JALAN/ACCES LV & ORANG & UNIT
-      checkData(data.detail.jalan_lebar_grade, setJalan_lebar_grade)
-      setJalan_lebar_grade_note(data.detail.jalan_lebar_grade_note)
-      checkData(data.detail.jalan_rata_bebas, setJalan_rata_bebas);
-      setJalan_rata_bebas_note(data.detail.jalan_rata_bebas_note);
-      checkData(data.detail.jalan_bebas_debu, setJalan_bebas_debu);
-      setJalan_bebas_debu_note(data.detail.jalan_bebas_debu_note);
-      checkData(data.detail.jalan_pintas, setJalan_pintas);
-      setJalan_pintas_note(data.detail.jalan_pintas_note);
-      checkData(data.detail.jalan_batang_kayu, setJalan_batang_kayu);
-      setJalan_batang_kayu_note(data.detail.jalan_batang_kayu_note);
-      checkData(data.detail.jalan_longsor, setJalan_longsor);
-      setJalan_longsor_note(data.detail.jalan_longsor_note);
-      checkData(data.detail.jalan_driver, setJalan_driver);
-      setJalan_driver_note(data.detail.jalan_driver_note);
-      checkData(data.detail.jalan_dua_batang_kayu, setJalan_dua_batang_kayu);
-      setJalan_dua_batang_kayu_note(data.detail.jalan_dua_batang_kayu_note);
-      checkData(data.detail.jalan_track_kering, setJalan_track_kering);
-      setJalan_track_kering_note(data.detail.jalan_track_kering_note);
-      checkData(data.detail.jalan_track_basah, setJalan_track_basah);
-      setJalan_track_basah_note(data.detail.jalan_track_basah_note);
-      checkData(data.detail.jalan_soil_lumpur, setJalan_soil_lumpur);
-      setJalan_soil_lumpur_note(data.detail.jalan_soil_lumpur_note);
-      checkData(data.detail.jalan_aman_amblas, setJalan_aman_amblas);
-      setJalan_aman_amblas_note(data.detail.jalan_aman_amblas_note);
-      checkData(data.detail.jalan_unit_travel, setJalan_unit_travel);
-      setJalan_unit_travel_note(data.detail.jalan_unit_travel_note);
-      checkData(data.detail.jalan_jarak_lapuk, setJalan_jarak_lapuk);
-      setJalan_jarak_lapuk_note(data.detail.jalan_jarak_lapuk_note);
+        // JALAN/ACCES LV & ORANG & UNIT
+        checkData(data.detail.jalan_lebar_grade, setJalan_lebar_grade);
+        setJalan_lebar_grade_note(data.detail.jalan_lebar_grade_note);
+        checkData(data.detail.jalan_rata_bebas, setJalan_rata_bebas);
+        setJalan_rata_bebas_note(data.detail.jalan_rata_bebas_note);
+        checkData(data.detail.jalan_bebas_debu, setJalan_bebas_debu);
+        setJalan_bebas_debu_note(data.detail.jalan_bebas_debu_note);
+        checkData(data.detail.jalan_pintas, setJalan_pintas);
+        setJalan_pintas_note(data.detail.jalan_pintas_note);
+        checkData(data.detail.jalan_batang_kayu, setJalan_batang_kayu);
+        setJalan_batang_kayu_note(data.detail.jalan_batang_kayu_note);
+        checkData(data.detail.jalan_longsor, setJalan_longsor);
+        setJalan_longsor_note(data.detail.jalan_longsor_note);
+        checkData(data.detail.jalan_driver, setJalan_driver);
+        setJalan_driver_note(data.detail.jalan_driver_note);
+        checkData(data.detail.jalan_dua_batang_kayu, setJalan_dua_batang_kayu);
+        setJalan_dua_batang_kayu_note(data.detail.jalan_dua_batang_kayu_note);
+        checkData(data.detail.jalan_track_kering, setJalan_track_kering);
+        setJalan_track_kering_note(data.detail.jalan_track_kering_note);
+        checkData(data.detail.jalan_track_basah, setJalan_track_basah);
+        setJalan_track_basah_note(data.detail.jalan_track_basah_note);
+        checkData(data.detail.jalan_soil_lumpur, setJalan_soil_lumpur);
+        setJalan_soil_lumpur_note(data.detail.jalan_soil_lumpur_note);
+        checkData(data.detail.jalan_aman_amblas, setJalan_aman_amblas);
+        setJalan_aman_amblas_note(data.detail.jalan_aman_amblas_note);
+        checkData(data.detail.jalan_unit_travel, setJalan_unit_travel);
+        setJalan_unit_travel_note(data.detail.jalan_unit_travel_note);
+        checkData(data.detail.jalan_jarak_lapuk, setJalan_jarak_lapuk);
+        setJalan_jarak_lapuk_note(data.detail.jalan_jarak_lapuk_note);
 
-      // PERALATAN
-      checkData(data.detail.peralatan_status_unit, setPeralatan_status_unit);
-      setPeralatan_status_unit_note(data.detail.peralatan_status_unit_note);
-      checkData(data.detail.peralatan_long_arm, setPeralatan_long_arm);
-      setPeralatan_long_arm_note(data.detail.peralatan_long_arm_note);
-      checkData(data.detail.peralatan_amphibi, setPeralatan_amphibi);
-      setPeralatan_amphibi_note(data.detail.peralatan_amphibi_note);
-      checkData(data.detail.peralatan_body, setPeralatan_body);
-      setPeralatan_body_note(data.detail.peralatan_body_note);
-      checkData(data.detail.peralatan_jadwal, setPeralatan_jadwal);
-      setPeralatan_jadwal_note(data.detail.peralatan_jadwal_note);
+        // PERALATAN
+        checkData(data.detail.peralatan_status_unit, setPeralatan_status_unit);
+        setPeralatan_status_unit_note(data.detail.peralatan_status_unit_note);
+        checkData(data.detail.peralatan_long_arm, setPeralatan_long_arm);
+        setPeralatan_long_arm_note(data.detail.peralatan_long_arm_note);
+        checkData(data.detail.peralatan_amphibi, setPeralatan_amphibi);
+        setPeralatan_amphibi_note(data.detail.peralatan_amphibi_note);
+        checkData(data.detail.peralatan_body, setPeralatan_body);
+        setPeralatan_body_note(data.detail.peralatan_body_note);
+        checkData(data.detail.peralatan_jadwal, setPeralatan_jadwal);
+        setPeralatan_jadwal_note(data.detail.peralatan_jadwal_note);
 
-      // LAND CLEARING
-      checkData(data.detail.land_clearing_lokasi_unit, setLand_clearing_lokasi_unit);
-      setLand_clearing_lokasi_unit_note(data.detail.land_clearing_lokasi_unit_note);
-      checkData(data.detail.land_clearing_alat_kerja, setLand_clearing_alat_kerja);
-      setLand_clearing_alat_kerja_note(data.detail.land_clearing_alat_kerja_note);
-      checkData(data.detail.land_clearing_jalur_land_clearing, setLand_clearing_jalur_land_clearing);
-      setLand_clearing_jalur_land_clearing_note(data.detail.land_clearing_jalur_land_clearing_note);
-      checkData(data.detail.land_clearing_patok, setLand_clearing_patok);
-      setLand_clearing_patok_note(data.detail.land_clearing_patok_note);
-      checkData(data.detail.land_clearing_patok_gps, setLand_clearing_patok_gps);
-      setLand_clearing_patok_gps_note(data.detail.land_clearing_patok_gps_note);
-      checkData(data.detail.land_clearing_kondisi_area, setLand_clearing_kondisi_area);
-      setLand_clearing_kondisi_area_note(data.detail.land_clearing_kondisi_area_note);
-      checkData(data.detail.land_clearing_area_kerja, setLand_clearing_area_kerja);
-      setLand_clearing_area_kerja_note(data.detail.land_clearing_area_kerja_note);
-      checkData(data.detail.land_clearing_longsor, setLand_clearing_longsor);
-      setLand_clearing_longsor_note(data.detail.land_clearing_longsor_note);
-      checkData(data.detail.land_clearing_long_arm, setLand_clearing_long_arm);
-      setLand_clearing_long_arm_note(data.detail.land_clearing_long_arm_note);
-      checkData(data.detail.land_clearing_kayu_kering, setLand_clearing_kayu_kering);
-      setLand_clearing_kayu_kering_note(data.detail.land_clearing_kayu_kering_note);
+        // LAND CLEARING
+        checkData(
+          data.detail.land_clearing_lokasi_unit,
+          setLand_clearing_lokasi_unit
+        );
+        setLand_clearing_lokasi_unit_note(
+          data.detail.land_clearing_lokasi_unit_note
+        );
+        checkData(
+          data.detail.land_clearing_alat_kerja,
+          setLand_clearing_alat_kerja
+        );
+        setLand_clearing_alat_kerja_note(
+          data.detail.land_clearing_alat_kerja_note
+        );
+        checkData(
+          data.detail.land_clearing_jalur_land_clearing,
+          setLand_clearing_jalur_land_clearing
+        );
+        setLand_clearing_jalur_land_clearing_note(
+          data.detail.land_clearing_jalur_land_clearing_note
+        );
+        checkData(data.detail.land_clearing_patok, setLand_clearing_patok);
+        setLand_clearing_patok_note(data.detail.land_clearing_patok_note);
+        checkData(
+          data.detail.land_clearing_patok_gps,
+          setLand_clearing_patok_gps
+        );
+        setLand_clearing_patok_gps_note(
+          data.detail.land_clearing_patok_gps_note
+        );
+        checkData(
+          data.detail.land_clearing_kondisi_area,
+          setLand_clearing_kondisi_area
+        );
+        setLand_clearing_kondisi_area_note(
+          data.detail.land_clearing_kondisi_area_note
+        );
+        checkData(
+          data.detail.land_clearing_area_kerja,
+          setLand_clearing_area_kerja
+        );
+        setLand_clearing_area_kerja_note(
+          data.detail.land_clearing_area_kerja_note
+        );
+        checkData(data.detail.land_clearing_longsor, setLand_clearing_longsor);
+        setLand_clearing_longsor_note(data.detail.land_clearing_longsor_note);
+        checkData(
+          data.detail.land_clearing_long_arm,
+          setLand_clearing_long_arm
+        );
+        setLand_clearing_long_arm_note(data.detail.land_clearing_long_arm_note);
+        checkData(
+          data.detail.land_clearing_kayu_kering,
+          setLand_clearing_kayu_kering
+        );
+        setLand_clearing_kayu_kering_note(
+          data.detail.land_clearing_kayu_kering_note
+        );
 
-      // PENGGALIAN CHANNEL
-      checkData(data.detail.penggalian_channel_gali_primer, Setpenggalian_channel_gali_primer);
-      Setpenggalian_channel_gali_primer_note(data.detail.penggalian_channel_gali_primer_note);
-      checkData(data.detail.penggalian_channel_unit_track, Setpenggalian_channel_unit_track);
-      Setpenggalian_channel_unit_track_note(data.detail.penggalian_channel_unit_track_note);
-      checkData(data.detail.penggalian_channel_unit_amphibi, Setpenggalian_channel_unit_amphibi);
-      Setpenggalian_channel_unit_amphibi_note(data.detail.penggalian_channel_unit_amphibi_note);
-      checkData(data.detail.penggalian_channel_alokasi, Setpenggalian_channel_alokasi);
-      Setpenggalian_channel_alokasi_note(data.detail.penggalian_channel_alokasi_note);
-      checkData(data.detail.penggalian_channel_alat_kerja, Setpenggalian_channel_alat_kerja);
-      Setpenggalian_channel_alat_kerja_note(data.detail.penggalian_channel_alat_kerja_note);
-      checkData(data.detail.penggalian_channel_pita_survey, Setpenggalian_channel_pita_survey);
-      Setpenggalian_channel_pita_survey_note(data.detail.penggalian_channel_pita_survey_note);
-      checkData(data.detail.penggalian_channel_longsor, Setpenggalian_channel_longsor);
-      Setpenggalian_channel_longsor_note(data.detail.penggalian_channel_longsor_note);
-      checkData(data.detail.penggalian_channel_unit_aman, Setpenggalian_channel_unit_aman);
-      Setpenggalian_channel_unit_aman_note(data.detail.penggalian_channel_unit_aman_note);
-      checkData(data.detail.penggalian_channel_operator_penggalian, Setpenggalian_channel_operator_penggalian);
-      Setpenggalian_channel_operator_penggalian_note(data.detail.penggalian_channel_operator_penggalian_note);
-      checkData(data.detail.penggalian_channel_lampu_kerja, Setpenggalian_channel_lampu_kerja);
-      Setpenggalian_channel_lampu_kerja_note(data.detail.penggalian_channel_lampu_kerja_note);
+        // PENGGALIAN CHANNEL
+        checkData(
+          data.detail.penggalian_channel_gali_primer,
+          Setpenggalian_channel_gali_primer
+        );
+        Setpenggalian_channel_gali_primer_note(
+          data.detail.penggalian_channel_gali_primer_note
+        );
+        checkData(
+          data.detail.penggalian_channel_unit_track,
+          Setpenggalian_channel_unit_track
+        );
+        Setpenggalian_channel_unit_track_note(
+          data.detail.penggalian_channel_unit_track_note
+        );
+        checkData(
+          data.detail.penggalian_channel_unit_amphibi,
+          Setpenggalian_channel_unit_amphibi
+        );
+        Setpenggalian_channel_unit_amphibi_note(
+          data.detail.penggalian_channel_unit_amphibi_note
+        );
+        checkData(
+          data.detail.penggalian_channel_alokasi,
+          Setpenggalian_channel_alokasi
+        );
+        Setpenggalian_channel_alokasi_note(
+          data.detail.penggalian_channel_alokasi_note
+        );
+        checkData(
+          data.detail.penggalian_channel_alat_kerja,
+          Setpenggalian_channel_alat_kerja
+        );
+        Setpenggalian_channel_alat_kerja_note(
+          data.detail.penggalian_channel_alat_kerja_note
+        );
+        checkData(
+          data.detail.penggalian_channel_pita_survey,
+          Setpenggalian_channel_pita_survey
+        );
+        Setpenggalian_channel_pita_survey_note(
+          data.detail.penggalian_channel_pita_survey_note
+        );
+        checkData(
+          data.detail.penggalian_channel_longsor,
+          Setpenggalian_channel_longsor
+        );
+        Setpenggalian_channel_longsor_note(
+          data.detail.penggalian_channel_longsor_note
+        );
+        checkData(
+          data.detail.penggalian_channel_unit_aman,
+          Setpenggalian_channel_unit_aman
+        );
+        Setpenggalian_channel_unit_aman_note(
+          data.detail.penggalian_channel_unit_aman_note
+        );
+        checkData(
+          data.detail.penggalian_channel_operator_penggalian,
+          Setpenggalian_channel_operator_penggalian
+        );
+        Setpenggalian_channel_operator_penggalian_note(
+          data.detail.penggalian_channel_operator_penggalian_note
+        );
+        checkData(
+          data.detail.penggalian_channel_lampu_kerja,
+          Setpenggalian_channel_lampu_kerja
+        );
+        Setpenggalian_channel_lampu_kerja_note(
+          data.detail.penggalian_channel_lampu_kerja_note
+        );
 
-      // PERAWATAN CHANNEL / MAINTENANCE & PENDALAMAN
-      checkData(data.detail.perawatan_channel_kedalaman, Setperawatan_channel_kedalaman);
-      Setperawatan_channel_kedalaman_note(data.detail.perawatan_channel_kedalaman_note);
-      checkData(data.detail.perawatan_channel_genangan, Setperawatan_channel_genangan);
-      Setperawatan_channel_genangan_note(data.detail.perawatan_channel_genangan_note);
-      checkData(data.detail.perawatan_channel_alokasi, Setperawatan_channel_alokasi);
-      Setperawatan_channel_alokasi_note(data.detail.perawatan_channel_alokasi_note);
-      checkData(data.detail.perawatan_channel_alat_kerja, Setperawatan_channel_alat_kerja);
-      Setperawatan_channel_alat_kerja_note(data.detail.perawatan_channel_alat_kerja_note);
-      checkData(data.detail.perawatan_channel_longsor, Setperawatan_channel_longsor);
-      Setperawatan_channel_longsor_note(data.detail.perawatan_channel_longsor_note);
-      checkData(data.detail.perawatan_channel_lampu_kerja, Setperawatan_channel_lampu_kerja);
-      Setperawatan_channel_lampu_kerja_note(data.detail.perawatan_channel_lampu_kerja_note);
+        // PERAWATAN CHANNEL / MAINTENANCE & PENDALAMAN
+        checkData(
+          data.detail.perawatan_channel_kedalaman,
+          Setperawatan_channel_kedalaman
+        );
+        Setperawatan_channel_kedalaman_note(
+          data.detail.perawatan_channel_kedalaman_note
+        );
+        checkData(
+          data.detail.perawatan_channel_genangan,
+          Setperawatan_channel_genangan
+        );
+        Setperawatan_channel_genangan_note(
+          data.detail.perawatan_channel_genangan_note
+        );
+        checkData(
+          data.detail.perawatan_channel_alokasi,
+          Setperawatan_channel_alokasi
+        );
+        Setperawatan_channel_alokasi_note(
+          data.detail.perawatan_channel_alokasi_note
+        );
+        checkData(
+          data.detail.perawatan_channel_alat_kerja,
+          Setperawatan_channel_alat_kerja
+        );
+        Setperawatan_channel_alat_kerja_note(
+          data.detail.perawatan_channel_alat_kerja_note
+        );
+        checkData(
+          data.detail.perawatan_channel_longsor,
+          Setperawatan_channel_longsor
+        );
+        Setperawatan_channel_longsor_note(
+          data.detail.perawatan_channel_longsor_note
+        );
+        checkData(
+          data.detail.perawatan_channel_lampu_kerja,
+          Setperawatan_channel_lampu_kerja
+        );
+        Setperawatan_channel_lampu_kerja_note(
+          data.detail.perawatan_channel_lampu_kerja_note
+        );
 
-      // TIME SHEET DAY WORK & PELAPORAN PEMAKAIAN FUEL
-      checkData(data.detail.time_sheet_area_kerja, Settime_sheet_area_kerja);
-      Settime_sheet_area_kerja_note(data.detail.time_sheet_area_kerja_note);
-      checkData(data.detail.time_sheet_tanda_tangan, Settime_sheet_tanda_tangan);
-      Settime_sheet_tanda_tangan_note(data.detail.time_sheet_tanda_tangan_note);
-      checkData(data.detail.time_sheet_pelaporan, Settime_sheet_pelaporan);
-      Settime_sheet_pelaporan_note(data.detail.time_sheet_pelaporan_note);
+        // TIME SHEET DAY WORK & PELAPORAN PEMAKAIAN FUEL
+        checkData(data.detail.time_sheet_area_kerja, Settime_sheet_area_kerja);
+        Settime_sheet_area_kerja_note(data.detail.time_sheet_area_kerja_note);
+        checkData(
+          data.detail.time_sheet_tanda_tangan,
+          Settime_sheet_tanda_tangan
+        );
+        Settime_sheet_tanda_tangan_note(
+          data.detail.time_sheet_tanda_tangan_note
+        );
+        checkData(data.detail.time_sheet_pelaporan, Settime_sheet_pelaporan);
+        Settime_sheet_pelaporan_note(data.detail.time_sheet_pelaporan_note);
       })
       .catch((err) => {
         alert(err);
@@ -283,8 +484,6 @@ const DaftarPeriksaGroupLeader = () => {
         setLoading(false);
       });
   };
-
-  
 
   if (loading) {
     return (
@@ -396,14 +595,31 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">{jalan_lebar_grade || jalan_lebar_grade_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_rata_bebas || jalan_rata_bebas_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_bebas_debu || jalan_bebas_debu_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_pintas || jalan_pintas_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_batang_kayu || jalan_batang_kayu_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_longsor || jalan_longsor_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_driver || jalan_driver_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_dua_batang_kayu || jalan_dua_batang_kayu_note}</td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_lebar_grade} <br /> {jalan_lebar_grade_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_rata_bebas} <br /> {jalan_rata_bebas_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_bebas_debu} <br /> {jalan_bebas_debu_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_pintas} <br /> {jalan_pintas_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_batang_kayu} <br /> {jalan_batang_kayu_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_longsor} <br /> {jalan_longsor_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_driver} <br /> {jalan_driver_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_dua_batang_kayu} <br />{" "}
+                      {jalan_dua_batang_kayu_note}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -447,12 +663,24 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">{jalan_track_kering || jalan_track_kering_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_track_basah || jalan_track_basah_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_soil_lumpur || jalan_soil_lumpur_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_aman_amblas || jalan_aman_amblas_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_unit_travel || jalan_unit_travel_note}</td>
-                    <td className="text-serif text-sm fw-bold">{jalan_jarak_lapuk || jalan_jarak_lapuk_note}</td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_track_kering} <br /> {jalan_track_kering_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_track_basah} <br /> {jalan_track_basah_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_soil_lumpur} <br /> {jalan_soil_lumpur_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_aman_amblas} <br /> {jalan_aman_amblas_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_unit_travel} <br /> {jalan_unit_travel_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {jalan_jarak_lapuk} <br /> {jalan_jarak_lapuk_note}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -503,11 +731,22 @@ const DaftarPeriksaGroupLeader = () => {
                     <td className="text-serif text-sm">Di isi sesuai jadwal</td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">{peralatan_status_unit || peralatan_status_unit_note}</td>
-                    <td className="text-serif text-sm fw-bold">{peralatan_long_arm || peralatan_long_arm_note}</td>
-                    <td className="text-serif text-sm fw-bold">{peralatan_amphibi || peralatan_amphibi_note}</td>
-                    <td className="text-serif text-sm fw-bold">{peralatan_body || peralatan_body_note}</td>
-                    <td className="text-serif text-sm fw-bold">{peralatan_jadwal || peralatan_jadwal_note}</td>
+                    <td className="text-serif text-sm fw-bold">
+                      {peralatan_status_unit} <br />{" "}
+                      {peralatan_status_unit_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {peralatan_long_arm} <br /> {peralatan_long_arm_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {peralatan_amphibi} <br /> {peralatan_amphibi_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {peralatan_body} <br /> {peralatan_body_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {peralatan_jadwal} <br /> {peralatan_body_note}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -524,24 +763,21 @@ const DaftarPeriksaGroupLeader = () => {
                     <th
                       colSpan={3}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Unit Kerja
                     </th>
                     <th
                       colSpan={2}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Survey
                     </th>
                     <th
                       colSpan={2}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Kondisi Area Kerja
                     </th>
@@ -575,13 +811,33 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_lokasi_unit || land_clearing_lokasi_unit_note}</td>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_alat_kerja || land_clearing_alat_kerja_note}</td>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_jalur_land_clearing || land_clearing_jalur_land_clearing_note}</td>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_patok || land_clearing_patok_note}</td>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_patok_gps || land_clearing_patok_gps_note}</td>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_kondisi_area || land_clearing_kondisi_area_note}</td>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_area_kerja || land_clearing_area_kerja_note}</td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_lokasi_unit} <br />{" "}
+                      {land_clearing_lokasi_unit_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_alat_kerja} <br />{" "}
+                      {land_clearing_alat_kerja_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_jalur_land_clearing} <br />{" "}
+                      {land_clearing_jalur_land_clearing_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_patok} <br /> {land_clearing_patok_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_patok_gps} <br />{" "}
+                      {land_clearing_patok_gps_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_kondisi_area} <br />{" "}
+                      {land_clearing_kondisi_area_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_area_kerja} <br />{" "}
+                      {land_clearing_area_kerja_note}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -609,9 +865,18 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_longsor || land_clearing_longsor_note}</td>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_long_arm || land_clearing_long_arm_note}</td>
-                    <td className="text-serif text-sm fw-bold">{land_clearing_kayu_kering || land_clearing_kayu_kering_note}</td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_longsor} <br />{" "}
+                      {land_clearing_longsor_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_long_arm} <br />{" "}
+                      {land_clearing_long_arm_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {land_clearing_kayu_kering} <br />{" "}
+                      {land_clearing_kayu_kering_note}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -628,16 +893,14 @@ const DaftarPeriksaGroupLeader = () => {
                     <th
                       colSpan={3}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Kondisi Area Kerja
                     </th>
                     <th
                       colSpan={3}
                       scope="col-2"
-                      className="text-serif fs-5"
-                      style={{ verticalAlign: "middle" }}
+                      className="text-serif fs-5 align-middle"
                     >
                       Unit Kerja/Alat
                     </th>
@@ -667,12 +930,30 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_gali_primer || penggalian_channel_gali_primer_note}</td>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_unit_track || penggalian_channel_unit_track_note}</td>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_unit_amphibi || penggalian_channel_unit_amphibi_note}</td>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_alokasi || penggalian_channel_alokasi_note}</td>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_alat_kerja || penggalian_channel_alat_kerja_note}</td>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_pita_survey || penggalian_channel_pita_survey_note}</td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_gali_primer} <br />{" "}
+                      {penggalian_channel_gali_primer_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_unit_track} <br />{" "}
+                      {penggalian_channel_unit_track_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_unit_amphibi} <br />{" "}
+                      {penggalian_channel_unit_amphibi_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_alokasi} <br />{" "}
+                      {penggalian_channel_alokasi_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_alat_kerja} <br />{" "}
+                      {penggalian_channel_alat_kerja_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_pita_survey} <br />{" "}
+                      {penggalian_channel_pita_survey_note}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -703,10 +984,22 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_longsor || penggalian_channel_longsor_note}</td>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_unit_aman || penggalian_channel_unit_aman_note}</td>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_operator_penggalian || penggalian_channel_operator_penggalian_note}</td>
-                    <td className="text-serif text-sm fw-bold">{penggalian_channel_lampu_kerja || penggalian_channel_lampu_kerja_note}</td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_longsor} <br />{" "}
+                      {penggalian_channel_longsor_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_unit_aman} <br />{" "}
+                      {penggalian_channel_unit_aman_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_operator_penggalian} <br />{" "}
+                      {penggalian_channel_operator_penggalian_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {penggalian_channel_lampu_kerja} <br />{" "}
+                      {penggalian_channel_lampu_kerja_note}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -766,12 +1059,30 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">{perawatan_channel_kedalaman || perawatan_channel_kedalaman_note}</td>
-                    <td className="text-serif text-sm fw-bold">{perawatan_channel_genangan || perawatan_channel_genangan_note}</td>
-                    <td className="text-serif text-sm fw-bold">{perawatan_channel_alokasi || perawatan_channel_alokasi_note}</td>
-                    <td className="text-serif text-sm fw-bold">{perawatan_channel_alat_kerja || perawatan_channel_alat_kerja_note}</td>
-                    <td className="text-serif text-sm fw-bold">{perawatan_channel_longsor || perawatan_channel_longsor_note}</td>
-                    <td className="text-serif text-sm fw-bold">{perawatan_channel_lampu_kerja || perawatan_channel_lampu_kerja_note}</td>
+                    <td className="text-serif text-sm fw-bold">
+                      {perawatan_channel_kedalaman} <br />{" "}
+                      {perawatan_channel_kedalaman_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {perawatan_channel_genangan} <br />{" "}
+                      {perawatan_channel_genangan_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {perawatan_channel_alokasi} <br />{" "}
+                      {perawatan_channel_alokasi_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {perawatan_channel_alat_kerja} <br />{" "}
+                      {perawatan_channel_alat_kerja_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {perawatan_channel_longsor} <br />{" "}
+                      {perawatan_channel_longsor_note}
+                    </td>
+                    <td className="text-serif text-sm fw-bold">
+                      {perawatan_channel_lampu_kerja} <br />{" "}
+                      {perawatan_channel_lampu_kerja_note}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -806,9 +1117,18 @@ const DaftarPeriksaGroupLeader = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className="text-serif text-sm fw-semibold">{time_sheet_area_kerja || time_sheet_area_kerja_note}</td>
-                      <td className="text-serif text-sm fw-semibold">{time_sheet_tanda_tangan || time_sheet_tanda_tangan_note}</td>
-                      <td className="text-serif text-sm fw-semibold">{time_sheet_pelaporan || time_sheet_pelaporan_note}</td>
+                      <td className="text-serif text-sm fw-semibold">
+                        {time_sheet_area_kerja} <br />{" "}
+                        {time_sheet_area_kerja_note}
+                      </td>
+                      <td className="text-serif text-sm fw-semibold">
+                        {time_sheet_tanda_tangan} <br />{" "}
+                        {time_sheet_tanda_tangan_note}
+                      </td>
+                      <td className="text-serif text-sm fw-semibold">
+                        {time_sheet_pelaporan} <br />{" "}
+                        {time_sheet_pelaporan_note}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -838,7 +1158,6 @@ const DaftarPeriksaGroupLeader = () => {
                   </div>
                   <div className="text-center gap-5">
                     <p className="fw-normal text-serif fw-semibold">
-                      
                       Disetujui oleh,
                     </p>
                     <p className="mt-5 text-serif fw-normal">
