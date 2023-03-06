@@ -29,10 +29,8 @@ const ProductControl = () => {
           data: {
             id_production_control: queryParams.get("id_production_control"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            pkh: queryParams.get("pkh"),
             // id_production_control: "vVoddQJ4R",
             // lokasi_pkh_id: "VbVdOQJ4g",
-            // pkh: "mhnOdQ1VR",
           },
         }
       )
