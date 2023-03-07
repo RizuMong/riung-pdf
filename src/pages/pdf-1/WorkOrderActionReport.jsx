@@ -27,7 +27,7 @@ const WorkOrderActionReport = () => {
     // Data Prod (Actual)
     actual_overburden: 0,
     actual_coal: 0,
-    tanggal_diterima_eng: "",
+    tanggal_diterima_prod: "",
     catatan_prod: "",
     diterima_oleh_prod: "",
     dilaporkan_oleh: "",
@@ -49,7 +49,7 @@ const WorkOrderActionReport = () => {
           data: {
             id_work_order: "NNYDAYx4R",
             // id_work_order: queryParams.get("id_work_order")
-          }
+          },
         }
       )
       .then((res) => {
@@ -59,7 +59,7 @@ const WorkOrderActionReport = () => {
           // Data Luar
           jobsite: data.jobsite,
           penerima_work_order: data.penerima_work_order,
-          start_periode: data.start_periode,
+          start_periode: data.start_periode.split(" ")[0],
           end_periode: data.end_periode,
           diorder_oleh: data.diorder_oleh,
 
@@ -74,7 +74,7 @@ const WorkOrderActionReport = () => {
           // Data Prod (Actual)
           actual_overburden: data.actual_overburden,
           actual_coal: data.actual_coal,
-          tanggal_diterima_eng: data.tanggal_diterima_eng,
+          tanggal_diterima_prod: data.tanggal_diterima_prod,
           catatan_prod: data.catatan_prod,
           diterima_oleh_prod: data.diterima_oleh_prod,
           dilaporkan_oleh: data.dilaporkan_oleh,
@@ -316,19 +316,18 @@ const WorkOrderActionReport = () => {
               <thead className="text-center">
                 <tr>
                   <th style={{ width: "25%" }} className="fw-semibold">
-                    <p className="fw-normal text-sm">Krassi, 22 Agustus 2021</p>
+                    <p className="fw-normal text-sm">
+                      {data.jobsite}, {data.tanggal_diterima_eng}
+                    </p>
                     <p>DIORDER OLEH,</p>
                     <p className="mt-5 border-top border-1">
-                      (Yogi Aditya Widodo)
+                      ({data.diorder_oleh})
                     </p>
                   </th>
-                  <th
-                    style={{ width: "25%", verticalAlign: "top" }}
-                    className="fw-semibold px-1"
-                  >
+                  <th width="25%" className="fw-semibold px-1 align-top">
                     <p>DITERIMA OLEH,</p>
                     <p className="fw-normal text-sm text-start px-1">
-                      NAMA: Afrizon
+                      NAMA: {data.diterima_oleh_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
                       JABATAN: Prod Dept. Head
@@ -343,15 +342,16 @@ const WorkOrderActionReport = () => {
                   </th>
 
                   <th style={{ width: "25%" }} className="fw-semibold">
-                    <p className="fw-normal text-sm">Krassi, 22 Agustus 2021</p>
-                    <p>DIORDER OLEH,</p>
-                    <p className="mt-5 border-top border-1">(Afrizon)</p>
+                    <p className="fw-normal text-sm">
+                      {data.jobsite}, {data.tanggal_diterima_prod}
+                    </p>
+                    <p>DILAPORKAN OLEH,</p>
+                    <p className="mt-5 border-top border-1">
+                      ({data.dilaporkan_oleh})
+                    </p>
                   </th>
 
-                  <th
-                    style={{ width: "25%", verticalAlign: "top" }}
-                    className="fw-semibold"
-                  >
+                  <th width="25%" className="fw-semibold align-top">
                     <p>DITERIMA OLEH,</p>
                     <p className="fw-normal text-sm text-start px-1">
                       NAMA: Yogi Aditya W.
