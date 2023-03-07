@@ -63,7 +63,7 @@ const DrillDesign = () => {
         setJobsite(res.data[0]?.jobsite);
         setTanggal(res.data[0]?.tanggal);
         setShift(res.data[0]?.shift);
-        setKepada(res.data[0]?.kepada)
+        setKepada(res.data[0]?.kepada);
         setDibuat(res.data[0]?.dibuat_oleh);
         setDiketahui(res.data[0]?.diketahui_oleh);
 
@@ -86,12 +86,25 @@ const DrillDesign = () => {
         setPattern(res?.data[0].pattern);
         setNo_of_hole(res?.data[0].no_of_hole);
         setVolume(res?.data[0].volume);
-        setSketsa(res?.data[0]?.sketsa || '');
+        setSketsa(res?.data[0]?.sketsa || "");
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
+
+  if (loading) {
+    return (
+      <div class="text-center pt-5">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">
@@ -127,7 +140,8 @@ const DrillDesign = () => {
                   <th className="col-3">
                     <div className="mb-2">
                       <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-1">
-                        Hari/Tanggal: <span className="fw-normal">{tanggal}</span>
+                        Hari/Tanggal:{" "}
+                        <span className="fw-normal">{tanggal}</span>
                       </p>
                       <div className="d-flex">
                         <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-1">
@@ -138,7 +152,7 @@ const DrillDesign = () => {
                         </p>
                       </div>
                       <p className="mb-2 px-2 fw-semibold text-alat border-bottom border-1">
-                        Kepada:{" "}  <span className="fw-normal">{kepada}</span>
+                        Kepada: <span className="fw-normal">{kepada}</span>
                       </p>
                     </div>
                   </th>

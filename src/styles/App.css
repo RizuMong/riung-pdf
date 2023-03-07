@@ -35,7 +35,7 @@ hr {
 .row::after {
   content: "" !important;
   clear: both !important;
-  display: table !important
+  display: table !important;
 }
 
 table {
@@ -49,19 +49,19 @@ p {
   margin-bottom: 0 !important;
 }
 
-/* table {
+table {
   margin: 0;
   margin-bottom: 0 !important;
-} */
+}
 
-[src=''] {
+[src=""] {
   visibility: hidden;
 }
 
 @media print {
   table {
-		page-break-inside: avoid !important;
-	}
+    page-break-inside: avoid !important;
+  }
 
   body {
     width: 100%;
@@ -71,6 +71,11 @@ p {
     font-size: 24px !important;
     text-align: center;
     font-weight: 800;
+  }
+
+  .header-report-production {
+    font-size: 22px !important;
+    text-align: center;
   }
 
   .text-alat {
@@ -92,7 +97,8 @@ p {
     height: 40px !important;
   }
 
-  .diketahui, .dibuat {
+  .diketahui,
+  .dibuat {
     font-size: 14px !important;
   }
 
@@ -132,7 +138,7 @@ p {
 }
 
 .bg-table-form {
-  background-color: #C7D5A4 ;
+  background-color: #c7d5a4;
 }
 
 /* Styling Excavator Control */

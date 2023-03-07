@@ -48,8 +48,6 @@ const LembarPica = () => {
         setDisahkan_oleh(res.data.disahkan_oleh);
         setDisiapkan_oleh(res.data.disiapkan_oleh);
 
-        console.log(data);
-
         // Data PICA
         if (res && res.data.pica) {
           const result = res.data.pica.map((item, index) => {

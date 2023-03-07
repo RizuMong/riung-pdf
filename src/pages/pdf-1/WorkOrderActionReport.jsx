@@ -8,7 +8,31 @@ import "../../styles/App.css";
 
 const WorkOrderActionReport = () => {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({
+    // Data Luar
+    jobsite: "",
+    penerima_work_order: "",
+    start_periode: "",
+    end_periode: "",
+    diorder_oleh: "",
+
+    // Data Eng (Target)
+    target_overburden_bcm: 0,
+    target_coal_ton: 0,
+    attachment: "",
+    tanggal_diterima_eng: "",
+    catatan_eng: "",
+    diterima_oleh_eng: "",
+
+    // Data Prod (Actual)
+    actual_overburden: 0,
+    actual_coal: 0,
+    tanggal_diterima_eng: "",
+    catatan_prod: "",
+    diterima_oleh_prod: "",
+    dilaporkan_oleh: "",
+  });
+  const [detail, seDetail] = useState([]);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -23,12 +47,38 @@ const WorkOrderActionReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order",
         {
           data: {
-            id_work_order: "I275ieJVg",
-          },
+            id_work_order: "NNYDAYx4R",
+            // id_work_order: queryParams.get("id_work_order")
+          }
         }
       )
       .then((res) => {
         const { data } = res;
+
+        setData({
+          // Data Luar
+          jobsite: data.jobsite,
+          penerima_work_order: data.penerima_work_order,
+          start_periode: data.start_periode,
+          end_periode: data.end_periode,
+          diorder_oleh: data.diorder_oleh,
+
+          // Data Eng (Target)
+          target_overburden_bcm: data.target_overburden_bcm,
+          target_coal_ton: data.target_coal_ton,
+          attachment: data.attachment,
+          tanggal_diterima_eng: data.tanggal_diterima_eng,
+          catatan_eng: data.catatan_eng,
+          diterima_oleh_eng: data.diterima_oleh_eng,
+
+          // Data Prod (Actual)
+          actual_overburden: data.actual_overburden,
+          actual_coal: data.actual_coal,
+          tanggal_diterima_eng: data.tanggal_diterima_eng,
+          catatan_prod: data.catatan_prod,
+          diterima_oleh_prod: data.diterima_oleh_prod,
+          dilaporkan_oleh: data.dilaporkan_oleh,
+        });
 
         console.log(data);
       })
@@ -87,7 +137,7 @@ const WorkOrderActionReport = () => {
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2 fw-normal text-alat">
-                        PERIODE :{" "}
+                        PERIODE : {data.start_periode} - {data.end_periode}
                       </p>
                       <hr className="w-100" />
                     </div>
@@ -178,12 +228,12 @@ const WorkOrderActionReport = () => {
                       {" "}
                       Target Include Rain & Slippery:
                       <br />
-                      OB: 542 Bcm
+                      OB: {data.target_overburden_bcm} Bcm
                       <br />
-                      Coal: 500 Ton
+                      Coal: {data.target_coal_ton} Ton
                     </td>
                     <td className="text-sm border border-1 text-center fw-semibold">
-                      A2 Utara
+                      {data.jobsite}
                     </td>
                     <td className="text-sm border border-1 text-center fw-semibold">
                       28/08/21
@@ -213,11 +263,11 @@ const WorkOrderActionReport = () => {
                   <tr>
                     <td className="text-sm border border-1">
                       {" "}
-                      Target Include Rain & Slippery:
+                      Actual Production OB:
                       <br />
-                      OB: 542 Bcm
+                      OB: {data.actual_overburden} Bcm
                       <br />
-                      Coal: 500 Ton
+                      Coal: {data.actual_coal} Ton
                     </td>
                     <td className="text-sm border border-1 text-center fw-semibold"></td>
                   </tr>
@@ -235,26 +285,28 @@ const WorkOrderActionReport = () => {
             <Table className="m-0">
               <thead>
                 <tr>
-                  <th className="text-sm fw-normal" colSpan={4}>
-                    GAMBAR ACUAN YANG DIGUNAKAN NO: PPT WO_PRO_WK04_2108 slide 6
+                  <th className="text-sm fw-normal">
+                    GAMBAR ACUAN YANG DIGUNAKAN NO:
                   </th>
                   <th
+                    width="50%"
                     className="fw-semibold border-start border-1 align-top"
                     rowSpan={2}
                     colSpan={2}
                   >
-                    CATATAN:
+                    CATATAN:{" "}
+                    <span className="text-sm fw-normal">
+                      {data.catatan_prod}
+                    </span>
                   </th>
                 </tr>
                 <tr>
-                  <th width="50%" className="fw-semibold" colSpan={4}>
-                    CATATAN:
+                  <th width="50%" className="fw-semibold">
+                    CATATAN:{" "}
                     <span className="text-sm fw-normal">
-                      Harap Feedback diberikan maksimal pada target waktu yang
-                      telah tercantum sebelum pukul 15:00 WITA
+                      {data.catatan_eng}
                     </span>
                   </th>
-                  <th width="50%" className="fw-semibold px-1" colSpan={2}></th>
                 </tr>
               </thead>
             </Table>

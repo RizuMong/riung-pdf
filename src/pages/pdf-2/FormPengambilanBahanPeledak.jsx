@@ -102,7 +102,7 @@ const FormPengambilanBahanPeledak = () => {
         alert(err);
       }) .finally(() => {
         setLoading(false);
-      });;
+      });
   };
 
   if (loading) {

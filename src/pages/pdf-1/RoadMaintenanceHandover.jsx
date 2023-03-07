@@ -49,8 +49,6 @@ const RoadMaintenanceHandover = () => {
         setDiserahkan(res?.data[0]?.diserahkan_oleh);
         setDiterima(res?.data[0]?.diterima_oleh);
         setCatatan(res?.data[0]?.catatan_problem);
-
-        console.log(data);
       })
       .catch((err) => {
         alert(err);
