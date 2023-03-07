@@ -197,6 +197,7 @@ const WorkOrderActionReport = () => {
                     URAIAN PELAKSANAAN
                   </th>
                   <th
+                    rowSpan={2}
                     style={{ width: "18%", verticalAlign: "middle" }}
                     className="header-table-action2"
                   >
@@ -225,6 +226,17 @@ const WorkOrderActionReport = () => {
                   </td>
                   <td className="text-sm">Keterangan</td>
                 </tr>
+                {/* Gak bisa gini tablenya harus dipisah */}
+                {/* <tr className="text-sm text-start">
+                  <td className="text-center">(2)</td>
+                  <td>EX 286</td>
+                  <td></td>
+                  <td></td>
+                  <td>EX 286</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr> */}
               </tbody>
               <thead>
                 <tr>

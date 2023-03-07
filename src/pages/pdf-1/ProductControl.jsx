@@ -30,7 +30,10 @@ const ProductControl = () => {
             id_production_control: queryParams.get("id_production_control"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh: queryParams.get("pkh"),
-          },
+            // id_production_control: "hkxdOCbVR",
+            // lokasi_pkh_id: "mWROOjxVg",
+            // pkh: "nB9DdjxVg",
+          }
         }
       )
       .then((res) => {
@@ -53,7 +56,8 @@ const ProductControl = () => {
   // fungsi untuk mengecek jam dan mengembalikan data yang cocok
   const getDataByJam = (jam) => {
     const detail = data?.detail || []; // default ke array kosong jika data belum ada
-    return detail.find((d) => d.jam === jam) || {}; // default ke objek kosong jika data tidak ditemukan
+    const formattedJam = jam.replace(".", ":"); // ubah format jam menjadi "HH:mm" dari "HH.mm"
+    return detail.find((d) => d.jam === formattedJam) || {}; // default ke objek kosong jika data tidak ditemukan
   };
 
   if (loading) {

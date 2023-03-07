@@ -28,6 +28,7 @@ import PemeriksaanKondisiLubangLedak from "../pages/pdf-2/PemeriksaanKondisiLuba
 import FormKehadiran from "../pages/pdf-2/FormKehadiran";
 import LembarPica from "../pages/pdf-2/LembarPica";
 import MinutesOfMeeting from "../pages/pdf-2/MinutesOfMeeting";
+import NotFound from "../pages/NotFound";
 
 const Index = () => {
   return (
@@ -104,6 +105,7 @@ const Index = () => {
         <Route path="/form-kehadiran" element={<FormKehadiran />} />
         <Route path="/lembar-pica" element={<LembarPica />} />
         <Route path="/minutes-of-meeting" element={<MinutesOfMeeting />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
