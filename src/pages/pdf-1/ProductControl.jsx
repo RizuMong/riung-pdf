@@ -34,15 +34,11 @@ const ProductControl = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/production-control-page",
         {
           data: {
-            // id_production_control: queryParams.get("id_production_control"),
-            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            // pkh: queryParams.get("pkh"),
-            // logbook_id: queryParams.get("logbook_id"),
-            id_production_control: "hkxdOCbVR",
-            lokasi_pkh_id: "mWROOjxVg",
-            pkh: "nB9DdjxVg",
-            logbook_id: "olTS3JJVg",
-          },
+            id_production_control: queryParams.get("id_production_control"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            pkh: queryParams.get("pkh"),
+            logbook_id: queryParams.get("logbook_id"),
+          }
         }
       )
       .then((res) => {
