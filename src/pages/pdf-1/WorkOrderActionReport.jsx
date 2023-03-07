@@ -82,9 +82,7 @@ const WorkOrderActionReport = () => {
                     <div className="mb-1">
                       <p className="mb-2 px-2  fw-normal text-alat">
                         NO. :{" "}
-                        <span className="fw-normal">
-                          IV/Eng/WO-Pro/VII/21
-                        </span>
+                        <span className="fw-normal">IV/Eng/WO-Pro/VII/21</span>
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal text-alat">
@@ -106,7 +104,7 @@ const WorkOrderActionReport = () => {
             <hr className="w-100 solid" />
 
             {/* Head Table Content */}
-            <Table responsive bordered>
+            <Table responsive bordered className="m-0">
               <thead className="text-center">
                 <tr>
                   <th
@@ -163,112 +161,78 @@ const WorkOrderActionReport = () => {
             </Table>
 
             {/* Table Content */}
-            <Table responsive bordered className="m-0">
+            <div className="row">
+              <div className="column m-0">
+                <Table responsive bordered>
+                  <tr className="text-center">
+                    <th className="text-base fw-semibold">NO</th>
+                    <th className="text-base fw-semibold">URAIAN PEKERJAAN</th>
+                    <th className="text-base fw-semibold">LOKASI</th>
+                    <th className="text-base fw-semibold">TARGET WAKTU</th>
+                  </tr>
+                  <tr>
+                    <td className="text-sm text-center border border-1">(1)</td>
+                    <td className="text-sm border border-1">
+                      {" "}
+                      Target Include Rain & Slippery:
+                      <br />
+                      OB: 542 Bcm
+                      <br />
+                      Coal: 500 Ton
+                    </td>
+                    <td className="text-sm border border-1 text-center fw-semibold">
+                      A2 Utara
+                    </td>
+                    <td className="text-sm border border-1 text-center fw-semibold">
+                      28/08/21
+                    </td>
+                  </tr>
+                </Table>
+              </div>
+              <div className="column">
+                <Table responsive bordered>
+                  <tr className="text-center">
+                    <th className="text-base fw-semibold">URAIAN PEKERJAAN</th>
+                    <th className="text-base fw-semibold">KETERANGAN</th>
+                  </tr>
+                  <tr>
+                    <td className="text-sm border border-1">
+                      {" "}
+                      Target Include Rain & Slippery:
+                      <br />
+                      OB: 542 Bcm
+                      <br />
+                      Coal: 500 Ton
+                    </td>
+                    <td className="text-sm border border-1 text-center fw-semibold"></td>
+                  </tr>
+                </Table>
+              </div>
+            </div>
+            {/* Catatan */}
+            <Table className="m-0">
               <thead>
                 <tr>
-                  <th
-                    style={{ width: "3%", verticalAlign: "middle" }}
-                    className="header-table-action2"
-                  >
-                    NO
-                  </th>
-                  <th
-                    style={{ width: "29%", verticalAlign: "middle" }}
-                    className="header-table-action2"
-                  >
-                    URAIAN PEKERJAAN
-                  </th>
-                  <th
-                    style={{ width: "10%", verticalAlign: "middle" }}
-                    className="header-table-action2"
-                  >
-                    LOKASI
-                  </th>
-                  <th
-                    style={{ width: "8%", verticalAlign: "middle" }}
-                    className="header-table-action2 border-end"
-                  >
-                    TARGET WAKTU
-                  </th>
-                  <th
-                    style={{ width: "32%", verticalAlign: "middle" }}
-                    className="header-table-action2"
-                  >
-                    URAIAN PELAKSANAAN
-                  </th>
-                  <th
-                    rowSpan={2}
-                    style={{ width: "18%", verticalAlign: "middle" }}
-                    className="header-table-action2"
-                  >
-                    KETERANGAN
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-center align-middle">
-                <tr>
-                  <td className="text-sm">(1)</td>
-                  <td className="text-sm text-start">
-                    Target Include Rain & Slippery:
-                    <br />
-                    OB: 542 Bcm
-                    <br />
-                    Coal: 500 Ton
-                  </td>
-                  <td className="text-sm fw-semibold">A2 Utara</td>
-                  <td className="text-sm fw-semibold border-end">28/08/21</td>
-                  <td className="text-sm text-start">
-                    Actual Production OB:
-                    <br />
-                    OB: 563, 571 Bcm
-                    <br />
-                    Coal: 44' 267 Ton
-                  </td>
-                  <td className="text-sm">Keterangan</td>
-                </tr>
-                {/* Gak bisa gini tablenya harus dipisah */}
-                {/* <tr className="text-sm text-start">
-                  <td className="text-center">(2)</td>
-                  <td>EX 286</td>
-                  <td></td>
-                  <td></td>
-                  <td>EX 286</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr> */}
-              </tbody>
-              <thead>
-                <tr>
-                  <th className="text-sm fw-normal border-top" colSpan={4}>
+                  <th className="text-sm fw-normal" colSpan={4}>
                     GAMBAR ACUAN YANG DIGUNAKAN NO: PPT WO_PRO_WK04_2108 slide 6
                   </th>
                   <th
-                    className="fw-semibold border-top"
+                    className="fw-semibold border-start border-1 align-top"
                     rowSpan={2}
                     colSpan={2}
-                    style={{ verticalAlign: "top" }}
                   >
                     CATATAN:
                   </th>
                 </tr>
                 <tr>
-                  <th
-                    style={{ width: "50%" }}
-                    className="fw-semibold"
-                    colSpan={4}
-                  >
+                  <th width="50%" className="fw-semibold" colSpan={4}>
                     CATATAN:
                     <span className="text-sm fw-normal">
                       Harap Feedback diberikan maksimal pada target waktu yang
                       telah tercantum sebelum pukul 15:00 WITA
                     </span>
                   </th>
-                  <th
-                    style={{ width: "50%" }}
-                    className="fw-semibold px-1"
-                    colSpan={2}
-                  ></th>
+                  <th width="50%" className="fw-semibold px-1" colSpan={2}></th>
                 </tr>
               </thead>
             </Table>
