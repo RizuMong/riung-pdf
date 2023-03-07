@@ -57,7 +57,7 @@ const WorkOrderActionReport = () => {
           <div className="p-1">
             <div className="row align-items-center">
               {/* Header Table */}
-              <table className="table">
+              <Table className="table">
                 <thead>
                   <th className="col-3">
                     {" "}
@@ -85,7 +85,7 @@ const WorkOrderActionReport = () => {
                         <span className="fw-normal">IV/Eng/WO-Pro/VII/21</span>
                       </p>
                       <hr className="w-100" />
-                      <p className="mb-2 px-2  fw-normal text-alat">
+                      <p className="mb-2 px-2 fw-normal text-alat">
                         PERIODE :{" "}
                       </p>
                       <hr className="w-100" />
@@ -99,9 +99,10 @@ const WorkOrderActionReport = () => {
                     </div>
                   </th>
                 </thead>
-              </table>
+              </Table>
             </div>
-            <hr className="w-100 solid" />
+
+            <hr className="w-100 solid m-0" />
 
             {/* Head Table Content */}
             <Table responsive bordered className="m-0">
