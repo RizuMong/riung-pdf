@@ -11,7 +11,14 @@ const ProductControl = () => {
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [lokasi, setLokasi] = useState("");
-  const [catatan, setCatatan] = useState("");
+  const [catatan, setCatatan] = useState({
+    catatan_shift_1: "",
+    catatan_shift_2: "",
+  });
+  const [section, setSection] = useState({
+    section_head_1: "",
+    section_head_2: "",
+  });
   const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
@@ -27,24 +34,31 @@ const ProductControl = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/production-control-page",
         {
           data: {
-            id_production_control: queryParams.get("id_production_control"),
-            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            pkh: queryParams.get("pkh"),
-            logbook_id: queryParams.get("logbook_id"),
-            // id_production_control: "hkxdOCbVR",
-            // lokasi_pkh_id: "mWROOjxVg",
-            // pkh: "nB9DdjxVg",
-          }
+            // id_production_control: queryParams.get("id_production_control"),
+            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            // pkh: queryParams.get("pkh"),
+            // logbook_id: queryParams.get("logbook_id"),
+            id_production_control: "hkxdOCbVR",
+            lokasi_pkh_id: "mWROOjxVg",
+            pkh: "nB9DdjxVg",
+            logbook_id: "olTS3JJVg",
+          },
         }
       )
       .then((res) => {
         const { data } = res;
         setData(data);
-
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);
         setLokasi(data?.lokasi);
-        setCatatan(data?.catatan);
+        setCatatan({
+          catatan_shift_1: data.catatan_shift_1,
+          catatan_shift_2: data.catatan_shift_2,
+        });
+        setSection({
+          section_head_1: data.section_head_1,
+          section_head_2: data.section_head_2,
+        });
       })
       .catch((err) => {
         alert(err);
@@ -385,18 +399,18 @@ const ProductControl = () => {
                   <th className="text-serif align-middle" scope="row">
                     I
                   </th>
+                  <td className="text-sm">{section.section_head_1}</td>
                   <td></td>
-                  <td></td>
-                  <td className="text-sm">{catatan}</td>
+                  <td className="text-sm">{catatan.catatan_shift_1}</td>
                 </tr>
                 {/* Shift 2 */}
                 <tr className="align-middle" style={{ height: 50 }}>
                   <th className="text-serif align-middle" scope="row">
                     II
                   </th>
-                  <td></td>
-                  <td></td>
+                  <td className="text-sm">{section.section_head_2}</td>
                   <td className="text-sm"></td>
+                  <td className="text-sm">{catatan.catatan_shift_2}</td>
                 </tr>
               </tbody>
             </table>
