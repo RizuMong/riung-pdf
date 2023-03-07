@@ -8,6 +8,7 @@ import "../../styles/App.css";
 
 const WorkOrderActionReport = () => {
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -188,6 +189,19 @@ const WorkOrderActionReport = () => {
                       28/08/21
                     </td>
                   </tr>
+                  {/* Mapping Data */}
+                  <tr>
+                    <td className="text-sm border border-1 text-center">(2)</td>
+                    <td className="text-sm border border-1 text-start">
+                      EX....
+                    </td>
+                    <td className="text-sm border border-1 text-center fw-semibold">
+                      A2 Utara
+                    </td>
+                    <td className="text-sm border border-1 text-center fw-semibold">
+                      28/08/21
+                    </td>
+                  </tr>
                 </Table>
               </div>
               <div className="column">
@@ -206,6 +220,13 @@ const WorkOrderActionReport = () => {
                       Coal: 500 Ton
                     </td>
                     <td className="text-sm border border-1 text-center fw-semibold"></td>
+                  </tr>
+                  {/* Mapping Data */}
+                  <tr>
+                    <td className="text-sm border border-1 text-start">
+                      EX...
+                    </td>
+                    <td className="text-sm border border-1 text-center"></td>
                   </tr>
                 </Table>
               </div>
