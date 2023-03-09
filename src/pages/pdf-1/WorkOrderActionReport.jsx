@@ -32,7 +32,8 @@ const WorkOrderActionReport = () => {
     diterima_oleh_prod: "",
     dilaporkan_oleh: "",
   });
-  const [detail, seDetail] = useState([]);
+  const [detail_target, seDetailTarget] = useState([]);
+  const [detail_actual, seDetailActual] = useState([]);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -47,8 +48,8 @@ const WorkOrderActionReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order",
         {
           data: {
-            id_work_order: "NNYDAYx4R",
-            // id_work_order: queryParams.get("id_work_order")
+            // id_work_order: "NNYDAYx4R",
+            id_work_order: queryParams.get("id_work_order")
           },
         }
       )
@@ -79,8 +80,8 @@ const WorkOrderActionReport = () => {
           diterima_oleh_prod: data.diterima_oleh_prod,
           dilaporkan_oleh: data.dilaporkan_oleh,
         });
-
-        console.log(data);
+        seDetailTarget(data?.detail_target);
+        seDetailActual(data?.detail_actual);
       })
       .catch((err) => {
         alert(err);
@@ -235,23 +236,25 @@ const WorkOrderActionReport = () => {
                     <td className="text-sm border border-1 text-center fw-semibold">
                       {data.jobsite}
                     </td>
-                    <td className="text-sm border border-1 text-center fw-semibold">
-                      28/08/21
-                    </td>
+                    <td className="text-sm border border-1 text-center fw-semibold"></td>
                   </tr>
-                  {/* Mapping Data */}
-                  <tr>
-                    <td className="text-sm border border-1 text-center">(2)</td>
-                    <td className="text-sm border border-1 text-start">
-                      EX....
-                    </td>
-                    <td className="text-sm border border-1 text-center fw-semibold">
-                      A2 Utara
-                    </td>
-                    <td className="text-sm border border-1 text-center fw-semibold">
-                      28/08/21
-                    </td>
-                  </tr>
+                  {/* Mapping Data Target*/}
+                  {detail_target?.map((item, index) => (
+                    <tr key={index}>
+                      <td className="text-sm border border-1 text-center">
+                        ({index + 2})
+                      </td>
+                      <td className="text-sm border border-1 text-start">
+                        {item.result}
+                      </td>
+                      <td className="text-sm border border-1 text-center fw-semibold">
+                        {item.lokasi}
+                      </td>
+                      <td className="text-sm border border-1 text-center fw-semibold">
+                        {item.target_waktu}
+                      </td>
+                    </tr>
+                  ))}
                 </Table>
               </div>
               <div className="column">
@@ -271,13 +274,17 @@ const WorkOrderActionReport = () => {
                     </td>
                     <td className="text-sm border border-1 text-center fw-semibold"></td>
                   </tr>
-                  {/* Mapping Data */}
-                  <tr>
-                    <td className="text-sm border border-1 text-start">
-                      EX...
-                    </td>
-                    <td className="text-sm border border-1 text-center"></td>
-                  </tr>
+                  {/* Mapping Data Prod */}
+                  {detail_actual?.map((item, index) => (
+                    <tr key={index}>
+                      <td className="text-sm border border-1 text-start">
+                        {item?.result}
+                      </td>
+                      <td className="text-sm border border-1 text-center">
+                        <img src={item.keterangan} width="120" height="60" />
+                      </td>
+                    </tr>
+                  ))}
                 </Table>
               </div>
             </div>
