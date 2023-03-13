@@ -89,7 +89,7 @@ const ProductControl = () => {
           <div className="p-3">
             {/* Header */}
             {/* Header Table */}
-            <table className="table">
+            <Table responsive>
               <thead>
                 <th className="col-4">
                   {" "}
@@ -126,7 +126,7 @@ const ProductControl = () => {
                   </div>
                 </th>
               </thead>
-            </table>
+            </Table>
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}
