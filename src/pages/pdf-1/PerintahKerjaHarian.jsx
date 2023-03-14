@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
 import axios from "axios";
 
+import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -112,7 +113,7 @@ const PerintahKerjaHarian = () => {
           <div className="p-1">
             <div className="row align-items-center">
               {/* Header Table */}
-              <table className="table">
+              <Table responsive className="table">
                 <thead>
                   <th className="col-1">
                     {" "}
@@ -143,9 +144,9 @@ const PerintahKerjaHarian = () => {
                     </div>
                   </th>
                 </thead>
-              </table>
+              </Table>
               <hr className="w-100 solid" />
-              <table className="table">
+              <Table responsive className="table">
                 <thead>
                   <th className="col-8">
                     <div className="mb-5">
@@ -172,7 +173,7 @@ const PerintahKerjaHarian = () => {
                     </div>
                   </th>
                 </thead>
-              </table>
+              </Table>
             </div>
             <hr className="w-100 solid" />
 

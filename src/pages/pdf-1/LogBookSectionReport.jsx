@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
 import axios from "axios";
 
+import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -53,7 +54,7 @@ const LogBookSectionReport = ({}) => {
           <div className="p-1">
             <div className="row align-items-center">
               {/* Header Table */}
-              <table className="table">
+              <Table responsive bordered className="table">
                 <thead>
                   <th className="col-3">
                     {" "}
@@ -98,7 +99,7 @@ const LogBookSectionReport = ({}) => {
                     </div>
                   </th>
                 </thead>
-              </table>
+              </Table>
             </div>
             <hr className="w-100 solid" />
 
@@ -176,7 +177,7 @@ const LogBookSectionReport = ({}) => {
                 </tbody>
               </table>
 
-              <table className="table table-bordered">
+              <Table responsive bordered className="table table-bordered">
                 <thead className="text-center">
                   <tr>
                     <th
@@ -214,7 +215,7 @@ const LogBookSectionReport = ({}) => {
                     <br />
                   </td>
                 </tbody>
-              </table>
+              </Table>
             </div>
 
             <hr className="w-100 solid m-0" />

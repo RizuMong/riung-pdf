@@ -114,7 +114,7 @@ const ExcavatorControl = () => {
             </div>
 
             {/* Content Table */}
-            <Table bordered hover size="sm mt-3 text-center">
+            <Table responsive bordered hover size="sm mt-3 text-center">
               <thead>
                 <tr>
                   <th width="10%" className="table-dark align-middle">

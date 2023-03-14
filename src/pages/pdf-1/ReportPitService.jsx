@@ -83,7 +83,7 @@ const ReportPitService = () => {
           <div className="p-1">
             <div className="row align-items-center">
               {/* Header Table */}
-              <table className="table">
+              <Table responsive className="table">
                 <thead>
                   <th className="col-3">
                     {" "}
@@ -119,12 +119,12 @@ const ReportPitService = () => {
                     </div>
                   </th>
                 </thead>
-              </table>
+              </Table>
             </div>
             <hr className="w-100 solid" />
 
             {/* Table Content */}
-            <Table bordered hover className="text-center">
+            <Table responsive bordered hover className="text-center">
               <thead>
                 <tr>
                   <th scope="col" className="header-table-pit">

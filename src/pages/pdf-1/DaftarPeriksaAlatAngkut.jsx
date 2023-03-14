@@ -428,7 +428,7 @@ const DaftarPeriksaAlatAngkut = () => {
           <div className="p-3">
             <div className="row align-items-center">
               {/* Header Table */}
-              <table className="table">
+              <Table responsive bordered className="table">
                 <thead>
                   <th className="col-4">
                     {" "}
@@ -467,12 +467,12 @@ const DaftarPeriksaAlatAngkut = () => {
                     </div>
                   </th>
                 </thead>
-              </table>
+              </Table>
             </div>
             <hr className="w-100 solid" />
 
             {/* Table Content */}
-            <Table bordered hover className="text-center mt-3">
+            <Table responsive bordered hover className="text-center mt-3">
               <thead>
                 <tr>
                   <th

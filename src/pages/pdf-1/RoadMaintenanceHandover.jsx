@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { WithRouter } from "../../utils/Navigation";
 import axios from "axios";
 
+import Table from "react-bootstrap/Table";
 import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
@@ -76,7 +77,7 @@ const RoadMaintenanceHandover = () => {
           <div className="p-3">
             {/* Header */}
             {/* Header Table */}
-            <table className="table">
+            <Table responsive className="table">
               <thead>
                 <th className="col-4">
                   {" "}
@@ -110,7 +111,7 @@ const RoadMaintenanceHandover = () => {
                   </div>
                 </th>
               </thead>
-            </table>
+            </Table>
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}

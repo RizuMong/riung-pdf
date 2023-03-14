@@ -221,7 +221,7 @@ const DaftarPeriksaAlatLoading = () => {
           <div className="p-2">
             {/* Header */}
             {/* Header Table */}
-            <table className="table">
+            <Table responsive bordered className="table">
               <thead>
                 <th className="col-4">
                   {" "}
@@ -261,7 +261,7 @@ const DaftarPeriksaAlatLoading = () => {
                   </div>
                 </th>
               </thead>
-            </table>
+            </Table>
 
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}

@@ -100,7 +100,7 @@ const ProductionReport = () => {
           <div className="p-1">
             <div className="row align-items-center">
               {/* Header Table */}
-              <table className="table">
+              <Table responsive className="table">
                 <thead>
                   <th className="col-3">
                     {" "}
@@ -145,12 +145,12 @@ const ProductionReport = () => {
                     </div>
                   </th>
                 </thead>
-              </table>
+              </Table>
             </div>
             <hr className="w-100 solid" />
 
             {/* Table Content */}
-            <Table bordered hover className="text-center mt-3">
+            <Table responsive bordered hover className="text-center mt-3">
               <thead>
                 <tr>
                   <th
@@ -474,7 +474,7 @@ const ProductionReport = () => {
             </Table>
 
             {/* Data Unit */}
-            <table className="table table-bordered">
+            <Table responsive bordered className="table table-bordered">
               <thead className="text-center">
                 <tr>
                   <th
@@ -516,7 +516,7 @@ const ProductionReport = () => {
                   <br />
                 </td>
               </tbody>
-            </table>
+            </Table>
 
             <hr className="w-100 solid m-0" />
 
