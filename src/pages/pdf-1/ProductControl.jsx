@@ -372,7 +372,7 @@ const ProductControl = () => {
             </Table>
 
             {/* Content Bottom */}
-            <table class="table mt-3">
+            <Table responsive className="table mt-3">
               <thead className="text-center">
                 <tr>
                   <th scope="col" className="text-serif fw-bold">
@@ -409,7 +409,7 @@ const ProductControl = () => {
                   <td className="text-sm">{catatan.catatan_shift_2}</td>
                 </tr>
               </tbody>
-            </table>
+            </Table>
           </div>
         </div>
       </div>
