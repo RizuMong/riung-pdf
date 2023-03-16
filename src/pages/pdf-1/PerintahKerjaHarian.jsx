@@ -12,6 +12,7 @@ const PerintahKerjaHarian = () => {
   const [tanggal, setTanggal] = useState("");
   const [lokasi, setLokasi] = useState("");
   const [dibuat, setDibuat] = useState("");
+  const [note_pkh, setNotePKH] = useState("");
   const [dilaporkan, setDilaporkan] = useState("");
   const [dilaksanakan1, setDilaksanakan1] = useState("");
   const [dilaksanakan2, setDilaksanakan2] = useState("");
@@ -30,50 +31,8 @@ const PerintahKerjaHarian = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/instruksi-kerja/pkh",
         {
           data: {
-            _id: queryParams.get("_id"),
-            company_id: queryParams.get("company_id"),
-            created_at: queryParams.get("created_at"),
-            created_by: queryParams.get("created_by"),
-            dibuat: {
-              company_user_id: queryParams.get("dibuat.company_user_id"),
-              email: queryParams.get("dibuat.email"),
-              name: queryParams.get("dibuat.name"),
-              photo: queryParams.get("dibuat.photo"),
-            },
-            dilaksanakan: {
-              company_user_id: queryParams.get("dilaksanakan.company_user_id"),
-              email: queryParams.get("dilaksanakan.email"),
-              name: queryParams.get("dilaksanakan.name"),
-              photo: queryParams.get("dilaksanakan.photo"),
-            },
-            dilaporkan: {
-              company_user_id: queryParams.get("dilaporkan.company_user_id"),
-              email: queryParams.get("dilaporkan.email"),
-              name: queryParams.get("dilaporkan.name"),
-              photo: queryParams.get("dilaporkan.photo"),
-            },
-            id: queryParams.get("id"),
             id_lokasi_pkh: queryParams.get("id_lokasi_pkh"),
-            jobsite: {
-              id: queryParams.get("jobsite.id"),
-              name: queryParams.get("jobsite.name"),
-            },
-            jobsite_text: queryParams.get("jobsite_text"),
-            kategori: queryParams.get("kategori"),
-            logbook_id: queryParams.get("logbook_id"),
-            lokasi: queryParams.get("lokasi"),
-            penerima_pkh: {
-              company_user_id: queryParams.get("penerima_pkh.company_user_id"),
-              email: queryParams.get("penerima_pkh.email"),
-              name: queryParams.get("penerima_pkh.name"),
-              photo: queryParams.get("penerima_pkh.photo"),
-            },
             pkh_id: queryParams.get("pkh_id"),
-            plan_productivity: queryParams.get("plan_productivity"),
-            shift: queryParams.get("shift"),
-            tanggal: queryParams.get("tanggal"),
-            updated_at: queryParams.get("updated_at"),
-            updated_by: queryParams.get("updated_by"),
           },
         }
       )
@@ -87,6 +46,7 @@ const PerintahKerjaHarian = () => {
         setDilaporkan(data[0]?.dilaporkan);
         setDilaksanakan1(data[0]?.dilaksanakan);
         setDilaksanakan2(data[0]?.dilaksanakan_2);
+        setNotePKH(data[0]?.note_pkh);
       })
       .catch((err) => {
         alert(err);
@@ -253,7 +213,7 @@ const PerintahKerjaHarian = () => {
             <hr className="w-100 solid m-0" />
             <div className="d-flex justify-content-between">
               <h5 className="fs-6 mt-1 border-end px-2 border-2">
-                NB: TOLONG DI JAGA ELEVASI DISPOSAL JANGAN SAMPAI OVER FILL
+                NB: {note_pkh}
               </h5>
               <p className="fs-6 mt-1">Halaman: 02/02</p>
             </div>
