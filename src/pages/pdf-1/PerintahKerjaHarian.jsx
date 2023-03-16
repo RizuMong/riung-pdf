@@ -38,7 +38,7 @@ const PerintahKerjaHarian = () => {
       )
       .then((res) => {
         const { data } = res;
-        setDatas(data);
+        setDatas(data.detail);
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);
         setLokasi(data?.lokasi);
@@ -160,7 +160,7 @@ const PerintahKerjaHarian = () => {
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  {datas?.data.map((item, index) => (
+                  {datas?.map((item, index) => (
                     <tr>
                       <td className="text-sm fw-normal">{index + 1}</td>
                       <td className="text-sm fw-normal">{item.data.lokasi}</td>
