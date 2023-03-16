@@ -170,7 +170,9 @@ const PerintahKerjaHarian = () => {
                       <td className="text-sm fw-normal">
                         {item.data.laporan_pelaksanaan_1}
                       </td>
-                      <td className="text-sm fw-normal"></td>
+                      <td className="text-sm fw-normal">
+                        {item.data.laporan_pelaksanaan_2}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
