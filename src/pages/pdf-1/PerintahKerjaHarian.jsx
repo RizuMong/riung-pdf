@@ -160,7 +160,7 @@ const PerintahKerjaHarian = () => {
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  {datas?.map((item, index) => (
+                  {datas?.data.map((item, index) => (
                     <tr>
                       <td className="text-sm fw-normal">{index + 1}</td>
                       <td className="text-sm fw-normal">{item.data.lokasi}</td>
