@@ -167,7 +167,7 @@ const MinutesOfMeeting = () => {
         </thead>
         <tbody>
           {tablePembahasan?.map((item) => (
-            <tr key={item?.id} className="text-center text-sm">
+            <tr key={item?.id} className="text-start text-sm">
               <td>{item?.id + 1}</td>
               <td>{item?.materi_pembahasan}</td>
               <td>{item?.progress}</td>
