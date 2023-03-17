@@ -281,7 +281,7 @@ const WorkOrderActionReport = () => {
                         {item?.result}
                       </td>
                       <td className="text-sm border border-1 text-center">
-                        <img src={item.keterangan} width="300" />
+                        <img src={item.keterangan} width="200" height="150" />
                       </td>
                     </tr>
                   ))}
