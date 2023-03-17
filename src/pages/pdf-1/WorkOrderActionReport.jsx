@@ -295,9 +295,9 @@ const WorkOrderActionReport = () => {
             <Table className="m-0">
               <thead>
                 <tr>
-                  <th className="text-sm fw-normal">
+                  {/* <th className="text-sm fw-normal">
                     GAMBAR ACUAN YANG DIGUNAKAN NO:
-                  </th>
+                  </th> */}
                   <th
                     width="50%"
                     className="fw-semibold border-start border-1 align-top"
