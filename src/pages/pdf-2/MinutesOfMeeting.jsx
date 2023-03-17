@@ -96,7 +96,7 @@ const MinutesOfMeeting = () => {
     let tmp = [];
     for (let i = 0; i < item.length; i = i + 11) {
       tmp.push(
-        <tr key={i} className="text-center text-sm align-middle">
+        <tr key={i} className="text-center text-sm align-start">
           <th>{item[i]?.peserta}</th>
           <th>{item[i + 1]?.peserta}</th>
           <th>{item[i + 2]?.peserta}</th>
