@@ -306,7 +306,7 @@ const WorkOrderActionReport = () => {
                   >
                     CATATAN:{" "}
                     <span className="text-sm fw-normal">
-                      {data.catatan_prod}
+                      {data.catatan_eng}
                     </span>
                   </th>
                 </tr>
@@ -314,7 +314,7 @@ const WorkOrderActionReport = () => {
                   <th width="50%" className="fw-semibold">
                     CATATAN:{" "}
                     <span className="text-sm fw-normal">
-                      {data.catatan_eng}
+                      {data.catatan_prod}
                     </span>
                   </th>
                 </tr>
