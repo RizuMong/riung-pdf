@@ -98,16 +98,36 @@ const MinutesOfMeeting = () => {
       tmp.push(
         <tr key={i} className="text-center text-sm align-middle">
           <th className="text-center">{item[i]?.peserta}</th>
-          <th className="text-center">{item[i + 1]?.peserta}</th>
-          <th className="text-center">{item[i + 2]?.peserta}</th>
-          <th className="text-center">{item[i + 3]?.peserta}</th>
-          <th className="text-center">{item[i + 4]?.peserta}</th>
-          <th className="text-center">{item[i + 5]?.peserta}</th>
-          <th className="text-center">{item[i + 6]?.peserta}</th>
-          <th className="text-center">{item[i + 7]?.peserta}</th>
-          <th className="text-center">{item[i + 8]?.peserta}</th>
-          <th className="text-center">{item[i + 9]?.peserta}</th>
-          <th className="text-center">{item[i + 10]?.peserta}</th>
+          <th className="text-center">
+            {item[i + 1]?.peserta || item[i + 1]?.peserta_text}
+          </th>
+          <th className="text-center">
+            {item[i + 2]?.peserta || item[i + 2]?.peserta_text}
+          </th>
+          <th className="text-center">
+            {item[i + 3]?.peserta || item[i + 3]?.peserta_text}
+          </th>
+          <th className="text-center">
+            {item[i + 4]?.peserta || item[i + 4]?.peserta_text}
+          </th>
+          <th className="text-center">
+            {item[i + 5]?.peserta || item[i + 5]?.peserta_text}
+          </th>
+          <th className="text-center">
+            {item[i + 6]?.peserta || item[i + 6]?.peserta_text}
+          </th>
+          <th className="text-center">
+            {item[i + 7]?.peserta || item[i + 7]?.peserta_text}
+          </th>
+          <th className="text-center">
+            {item[i + 8]?.peserta || item[i + 8]?.peserta_text}
+          </th>
+          <th className="text-center">
+            {item[i + 9]?.peserta || item[i + 9]?.peserta_text}
+          </th>
+          <th className="text-center">
+            {item[i + 10]?.peserta || item[i + 10]?.peserta_text}
+          </th>
         </tr>
       );
     }
