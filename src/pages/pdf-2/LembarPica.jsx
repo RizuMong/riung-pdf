@@ -168,7 +168,7 @@ const LembarPica = () => {
           <p>
             {lokasi}, {start_date}
           </p>
-          <p>Di siapkan oleh</p>
+          <p>Disiapkan oleh,</p>
           <p className="mt-6 text-center border-bottom border-1 border-dark">
             ({disiapkan_oleh})
           </p>
