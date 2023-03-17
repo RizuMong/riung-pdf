@@ -168,12 +168,12 @@ const MinutesOfMeeting = () => {
         <tbody>
           {tablePembahasan?.map((item) => (
             <tr key={item?.id} className="text-start text-sm">
-              <td>{item?.id + 1}</td>
-              <td>{item?.materi_pembahasan}</td>
-              <td>{item?.progress}</td>
-              <td>{item?.due_date}</td>
-              <td>{item?.pic}</td>
-              <td>{item?.status}</td>
+              <td className="text-start">{item?.id + 1}</td>
+              <td className="text-start">{item?.materi_pembahasan}</td>
+              <td className="text-start">{item?.progress}</td>
+              <td className="text-start">{item?.due_date}</td>
+              <td className="text-start">{item?.pic}</td>
+              <td className="text-start">{item?.status}</td>
             </tr>
           ))}
         </tbody>
