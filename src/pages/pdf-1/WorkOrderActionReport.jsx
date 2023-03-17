@@ -281,13 +281,16 @@ const WorkOrderActionReport = () => {
                         {item?.result}
                       </td>
                       <td className="text-sm border border-1 text-center">
-                        <img src={item.keterangan} width="120" height="60" />
+                        <img src={item.keterangan} width="300" />
                       </td>
                     </tr>
                   ))}
                 </Table>
               </div>
             </div>
+
+            {/* Table Satu Jangan Dipisah*/}
+
             {/* Catatan */}
             <Table className="m-0">
               <thead>
