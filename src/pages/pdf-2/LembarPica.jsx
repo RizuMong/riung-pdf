@@ -111,9 +111,9 @@ const LembarPica = () => {
       {/* Header */}
       <div className="mt-2">
         <pre className="text-normal m-0">Jobsite : {jobsite}</pre>
-        <pre className="text-normal m-0">Bagian/departemen : {bagian}</pre>
+        <pre className="text-normal m-0">Bagian / Departemen : {bagian}</pre>
         <div className="d-flex justify-content-between">
-          <pre className="text-normal m-0">Proses/kegiatan : {proses}</pre>
+          <pre className="text-normal m-0">Proses / Kegiatan : {proses}</pre>
           <p className="text-sm">FRM-MRE-001</p>
         </div>
         <div className="d-flex justify-content-between">
