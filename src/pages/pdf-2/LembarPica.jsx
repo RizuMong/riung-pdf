@@ -49,12 +49,6 @@ const LembarPica = () => {
         setDisahkan_oleh(res.data.disahkan_oleh);
         setDisiapkan_oleh(res.data.disiapkan_oleh);
 
-        console.log({
-          data: data.pica[0]
-        });
-
-        console.log(data);
-
         // Data PICA
         if (res && res.data.pica) {
           const result = res.data.pica.map((item, index) => {
@@ -98,7 +92,7 @@ const LembarPica = () => {
       </div>
     );
   }
-  
+
   return (
     <div className="border border-2 border-dark p-1">
       {/* Header Form */}
@@ -135,12 +129,12 @@ const LembarPica = () => {
         <table className="table table-bordered">
           <thead className="table-abu">
             <tr className="text-center">
-              <th>No</th>
+              <th>NO</th>
               <th>PROBLEM</th>
-              <th>CAUSE / Identification</th>
+              <th>CAUSE / IDENTIFICATION</th>
               <th>CORRECTIVE - PREVENTION ACTION</th>
               <th>PIC</th>
-              <th>Due Date</th>
+              <th>DUE DATE</th>
               <th>STATUS</th>
             </tr>
           </thead>
@@ -148,9 +142,11 @@ const LembarPica = () => {
             {tablePICA?.map((item) => (
               <tr className="text-center">
                 <td>{item?.id + 1}</td>
-                <td>{item?.problem}</td>
-                <td>{item?.cause}</td>
-                <td>{item?.corrective_prevention_action}</td>
+                <td className="text-start">{item?.problem}</td>
+                <td className="text-start">{item?.cause}</td>
+                <td className="text-start">
+                  {item?.corrective_prevention_action}
+                </td>
                 <td>{item?.pic || item?.pic_non_user}</td>
                 <td>{item?.due_date}</td>
                 <td>{item?.status}</td>
@@ -169,7 +165,9 @@ const LembarPica = () => {
           </p>
         </div>
         <div>
-          <p>{lokasi}, {start_date}</p>
+          <p>
+            {lokasi}, {start_date}
+          </p>
           <p>Di siapkan oleh</p>
           <p className="mt-6 text-center border-bottom border-1 border-dark">
             ({disiapkan_oleh})
