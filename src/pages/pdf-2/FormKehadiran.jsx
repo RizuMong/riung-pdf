@@ -31,13 +31,7 @@ const FormKehadiran = () => {
             _id: queryParams.get("_id"),
             id: queryParams.get("id"),
             id_daftar_hadir: queryParams.get("id_daftar_hadir"),
-          },
-
-          // data: {
-          //   _id: queryParams.get("_id"),
-          //   id: queryParams.get("id"),
-          //   id_daftar_hadir: queryParams.get("id_daftar_hadir"),
-          // },
+          }
         }
       )
       .then((res) => {
@@ -144,7 +138,7 @@ const FormKehadiran = () => {
             {tableData?.map((item) => (
               <tr key={item.id} className="text-center" style={{ height: 40 }}>
                 <th className="fw-normal align-middle">{item.id + 1}</th>
-                <th className="fw-normal align-middle">{item?.peserta}</th>
+                <th className="fw-normal align-middle">{item?.peserta || item?.peserta_text}</th>
                 <th className="fw-normal align-middle">{item?.dept}</th>
                 <th className="fw-normal align-middle">{item?.jabatan}</th>
                 <th className="fw-normal align-middle"></th>
