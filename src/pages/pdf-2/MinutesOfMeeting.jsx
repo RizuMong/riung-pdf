@@ -99,8 +99,8 @@ const MinutesOfMeeting = () => {
         <tr key={i} className="text-center text-sm align-middle">
           <th className="text-center">{item[i]?.peserta}</th>
           <th className="text-center">
-            {/* {item[i + 1]?.peserta} */}
-            {item[i + 1]?.peserta_text}
+            {item[i + 1]?.peserta && item[i + 1]?.peserta_text}
+            {/* {item[i + 1]?.peserta_text} */}
           </th>
           <th className="text-center">
             {item[i + 2]?.peserta || item[i + 2]?.peserta_text}
