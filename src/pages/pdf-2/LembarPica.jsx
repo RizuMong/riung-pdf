@@ -142,7 +142,7 @@ const LembarPica = () => {
                 <td>{item?.problem}</td>
                 <td>{item?.cause}</td>
                 <td>{item?.corrective_prevention_action}</td>
-                <td>{item?.pic}</td>
+                <td>{item?.pic || item?.pic_non_user}</td>
                 <td>{item?.due_date}</td>
                 <td>{item?.status}</td>
               </tr>
