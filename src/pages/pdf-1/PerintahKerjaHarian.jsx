@@ -31,8 +31,10 @@ const PerintahKerjaHarian = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/instruksi-kerja/pkh",
         {
           data: {
+            // id_lokasi_pkh: "xEjKD--Vg",
+            // pkh_id: "D89KDaa4g",
             id_lokasi_pkh: queryParams.get("id_lokasi_pkh"),
-            pkh_id: queryParams.get("pkh_id"),
+            pkh_id: queryParams.get("pkh_id")
           },
         }
       )
@@ -163,15 +165,15 @@ const PerintahKerjaHarian = () => {
                   {datas?.map((item, index) => (
                     <tr>
                       <td className="text-sm fw-normal">{index + 1}</td>
-                      <td className="text-sm fw-normal">{item.data.lokasi}</td>
+                      <td className="text-sm fw-normal">{item.lokasi}</td>
                       <td className="text-sm fw-normal">
-                        {item.data.instruksi_kerja}
+                        {item.instruksi_kerja}
                       </td>
                       <td className="text-sm fw-normal">
-                        {item.data.laporan_pelaksanaan_1}
+                        {item.laporan_pelaksanaan_1}
                       </td>
                       <td className="text-sm fw-normal">
-                        {item.data.laporan_pelaksanaan_2}
+                        {item.laporan_pelaksanaan_2}
                       </td>
                     </tr>
                   ))}
