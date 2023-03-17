@@ -96,18 +96,18 @@ const MinutesOfMeeting = () => {
     let tmp = [];
     for (let i = 0; i < item.length; i = i + 11) {
       tmp.push(
-        <tr key={i} className="text-start text-sm align-middle">
-          <th className="text-start">{item[i]?.peserta}</th>
-          <th className="text-start">{item[i + 1]?.peserta}</th>
-          <th className="text-start">{item[i + 2]?.peserta}</th>
-          <th className="text-start">{item[i + 3]?.peserta}</th>
-          <th className="text-start">{item[i + 4]?.peserta}</th>
-          <th className="text-start">{item[i + 5]?.peserta}</th>
-          <th className="text-start">{item[i + 6]?.peserta}</th>
-          <th className="text-start">{item[i + 7]?.peserta}</th>
-          <th className="text-start">{item[i + 8]?.peserta}</th>
-          <th className="text-start">{item[i + 9]?.peserta}</th>
-          <th className="text-start">{item[i + 10]?.peserta}</th>
+        <tr key={i} className="text-center text-sm align-middle">
+          <th className="text-center">{item[i]?.peserta}</th>
+          <th className="text-center">{item[i + 1]?.peserta}</th>
+          <th className="text-center">{item[i + 2]?.peserta}</th>
+          <th className="text-center">{item[i + 3]?.peserta}</th>
+          <th className="text-center">{item[i + 4]?.peserta}</th>
+          <th className="text-center">{item[i + 5]?.peserta}</th>
+          <th className="text-center">{item[i + 6]?.peserta}</th>
+          <th className="text-center">{item[i + 7]?.peserta}</th>
+          <th className="text-center">{item[i + 8]?.peserta}</th>
+          <th className="text-center">{item[i + 9]?.peserta}</th>
+          <th className="text-center">{item[i + 10]?.peserta}</th>
         </tr>
       );
     }
