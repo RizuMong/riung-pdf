@@ -32,6 +32,12 @@ const FormKehadiran = () => {
             id: queryParams.get("id"),
             id_daftar_hadir: queryParams.get("id_daftar_hadir"),
           },
+
+          // data: {
+          //   _id: queryParams.get("_id"),
+          //   id: queryParams.get("id"),
+          //   id_daftar_hadir: queryParams.get("id_daftar_hadir"),
+          // },
         }
       )
       .then((res) => {
@@ -57,6 +63,8 @@ const FormKehadiran = () => {
           });
           setTableData(result);
         }
+
+        console.log(data);
       })
       .catch((err) => {
         alert(err);
@@ -85,7 +93,7 @@ const FormKehadiran = () => {
           <img src={LogoRiung} alt="Logo Riung Ops" width="140" height="56" />
         </div>
         <div className="text-end">
-          <p>FRM-MRGA-006</p>
+          <p>FRM-HRGA-006</p>
           <p>Rev. 01</p>
         </div>
       </div>
