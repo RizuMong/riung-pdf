@@ -32,6 +32,7 @@ const LembarPica = () => {
           _id: queryParams.get("_id"),
           id: queryParams.get("id"),
           id_pica: queryParams.get("id_pica"),
+          // id_pica: "c5aDswa4R",
         },
       })
       .then((res) => {
@@ -48,6 +49,12 @@ const LembarPica = () => {
         setDisahkan_oleh(res.data.disahkan_oleh);
         setDisiapkan_oleh(res.data.disiapkan_oleh);
 
+        console.log({
+          data: data.pica[0]
+        });
+
+        console.log(data);
+
         // Data PICA
         if (res && res.data.pica) {
           const result = res.data.pica.map((item, index) => {
@@ -56,6 +63,7 @@ const LembarPica = () => {
               corrective_prevention_action,
               due_date,
               pic,
+              pic_non_user,
               problem,
               status,
             } = item;
@@ -65,6 +73,7 @@ const LembarPica = () => {
               corrective_prevention_action,
               due_date,
               pic,
+              pic_non_user,
               problem,
               status,
             };
@@ -160,7 +169,7 @@ const LembarPica = () => {
           </p>
         </div>
         <div>
-          <p>lokasi, {lokasi}</p>
+          <p>{lokasi}, {start_date}</p>
           <p>Di siapkan oleh</p>
           <p className="mt-6 text-center border-bottom border-1 border-dark">
             ({disiapkan_oleh})
