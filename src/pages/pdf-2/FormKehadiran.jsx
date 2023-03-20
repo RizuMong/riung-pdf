@@ -25,7 +25,7 @@ const FormKehadiran = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-hadir",
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-hadir-new",
         {
           data: {
             _id: queryParams.get("_id"),
