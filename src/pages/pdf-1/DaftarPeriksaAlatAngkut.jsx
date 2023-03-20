@@ -187,13 +187,9 @@ const DaftarPeriksaAlatAngkut = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa-alat-angkut-batubara",
         {
           data: {
-            tanggal: queryParams.get("tanggal"),
-            lokasi: queryParams.get("lokasi"),
-            shift: queryParams.get("shift"),
-            is_hauling: queryParams.get("is_hauling"),
             id_daftar_periksa_kontaminasi_alat_batubara: queryParams.get("id_daftar_periksa_kontaminasi_alat_batubara"),
             pkh: queryParams.get("pkh"),
-          },
+          }
         }
       )
       .then((res) => {
