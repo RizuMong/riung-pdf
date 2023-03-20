@@ -339,7 +339,7 @@ const PemeriksaanKondisiLubangLedak = () => {
                             <p className="fw-bold">Checker</p>
                           </div>
                           <div>
-                            <p className="fw-normal">Dibuat Oleh,</p>
+                            <p className="fw-normal">Disetujui oleh,</p>
                             <p className="fw-normal mt-5">({disetujui})</p>
                             <p className="fw-bold">Drill & Blast Eng</p>
                           </div>
