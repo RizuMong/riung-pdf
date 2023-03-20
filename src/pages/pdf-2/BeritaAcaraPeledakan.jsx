@@ -29,6 +29,7 @@ const BeritaAcaraPeledakan = () => {
     alasan_booster: "",
     alasan_elec_det: "",
     alasan_emulsion: "",
+    alasan_exel_17: "",
     alasan_exel_25: "",
     alasan_exel_42: "",
     alasan_exel_65: "",
@@ -119,6 +120,7 @@ const BeritaAcaraPeledakan = () => {
           alasan_booster: data.detail.alasan_booster,
           alasan_elec_det: data.detail.alasan_elec_det,
           alasan_emulsion: data.detail.alasan_emulsion,
+          alasan_exel_17: data.detail.alasan_17_ms,
           alasan_exel_25: data.detail.alasan_exel_25,
           alasan_exel_42: data.detail.alasan_exel_42,
           alasan_exel_65: data.detail.alasan_exel_65,
@@ -373,7 +375,7 @@ const BeritaAcaraPeledakan = () => {
                     </td>
                     <td>{detail?.ditambah_exel_17}</td>
                     <td>{detail?.dikembalikan_exel_17}</td>
-                    <td>{detail?.alasan_17_ms}</td>
+                    <td>{detail?.alasan_exel_17}</td>
                   </tr>
                   <tr className="align-middle">
                     <td className="text-start">
