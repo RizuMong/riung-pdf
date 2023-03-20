@@ -191,34 +191,8 @@ const DaftarPeriksaAlatAngkut = () => {
             lokasi: queryParams.get("lokasi"),
             shift: queryParams.get("shift"),
             is_hauling: queryParams.get("is_hauling"),
-            dpkab: [
-              {
-                tipe: {
-                  id: queryParams.get("tipe"),
-                  name: queryParams.get("name"),
-                },
-                cn_unit: {
-                  id: queryParams.get("id"),
-                  name: queryParams.get("name"),
-                },
-                q1: queryParams.get("q1"),
-                q2: queryParams.get("q2"),
-                q3: queryParams.get("q3"),
-                q4: queryParams.get("q4"),
-                q5: queryParams.get("q5"),
-                q6: queryParams.get("q6"),
-                q7: queryParams.get("q7"),
-                q8: queryParams.get("q8"),
-                q9: queryParams.get("q9"),
-                q10: queryParams.get("q10"),
-                q11: queryParams.get("q11"),
-                q12: queryParams.get("q12"),
-                q13: queryParams.get("q13"),
-                q14: queryParams.get("q14"),
-              },
-            ],
-            id_daftar_periksa_kontaminasi_alat_batubara: "fqgwNmoVg",
-            pkh: "a_iFa0h4R",
+            id_daftar_periksa_kontaminasi_alat_batubara: queryParams.get("id_daftar_periksa_kontaminasi_alat_batubara"),
+            pkh: queryParams.get("pkh"),
           },
         }
       )
