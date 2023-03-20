@@ -7,7 +7,7 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const DaftarPeriksaAlatAngkut = () => {
-  const [datas, setDatas] = useState([]);
+  // const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [jobsite, setJobsite] = useState("");
   const [penerima, setPenerima] = useState("");
@@ -198,7 +198,7 @@ const DaftarPeriksaAlatAngkut = () => {
       )
       .then((res) => {
         const { data } = res;
-        setDatas(data);
+        // setDatas(data);
         setJobsite(data[0].jobsite);
         setPenerima(data[0].penerima);
         setTanggal(data[0].tanggal);
