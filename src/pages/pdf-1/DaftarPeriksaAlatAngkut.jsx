@@ -377,7 +377,7 @@ const DaftarPeriksaAlatAngkut = () => {
         checker(res?.data[9]?.data.q14, setQ10n);
       })
       .catch((err) => {
-        alert(err);
+        // alert(err);
       })
       .finally(() => {
         setLoading(false);
