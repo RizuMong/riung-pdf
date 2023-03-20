@@ -223,7 +223,7 @@ const FormPengambilanBahanPeledak = () => {
                     <th className="fw-normal align-middle">.. MS (EA)</th>
                     <th className="fw-normal align-middle">.. MS (EA)</th>
                     <th className="fw-normal align-middle">.. MS (EA)</th>
-                    <th className="fw-normal align-middle"> DET. 12M (EA)</th>
+                    <th className="fw-normal align-middle"> DET. ..M (EA)</th>
                     <th className="fw-normal align-middle">(M)</th>
                   </tr>
                 </thead>
