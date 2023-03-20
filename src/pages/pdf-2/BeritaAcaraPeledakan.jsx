@@ -35,46 +35,46 @@ const BeritaAcaraPeledakan = () => {
     alasan_exel_ms_d_12: "",
     alasan_jumlah_lubang: "",
     alasan_power_gel: "",
-    dikembalikan_ammonium_nitrate: 0,
-    dikembalikan_booster: 0,
-    dikembalikan_emulsion: 0,
-    dikembalikan_dynamite: 0,
-    dikembalikan_elec_det: 0,
-    dikembalikan_exel_17: 0,
-    dikembalikan_exel_25: 0,
-    dikembalikan_exel_42: 0,
-    dikembalikan_exel_65: 0,
-    dikembalikan_exel_ms_d_12: 0,
-    dikembalikan_lubang: 0,
-    dikembalikan_power_gel: 0,
-    ditambah_ammonium_nitrate: 0,
-    ditambah_booster: 0,
-    ditambah_dynamite: 0,
-    ditambah_elec_det: 0,
-    ditambah_emulsion: 0,
-    ditambah_exel_17: 0,
-    ditambah_exel_25: 0,
-    ditambah_exel_42: 0,
-    ditambah_exel_65: 0,
-    ditambah_exel_ms_d_12: 0,
-    ditambah_jumlah_lubang: 0,
-    ditambah_power_gel: 0,
-    exel_17_ms: 0,
-    exel_25_ms: 0,
-    exel_42_ms: 0,
-    exel_65_ms: 0,
-    pelaksanaan_ammonium_nitrate: 0,
-    pelaksanaan_booster: 0,
-    pelaksanaan_dynamite: 0,
-    pelaksanaan_emulsion: 0,
-    pelaksaaan_elec_det: 0,
-    pelaksanaan_exel_17: 0,
-    pelaksanaan_exel_25: 0,
-    pelaksanaan_exel_42: 0,
-    pelaksanaan_exel_65: 0,
-    pelaksanaan_exel_ms_d_12: 0,
-    pelaksanaan_jumlah_lubang: 0,
-    pelaksanaan_power_gel: 0,
+    dikembalikan_ammonium_nitrate: "",
+    dikembalikan_booster: "",
+    dikembalikan_emulsion: "",
+    dikembalikan_dynamite: "",
+    dikembalikan_elec_det: "",
+    dikembalikan_exel_17: "",
+    dikembalikan_exel_25: "",
+    dikembalikan_exel_42: "",
+    dikembalikan_exel_65: "",
+    dikembalikan_exel_ms_d_12: "",
+    dikembalikan_lubang: "",
+    dikembalikan_power_gel: "",
+    ditambah_ammonium_nitrate: "",
+    ditambah_booster: "",
+    ditambah_dynamite: "",
+    ditambah_elec_det: "",
+    ditambah_emulsion: "",
+    ditambah_exel_17: "",
+    ditambah_exel_25: "",
+    ditambah_exel_42: "",
+    ditambah_exel_65: "",
+    ditambah_exel_ms_d_12: "",
+    ditambah_jumlah_lubang: "",
+    ditambah_power_gel: "",
+    exel_17_ms: "",
+    exel_25_ms: "",
+    exel_42_ms: "",
+    exel_65_ms: "",
+    pelaksanaan_ammonium_nitrate: "",
+    pelaksanaan_booster: "",
+    pelaksanaan_dynamite: "",
+    pelaksanaan_emulsion: "",
+    pelaksaaan_elec_det: "",
+    pelaksanaan_exel_17: "",
+    pelaksanaan_exel_25: "",
+    pelaksanaan_exel_42: "",
+    pelaksanaan_exel_65: "",
+    pelaksanaan_exel_ms_d_12: "",
+    pelaksanaan_jumlah_lubang: "",
+    pelaksanaan_power_gel: "",
   });
 
   const windowUrl = window.location.search;
@@ -90,7 +90,9 @@ const BeritaAcaraPeledakan = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/berita-acara-peledakan",
         {
           data: {
-            id_berita_acara_peledakan: queryParams.get("id_berita_acara_peledakan"),
+            id_berita_acara_peledakan: queryParams.get(
+              "id_berita_acara_peledakan"
+            ),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
           },
         }
@@ -366,7 +368,9 @@ const BeritaAcaraPeledakan = () => {
                       <p>EXEL TLD 17 {detail?.exel_17_ms} MS</p>
                     </td>
                     <td>EA</td>
-                    <td className="text-black">{detail?.pelaksanaan_exel_17}</td>
+                    <td className="text-black">
+                      {detail?.pelaksanaan_exel_17}
+                    </td>
                     <td>{detail?.ditambah_exel_17}</td>
                     <td>{detail?.dikembalikan_exel_17}</td>
                     <td>{detail?.alasan_17_ms}</td>
@@ -377,7 +381,9 @@ const BeritaAcaraPeledakan = () => {
                       <p>EXEL TLD 25 {detail?.exel_25_ms} MS</p>
                     </td>
                     <td>EA</td>
-                    <td className="text-black">{detail?.pelaksanaan_exel_25}</td>
+                    <td className="text-black">
+                      {detail?.pelaksanaan_exel_25}
+                    </td>
                     <td>{detail?.ditambah_exel_25}</td>
                     <td>{detail?.dikembalikan_exel_25}</td>
                     <td>{detail?.alasan_exel_25}</td>
@@ -388,7 +394,9 @@ const BeritaAcaraPeledakan = () => {
                       <p>EXEL TLD 42 {detail?.exel_42_ms} MS</p>
                     </td>
                     <td>EA</td>
-                    <td className="text-black">{detail?.pelaksanaan_exel_42}</td>
+                    <td className="text-black">
+                      {detail?.pelaksanaan_exel_42}
+                    </td>
                     <td>{detail?.ditambah_exel_42}</td>
                     <td>{detail?.dikembalikan_exel_42}</td>
                     <td>{detail?.alasan_exel_42}</td>
@@ -399,7 +407,9 @@ const BeritaAcaraPeledakan = () => {
                       <p>EXEL TLD 65 {detail?.exel_65_ms} MS</p>
                     </td>
                     <td>EA</td>
-                    <td className="text-black">{detail?.pelaksanaan_exel_65}</td>
+                    <td className="text-black">
+                      {detail?.pelaksanaan_exel_65}
+                    </td>
                     <td>{detail?.ditambah_exel_65}</td>
                     <td>{detail?.dikembalikan_exel_65}</td>
                     <td>{detail?.alasan_exel_65}</td>
@@ -410,7 +420,9 @@ const BeritaAcaraPeledakan = () => {
                       <p>EXEL MS D 12. 12 M</p>
                     </td>
                     <td>EA</td>
-                    <td className="text-black">{detail?.pelaksanaan_exel_ms_d_12}</td>
+                    <td className="text-black">
+                      {detail?.pelaksanaan_exel_ms_d_12}
+                    </td>
                     <td>{detail?.ditambah_exel_ms_d_12}</td>
                     <td>{detail?.dikembalikan_exel_ms_d_12}</td>
                     <td>{detail?.alasan_exel_ms_d_12}</td>
@@ -419,7 +431,9 @@ const BeritaAcaraPeledakan = () => {
                     <td>7</td>
                     <td className="text-start">Booster 400 gr</td>
                     <td>EA</td>
-                    <td className="text-black">{detail?.pelaksanaan_booster}</td>
+                    <td className="text-black">
+                      {detail?.pelaksanaan_booster}
+                    </td>
                     <td>{detail?.ditambah_booster}</td>
                     <td>{detail?.dikembalikan_booster}</td>
                     <td>{detail?.alasan_booster}</td>
@@ -428,7 +442,9 @@ const BeritaAcaraPeledakan = () => {
                     <td>8</td>
                     <td className="text-start">Power Gel</td>
                     <td>kg</td>
-                    <td className="text-black">{detail?.pelaksanaan_power_gel}</td>
+                    <td className="text-black">
+                      {detail?.pelaksanaan_power_gel}
+                    </td>
                     <td>{detail?.ditambah_power_gel}</td>
                     <td>{detail?.dikembalikan_power_gel}</td>
                     <td>{detail?.alasan_power_gel}</td>
