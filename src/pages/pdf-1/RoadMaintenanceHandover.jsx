@@ -171,7 +171,7 @@ const RoadMaintenanceHandover = () => {
                 <tbody className="text-center">
                   <tr key={index}>
                     <td>{item?.data?.jenis_material}</td>
-                    <td></td>
+                    <td>{item?.data?.jenis_pekerjaan}</td>
                     <td>{item?.data?.pengangkutan_rit}</td>
                     <td>{item?.data?.hasil_kubikasi}</td>
                     <td>{item?.data?.hasil_panjang}</td>
