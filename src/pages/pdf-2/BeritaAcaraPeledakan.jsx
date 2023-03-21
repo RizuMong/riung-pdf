@@ -419,7 +419,7 @@ const BeritaAcaraPeledakan = () => {
                   <tr className="align-middle">
                     <td className="text-start">
                       <p>MS Connector:</p>
-                      <p>EXEL MS D 12. 12 M</p>
+                      <p>EXEL MS D 12 M</p>
                     </td>
                     <td>EA</td>
                     <td className="text-black">
