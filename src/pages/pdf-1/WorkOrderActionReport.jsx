@@ -15,6 +15,7 @@ const WorkOrderActionReport = () => {
     start_periode: "",
     end_periode: "",
     diorder_oleh: "",
+    nomor_dokumen: "",
 
     // Data Eng (Target)
     target_overburden_bcm: 0,
@@ -64,6 +65,7 @@ const WorkOrderActionReport = () => {
           start_periode: data.start_periode.split(" ")[0],
           end_periode: data.end_periode,
           diorder_oleh: data.diorder_oleh,
+          nomor_dokumen: data.nomor_dokumen,
 
           // Data Eng (Target)
           target_overburden_bcm: data.target_overburden_bcm,
@@ -140,7 +142,7 @@ const WorkOrderActionReport = () => {
                     <div className="mb-1">
                       <p className="mb-2 px-2  fw-normal text-alat">
                         NO. :{" "}
-                        <span className="fw-normal">IV/Eng/WO-Pro/VII/21</span>
+                        <span className="fw-normal">{data.nomor_dokumen}</span>
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2 fw-normal text-alat">
