@@ -511,10 +511,6 @@ const BeritaAcaraPeledakan = () => {
             </div>
           </div>
         </div>
-        <p className="text-center text-sm">
-          Distribusi : Asli:Ka.Gudang Handak, Red:Ka.Teknik, Yellow : Eng.Dept.,
-          Green: Polisi, Blue: Satpam
-        </p>
       </div>
     </div>
   );

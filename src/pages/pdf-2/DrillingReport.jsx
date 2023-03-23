@@ -47,7 +47,7 @@ const DrillingReport = () => {
           data: {
             id_drilling_report: queryParams.get("id_drilling_report"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-          },
+          }
         }
       )
       .then((res) => {
