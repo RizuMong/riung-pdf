@@ -461,7 +461,7 @@ const BeritaAcaraPeledakan = () => {
                     <th rowSpan={5} className="fw-normal">
                       <p>Dibuat Oleh,</p>
                       <p>JURU LEDAK</p>
-                      <p className="mt-5">(Heri. P)</p>
+                      <p className="mt-5">({data.juru_ledak})</p>
                     </th>
                     <th className="fw-normal" colSpan={3}>
                       Diketahui oleh,
