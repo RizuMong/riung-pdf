@@ -171,14 +171,10 @@ const DaftarPeriksaLeader = () => {
       .post(
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/group-leader",
         {
-          // data: {
-          //   id_dpgl: queryParams.get("id_dpgl"),
-          //   lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-          // },
           data: {
-            id_dpgl: "CCJIay-VR",
-            lokasi_pkh_id: "fIISay-4g",
-          },
+            id_dpgl: queryParams.get("id_dpgl"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+          }
         }
       )
       .then((res) => {
