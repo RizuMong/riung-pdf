@@ -45,7 +45,7 @@ const FormPengambilanBahanPeledak = () => {
             ),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh_id: queryParams.get("pkh_id"),
-          },
+          }
         }
       )
       .then((res) => {
@@ -100,7 +100,8 @@ const FormPengambilanBahanPeledak = () => {
       })
       .catch((err) => {
         alert(err);
-      }) .finally(() => {
+      })
+      .finally(() => {
         setLoading(false);
       });
   };
@@ -108,10 +109,7 @@ const FormPengambilanBahanPeledak = () => {
   if (loading) {
     return (
       <div class="text-center pt-5">
-        <div
-          class="spinner-border text-warning"
-          role="status"
-        >
+        <div class="spinner-border text-warning" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>
@@ -217,7 +215,7 @@ const FormPengambilanBahanPeledak = () => {
                     <th className="fw-normal align-middle">EXEL TLD</th>
                     <th className="fw-normal align-middle">EXEL TLD</th>
                     <th className="fw-normal align-middle">RAYDET MS</th>
-                    <th className="fw-normal align-middle"> DET. CORDS</th>
+                    <th className="fw-normal align-middle">DET. CORDS</th>
                   </tr>
                   <tr className="text-center">
                     <th className="fw-normal align-middle">17 MS (EA)</th>
