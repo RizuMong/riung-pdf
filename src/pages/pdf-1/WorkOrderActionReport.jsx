@@ -266,7 +266,7 @@ const WorkOrderActionReport = () => {
                   <td className="border border-1 fw-semibold">
                     {item?.target_waktu}
                   </td>
-                  <td className="border border-1 text-start">{item?.hasil_target}</td>
+                  <td className="border border-1 text-start">{item?.hasil_actual}</td>
                   <td className="border-0"></td>
                 </tbody>
               ))}
