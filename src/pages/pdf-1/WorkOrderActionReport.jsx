@@ -49,8 +49,8 @@ const WorkOrderActionReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order-v2",
         {
           data: {
-            // id_work_order: "q_PyODB4R",
-            id_work_order: queryParams.get("id_work_order")
+            id_work_order: "q_PyODB4R",
+            // id_work_order: queryParams.get("id_work_order")
           },
         }
       )
@@ -225,12 +225,12 @@ const WorkOrderActionReport = () => {
             <Table responsive bordered className="table-bordered">
               <thead>
                 <tr className="fw-bold text-center align-middle">
-                  <th>NO</th>
-                  <th>URAIAN PEKERJAAN</th>
-                  <th>LOKASI</th>
-                  <th>TARGET WAKTU</th>
-                  <th>URAIAN PEKERJAAN</th>
-                  <th>KETERANGAN</th>
+                  <th width="2%">NO</th>
+                  <th width="25%">URAIAN PEKERJAAN</th>
+                  <th width="8%">LOKASI</th>
+                  <th width="15%">TARGET WAKTU</th>
+                  <th width="30%">URAIAN PEKERJAAN</th>
+                  <th width="20%">KETERANGAN</th>
                 </tr>
               </thead>
               <tr>
@@ -257,9 +257,10 @@ const WorkOrderActionReport = () => {
                 </td>
 
                 <td className="text-sm border-0 text-center fw-semibold">
-                  {evidence && evidence.map((item) => (
-                    <img width="80" src={item.url} alt="" />
-                  ))}
+                  {evidence &&
+                    evidence.map((item) => (
+                      <img width="80" src={item.url} alt="" />
+                    ))}
                 </td>
               </tr>
               {/* Mapping Data */}
@@ -269,11 +270,15 @@ const WorkOrderActionReport = () => {
                   <td className="border border-1 text-start">
                     {item?.hasil_target}
                   </td>
-                  <td className="border border-1 fw-semibold">{item?.lokasi}</td>
+                  <td className="border border-1 fw-semibold">
+                    {item?.lokasi}
+                  </td>
                   <td className="border border-1 fw-semibold">
                     {item?.target_waktu}
                   </td>
-                  <td className="border border-1 text-start">{item?.hasil_actual}</td>
+                  <td className="border border-1 text-start">
+                    {item?.hasil_actual}
+                  </td>
                   <td className="border-0"></td>
                 </tbody>
               ))}
@@ -352,7 +357,7 @@ const WorkOrderActionReport = () => {
                   <th width="25%" className="fw-semibold align-top">
                     <p>DITERIMA OLEH,</p>
                     <p className="fw-normal text-sm text-start px-1">
-                      NAMA: Yogi Aditya W.
+                      NAMA: {data.diterima_oleh_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
                       JABATAN: Engineering Dept. Head
@@ -371,9 +376,10 @@ const WorkOrderActionReport = () => {
           </div>
         </div>
         {/* Tempat Attachment */}
-        {attachment && attachment?.map((gambar) => (
-          <img width="600" src={gambar?.url} alt={gambar?.name} />
-        ))}
+        {attachment &&
+          attachment?.map((gambar) => (
+            <img width="1000" src={gambar?.url} alt={gambar?.name} />
+          ))}
       </div>
     </div>
   );
