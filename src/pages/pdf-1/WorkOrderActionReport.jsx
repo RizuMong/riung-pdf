@@ -337,7 +337,7 @@ const WorkOrderActionReport = () => {
                       DEPT: Production
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      TANGGAL:
+                      TANGGAL: {data.tanggal_diterima_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">PARAF: </p>
                   </th>
@@ -364,7 +364,7 @@ const WorkOrderActionReport = () => {
                       DEPT: Engineering
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      TANGGAL:
+                      TANGGAL: {data.tanggal_diterima_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">PARAF: </p>
                   </th>
