@@ -27,19 +27,9 @@ const ExcavatorControl = () => {
       .post(
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/excavator-control-page",
         {
-          _id: queryParams.get("_id"),
-          company_id: queryParams.get("company_id"),
-          created_at: queryParams.get("created_at"),
-          created_by: queryParams.get("created_by"),
-          date: queryParams.get("date"),
-          id: queryParams.get("id"),
           id_excon: queryParams.get("id_excon"),
-          lokasi: queryParams.get("lokasi"),
           lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
           pkh_id: queryParams.get("pkh_id"),
-          shift: queryParams.get("shift"),
-          updated_at: queryParams.get("updated_at"),
-          updated_by: queryParams.get("updated_by"),
         }
       )
       .then((res) => {

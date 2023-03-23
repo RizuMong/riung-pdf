@@ -32,8 +32,9 @@ const WorkOrderActionReport = () => {
     diterima_oleh_prod: "",
     dilaporkan_oleh: "",
   });
-  const [detail_target, seDetailTarget] = useState([]);
-  const [detail_actual, seDetailActual] = useState([]);
+  const [detail, seDetail] = useState([]);
+  const [attachment, seAttachment] = useState([]);
+  const [evidence, SetEvidence] = useState([]);
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -45,10 +46,10 @@ const WorkOrderActionReport = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order",
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order-v2",
         {
           data: {
-            // id_work_order: "NNYDAYx4R",
+            // id_work_order: "q_PyODB4R",
             id_work_order: queryParams.get("id_work_order")
           },
         }
@@ -67,7 +68,6 @@ const WorkOrderActionReport = () => {
           // Data Eng (Target)
           target_overburden_bcm: data.target_overburden_bcm,
           target_coal_ton: data.target_coal_ton,
-          attachment: data.attachment,
           tanggal_diterima_eng: data.tanggal_diterima_eng,
           catatan_eng: data.catatan_eng,
           diterima_oleh_eng: data.diterima_oleh_eng,
@@ -80,11 +80,12 @@ const WorkOrderActionReport = () => {
           diterima_oleh_prod: data.diterima_oleh_prod,
           dilaporkan_oleh: data.dilaporkan_oleh,
         });
-        seDetailTarget(data?.detail_target);
-        seDetailActual(data?.detail_actual);
+        seDetail(data?.detail);
+        seAttachment(data?.attachment);
+        SetEvidence(data?.evidence);
       })
       .catch((err) => {
-        alert(err);
+        // alert(err);
       })
       .finally(() => {
         setLoading(false);
@@ -161,7 +162,7 @@ const WorkOrderActionReport = () => {
               <thead className="text-center">
                 <tr>
                   <th
-                    colspan={2}
+                    colSpan={2}
                     scope="col-3"
                     className="header-table-action border-end"
                     style={{ width: "50%", verticalAlign: "middle" }}
@@ -169,7 +170,7 @@ const WorkOrderActionReport = () => {
                     PEMERIKSAAN
                   </th>
                   <th
-                    colspan={2}
+                    colSpan={2}
                     scope="col-3"
                     className="header-table-action"
                     style={{ width: "50%", verticalAlign: "middle" }}
@@ -196,14 +197,14 @@ const WorkOrderActionReport = () => {
                 </tr>
                 <tr>
                   <th
-                    colspan={2}
+                    colSpan={2}
                     scope="col-3"
                     className="header-table-coal text-start border-end"
                   >
                     TEMBUSAN: Project Manager
                   </th>
                   <th
-                    colspan={2}
+                    colSpan={2}
                     scope="col-3"
                     className="header-table-coal text-start"
                   >
@@ -213,83 +214,63 @@ const WorkOrderActionReport = () => {
               </thead>
             </Table>
 
-            {/* Table Content */}
-            <div className="row">
-              <div className="column m-0">
-                <Table responsive bordered>
-                  <tr className="text-center">
-                    <th className="text-base fw-semibold">NO</th>
-                    <th className="text-base fw-semibold">URAIAN PEKERJAAN</th>
-                    <th className="text-base fw-semibold">LOKASI</th>
-                    <th className="text-base fw-semibold">TARGET WAKTU</th>
-                  </tr>
-                  <tr>
-                    <td className="text-sm text-center border border-1">(1)</td>
-                    <td className="text-sm border border-1">
-                      {" "}
-                      Target Include Rain & Slippery:
-                      <br />
-                      OB: {data.target_overburden_bcm} Bcm
-                      <br />
-                      Coal: {data.target_coal_ton} Ton
-                    </td>
-                    <td className="text-sm border border-1 text-center fw-semibold">
-                      {data.jobsite}
-                    </td>
-                    <td className="text-sm border border-1 text-center fw-semibold"></td>
-                  </tr>
-                  {/* Mapping Data Target*/}
-                  {detail_target?.map((item, index) => (
-                    <tr key={index}>
-                      <td className="text-sm border border-1 text-center">
-                        ({index + 2})
-                      </td>
-                      <td className="text-sm border border-1 text-start">
-                        {item.result}
-                      </td>
-                      <td className="text-sm border border-1 text-center fw-semibold">
-                        {item.lokasi}
-                      </td>
-                      <td className="text-sm border border-1 text-center fw-semibold">
-                        {item.target_waktu}
-                      </td>
-                    </tr>
-                  ))}
-                </Table>
-              </div>
-              <div className="column">
-                <Table responsive bordered>
-                  <tr className="text-center">
-                    <th className="text-base fw-semibold">URAIAN PEKERJAAN</th>
-                    <th className="text-base fw-semibold">KETERANGAN</th>
-                  </tr>
-                  <tr>
-                    <td className="text-sm border border-1">
-                      {" "}
-                      Actual Production OB:
-                      <br />
-                      OB: {data.actual_overburden} Bcm
-                      <br />
-                      Coal: {data.actual_coal} Ton
-                    </td>
-                    <td className="text-sm border border-1 text-center fw-semibold"></td>
-                  </tr>
-                  {/* Mapping Data Prod */}
-                  {detail_actual?.map((item, index) => (
-                    <tr key={index}>
-                      <td className="text-sm border border-1 text-start">
-                        {item?.result}
-                      </td>
-                      <td className="text-sm border border-1 text-center">
-                        <img src={item.keterangan} width="200"/>
-                      </td>
-                    </tr>
-                  ))}
-                </Table>
-              </div>
-            </div>
-
             {/* Table Satu Jangan Dipisah*/}
+            <Table responsive bordered className="table-bordered">
+              <thead>
+                <tr className="fw-bold text-center align-middle">
+                  <th>NO</th>
+                  <th>URAIAN PEKERJAAN</th>
+                  <th>LOKASI</th>
+                  <th>TARGET WAKTU</th>
+                  <th>URAIAN PEKERJAAN</th>
+                  <th>KETERANGAN</th>
+                </tr>
+              </thead>
+              <tr>
+                <td className="text-sm text-center border border-1">(1)</td>
+                <td className="text-sm border border-1">
+                  {" "}
+                  Target Include Rain & Slippery:
+                  <br />
+                  OB: {data.target_overburden_bcm} Bcm
+                  <br />
+                  Coal: {data.target_coal_ton} Ton
+                </td>
+                <td className="text-sm border border-1 text-center fw-semibold">
+                  {data.jobsite}
+                </td>
+                <td className="text-sm border border-1 text-center fw-semibold"></td>
+                <td className="text-sm border border-1 text-start">
+                  {" "}
+                  Actual Production OB:
+                  <br />
+                  OB: {data.actual_overburden} Bcm
+                  <br />
+                  Coal: {data.actual_coal} Ton
+                </td>
+
+                <td className="text-sm border-0 text-center fw-semibold">
+                  {evidence.map((item) => (
+                    <img width="80" src={item.url} alt="" />
+                  ))}
+                </td>
+              </tr>
+              {/* Mapping Data */}
+              {detail?.map((item, index) => (
+                <tbody className="text-center text-sm">
+                  <td className="border border-1">({index + 2})</td>
+                  <td className="border border-1 text-start">
+                    {item?.hasil_target}
+                  </td>
+                  <td className="border border-1 fw-semibold">{item?.lokasi}</td>
+                  <td className="border border-1 fw-semibold">
+                    {item?.target_waktu}
+                  </td>
+                  <td className="border border-1">{item?.hasil_target}</td>
+                  <td className="border-0"></td>
+                </tbody>
+              ))}
+            </Table>
 
             {/* Catatan */}
             <Table className="m-0">
@@ -382,6 +363,10 @@ const WorkOrderActionReport = () => {
             </Table>
           </div>
         </div>
+        {/* Tempat Attachment */}
+        {attachment?.map((gambar) => (
+          <img width="600" src={gambar?.url} alt={gambar?.name} />
+        ))}
       </div>
     </div>
   );
