@@ -171,9 +171,13 @@ const DaftarPeriksaLeader = () => {
       .post(
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/group-leader",
         {
+          // data: {
+          //   id_dpgl: queryParams.get("id_dpgl"),
+          //   lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+          // },
           data: {
-            id_dpgl: queryParams.get("id_dpgl"),
-            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            id_dpgl: "CCJIay-VR",
+            lokasi_pkh_id: "fIISay-4g",
           },
         }
       )
@@ -196,7 +200,7 @@ const DaftarPeriksaLeader = () => {
             set("✓");
             return 1;
           }
-          set("X");
+          set(" ");
           return 1;
         };
 
@@ -497,7 +501,7 @@ const DaftarPeriksaLeader = () => {
                       Lebar & tinggi sesuai standar
                     </td>
                     <td className="text-serif text-sm">
-                      Rata & bebas material lepa
+                      Rata & bebas material lepas
                     </td>
                     <td className="text-serif text-sm">Bebas genangan air</td>
                     <td className="text-serif text-sm">Bulldozer</td>
@@ -862,7 +866,7 @@ const DaftarPeriksaLeader = () => {
 
             {/* Komoditas & Stockpile */}
             {/* Table & Section Bottom */}
-            <div className="row align-items-center mb-5">
+            <div className="row align-items-center">
               <div className="col-4 table-responsive">
                 <table class="table table-bordered caption-top mt-2">
                   <caption className="text-black text-serif header-leader">
@@ -932,6 +936,16 @@ const DaftarPeriksaLeader = () => {
                   </tbody>
                 </table>
               </div>
+            </div>
+
+            {/* Catatan dan Tandatangan */}
+            <div className="d-flex align-items-center">
+              <div className="col-4 mb-3 mt-4 w-75">
+                <h5 className="header-leader text-serif">8. CATATAN</h5>
+                <p className="border-bottom border-dark">-</p>
+                <p className="border-bottom border-dark">-</p>
+                <p className="border-bottom border-dark">-</p>
+              </div>
 
               {/* Tanda Tangan */}
               <div className="col-4 px-5">
@@ -956,13 +970,6 @@ const DaftarPeriksaLeader = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            {/* PICA */}
-            <div className="mb-3 mt-5 w-75">
-              <h5 className="header-leader text-serif">8. CATATAN</h5>
-              <p className="border-bottom border-dark">-</p>
-              <p className="border-bottom border-dark">-</p>
-              <p className="border-bottom border-dark">-</p>
             </div>
           </div>
         </div>
