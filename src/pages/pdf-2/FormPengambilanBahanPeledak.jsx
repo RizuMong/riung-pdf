@@ -214,16 +214,16 @@ const FormPengambilanBahanPeledak = () => {
                   </tr>
                   <tr className="text-center">
                     <th className="fw-normal align-middle">EXEL TLD</th>
-                    <th className="fw-normal align-middle"> EXEL TLD</th>
+                    <th className="fw-normal align-middle">EXEL TLD</th>
                     <th className="fw-normal align-middle">EXEL TLD</th>
                     <th className="fw-normal align-middle">RAYDET MS</th>
                     <th className="fw-normal align-middle"> DET. CORDS</th>
                   </tr>
                   <tr className="text-center">
-                    <th className="fw-normal align-middle">.. MS (EA)</th>
-                    <th className="fw-normal align-middle">.. MS (EA)</th>
-                    <th className="fw-normal align-middle">.. MS (EA)</th>
-                    <th className="fw-normal align-middle"> DET. ..M (EA)</th>
+                    <th className="fw-normal align-middle">17 MS (EA)</th>
+                    <th className="fw-normal align-middle">25 MS (EA)</th>
+                    <th className="fw-normal align-middle">42 MS (EA)</th>
+                    <th className="fw-normal align-middle">DET 65 M (EA)</th>
                     <th className="fw-normal align-middle">(M)</th>
                   </tr>
                 </thead>
