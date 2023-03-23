@@ -80,9 +80,16 @@ const WorkOrderActionReport = () => {
           diterima_oleh_prod: data.diterima_oleh_prod,
           dilaporkan_oleh: data.dilaporkan_oleh,
         });
+
+        if (data && data.attachment) {
+          seAttachment(data?.attachment);
+        }
+        if (data && data.evidence) {
+          SetEvidence(data?.evidence);
+        }
         seDetail(data?.detail);
-        seAttachment(data?.attachment);
-        SetEvidence(data?.evidence);
+        // seAttachment(data?.attachment);
+        // SetEvidence(data?.evidence);
       })
       .catch((err) => {
         // alert(err);
