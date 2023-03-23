@@ -13,7 +13,6 @@ const DaftarPeriksaLeader = () => {
   const [shift, setShift] = useState("");
   const [diperiksa, setDiperiksa] = useState("");
   const [disetujui, setDisetujui] = useState("");
-  // const [catatan, setCatatan] = useState("");
 
   // Loading Area
   const [loading_area_bebas_genang, SetLoading_area_bebas_genang] =
@@ -519,7 +518,7 @@ const DaftarPeriksaLeader = () => {
                       Volume cukup untuk 1 shift
                     </td>
                   </tr>
-                  <tr>
+                  <tr className="align-middle">
                     <td className="text-serif text-sm fw-bold">
                       {loading_area_grade} <br /> {loading_area_grade_note}
                     </td>
@@ -619,7 +618,7 @@ const DaftarPeriksaLeader = () => {
                       Operator/driver mematuhi rambu
                     </td>
                   </tr>
-                  <tr>
+                  <tr className="align-middle">
                     <td className="text-serif text-sm fw-bold">
                       {jalan_lebar_grade} <br /> {jalan_lebar_grade_note}
                     </td>
@@ -697,7 +696,7 @@ const DaftarPeriksaLeader = () => {
                     <td className="text-serif text-sm">Aman dari longsor</td>
                     <td className="text-serif text-sm">Cukup penerangan</td>
                   </tr>
-                  <tr>
+                  <tr className="align-middle">
                     <td className="text-serif text-sm fw-bold">
                       {dumping_area_jalan_rata} <br />{" "}
                       {dumping_area_jalan_rata_note}
@@ -761,7 +760,7 @@ const DaftarPeriksaLeader = () => {
                     </tr>
                   </thead>
                   <tbody className="text-center">
-                    <tr>
+                    <tr className="align-middle">
                       <td className="text-serif text-sm fw-bold">
                         {drainage_saluran_pit} <br />{" "}
                         {drainage_saluran_pit_note}
@@ -829,7 +828,7 @@ const DaftarPeriksaLeader = () => {
                     </tr>
                   </thead>
                   <tbody className="text-center">
-                    <tr>
+                    <tr className="align-middle">
                       <td className="text-serif text-sm fw-bold">
                         {dewatering_sump} <br /> {dewatering_sump_note}
                       </td>
@@ -882,7 +881,7 @@ const DaftarPeriksaLeader = () => {
                     </tr>
                   </thead>
                   <tbody className="text-center">
-                    <tr>
+                    <tr className="align-middle">
                       <td className="text-serif text-sm fw-bold">
                         {komoditas_kontaminasi} <br />{" "}
                         {komoditas_kontaminasi_note}
@@ -917,7 +916,7 @@ const DaftarPeriksaLeader = () => {
                     </tr>
                   </thead>
                   <tbody className="text-center">
-                    <tr>
+                    <tr className="align-middle">
                       <td className="text-serif text-sm fw-bold">
                         {stockpile_balance} <br /> {stockpile_balance_note}
                       </td>
@@ -938,9 +937,9 @@ const DaftarPeriksaLeader = () => {
             <div className="d-flex align-items-center">
               <div className="col-4 mb-3 mt-4 w-75">
                 <h5 className="header-leader text-serif">8. CATATAN</h5>
-                <p className="border-bottom border-dark">-</p>
-                <p className="border-bottom border-dark">-</p>
-                <p className="border-bottom border-dark">-</p>
+                <p className="border-bottom border-dark">.</p>
+                <p className="border-bottom border-dark">.</p>
+                <p className="border-bottom border-dark">.</p>
               </div>
 
               {/* Tanda Tangan */}
