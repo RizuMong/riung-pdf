@@ -218,7 +218,7 @@ const DaftarPeriksaGroupLeader = () => {
             id_dpgl_open_channel: queryParams.get("id_dpgl_open_channel"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh_id: queryParams.get("pkh_id"),
-          },
+          }
         }
       )
       .then((res) => {
@@ -235,14 +235,14 @@ const DaftarPeriksaGroupLeader = () => {
 
         // Check Data True
         const checkData = (data, set) => {
-          if (data == null) {
+          if (data == false) {
             set("");
             return 1;
           } else if (data) {
             set("✓");
             return 1;
           }
-          set("X");
+          set(" ");
           return 1;
         };
 
@@ -1132,40 +1132,42 @@ const DaftarPeriksaGroupLeader = () => {
                     </tr>
                   </tbody>
                 </table>
-
-                {/* PICA */}
-                <div className="mb-3 mt-5">
-                  <h5 className="header-leader text-serif">7. PICA</h5>
-                  <p className="border-bottom border-dark">-</p>
-                  <p className="border-bottom border-dark">-</p>
-                  <p className="border-bottom border-dark">-</p>
-                </div>
               </div>
 
-              {/* Tanda Tangan */}
-              <div className="col-4 px-5">
-                <div className="d-flex gap-5">
-                  <div className="text-center gap-5">
-                    <p className="fw-normal text-serif fw-semibold">
-                      Diperiksa oleh,
-                    </p>
-                    <p className="mt-5 text-serif fw-normal">
-                      {data.diperiksa}
-                    </p>
-                    <p className="border-top border-dark text-serif fw-semibold">
-                      Group Leader
-                    </p>
-                  </div>
-                  <div className="text-center gap-5">
-                    <p className="fw-normal text-serif fw-semibold">
-                      Disetujui oleh,
-                    </p>
-                    <p className="mt-5 text-serif fw-normal">
-                      {data.diperiksa}
-                    </p>
-                    <p className="border-top border-dark text-serif fw-semibold">
-                      Section Head
-                    </p>
+              {/* PICA dan Tanda tangan*/}
+              <div className="row align-items-center mt-4">
+                <div className="col-8">
+                  <h5 className="header-leader text-serif">7. PICA</h5>
+                  <p className="border-bottom border-dark">.</p>
+                  <p className="border-bottom border-dark">.</p>
+                  <p className="border-bottom border-dark">.</p>
+                </div>
+
+                {/* Tanda Tangan */}
+                <div className="col-4 align-items-center">
+                  <div className="d-flex gap-5">
+                    <div className="text-center gap-5">
+                      <p className="fw-normal text-serif fw-semibold">
+                        Diperiksa oleh,
+                      </p>
+                      <p className="mt-5 text-serif fw-normal">
+                        {data.diperiksa}
+                      </p>
+                      <p className="border-top border-dark text-serif fw-semibold">
+                        Group Leader
+                      </p>
+                    </div>
+                    <div className="text-center gap-5">
+                      <p className="fw-normal text-serif fw-semibold">
+                        Disetujui oleh,
+                      </p>
+                      <p className="mt-5 text-serif fw-normal">
+                        {data.diperiksa}
+                      </p>
+                      <p className="border-top border-dark text-serif fw-semibold">
+                        Section Head
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
