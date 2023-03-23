@@ -250,7 +250,7 @@ const WorkOrderActionReport = () => {
                 </td>
 
                 <td className="text-sm border-0 text-center fw-semibold">
-                  {evidence.map((item) => (
+                  {evidence && evidence.map((item) => (
                     <img width="80" src={item.url} alt="" />
                   ))}
                 </td>
@@ -364,7 +364,7 @@ const WorkOrderActionReport = () => {
           </div>
         </div>
         {/* Tempat Attachment */}
-        {attachment?.map((gambar) => (
+        {attachment && attachment?.map((gambar) => (
           <img width="600" src={gambar?.url} alt={gambar?.name} />
         ))}
       </div>
