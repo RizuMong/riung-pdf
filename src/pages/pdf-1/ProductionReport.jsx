@@ -95,7 +95,7 @@ const ProductionReport = () => {
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
-        <p className="text-end fst-italic">FRM-OPR-018</p>
+        <p className="text-end fst-italic text-sm">FRM-OPR-018</p>
         <div className="border border-3 border-dark">
           <div className="p-1">
             <div className="row align-items-center">
@@ -272,7 +272,7 @@ const ProductionReport = () => {
                     rowSpan={2}
                     className="header-table-production2 fw-normal align-middle"
                   >
-                    DISP/S'PILE
+                    DISPOSAL / STOCKPILE
                   </th>
                   <th
                     scope="col"
@@ -541,12 +541,6 @@ const ProductionReport = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="d-flex">
-          <p className="text-bottom-left fw-normal text-bottom flex-grow-1">
-            Distribusi : Asli : Production Dept.
-          </p>
-          <p className="text-center fw-normal text-bottom">Revisi : 0</p>
         </div>
       </div>
     </div>
