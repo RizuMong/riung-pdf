@@ -31,7 +31,7 @@ const ProductControl = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/production-control-page",
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/production-control-page-v2",
         {
           data: {
             id_production_control: queryParams.get("id_production_control"),
