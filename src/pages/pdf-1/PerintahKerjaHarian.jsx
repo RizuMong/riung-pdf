@@ -31,12 +31,12 @@ const PerintahKerjaHarian = () => {
         "https://api-oos.jojonomic.com/23946/rios/generate-pdf/perintah-kerja-harian/pkh-v2",
         {
           data: {
-            // id_lokasi_pkh: "xEjKD--Vg",
-            // pkh_id: "D89KDaa4g",
             id_lokasi_pkh: queryParams.get("id_lokasi_pkh"),
+            logbook_detail_id: queryParams.get("logbook_detail_id"),
+            logbook_id: queryParams.get("logbook_id"),
+            logbook_id: queryParams.get("logbook_id"),
             pkh_id: queryParams.get("pkh_id"),
-            logbook_id: queryParams.get("logbook_id")
-          },
+          }
         }
       )
       .then((res) => {
