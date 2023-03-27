@@ -32,7 +32,7 @@ const PerintahKerjaHarian = () => {
         {
           data: {
             id_lokasi_pkh: queryParams.get("id_lokasi_pkh"),
-            logbook_detail_id: queryParams.get("logbook_detail_id"),
+            logbook_detail_id: queryParams.get("logbook_detail_id.id"),
             logbook_id: queryParams.get("logbook_id"),
             logbook_id: queryParams.get("logbook_id"),
             pkh_id: queryParams.get("pkh_id"),
