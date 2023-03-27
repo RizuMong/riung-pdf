@@ -239,27 +239,26 @@ const WorkOrderActionReport = () => {
                   {" "}
                   Target Include Rain & Slippery:
                   <br />
-                  OB: {data.target_overburden_bcm} Bcm
+                  OB: {data?.target_overburden_bcm} Bcm
                   <br />
-                  Coal: {data.target_coal_ton} Ton
+                  Coal: {data?.target_coal_ton} Ton
                 </td>
                 <td className="text-sm border border-1 text-center fw-semibold">
-                  {data.jobsite}
+                  {data?.jobsite}
                 </td>
                 <td className="text-sm border border-1 text-center fw-semibold"></td>
                 <td className="text-sm border border-1 text-start">
                   {" "}
                   Actual Production OB:
                   <br />
-                  OB: {data.actual_overburden} Bcm
+                  OB: {data?.actual_overburden} Bcm
                   <br />
-                  Coal: {data.actual_coal} Ton
+                  Coal: {data?.actual_coal} Ton
                 </td>
-
                 <td className="text-sm border-0 text-center fw-semibold">
                   {evidence &&
-                    evidence.map((item) => (
-                      <img width="80" src={item.url} alt="" />
+                    evidence?.map((item) => (
+                      <img width="150" src={item?.url} alt={item?.name} /> 
                     ))}
                 </td>
               </tr>
