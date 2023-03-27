@@ -38,7 +38,7 @@ const ProductControl = () => {
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh: queryParams.get("pkh"),
             logbook_id: queryParams.get("logbook_id"),
-          }
+          },
         }
       )
       .then((res) => {
@@ -175,6 +175,14 @@ const ProductControl = () => {
               </thead>
               <tbody className="text-center">
                 {/* Shift 1 */}
+                <tr>
+                  <td>06:00 - 07:00</td>
+                  <td>{getDataByJam("06:00 - 07:00").produksi_aktual}</td>
+                  <td>{getDataByJam("06:00 - 07:00").produksi_plan}</td>
+                  <td>{getDataByJam("06:00 - 07:00").akumulasi_aktual}</td>
+                  <td>{getDataByJam("06:00 - 07:00").akumulasi_plan}</td>
+                  <td>{getDataByJam("06:00 - 07:00").keterangan}</td>
+                </tr>
                 <tr>
                   <td>07:00 - 08:00</td>
                   <td>{getDataByJam("07:00 - 08:00").produksi_aktual}</td>
@@ -359,14 +367,6 @@ const ProductControl = () => {
                   <td>{getDataByJam("05:00 - 06:00").akumulasi_aktual}</td>
                   <td>{getDataByJam("05:00 - 06:00").akumulasi_plan}</td>
                   <td>{getDataByJam("05:00 - 06:00").keterangan}</td>
-                </tr>
-                <tr>
-                  <td>06:00 - 07:00</td>
-                  <td>{getDataByJam("06:00 - 07:00").produksi_aktual}</td>
-                  <td>{getDataByJam("06:00 - 07:00").produksi_plan}</td>
-                  <td>{getDataByJam("06:00 - 07:00").akumulasi_aktual}</td>
-                  <td>{getDataByJam("06:00 - 07:00").akumulasi_plan}</td>
-                  <td>{getDataByJam("06:00 - 07:00").keterangan}</td>
                 </tr>
               </tbody>
             </Table>
