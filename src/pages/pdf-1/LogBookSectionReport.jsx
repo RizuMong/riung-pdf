@@ -34,7 +34,7 @@ const LogBookSectionReport = ({}) => {
       })
       .finally(() => {
         setLoading(false);
-      });;
+      });
   };
 
   if (loading) {
@@ -67,7 +67,7 @@ const LogBookSectionReport = ({}) => {
                         alt="Logo RIUNG"
                       />
                       <h5 className="fw-bold text-lg">
-                        PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
+                        PT Riung Mitra Lestari Production Department Jobsite:{" "}
                         {datas.jobsite}
                       </h5>
                     </div>
