@@ -34,7 +34,8 @@ const PerintahKerjaHarian = () => {
             // id_lokasi_pkh: "xEjKD--Vg",
             // pkh_id: "D89KDaa4g",
             id_lokasi_pkh: queryParams.get("id_lokasi_pkh"),
-            pkh_id: queryParams.get("pkh_id")
+            pkh_id: queryParams.get("pkh_id"),
+            logbook_id: queryParams.get("logbook_id")
           },
         }
       )
