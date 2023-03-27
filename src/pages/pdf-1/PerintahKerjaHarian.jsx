@@ -28,7 +28,7 @@ const PerintahKerjaHarian = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/instruksi-kerja/pkh",
+        "https://api-oos.jojonomic.com/23946/rios/generate-pdf/perintah-kerja-harian/pkh-v2",
         {
           data: {
             // id_lokasi_pkh: "xEjKD--Vg",

@@ -38,7 +38,7 @@ const ProductControl = () => {
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh: queryParams.get("pkh"),
             logbook_id: queryParams.get("logbook_id"),
-          },
+          }
         }
       )
       .then((res) => {
