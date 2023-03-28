@@ -12,7 +12,8 @@ const ControlActivityCoalGetting = () => {
   const [tanggal, setTanggal] = useState("");
   const [lokasi, setLokasi] = useState("");
   const [shift, setShift] = useState("");
-  const [penerima, setPenerima] = useState("");
+  const [customer, setCustomer] = useState("");
+  const [group_leader, setGroupLeader] = useState("");
   const [loading, setLoading] = useState(true);
 
   //Kolom 1
@@ -138,13 +139,10 @@ const ControlActivityCoalGetting = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/control-activity-coal-getting",
         {
           data: {
-            tanggal: queryParams.get("tanggal"),
-            lokasi: queryParams.get("lokasi"),
-            shift: queryParams.get("shift"),
-            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             id_control_activity_coal_getting: queryParams.get(
               "id_control_activity_coal_getting"
             ),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
           },
         }
       )
@@ -153,7 +151,8 @@ const ControlActivityCoalGetting = () => {
         setDatas(data);
         setTanggal(data[0]?.tanggal);
         setLokasi(data[0]?.lokasi);
-        setPenerima(data[0]?.penerima);
+        setCustomer(data[0]?.customer);
+        setGroupLeader(data[0]?.prod_group_leader);
         setJobsite(data[0]?.jobsite);
         setShift(data[0]?.shift);
 
@@ -678,20 +677,14 @@ const ControlActivityCoalGetting = () => {
             {/* Content Bottom */}
             <div className="container px-5 pt-3">
               <div className="row align-items-center">
-                <div className="col-4 text-center gap-5">
+                <div className="col-6 text-center gap-5">
                   <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
-                  <p className="mt-5">()</p>
+                  <p className="mt-5">({group_leader})</p>
                   <p> Prod. Group Leader</p>
                 </div>
-                <div className="col-4 align-self-end">
-                  <p className="text-base">
-                    Distribusi : <u>Asli</u> : Production Dept., <u>Yellow</u> :
-                    Customer
-                  </p>
-                </div>
-                <div className="col-4 text-center">
+                <div className="col-6 text-center">
                   <p>Mengetahui,</p>
-                  <p className="mt-5">({penerima})</p>
+                  <p className="mt-5">({customer.trim()})</p>
                   <p>Customer</p>
                 </div>
               </div>
