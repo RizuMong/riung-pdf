@@ -84,7 +84,7 @@ const ProductControl = () => {
   return (
     <div className="container-fluid">
       <div className="mt-1 mb-1">
-        <p className="text-end fst-italic">FRM – OPR - 004</p>
+        <p className="text-end fst-italic text-sm">FRM – OPR - 004</p>
         <div className="border border-2 border-dark">
           <div className="p-3">
             {/* Header */}
