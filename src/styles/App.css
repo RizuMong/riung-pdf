@@ -59,6 +59,11 @@ table {
 }
 
 @media print {
+  /* Logbook */
+  .text-akivitas-logbook {
+    font-size: 10px !important;
+  }
+
   table {
     page-break-inside: avoid !important;
   }

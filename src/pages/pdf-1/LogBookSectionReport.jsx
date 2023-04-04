@@ -23,6 +23,7 @@ const LogBookSectionReport = ({}) => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
         {
           id_logbook: queryParams.get("id_logbook"),
+          // id_logbook: "4t-LIHLVR",
         }
       )
       .then((res) => {
@@ -49,7 +50,7 @@ const LogBookSectionReport = ({}) => {
 
   return (
     <div className="container-fluid">
-      <div className="mt-1 mb-1">
+      <div className="">
         <div className="border border-3 border-dark">
           <div className="p-1">
             <div className="row align-items-center">
@@ -155,7 +156,7 @@ const LogBookSectionReport = ({}) => {
                         <td className="text-sm fw-normal">
                           {item?.cn_support}
                         </td>
-                        <td className="text-sm fw-normal">{item?.aktivitas}</td>
+                        <td className="text-sm fw-normal text-akivitas-logbook">{item?.aktivitas}</td>
                         <td className="text-sm fw-normal">
                           <img
                             src={item?.sketsa.url}
@@ -225,17 +226,17 @@ const LogBookSectionReport = ({}) => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan Oleh,</p>
-                  <p className="fw-bold mt-5">({datas?.diserahkan_oleh})</p>
+                  <p className="fw-bold mt-5">({datas?.diserahkan_oleh.trim()})</p>
                   <p className="fw-bold m">Section Shift 1</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
-                  <p className="fw-bold mt-5">({datas?.diterima_oleh})</p>
+                  <p className="fw-bold mt-5">({datas?.diterima_oleh.trim()})</p>
                   <p className="fw-bold m">Section Shift 2</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diketahui,</p>
-                  <p className="fw-bold mt-5">({datas?.diketahui})</p>
+                  <p className="fw-bold mt-5">({datas?.diketahui.trim()})</p>
                   <p className="fw-bold m">Production Dept Head</p>
                 </div>
               </div>
