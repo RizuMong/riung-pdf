@@ -187,9 +187,11 @@ const DaftarPeriksaAlatAngkut = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa-alat-angkut-batubara",
         {
           data: {
-            id_daftar_periksa_kontaminasi_alat_batubara: queryParams.get("id_daftar_periksa_kontaminasi_alat_batubara"),
+            id_daftar_periksa_kontaminasi_alat_batubara: queryParams.get(
+              "id_daftar_periksa_kontaminasi_alat_batubara"
+            ),
             pkh: queryParams.get("pkh"),
-          }
+          },
         }
       )
       .then((res) => {
@@ -730,17 +732,12 @@ const DaftarPeriksaAlatAngkut = () => {
             {/* Content Bottom */}
             <div className="container px-5 pt-3">
               <div className="row align-items-center">
-                <div className="col-4 text-center gap-5">
+                <div className="col-6 text-center gap-5">
                   <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
                   <p className="mt-5">()</p>
                   <p> Prod. Group Leader</p>
                 </div>
-                <div className="col-4 align-self-end">
-                  <p className="text-base">
-                    Distribusi : Asli : Production Dept., Yellow : Customer
-                  </p>
-                </div>
-                <div className="col-4 text-center">
+                <div className="col-6 text-center">
                   <p>Mengetahui,</p>
                   <p className="mt-5">({penerima})</p>
                   <p>Customer</p>
