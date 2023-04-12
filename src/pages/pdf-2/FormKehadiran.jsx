@@ -126,7 +126,7 @@ const FormKehadiran = () => {
           <thead className="bg-table-form">
             <tr className="text-center">
               <th className="fw-semibold">No</th>
-              <th className="fw-semibold">Nama / Name</th>
+              <th className="fw-semibold">NRP - Nama</th>
               <th className="fw-semibold">Dept / Seksi</th>
               <th className="fw-semibold">Jabatan</th>
               <th className="fw-semibold">Tandatangan</th>
