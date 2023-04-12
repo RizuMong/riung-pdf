@@ -226,17 +226,17 @@ const LogBookSectionReport = ({}) => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan Oleh,</p>
-                  <p className="fw-bold mt-5">({datas?.diserahkan_oleh.trim()})</p>
+                  <p className="fw-bold mt-5">({datas?.diserahkan_oleh})</p>
                   <p className="fw-bold m">Section Shift 1</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
-                  <p className="fw-bold mt-5">({datas?.diterima_oleh.trim()})</p>
+                  <p className="fw-bold mt-5">({datas?.diterima_oleh})</p>
                   <p className="fw-bold m">Section Shift 2</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diketahui,</p>
-                  <p className="fw-bold mt-5">({datas?.diketahui.trim()})</p>
+                  <p className="fw-bold mt-5">({datas?.diketahui})</p>
                   <p className="fw-bold m">Production Dept Head</p>
                 </div>
               </div>
