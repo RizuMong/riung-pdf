@@ -24,6 +24,8 @@ const WorkOrderActionReport = () => {
     tanggal_diterima_eng: "",
     catatan_eng: "",
     diterima_oleh_eng: "",
+    jabatan_eng: "",
+    departemen_eng: "",
 
     // Data Prod (Actual)
     actual_overburden: 0,
@@ -32,6 +34,8 @@ const WorkOrderActionReport = () => {
     catatan_prod: "",
     diterima_oleh_prod: "",
     dilaporkan_oleh: "",
+    jabatan_prod: "",
+    departemen_prod: "",
   });
   const [detail, seDetail] = useState([]);
   const [attachment, seAttachment] = useState([]);
@@ -51,7 +55,7 @@ const WorkOrderActionReport = () => {
         {
           data: {
             // id_work_order: "q_PyODB4R",
-            id_work_order: queryParams.get("id_work_order")
+            id_work_order: queryParams.get("id_work_order"),
           },
         }
       )
@@ -73,6 +77,8 @@ const WorkOrderActionReport = () => {
           tanggal_diterima_eng: data.tanggal_diterima_eng,
           catatan_eng: data.catatan_eng,
           diterima_oleh_eng: data.diterima_oleh_eng,
+          jabatan_eng: data.jabatan_eng,
+          departemen_eng: data.departemen_eng,
 
           // Data Prod (Actual)
           actual_overburden: data.actual_overburden,
@@ -81,6 +87,8 @@ const WorkOrderActionReport = () => {
           catatan_prod: data.catatan_prod,
           diterima_oleh_prod: data.diterima_oleh_prod,
           dilaporkan_oleh: data.dilaporkan_oleh,
+          jabatan_prod: data.jabatan_prod,
+          departemen_prod: data.departemen_prod,
         });
 
         if (data && data.attachment) {
@@ -258,7 +266,7 @@ const WorkOrderActionReport = () => {
                 <td className="text-sm border-0 text-center fw-semibold">
                   {evidence &&
                     evidence?.map((item) => (
-                      <img width="150" src={item?.url} alt={item?.name} /> 
+                      <img width="150" src={item?.url} alt={item?.name} />
                     ))}
                 </td>
               </tr>
@@ -332,10 +340,10 @@ const WorkOrderActionReport = () => {
                       NAMA: {data.diterima_oleh_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      JABATAN: Prod Dept. Head
+                      JABATAN: {data?.jabatan_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      DEPT: Production
+                      DEPT: {data?.departemen_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
                       TANGGAL: {data.tanggal_diterima_eng}
@@ -359,10 +367,10 @@ const WorkOrderActionReport = () => {
                       NAMA: {data.diterima_oleh_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      JABATAN: Engineering Dept. Head
+                      JABATAN: {data?.jabatan_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      DEPT: Engineering
+                      DEPT: {data?.departemen_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
                       TANGGAL: {data.tanggal_diterima_prod}
