@@ -10,7 +10,8 @@ const DaftarPeriksaAlatAngkut = () => {
   // const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [jobsite, setJobsite] = useState("");
-  const [penerima, setPenerima] = useState("");
+  const [customer, setCustomer] = useState("");
+  const [pemeriksa, setPemeriksa] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
 
@@ -208,9 +209,10 @@ const DaftarPeriksaAlatAngkut = () => {
         const { data } = res;
         // setDatas(data);
         setJobsite(data[0].jobsite);
-        setPenerima(data[0].penerima);
         setTanggal(data[0].tanggal);
         setShift(data[0].shift);
+        setPemeriksa(data[0].pemeriksaan)
+        setCustomer(data[0].customer)
 
         const checker = (data, set) => {
           if (data == null) {
@@ -755,12 +757,12 @@ const DaftarPeriksaAlatAngkut = () => {
               <div className="row align-items-center">
                 <div className="col-6 text-center gap-5">
                   <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
-                  <p className="mt-5">()</p>
+                  <p className="mt-5">({pemeriksa})</p>
                   <p> Prod. Group Leader</p>
                 </div>
                 <div className="col-6 text-center">
                   <p>Mengetahui,</p>
-                  <p className="mt-5">({penerima})</p>
+                  <p className="mt-5">({customer})</p>
                   <p>Customer</p>
                 </div>
               </div>
