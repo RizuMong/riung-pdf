@@ -16,6 +16,7 @@ const WorkOrderActionReport = () => {
     end_periode: "",
     diorder_oleh: "",
     nomor_dokumen: "",
+    tanggal_diorder: "",
 
     // Data Eng (Target)
     target_overburden_bcm: 0,
@@ -36,6 +37,7 @@ const WorkOrderActionReport = () => {
     dilaporkan_oleh: "",
     jabatan_prod: "",
     departemen_prod: "",
+    tanggal_dilaporkan: "",
   });
   const [detail, seDetail] = useState([]);
   const [attachment, seAttachment] = useState([]);
@@ -54,9 +56,8 @@ const WorkOrderActionReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order-v2",
         {
           data: {
-            // id_work_order: "q_PyODB4R",
             id_work_order: queryParams.get("id_work_order"),
-          },
+          }
         }
       )
       .then((res) => {
@@ -79,6 +80,7 @@ const WorkOrderActionReport = () => {
           diterima_oleh_eng: data.diterima_oleh_eng,
           jabatan_eng: data.jabatan_eng,
           departemen_eng: data.departemen_eng,
+          tanggal_diorder: data.tanggal_diorder,
 
           // Data Prod (Actual)
           actual_overburden: data.actual_overburden,
@@ -89,6 +91,7 @@ const WorkOrderActionReport = () => {
           dilaporkan_oleh: data.dilaporkan_oleh,
           jabatan_prod: data.jabatan_prod,
           departemen_prod: data.departemen_prod,
+          tanggal_dilaporkan: data.tanggal_dilaporkan,
         });
 
         if (data && data.attachment) {
@@ -98,6 +101,8 @@ const WorkOrderActionReport = () => {
           SetEvidence(data?.evidence);
         }
         seDetail(data?.detail);
+
+        console.log(data);
       })
       .catch((err) => {
         // alert(err);
@@ -327,7 +332,7 @@ const WorkOrderActionReport = () => {
                 <tr>
                   <th style={{ width: "25%" }} className="fw-semibold">
                     <p className="fw-normal text-sm">
-                      {data.jobsite}, {data.tanggal_diterima_eng}
+                      {data.jobsite}, {data.tanggal_diorder}
                     </p>
                     <p>DIORDER OLEH,</p>
                     <p className="mt-5 border-top border-1">
@@ -346,14 +351,14 @@ const WorkOrderActionReport = () => {
                       DEPT: {data?.departemen_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      TANGGAL: {data.tanggal_diterima_eng}
+                      TANGGAL: {data.tanggal_diterima_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">PARAF: </p>
                   </th>
 
                   <th style={{ width: "25%" }} className="fw-semibold">
                     <p className="fw-normal text-sm">
-                      {data.jobsite}, {data.tanggal_diterima_prod}
+                      {data.jobsite}, {data.tanggal_dilaporkan}
                     </p>
                     <p>DILAPORKAN OLEH,</p>
                     <p className="mt-5 border-top border-1">
@@ -373,7 +378,7 @@ const WorkOrderActionReport = () => {
                       DEPT: {data?.departemen_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      TANGGAL: {data.tanggal_diterima_prod}
+                      TANGGAL: {data.tanggal_diterima_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">PARAF: </p>
                   </th>
