@@ -174,7 +174,7 @@ const ControlActivityCoalGetting = () => {
         setCleaning1(data[0]?.data.cleaning);
         setKontaminasi1(data[0]?.data.kontaminasi);
         setDirtyCoal1(data[0]?.data.kontaminasi_dirty_coal);
-        // Kantongan Air: Belum ada datanya
+        setKantonganAir1(data[0]?.data.kantongan_air);
         setKelayakanAkses1(data[0]?.data.akses_front_coal);
         setMetodeLoading1(data[0]?.data.metode_loading);
 
@@ -196,7 +196,7 @@ const ControlActivityCoalGetting = () => {
         setCleaning2(data[1]?.data.cleaning);
         setKontaminasi2(data[1]?.data.kontaminasi);
         setDirtyCoal2(data[1]?.data.kontaminasi_dirty_coal);
-        // Kantongan Air: Belum ada datanya
+        setKantonganAir2(data[1]?.data.kantongan_air);
         setKelayakanAkses2(data[1]?.data.akses_front_coal);
         setMetodeLoading2(data[1]?.data.metode_loading);
 
@@ -218,7 +218,7 @@ const ControlActivityCoalGetting = () => {
         setCleaning3(data[2]?.data.cleaning);
         setKontaminasi3(data[2]?.data.kontaminasi);
         setDirtyCoal3(data[2]?.data.kontaminasi_dirty_coal);
-        // Kantongan Air: Belum ada datanya
+        setKantonganAir3(data[2]?.data.kantongan_air);
         setKelayakanAkses3(data[2]?.data.akses_front_coal);
         setMetodeLoading3(data[2]?.data.metode_loading);
 
@@ -240,7 +240,7 @@ const ControlActivityCoalGetting = () => {
         setCleaning4(data[3]?.data.cleaning);
         setKontaminasi4(data[3]?.data.kontaminasi);
         setDirtyCoal4(data[3]?.data.kontaminasi_dirty_coal);
-        // Kantongan Air: Belum ada datanya
+        setKantonganAir4(data[3]?.data.kantongan_air);
         setKelayakanAkses4(data[3]?.data.akses_front_coal);
         setMetodeLoading4(data[3]?.data.metode_loading);
 
@@ -262,7 +262,7 @@ const ControlActivityCoalGetting = () => {
         setCleaning5(data[4]?.data.cleaning);
         setKontaminasi5(data[4]?.data.kontaminasi);
         setDirtyCoal5(data[4]?.data.kontaminasi_dirty_coal);
-        // Kantongan Air: Belum ada datanya
+        setKantonganAir5(data[4]?.data.kantongan_air);
         setKelayakanAkses5(data[4]?.data.akses_front_coal);
         setMetodeLoading5(data[4]?.data.metode_loading);
       })
@@ -639,11 +639,11 @@ const ControlActivityCoalGetting = () => {
               <tbody className="text-start">
                 <tr>
                   <td>Kantongan air:</td>
-                  <td className="text-center"></td>
-                  <td className="text-center"></td>
-                  <td className="text-center"></td>
-                  <td className="text-center"></td>
-                  <td className="text-center"></td>
+                  <td className="text-center">{kantongan_air1}</td>
+                  <td className="text-center">{kantongan_air2}</td>
+                  <td className="text-center">{kantongan_air3}</td>
+                  <td className="text-center">{kantongan_air4}</td>
+                  <td className="text-center">{kantongan_air5}</td>
                   <td className="text-center"></td>
                 </tr>
               </tbody>
