@@ -14,18 +14,6 @@ const DaftarPeriksaAlatAngkut = () => {
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
 
-    // Data CN_Unit
-    const [cn_unit1, setcn_unit1] = useState("");
-    const [cn_unit2, setcn_unit2] = useState("");
-    const [cn_unit3, setcn_unit3] = useState("");
-    const [cn_unit4, setcn_unit4] = useState("");
-    const [cn_unit5, setcn_unit5] = useState("");
-    const [cn_unit6, setcn_unit6] = useState("");
-    const [cn_unit7, setcn_unit7] = useState("");
-    const [cn_unit8, setcn_unit8] = useState("");
-    const [cn_unit9, setcn_unit9] = useState("");
-    const [cn_unit10, setcn_unit10] = useState("");
-
   // Kolom 1
   const [q1a, setQ1a] = useState("");
   const [q1b, setQ1b] = useState("");
@@ -225,18 +213,6 @@ const DaftarPeriksaAlatAngkut = () => {
           set("X");
           return 1;
         };
-
-                // Data CN UNIT
-                setcn_unit1(data[0].data.cn_unit)
-                setcn_unit2(data[1].data.cn_unit)
-                setcn_unit3(data[2].data.cn_unit)
-                setcn_unit4(data[3].data.cn_unit)
-                setcn_unit5(data[4].data.cn_unit)
-                setcn_unit6(data[5].data.cn_unit)
-                setcn_unit7(data[6].data.cn_unit)
-                setcn_unit8(data[7].data.cn_unit)
-                setcn_unit9(data[8].data.cn_unit)
-                setcn_unit10(data[9].data.cn_unit)
 
         // Kolom 1
         checker(res?.data[0].data.q1, setQ1a);
@@ -495,17 +471,16 @@ const DaftarPeriksaAlatAngkut = () => {
                   </th>
                 </tr>
                 <tr className="text-center">
-
-                <th width="5%">{cn_unit1}</th>
-                  <th width="5%">{cn_unit2}</th>
-                  <th width="5%">{cn_unit3}</th>
-                  <th width="5%">{cn_unit4}</th>
-                  <th width="5%">{cn_unit5}</th>
-                  <th width="5%">{cn_unit6}</th>
-                  <th width="5%">{cn_unit7}</th>
-                  <th width="5%">{cn_unit8}</th>
-                  <th width="5%">{cn_unit9}</th>
-                  <th width="5%">{cn_unit10}</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
+                  <th width="5%">-</th>
                 </tr>
               </thead>
               <tbody className="text-start">
