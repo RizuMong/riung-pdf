@@ -12,6 +12,8 @@ const ReportPitService = () => {
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
   const [penerima, setPenerima] = useState("");
+  const [dibuat_oleh, setDibuatOleh] = useState("");
+  const [diserahkan_oleh, setDiserahkanOleh] = useState("");
   const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
@@ -27,35 +29,22 @@ const ReportPitService = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/handover-pit-service/report",
         {
           data: {
-            _id: queryParams.get("_id"),
-            company_id: queryParams.get("company_id"),
-            created_at: queryParams.get("created_at"),
-            created_by: queryParams.get("created_by"),
-            date: queryParams.get("date"),
             id: queryParams.get("id"),
             id_hops: queryParams.get("id_hops"),
-            lokasi: queryParams.get("lokasi"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            penerima_hops: {
-              company_user_id: queryParams.get("penerima_hops.company_user_id"),
-              email: queryParams.get("penerima_hops.email"),
-              name: queryParams.get("penerima_hops.name"),
-              photo: queryParams.get("penerima_hops.photo"),
-            },
             pkh: queryParams.get("pkh"),
-            shift: queryParams.get("shift"),
-            updated_at: queryParams.get("updated_at"),
-            updated_by: queryParams.get("updated_by"),
-          },
+          }
         }
       )
       .then((res) => {
         const { data } = res;
         setDatas(data);
-        setJobsite(data[0].jobsite);
-        setTanggal(data[0].tanggal);
-        setShift(data[0].shift);
-        setPenerima(data[0].penerima_hops);
+        setJobsite(data[0]?.jobsite);
+        setTanggal(data[0]?.tanggal);
+        setShift(data[0]?.shift);
+        setPenerima(data[0]?.penerima_hops);
+        setDiserahkanOleh(data[0]?.diserahkan_oleh)
+        setDibuatOleh(data[0]?.dibuat_oleh)
       })
       .catch((err) => {
         alert(err);
@@ -168,12 +157,12 @@ const ReportPitService = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="text-sm">Dibuat oleh,</p>
-                  <p className="mt-4">()</p>
+                  <p className="mt-4">({dibuat_oleh})</p>
                   <p className="text-sm">Pit Service Group Leader</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="text-sm">Diserahkan oleh:</p>
-                  <p className="mt-4">()</p>
+                  <p className="mt-4">({diserahkan_oleh})</p>
                   <p className="text-sm">Prod. Dept/Section Head</p>
                 </div>
                 <div className="col-4 text-center">
@@ -184,12 +173,6 @@ const ReportPitService = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="d-flex">
-          <p className="text-bottom-left fw-normal text-bottom flex-grow-1">
-            Distribusi : Asli : Production Dept.
-          </p>
-          <p className="text-center fw-normal text-bottom">Revisi : 0</p>
         </div>
       </div>
     </div>
