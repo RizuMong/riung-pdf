@@ -342,13 +342,13 @@ const WorkOrderActionReport = () => {
                   <th width="25%" className="fw-semibold px-1 align-top">
                     <p>DITERIMA OLEH,</p>
                     <p className="fw-normal text-sm text-start px-1">
-                      NAMA: {data.diterima_oleh_eng}
+                      NAMA: {data.diterima_oleh_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      JABATAN: {data?.jabatan_eng}
+                      JABATAN: {data?.jabatan_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      DEPT: {data?.departemen_eng}
+                      DEPT: {data?.departemen_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
                       TANGGAL: {data.tanggal_diterima_prod}
@@ -369,13 +369,13 @@ const WorkOrderActionReport = () => {
                   <th width="25%" className="fw-semibold align-top">
                     <p>DITERIMA OLEH,</p>
                     <p className="fw-normal text-sm text-start px-1">
-                      NAMA: {data.diterima_oleh_prod}
+                      NAMA: {data.diterima_oleh_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      JABATAN: {data?.jabatan_prod}
+                      JABATAN: {data?.jabatan_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      DEPT: {data?.departemen_prod}
+                      DEPT: {data?.departemen_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
                       TANGGAL: {data.tanggal_diterima_eng}
