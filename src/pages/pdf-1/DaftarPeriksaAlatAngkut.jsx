@@ -174,6 +174,18 @@ const DaftarPeriksaAlatAngkut = () => {
   const [q10m, setQ10m] = useState("");
   const [q10n, setQ10n] = useState("");
 
+  // Data CN_Unit
+  const [cn_unit1, setCn_unit1] = useState("");
+  const [cn_unit2, setCn_unit2] = useState("");
+  const [cn_unit3, setCn_unit3] = useState("");
+  const [cn_unit4, setCn_unit4] = useState("");
+  const [cn_unit5, setCn_unit5] = useState("");
+  const [cn_unit6, setCn_unit6] = useState("");
+  const [cn_unit7, setCn_unit7] = useState("");
+  const [cn_unit8, setCn_unit8] = useState("");
+  const [cn_unit9, setCn_unit9] = useState("");
+  const [cn_unit10, setCn_unit10] = useState("");
+
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
 
@@ -187,10 +199,8 @@ const DaftarPeriksaAlatAngkut = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa-alat-angkut-batubara",
         {
           data: {
-            id_daftar_periksa_kontaminasi_alat_batubara: queryParams.get(
-              "id_daftar_periksa_kontaminasi_alat_batubara"
-            ),
-            pkh: queryParams.get("pkh"),
+            id_daftar_periksa_kontaminasi_alat_batubara: "6IzHXrL4R",
+            pkh: "qtUIX9Y4g",
           },
         }
       )
@@ -373,6 +383,17 @@ const DaftarPeriksaAlatAngkut = () => {
         checker(res?.data[9]?.data.q12, setQ10l);
         checker(res?.data[9]?.data.q13, setQ10m);
         checker(res?.data[9]?.data.q14, setQ10n);
+
+        setCn_unit1(data[0]?.data?.cn_unit);
+        setCn_unit2(data[1]?.data?.cn_unit);
+        setCn_unit3(data[2]?.data?.cn_unit);
+        setCn_unit4(data[3]?.data?.cn_unit);
+        setCn_unit5(data[4]?.data?.cn_unit);
+        setCn_unit6(data[5]?.data?.cn_unit);
+        setCn_unit7(data[6]?.data?.cn_unit);
+        setCn_unit8(data[7]?.data?.cn_unit);
+        setCn_unit9(data[8]?.data?.cn_unit);
+        setCn_unit10(data[9]?.data?.cn_unit);
       })
       .catch((err) => {
         // alert(err);
@@ -471,16 +492,16 @@ const DaftarPeriksaAlatAngkut = () => {
                   </th>
                 </tr>
                 <tr className="text-center">
-                  <th width="5%">-</th>
-                  <th width="5%">-</th>
-                  <th width="5%">-</th>
-                  <th width="5%">-</th>
-                  <th width="5%">-</th>
-                  <th width="5%">-</th>
-                  <th width="5%">-</th>
-                  <th width="5%">-</th>
-                  <th width="5%">-</th>
-                  <th width="5%">-</th>
+                  <th width="5%">{cn_unit1}</th>
+                  <th width="5%">{cn_unit2}</th>
+                  <th width="5%">{cn_unit3}</th>
+                  <th width="5%">{cn_unit4}</th>
+                  <th width="5%">{cn_unit5}</th>
+                  <th width="5%">{cn_unit6}</th>
+                  <th width="5%">{cn_unit7}</th>
+                  <th width="5%">{cn_unit8}</th>
+                  <th width="5%">{cn_unit9}</th>
+                  <th width="5%">{cn_unit10}</th>
                 </tr>
               </thead>
               <tbody className="text-start">
