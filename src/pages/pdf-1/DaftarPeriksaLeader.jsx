@@ -168,7 +168,7 @@ const DaftarPeriksaLeader = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/group-leader",
+        "https://api-oos.jojonomic.com/23946/rios/generate-pdf/daftar-periksa/group-leader-new",
         {
           data: {
             id_dpgl: queryParams.get("id_dpgl"),
