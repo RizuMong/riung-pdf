@@ -684,7 +684,7 @@ const ControlActivityCoalGetting = () => {
                 </div>
                 <div className="col-6 text-center">
                   <p>Mengetahui,</p>
-                  <p className="mt-5">({customer.trim()})</p>
+                  <p className="mt-5">({customer})</p>
                   <p>Customer</p>
                 </div>
               </div>
