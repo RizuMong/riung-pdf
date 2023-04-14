@@ -190,7 +190,7 @@ const DaftarPeriksaLeader = () => {
         // Check Data True
         const checkData = (data, set) => {
           if (data == null) {
-            set(" ");
+            set("X");
             return 1;
           } else if (data) {
             set("✓");
