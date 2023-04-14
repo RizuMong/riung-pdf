@@ -122,8 +122,9 @@ const DaftarPeriksaLeader = () => {
   const [dewatering_air_tambang, setDewatering_air_tambang] = useState("");
   const [dewatering_air_tambang_note, setDewatering_air_tambang_note] =
     useState("");
-  // const [dewatering_air_sendiment, setDewatering_air_sendiment] = useState("");
-  // const [dewatering_air_sendiment_note, setDewatering_air_sendiment_note] = useState("");
+  const [dewatering_air_sendiment, setDewatering_air_sendiment] = useState("");
+  const [dewatering_air_sendiment_note, setDewatering_air_sendiment_note] =
+    useState("");
   const [dewatering_fungsi_pompa, setDewatering_fungsi_pompa] = useState("");
   const [dewatering_fungsi_pompa_note, setDewatering_fungsi_pompa_note] =
     useState("");
@@ -374,6 +375,13 @@ const DaftarPeriksaLeader = () => {
         setDewatering_penerangan_note(data.detail.dewatering_penerangan_note);
         checkData(data.detail.dewatering_sump, setDewatering_sump);
         setDewatering_sump_note(data.detail.dewatering_sump_note);
+        checkData(
+          data.detail.dewatering_air_tambang_sendiment,
+          setDewatering_air_sendiment
+        );
+        setDewatering_air_sendiment_note(
+          data.detail.dewatering_air_tambang_sendiment_note
+        );
 
         // Komoditas
         checkData(data.detail.komoditas_kontaminasi, setKomoditas_kontaminasi);
@@ -848,7 +856,10 @@ const DaftarPeriksaLeader = () => {
                         {dewatering_fungsi_pond} <br />{" "}
                         {dewatering_fungsi_pond_note}
                       </td>
-                      <td className="text-serif text-sm fw-bold"></td>
+                      <td className="text-serif text-sm fw-bold">
+                        {dewatering_air_sendiment} <br />
+                        {dewatering_air_sendiment_note}
+                      </td>
                       <td className="text-serif text-sm fw-bold">
                         {dewatering_air_tambang} <br />{" "}
                         {dewatering_air_tambang_note}
