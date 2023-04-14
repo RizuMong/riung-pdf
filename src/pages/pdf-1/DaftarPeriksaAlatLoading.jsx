@@ -92,22 +92,12 @@ const DaftarPeriksaAlatLoading = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/alat-loading",
         {
           data: {
-            _id: queryParams.get("_id"),
-            company_id: queryParams.get("company_id"),
-            created_at: queryParams.get("created_at"),
-            created_by: queryParams.get("created_by"),
-            id: queryParams.get("id"),
             id_daftar_kontaminasi_alat_loading: queryParams.get(
               "id_daftar_kontaminasi_alat_loading"
             ),
-            lokasi: queryParams.get("lokasi"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh: queryParams.get("pkh"),
-            shift: queryParams.get("shift"),
-            tanggal: queryParams.get("tanggal"),
-            updated_at: queryParams.get("updated_at"),
-            updated_by: queryParams.get("updated_by"),
-          },
+          }
         }
       )
       .then((res) => {
