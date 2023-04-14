@@ -172,8 +172,10 @@ const DaftarPeriksaLeader = () => {
         "https://api-oos.jojonomic.com/23946/rios/generate-pdf/daftar-periksa/group-leader-new",
         {
           data: {
-            id_dpgl: queryParams.get("id_dpgl"),
-            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            // id_dpgl: queryParams.get("id_dpgl"),
+            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            "id_dpgl": "nImIxkE4g",
+            "lokasi_pkh_id": "igX4xzPVg"
           }
         }
       )
@@ -190,15 +192,21 @@ const DaftarPeriksaLeader = () => {
         // Check Data True
         const checkData = (data, set) => {
           if (data == null) {
-            set("X");
+            set(" ");
             return 1;
           } else if (data) {
             set("✓");
             return 1;
           }
-          set(" ");
+          set("X");
           return 1;
         };
+
+        console.log(data);
+
+        console.log({
+          data_baru: data.detail
+        });
 
         // Loading Area
         checkData(
