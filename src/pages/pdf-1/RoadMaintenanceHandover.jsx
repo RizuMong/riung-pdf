@@ -188,7 +188,7 @@ const RoadMaintenanceHandover = () => {
               <thead className="text-center">
                 <tr>
                   <th scope="col">C/N Unit</th>
-                  <th scope="col">Lokasi (Km)</th>
+                  {/* <th scope="col">Lokasi (Km)</th> */}
                   <th scope="col">Aktivitas</th>
                 </tr>
               </thead>
@@ -196,7 +196,7 @@ const RoadMaintenanceHandover = () => {
                 <tbody className="text-center">
                   <tr key={index}>
                     <th>{item?.data.cn_unit}</th>
-                    <td>{item?.data.lokasi_a2b}</td>
+                    {/* <td>{item?.data.lokasi_a2b}</td> */}
                     <td>{item?.data.aktivitas_a2b}</td>
                   </tr>
                 </tbody>
