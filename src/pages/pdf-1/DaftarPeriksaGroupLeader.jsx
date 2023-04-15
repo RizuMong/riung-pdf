@@ -212,7 +212,7 @@ const DaftarPeriksaGroupLeader = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/group-leader-open-channel",
+        "https://api-oos.jojonomic.com/23946/rios/generate-pdf/daftar-periksa/group-leader-open-channel-v2",
         {
           data: {
             id_dpgl_open_channel: queryParams.get("id_dpgl_open_channel"),
@@ -235,14 +235,14 @@ const DaftarPeriksaGroupLeader = () => {
 
         // Check Data True
         const checkData = (data, set) => {
-          if (data == false) {
+          if (data == null) {
             set("");
             return 1;
           } else if (data) {
             set("✓");
             return 1;
           }
-          set(" ");
+          set("X");
           return 1;
         };
 
@@ -943,7 +943,7 @@ const DaftarPeriksaGroupLeader = () => {
                       {penggalian_channel_unit_amphibi_note}
                     </td>
                     <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_alokasi} <br />{" "}
+                      {penggalian_channel_alokasi}<br />{" "}
                       {penggalian_channel_alokasi_note}
                     </td>
                     <td className="text-serif text-sm fw-bold">
