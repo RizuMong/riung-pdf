@@ -503,7 +503,7 @@ const BeritaAcaraPeledakan = () => {
                     <th className="fw-normal"></th>
                     <th className="fw-normal"></th>
                     <th className="fw-normal">Drill & Blast Group Leader</th>
-                    <th className="fw-normal">{disetujui_oleh_group_leader}</th>
+                    <th className="fw-normal">{data.disetujui_oleh_group_leader}</th>
                     <th className="fw-normal"></th>
                   </tr>
                 </thead>
