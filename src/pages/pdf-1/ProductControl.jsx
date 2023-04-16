@@ -18,6 +18,8 @@ const ProductControl = () => {
   const [section, setSection] = useState({
     section_head_1: "",
     section_head_2: "",
+    ttd_section_1: "",
+    ttd_section_2: "",
   });
   const [loading, setLoading] = useState(true);
 
@@ -38,7 +40,7 @@ const ProductControl = () => {
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh: queryParams.get("pkh"),
             logbook_id: queryParams.get("logbook_id"),
-          }
+          },
         }
       )
       .then((res) => {
@@ -54,6 +56,8 @@ const ProductControl = () => {
         setSection({
           section_head_1: data.section_head_1,
           section_head_2: data.section_head_2,
+          ttd_section_1: data.ttd_section_1,
+          ttd_section_2: data.ttd_section_2,
         });
       })
       .catch((err) => {
@@ -396,7 +400,9 @@ const ProductControl = () => {
                     I
                   </th>
                   <td className="text-sm">{section.section_head_1}</td>
-                  <td></td>
+                  <td>
+                    <img src={section?.ttd_section_1} width="80" />
+                  </td>
                   <td className="text-sm">{catatan.catatan_shift_1}</td>
                 </tr>
                 {/* Shift 2 */}
@@ -405,7 +411,9 @@ const ProductControl = () => {
                     II
                   </th>
                   <td className="text-sm">{section.section_head_2}</td>
-                  <td className="text-sm"></td>
+                  <td className="text-sm">
+                    <img src={section?.ttd_section_2} width="80" />
+                  </td>
                   <td className="text-sm">{catatan.catatan_shift_2}</td>
                 </tr>
               </tbody>

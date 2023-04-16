@@ -17,6 +17,12 @@ const PerintahKerjaHarian = () => {
   const [dilaksanakan1, setDilaksanakan1] = useState("");
   const [dilaksanakan2, setDilaksanakan2] = useState("");
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({
+    jabatan_dibuat: "",
+    jabatan_dilaporkan: "",
+    ttd_dilaksanakan_1: "",
+    ttd_dilaksanakan_2: "",
+  });
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -36,11 +42,13 @@ const PerintahKerjaHarian = () => {
             logbook_id: queryParams.get("logbook_id"),
             logbook_id: queryParams.get("logbook_id"),
             pkh_id: queryParams.get("pkh_id"),
-          }
+          },
         }
       )
       .then((res) => {
         const { data } = res;
+
+        console.log(data);
         setDatas(data.detail);
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);
@@ -50,6 +58,12 @@ const PerintahKerjaHarian = () => {
         setDilaksanakan1(data?.dilaksanakan);
         setDilaksanakan2(data?.dilaksanakan_2);
         setNotePKH(data?.note_pkh);
+        setData({
+          jabatan_dibuat: data?.jabatan_dibuat,
+          jabatan_dilaporkan: data?.jabatan_dilaporkan,
+          ttd_dilaksanakan_1: data?.ttd_dilaksanakan_1,
+          ttd_dilaksanakan_2: data?.ttd_dilaksanakan_2,
+        });
       })
       .catch((err) => {
         alert(err);
@@ -80,7 +94,7 @@ const PerintahKerjaHarian = () => {
                 <thead>
                   <th className="col-1">
                     {" "}
-                    <div className="d-flex gap-3 mb-4">
+                    <div className="d-flex gap-3 mb-3">
                       <img
                         className="pl-2"
                         src={LogoRiung}
@@ -90,20 +104,20 @@ const PerintahKerjaHarian = () => {
                       />
                     </div>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 80 }}></div>
                   <th className="col-6">
-                    <h1 className="header-report-production mb-6 fw-semibold">
+                    <h1 className="header-report-production mb-4 fw-semibold">
                       PERINTAH KERJA HARIAN (PKH)
                     </h1>
                   </th>
                   <th className="col-3">
                     <div className="mb-4">
-                      <p className="mb-2 px-2 fw-semibold fst-italic text-alat">
+                      <p className="mb-4 px-2 fw-semibold fst-italic text-alat">
                         FRM-OPR - 006
                       </p>
-                      <p className="mb-2 px-2 fw-semibold fs-6 text-alat">
+                      {/* <p className="mb-2 px-2 fw-semibold fs-6 text-alat">
                         2-2
-                      </p>
+                      </p> */}
                     </div>
                   </th>
                 </thead>
@@ -186,32 +200,38 @@ const PerintahKerjaHarian = () => {
             {/* Content Bottom */}
             <div className="row">
               <div>
-                <div className="d-flex gap-5 mt-1">
-                  <p className="mb-2 mt px-2 fw-normal text-alat">
-                    Dibuat: Dept. Head
+                <div className="d-flex gap-4 mt-1">
+                  <p className="mb-2 fw-normal text-alat">
+                    Dibuat: {data.jabatan_dibuat}
                   </p>
-                  <p className="mb-2 mt px-2 fw-normal text-alat">{dibuat}</p>
+                  <p className="fw-normal text-alat">{dibuat}</p>
                 </div>
 
-                <div className="d-flex gap-2">
-                  <p className="mb-2 px-2 fw-normal text-alat">
-                    Dilaporkan: Section Head
-                  </p>
-                  <p className="mb-2 mt px-2 fw-normal text-alat">
-                    {dilaporkan}
-                  </p>
-                </div>
+                <div className="d-flex justify-content-between gap-2">
+                  <div>
+                    <p className="mb-2 fw-normal text-alat">
+                      Dilaporkan: {data.jabatan_dilaporkan}
+                    </p>
+                    <p className="mb-2 mt fw-normal text-alat">{dilaporkan}</p>
+                    <p className="mb-2 fw-normal text-alat">
+                      Dilaksanakan: Group Leader
+                    </p>
+                  </div>
 
-                <div className="d-flex justify-content-between">
-                  <p className="mb-2 px-2 fw-normal text-alat">
-                    Dilaksanakan: Group Leader
-                  </p>
-                  <p className="mb-2 px-2 fw-semibold text-alat">
-                    ({dilaksanakan1})
-                  </p>
-                  <p className="mb-2 px-2 fw-semibold text-alat px-5">
-                    ({dilaksanakan2})
-                  </p>
+                  <div className="text-center d-block">
+                    <img src={data.ttd_dilaksanakan_1} width="100" />
+                    <p className="mb-2 fw-semibold text-alat px-5">
+                      ({dilaksanakan1})
+                    </p>
+                  </div>
+                  <div>
+                    <div className="text-center d-block">
+                      <img src={data.ttd_dilaksanakan_2} width="100" />
+                      <p className="mb-2 px-2 fw-semibold text-alat px-5">
+                        ({dilaksanakan2})
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -220,7 +240,7 @@ const PerintahKerjaHarian = () => {
               <h5 className="fs-6 mt-1 border-end px-2 border-2">
                 NB: {note_pkh}
               </h5>
-              <p className="fs-6 mt-1">Halaman: 02/02</p>
+              <p className="fs-6 mt-1 text-sm">Halaman: 02/02</p>
             </div>
           </div>
         </div>
