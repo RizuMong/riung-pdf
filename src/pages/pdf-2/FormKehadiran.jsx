@@ -14,6 +14,8 @@ const FormKehadiran = () => {
   const [notulen, setNotulen] = useState("");
   const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ttd, setTTD] = useState("");
+
   
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -36,11 +38,11 @@ const FormKehadiran = () => {
         const { data } = res;
 
         setDatas(data);
-        setJudul(res.data.judul);
-        setTanggal(res.data.tanggal);
-        setTempat(res.data.tempat);
-        setFasilitator(res.data.fasilitator);
-        setNotulen(res.data.notulen);
+        setJudul(res.data?.judul);
+        setTanggal(res.data?.tanggal);
+        setTempat(res.data?.tempat);
+        setFasilitator(res.data?.fasilitator);
+        setNotulen(res.data?.notulen);
 
         if (res && res.data.list[0]) {
           const result = res.data.list.map((item, index) => {
@@ -139,7 +141,7 @@ const FormKehadiran = () => {
                 <th className="fw-normal align-middle">{item?.peserta || item?.peserta_text}</th>
                 <th className="fw-normal align-middle">{item?.dept}</th>
                 <th className="fw-normal align-middle">{item?.jabatan}</th>
-                <th className="fw-normal align-middle"></th>
+                <th className="fw-normal align-middle">{item?.ttd_peserta}</th>
               </tr>
             ))}
           </tbody>

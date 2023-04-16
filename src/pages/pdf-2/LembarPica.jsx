@@ -6,7 +6,6 @@ import LogoRiung from "../../assets/logo-riung3.jpg";
 import "../../styles/App.css";
 
 const LembarPica = () => {
-  // const [datas, setDatas] = useState([]);
   const [bagian, setBagian] = useState("");
   const [jobsite, setJobsite] = useState("");
   const [lokasi, setLokasi] = useState("");
