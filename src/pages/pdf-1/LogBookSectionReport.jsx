@@ -8,6 +8,12 @@ import "../../styles/App.css";
 
 const LogBookSectionReport = ({}) => {
   const [datas, setDatas] = useState([]);
+  const [ttd, setTTD] = useState({
+    ttd_diketahui: "",
+    ttd_diserahkan: "",
+    ttd_diterima: "",
+    jabatan_diketahui: "",
+  });
   const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
@@ -22,13 +28,23 @@ const LogBookSectionReport = ({}) => {
       .post(
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
         {
-          id_logbook: queryParams.get("id_logbook"),
-          // id_logbook: "4t-LIHLVR",
+          // id_logbook: queryParams.get("id_logbook"),
+          id_logbook: "DXk4X7EVR",
         }
       )
       .then((res) => {
         const { data } = res;
         setDatas(data);
+        setTTD({
+          ttd_diketahui: data.ttd_diketahui,
+          ttd_diserahkan: data.ttd_diserahkan,
+          ttd_diterima: data.ttd_diterima,
+          jabatan_diketahui: data.jabatan_diketahui,
+        });
+
+        console.log("====================================");
+        console.log(data);
+        console.log("====================================");
       })
       .catch((err) => {
         alert(err);
@@ -156,7 +172,9 @@ const LogBookSectionReport = ({}) => {
                         <td className="text-sm fw-normal">
                           {item?.cn_support}
                         </td>
-                        <td className="text-sm fw-normal text-akivitas-logbook">{item?.aktivitas}</td>
+                        <td className="text-sm fw-normal text-akivitas-logbook">
+                          {item?.aktivitas}
+                        </td>
                         <td className="text-sm fw-normal">
                           <img
                             src={item?.sketsa.url}
@@ -212,8 +230,6 @@ const LogBookSectionReport = ({}) => {
                     <br />
                     <br />
                     <br />
-                    <br />
-                    <br />
                   </td>
                 </tbody>
               </Table>
@@ -226,18 +242,21 @@ const LogBookSectionReport = ({}) => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan Oleh,</p>
-                  <p className="fw-bold mt-5">({datas?.diserahkan_oleh})</p>
-                  <p className="fw-bold m">Section Shift 1</p>
+                  <img src={ttd?.ttd_diserahkan} width="100" />
+                  <p className="fw-bold">({datas?.diserahkan_oleh})</p>
+                  <p className="fw-bold">Section Shift 1</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
-                  <p className="fw-bold mt-5">({datas?.diterima_oleh})</p>
-                  <p className="fw-bold m">Section Shift 2</p>
+                  <img src={ttd?.ttd_diterima} width="100" />
+                  <p className="fw-bold">({datas?.diterima_oleh})</p>
+                  <p className="fw-bold">Section Shift 2</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diketahui,</p>
-                  <p className="fw-bold mt-5">({datas?.diketahui})</p>
-                  <p className="fw-bold m">Production Dept Head</p>
+                  <img src={ttd?.ttd_diketahui} width="100" />
+                  <p className="fw-bold">({datas?.diketahui})</p>
+                  <p className="fw-bold">Production Dept Head</p>
                 </div>
               </div>
             </div>
