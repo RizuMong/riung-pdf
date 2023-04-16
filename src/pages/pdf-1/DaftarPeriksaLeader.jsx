@@ -13,6 +13,11 @@ const DaftarPeriksaLeader = () => {
   const [shift, setShift] = useState("");
   const [diperiksa, setDiperiksa] = useState("");
   const [disetujui, setDisetujui] = useState("");
+  const [ttd, setTTD] = useState({
+    ttd_diperiksa: "",
+    ttd_disetujui: ""
+  });
+
 
   // Loading Area
   const [loading_area_bebas_genang, SetLoading_area_bebas_genang] =
@@ -180,12 +185,18 @@ const DaftarPeriksaLeader = () => {
       .then((res) => {
         const { data } = res;
 
+        console.log(data);
+
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);
         setShift(data?.shift);
         setLokasi(data?.lokasi);
         setDiperiksa(data?.diperiksa);
         setDisetujui(data?.disetujui);
+        setTTD({
+          ttd_diperiksa: data.ttd_diperiksa,
+          ttd_disetujui: data.ttd_disetujui
+        })
 
         // Check Data True
         const checkData = (data, set) => {
@@ -199,12 +210,6 @@ const DaftarPeriksaLeader = () => {
           set("X");
           return 1;
         };
-
-        console.log(data);
-
-        console.log({
-          data_baru: data.detail
-        });
 
         // Loading Area
         checkData(
@@ -966,7 +971,8 @@ const DaftarPeriksaLeader = () => {
                     <p className="fw-normal text-serif fw-semibold">
                       Diperiksa oleh,
                     </p>
-                    <p className="mt-4">{diperiksa}</p>
+                    <img src={ttd.ttd_diperiksa} width="100"/>
+                    <p>{diperiksa}</p>
                     <p className="border-top border-dark text-serif fw-semibold">
                       Group Leader
                     </p>
@@ -975,7 +981,8 @@ const DaftarPeriksaLeader = () => {
                     <p className="fw-normal text-serif fw-semibold">
                       Disetujui oleh,
                     </p>
-                    <p className="mt-4">{disetujui}</p>
+                    <img src={ttd.ttd_disetujui} width="100"/>
+                    <p>{disetujui}</p>
                     <p className="border-top border-dark text-serif fw-semibold">
                       Section Head
                     </p>
