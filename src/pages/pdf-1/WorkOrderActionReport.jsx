@@ -17,6 +17,7 @@ const WorkOrderActionReport = () => {
     diorder_oleh: "",
     nomor_dokumen: "",
     tanggal_diorder: "",
+    ttd_diorder: "",
 
     // Data Eng (Target)
     target_overburden_bcm: 0,
@@ -25,8 +26,9 @@ const WorkOrderActionReport = () => {
     tanggal_diterima_eng: "",
     catatan_eng: "",
     diterima_oleh_eng: "",
-    jabatan_eng: "",
-    departemen_eng: "",
+    jabatan_diterima_eng: "",
+    departemen_diterima_eng: "",
+    ttd_diterima_eng: "",
 
     // Data Prod (Actual)
     actual_overburden: 0,
@@ -35,9 +37,11 @@ const WorkOrderActionReport = () => {
     catatan_prod: "",
     diterima_oleh_prod: "",
     dilaporkan_oleh: "",
-    jabatan_prod: "",
-    departemen_prod: "",
+    jabatan_diterima_prod: "",
+    departemen_diterima_prod: "",
     tanggal_dilaporkan: "",
+    ttd_dilaporkan_prod: "",
+    ttd_diterima_prod: "",
   });
   const [detail, seDetail] = useState([]);
   const [attachment, seAttachment] = useState([]);
@@ -56,12 +60,15 @@ const WorkOrderActionReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order-v2",
         {
           data: {
-            id_work_order: queryParams.get("id_work_order"),
-          }
+            // id_work_order: queryParams.get("id_work_order"),
+            id_work_order: "JD1O_7P4g",
+          },
         }
       )
       .then((res) => {
         const { data } = res;
+
+        console.log(data);
 
         setData({
           // Data Luar
@@ -71,6 +78,7 @@ const WorkOrderActionReport = () => {
           end_periode: data.end_periode,
           diorder_oleh: data.diorder_oleh,
           nomor_dokumen: data.nomor_dokumen,
+          ttd_diorder: data.ttd_diorder,
 
           // Data Eng (Target)
           target_overburden_bcm: data.target_overburden_bcm,
@@ -78,8 +86,9 @@ const WorkOrderActionReport = () => {
           tanggal_diterima_eng: data.tanggal_diterima_eng,
           catatan_eng: data.catatan_eng,
           diterima_oleh_eng: data.diterima_oleh_eng,
-          jabatan_eng: data.jabatan_eng,
-          departemen_eng: data.departemen_eng,
+          jabatan_diterima_eng: data.jabatan_diterima_eng,
+          departemen_diterima_eng: data.departemen_eng,
+          ttd_diterima_eng: data.ttd_diterima_eng,
           tanggal_diorder: data.tanggal_diorder,
 
           // Data Prod (Actual)
@@ -89,9 +98,12 @@ const WorkOrderActionReport = () => {
           catatan_prod: data.catatan_prod,
           diterima_oleh_prod: data.diterima_oleh_prod,
           dilaporkan_oleh: data.dilaporkan_oleh,
-          jabatan_prod: data.jabatan_prod,
-          departemen_prod: data.departemen_prod,
+
+          jabatan_diterima_prod: data.jabatan_prod,
+          departemen_diterima_prod: data.departemen_prod,
           tanggal_dilaporkan: data.tanggal_dilaporkan,
+          ttd_dilaporkan_prod: data.ttd_dilaporkan_prod,
+          ttd_diterima_prod: data.ttd_diterima_prod,
         });
 
         if (data && data.attachment) {
@@ -335,9 +347,8 @@ const WorkOrderActionReport = () => {
                       {data.jobsite}, {data.tanggal_diorder}
                     </p>
                     <p>DIORDER OLEH,</p>
-                    <p className="mt-5 border-top border-1">
-                      ({data.diorder_oleh})
-                    </p>
+                    <img src={data?.ttd_diorder} width="100" />
+                    <p className="border-top border-1">({data.diorder_oleh})</p>
                   </th>
                   <th width="25%" className="fw-semibold px-1 align-top">
                     <p>DITERIMA OLEH,</p>
@@ -345,15 +356,22 @@ const WorkOrderActionReport = () => {
                       NAMA: {data.diterima_oleh_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      JABATAN: {data?.jabatan_prod}
+                      JABATAN: {data?.jabatan_diterima_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      DEPT: {data?.departemen_prod}
+                      DEPT: {data?.departemen_diterima_prod}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
                       TANGGAL: {data.tanggal_diterima_prod}
                     </p>
-                    <p className="fw-normal text-sm text-start px-1">PARAF: </p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      PARAF:
+                      <img
+                        className="mx-3"
+                        src={data?.ttd_diterima_prod}
+                        width="60"
+                      />
+                    </p>
                   </th>
 
                   <th style={{ width: "25%" }} className="fw-semibold">
@@ -361,6 +379,7 @@ const WorkOrderActionReport = () => {
                       {data.jobsite}, {data.tanggal_dilaporkan}
                     </p>
                     <p>DILAPORKAN OLEH,</p>
+                    <img src={data?.ttd_dilaporkan_prod} width="100" />
                     <p className="mt-5 border-top border-1">
                       ({data.dilaporkan_oleh})
                     </p>
@@ -372,15 +391,22 @@ const WorkOrderActionReport = () => {
                       NAMA: {data.diterima_oleh_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      JABATAN: {data?.jabatan_eng}
+                      JABATAN: {data?.jabatan_diterima_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
-                      DEPT: {data?.departemen_eng}
+                      DEPT: {data?.departemen_diterima_eng}
                     </p>
                     <p className="fw-normal text-sm text-start px-1">
                       TANGGAL: {data.tanggal_diterima_eng}
                     </p>
-                    <p className="fw-normal text-sm text-start px-1">PARAF: </p>
+                    <p className="fw-normal text-sm text-start px-1">
+                      PARAF:
+                      <img
+                        className="mx-3"
+                        src={data?.ttd_diterima_eng}
+                        width="60"
+                      />
+                    </p>
                   </th>
                 </tr>
               </thead>
