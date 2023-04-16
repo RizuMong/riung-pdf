@@ -19,6 +19,11 @@ const ProductionReport = () => {
   const [dibuat, setDibuat] = useState("");
   const [diserahkan, setDiserahkan] = useState("");
   const [diterima, setDiterima] = useState("");
+  const [ttd, setTTD] = useState({
+    ttd_dibuat_oleh: "",
+    ttd_diserahkan: "",
+    ttd_diterima: "",
+  });
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -33,26 +38,9 @@ const ProductionReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/handover-production",
         {
           data: {
-            _id: queryParams.get("_id"),
-            company_id: queryParams.get("company_id"),
-            created_at: queryParams.get("created_at"),
-            created_by: queryParams.get("created_by"),
-            date: queryParams.get("date"),
-            id: queryParams.get("id"),
             id_hop: queryParams.get("id_hop"),
-            kategori: queryParams.get("kategori"),
-            lokasi: queryParams.get("lokasi"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            penerima_hop: {
-              company_user_id: queryParams.get("penerima_hop.company_user_id"),
-              email: queryParams.get("penerima_hop.email"),
-              name: queryParams.get("penerima_hop.name"),
-              photo: queryParams.get("penerima_hop.photo"),
-            },
             pkh_id: queryParams.get("pkh_id"),
-            shift: queryParams.get("shift"),
-            updated_at: queryParams.get("updated_at"),
-            updated_by: queryParams.get("updated_by"),
           },
         }
       )
@@ -69,10 +57,19 @@ const ProductionReport = () => {
         setUnitBD(res.data[0]?.unit_breakdown);
         setUnitSB(res.data[0]?.unit_standby);
         setCatatan(res.data[0]?.catatan);
-
         setDibuat(res.data[0]?.dibuat_oleh);
         setDiserahkan(res.data[0]?.diserahkan);
         setDiterima(res.data[0]?.diterima);
+
+        setTTD({
+          ttd_dibuat_oleh: res.data[0].ttd_dibuat_oleh,
+          ttd_diserahkan: res.data[0].ttd_diserahkan,
+          ttd_diterima: res.data[0].ttd_diterima,
+        });
+
+        console.log("====================================");
+        console.log(res.data[0]);
+        console.log("====================================");
       })
       .catch((err) => {
         alert(err);
@@ -511,9 +508,6 @@ const ProductionReport = () => {
                   {catatan}
                   <br />
                   <br />
-                  <br />
-                  <br />
-                  <br />
                 </td>
               </tbody>
             </Table>
@@ -525,17 +519,20 @@ const ProductionReport = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Dibuat oleh,</p>
-                  <p className="mt-5">({dibuat})</p>
+                  <img src={ttd.ttd_dibuat_oleh} width="100" />
+                  <p>({dibuat})</p>
                   <p className="fw-bold">Group Leader</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-bold">Diserahkan,</p>
-                  <p className="mt-5">({diserahkan})</p>
+                  <img src={ttd.ttd_diserahkan} width="100" />
+                  <p>({diserahkan})</p>
                   <p className="fw-bold">Section Head</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-bold">Diterima,</p>
-                  <p className="mt-5">({diterima})</p>
+                  <img src={ttd.ttd_diterima} width="100" />
+                  <p>({diterima})</p>
                   <p className="fw-bold">Group Leader</p>
                 </div>
               </div>
