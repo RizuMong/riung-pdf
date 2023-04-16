@@ -15,6 +15,14 @@ const ReportPitService = () => {
   const [dibuat_oleh, setDibuatOleh] = useState("");
   const [diserahkan_oleh, setDiserahkanOleh] = useState("");
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({
+    jabatan_dibuat_oleh: "",
+    jabatan_diserahkan_oleh: "",
+    jabatan_diterima: "",
+    ttd_dibuat_oleh: "",
+    ttd_diserahkan_oleh: "",
+    ttd_diterima_oleh: ""
+  });
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -29,7 +37,6 @@ const ReportPitService = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/handover-pit-service/report",
         {
           data: {
-            id: queryParams.get("id"),
             id_hops: queryParams.get("id_hops"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh: queryParams.get("pkh"),
@@ -43,8 +50,16 @@ const ReportPitService = () => {
         setTanggal(data[0]?.tanggal);
         setShift(data[0]?.shift);
         setPenerima(data[0]?.penerima_hops);
-        setDiserahkanOleh(data[0]?.diserahkan_oleh)
-        setDibuatOleh(data[0]?.dibuat_oleh)
+        setDiserahkanOleh(data[0]?.diserahkan_oleh);
+        setDibuatOleh(data[0]?.dibuat_oleh);
+        setData({
+          jabatan_dibuat_oleh: data[0]?.jabatan_dibuat_oleh,
+          jabatan_diserahkan_oleh: data[0]?.jabatan_diserahkan_oleh,
+          jabatan_diterima: data[0]?.jabatan_diterima,
+          ttd_dibuat_oleh: data[0].ttd_dibuat_oleh,
+          ttd_diserahkan_oleh: data[0].ttd_diserahkan_oleh,
+          ttd_diterima_oleh: data[0].ttd_diterima_oleh
+        })
       })
       .catch((err) => {
         alert(err);
@@ -157,18 +172,21 @@ const ReportPitService = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="text-sm">Dibuat oleh,</p>
-                  <p className="mt-4">({dibuat_oleh})</p>
-                  <p className="text-sm">Pit Service Group Leader</p>
+                  <img src={data?.ttd_dibuat_oleh} width="100" />
+                  <p>({dibuat_oleh})</p>
+                  <p className="text-sm">{data?.jabatan_dibuat_oleh}</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="text-sm">Diserahkan oleh:</p>
-                  <p className="mt-4">({diserahkan_oleh})</p>
-                  <p className="text-sm">Prod. Dept/Section Head</p>
+                  <img src={data?.ttd_diserahkan_oleh} width="100" />
+                  <p>({diserahkan_oleh})</p>
+                  <p className="text-sm">{data?.jabatan_diserahkan_oleh}</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="text-sm">Diterima oleh,</p>
-                  <p className="mt-4">({penerima})</p>
-                  <p className="text-sm">Pit Service Group Leader</p>
+                  <img src={data?.ttd_diterima_oleh} width="100" />
+                  <p>({penerima})</p>
+                  <p className="text-sm">{data?.jabatan_diterima}</p>
                 </div>
               </div>
             </div>
