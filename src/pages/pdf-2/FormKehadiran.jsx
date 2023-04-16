@@ -30,8 +30,7 @@ const FormKehadiran = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-hadir-peserta",
         {
           data: {
-            id_daftar_hadir: "kFgkawa4g",
-            // id_daftar_hadir: queryParams.get("id_daftar_hadir"),
+            id_daftar_hadir: queryParams.get("id_daftar_hadir"),
           }
         }
       )
@@ -149,7 +148,7 @@ const FormKehadiran = () => {
                 <th className="fw-normal align-middle">{item?.dept}</th>
                 <th className="fw-normal align-middle">{item?.jabatan}</th>
                 <th className="fw-normal align-middle">
-                  <img src={item.ttd_peserta} width="75" />
+                  <img src={item?.ttd_peserta} width="75" />
                 </th>
               </tr>
             ))}
