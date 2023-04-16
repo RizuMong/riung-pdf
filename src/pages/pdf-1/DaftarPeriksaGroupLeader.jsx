@@ -1154,7 +1154,7 @@ const DaftarPeriksaGroupLeader = () => {
                       <p className="fw-normal text-serif fw-semibold">
                         Diperiksa oleh,
                       </p>
-                      <img src={ttd.ttd_diperiksa} width="100"/>
+                      <img src={data?.ttd_diperiksa} width="100"/>
                       <p className="text-serif fw-normal">
                         {data.diperiksa}
                       </p>
@@ -1166,7 +1166,7 @@ const DaftarPeriksaGroupLeader = () => {
                       <p className="fw-normal text-serif fw-semibold">
                         Disetujui oleh,
                       </p>
-                      <img src={ttd.ttd_disetujui} width="100"/>
+                      <img src={data?.ttd_disetujui} width="100"/>
                       <p className="text-serif fw-normal">
                         {data.diperiksa}
                       </p>
