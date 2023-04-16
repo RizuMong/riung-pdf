@@ -28,8 +28,7 @@ const LogBookSectionReport = ({}) => {
       .post(
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
         {
-          // id_logbook: queryParams.get("id_logbook"),
-          id_logbook: "DXk4X7EVR",
+          id_logbook: queryParams.get("id_logbook"),
         }
       )
       .then((res) => {
@@ -41,10 +40,6 @@ const LogBookSectionReport = ({}) => {
           ttd_diterima: data.ttd_diterima,
           jabatan_diketahui: data.jabatan_diketahui,
         });
-
-        console.log("====================================");
-        console.log(data);
-        console.log("====================================");
       })
       .catch((err) => {
         alert(err);
@@ -256,7 +251,7 @@ const LogBookSectionReport = ({}) => {
                   <p className="fw-bold">Diketahui,</p>
                   <img src={ttd?.ttd_diketahui} width="100" />
                   <p className="fw-bold">({datas?.diketahui})</p>
-                  <p className="fw-bold">Production Dept Head</p>
+                  <p className="fw-bold">{ttd?.jabatan_diketahui}</p>
                 </div>
               </div>
             </div>
