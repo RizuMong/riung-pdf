@@ -18,6 +18,12 @@ const BlastDesign = () => {
   const [jam, setJam] = useState("");
   const [dibuat, setDibuat] = useState("");
   const [diterima, setDiterima] = useState("");
+  const [data_report, setDataReport] = useState({
+    powder_faktor_plan: "",
+    powder_factor_aktual: "",
+    volume_aktual: "",
+    volume_plan: "",
+  });
 
   // Lokasi Drilling
   const [pit, setPit] = useState("");
@@ -67,11 +73,8 @@ const BlastDesign = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/blast-design",
         {
           data: {
-            _id: queryParams.get("_id"),
-            id: queryParams.get("id"),
             id_blast_design: queryParams.get("id_blast_design"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            pkh_id: queryParams.get("pkh_id"),
           },
         }
       )
@@ -85,6 +88,12 @@ const BlastDesign = () => {
         setJam(data[0]?.jam);
         setDibuat(data[0]?.dibuat_oleh);
         setDiterima(data[0]?.diterima_oleh);
+        setDataReport({
+          powder_faktor_plan: data[0].powder_faktor_plan,
+          powder_factor_aktual: data[0].powder_factor_aktual,
+          volume_aktual: data[0].volume_aktual,
+          volume_plan: data[0].volume_plan,
+        });
 
         // Lokasi Drilling
         setPit(data[0]?.pit);
@@ -119,7 +128,9 @@ const BlastDesign = () => {
         setExel65pcs(data[0]?.exel_65_pcs);
 
         // Powder Faktor
-        setPowderFactorPlan(data[0].powder_factor_plan);
+        if (data[0] && data[0].powder_factor_plan) {
+          setPowderFactorPlan(data[0]?.powder_factor_plan);
+        }
 
         // Table Inhole Delay
         if (data && data[0].inhole_delay) {
@@ -133,6 +144,10 @@ const BlastDesign = () => {
             };
           });
           setTableInhale(result);
+
+          console.log("====================================");
+          console.log(data);
+          console.log("====================================");
         }
       })
       .catch((err) => {
@@ -390,11 +405,11 @@ const BlastDesign = () => {
                                   <th className="fw-normal">Actual</th>
                                 </tr>
                                 <tr>
-                                  <th className="fw-normal text-black fs-5">
-                                    <br />
+                                  <th className="fw-normal fs-5 text-sm">
+                                    {data_report?.volume_plan}
                                   </th>
-                                  <th className="fw-normal text-black fs-5">
-                                    <br />
+                                  <th className="fw-normal fs-5">
+                                    {data_report?.volume_aktual}
                                   </th>
                                 </tr>
                                 <tr>
@@ -403,15 +418,11 @@ const BlastDesign = () => {
                                   </th>
                                 </tr>
                                 <tr>
-                                  <th className="fw-normal">Plan</th>
-                                  <th className="fw-normal">Actual</th>
-                                </tr>
-                                <tr>
-                                  <th className="fw-normal text-black fs-5">
-                                    <br />
+                                  <th className="fw-normal">
+                                    {data_report?.powder_faktor_plan}
                                   </th>
-                                  <th className="fw-normal text-black fs-5">
-                                    <br />
+                                  <th className="fw-normal">
+                                    {data_report?.powder_factor_aktual}
                                   </th>
                                 </tr>
                               </thead>
