@@ -14,6 +14,8 @@ const ExcavatorControl = () => {
   const [shift, setShift] = useState("");
   const [penerima, setPenerima] = useState("");
   const [pit, setPit] = useState("");
+  const [ttd_dibuat_oleh, setTTD] = useState("");
+
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -46,6 +48,7 @@ const ExcavatorControl = () => {
         }
         setPenerima(res.data[0]?.penerima);
         setPit(res.data[0]?.pit);
+        setTTD(res.data[0]?.ttd_dibuat_oleh)
       })
       .catch((err) => {
         alert(err);
@@ -171,7 +174,8 @@ const ExcavatorControl = () => {
                 </div>
                 <div className="col-3 text-center">
                   <p>Dibuat oleh,</p>
-                  <p className="mt-5 border-bottom border-dark border-3 w-100">
+                  <img src={ttd_dibuat_oleh} width="100" />
+                  <p className="border-bottom border-dark border-3 w-100">
                     ({penerima})
                   </p>
                 </div>
