@@ -6,7 +6,7 @@ import LogoRiung from "../../assets/logo-riung3.jpg";
 import "../../styles/App.css";
 
 const LembarPica = () => {
-  const [datas, setDatas] = useState([]);
+  // const [datas, setDatas] = useState([]);
   const [bagian, setBagian] = useState("");
   const [jobsite, setJobsite] = useState("");
   const [lokasi, setLokasi] = useState("");
@@ -17,6 +17,8 @@ const LembarPica = () => {
   const [disiapkan_oleh, setDisiapkan_oleh] = useState("");
   const [tablePICA, setTablePICA] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ttd_disahkan, setDisahkan] = useState("")
+  const [ttd_disiapkan, setDisiapkan] = useState("")
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -29,25 +31,22 @@ const LembarPica = () => {
     axios
       .post("https://api-oos.jojonomic.com/23946/rios/generate-pdf/pica", {
         data: {
-          _id: queryParams.get("_id"),
-          id: queryParams.get("id"),
-          id_pica: queryParams.get("id_pica"),
-          // id_pica: "c5aDswa4R",
+          id_pica: queryParams.get("id_pica")
         },
       })
       .then((res) => {
         const { data } = res;
-        setDatas(data);
 
-        // Data Luar
-        setBagian(res.data.bagian);
-        setJobsite(res.data.jobsite);
-        setLokasi(res.data.lokasi);
-        setProses(res.data.proses);
-        setStart_date(res.data.start_date);
-        setEnd_date(res.data.end_date);
-        setDisahkan_oleh(res.data.disahkan_oleh);
-        setDisiapkan_oleh(res.data.disiapkan_oleh);
+        setBagian(data.bagian);
+        setJobsite(data.jobsite);
+        setLokasi(data.lokasi);
+        setProses(data.proses);
+        setStart_date(data.start_date);
+        setEnd_date(data.end_date);
+        setDisahkan_oleh(data.disahkan_oleh);
+        setDisiapkan_oleh(data.disiapkan_oleh);
+        setDisahkan(data.ttd_disahkan)
+        setDisiapkan(data.ttd_disiapkan)
 
         // Data PICA
         if (res && res.data.pica) {
@@ -85,9 +84,9 @@ const LembarPica = () => {
 
   if (loading) {
     return (
-      <div class="text-center pt-5">
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
@@ -160,7 +159,8 @@ const LembarPica = () => {
       <div className="d-flex justify-content-between px-5 mt-4">
         <div className="mt-2 align-content-center">
           <p>Disahkan oleh,</p>
-          <p className="mt-5 text-center border-bottom border-1 border-dark">
+          <img src={ttd_disahkan} width="100" />
+          <p className="text-center border-bottom border-1 border-dark">
             ({disahkan_oleh})
           </p>
         </div>
@@ -169,7 +169,8 @@ const LembarPica = () => {
             {lokasi}, {start_date}
           </p>
           <p>Disiapkan oleh,</p>
-          <p className="mt-6 text-center border-bottom border-1 border-dark">
+          <img src={ttd_disiapkan} width="100" />
+          <p className="text-center border-bottom border-1 border-dark">
             ({disiapkan_oleh})
           </p>
         </div>
