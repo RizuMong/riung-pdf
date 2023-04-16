@@ -30,12 +30,18 @@ const FormKehadiran = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-hadir-peserta",
         {
           data: {
-            id_daftar_hadir: queryParams.get("id_daftar_hadir"),
+            id_daftar_hadir: "kFgkawa4g",
+            // id_daftar_hadir: queryParams.get("id_daftar_hadir"),
           }
         }
       )
       .then((res) => {
         const { data } = res;
+
+        console.log(data);
+        console.log({
+          ttd: data.list[6].ttd_peserta
+        });
 
         setDatas(data);
         setJudul(res.data?.judul);
@@ -46,13 +52,14 @@ const FormKehadiran = () => {
 
         if (res && res.data.list[0]) {
           const result = res.data.list.map((item, index) => {
-            const { dept, jabatan, peserta, peserta_text } = item;
+            const { dept, jabatan, peserta, peserta_text, ttd_peserta } = item;
             return {
               id: index,
               dept,
               jabatan,
               peserta,
               peserta_text,
+              ttd_peserta
             };
           });
           setTableData(result);
@@ -141,7 +148,9 @@ const FormKehadiran = () => {
                 <th className="fw-normal align-middle">{item?.peserta || item?.peserta_text}</th>
                 <th className="fw-normal align-middle">{item?.dept}</th>
                 <th className="fw-normal align-middle">{item?.jabatan}</th>
-                <th className="fw-normal align-middle">{item?.ttd_peserta}</th>
+                <th className="fw-normal align-middle">
+                  <img src={item.ttd_peserta} width="75" />
+                </th>
               </tr>
             ))}
           </tbody>
