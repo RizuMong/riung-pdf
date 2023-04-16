@@ -13,6 +13,8 @@ const DaftarPeriksaGroupLeader = () => {
     shift: "",
     diperiksa: "",
     disetujui: "",
+    ttd_diperiksa: "",
+    ttd_disetujui: ""
   });
   const [loading, setLoading] = useState(true);
 
@@ -218,7 +220,7 @@ const DaftarPeriksaGroupLeader = () => {
             id_dpgl_open_channel: queryParams.get("id_dpgl_open_channel"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh_id: queryParams.get("pkh_id"),
-          }
+          },
         }
       )
       .then((res) => {
@@ -231,6 +233,8 @@ const DaftarPeriksaGroupLeader = () => {
           shift: data.shift,
           diperiksa: data.diperiksa,
           disetujui: data.disetujui,
+          ttd_diperiksa: data.ttd_diperiksa,
+          ttd_disetujui: data.ttd_disetujui
         });
 
         // Check Data True
@@ -943,8 +947,8 @@ const DaftarPeriksaGroupLeader = () => {
                       {penggalian_channel_unit_amphibi_note}
                     </td>
                     <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_alokasi}<br />{" "}
-                      {penggalian_channel_alokasi_note}
+                      {penggalian_channel_alokasi}
+                      <br /> {penggalian_channel_alokasi_note}
                     </td>
                     <td className="text-serif text-sm fw-bold">
                       {penggalian_channel_alat_kerja} <br />{" "}
@@ -1150,7 +1154,8 @@ const DaftarPeriksaGroupLeader = () => {
                       <p className="fw-normal text-serif fw-semibold">
                         Diperiksa oleh,
                       </p>
-                      <p className="mt-5 text-serif fw-normal">
+                      <img src={ttd.ttd_diperiksa} width="100"/>
+                      <p className="text-serif fw-normal">
                         {data.diperiksa}
                       </p>
                       <p className="border-top border-dark text-serif fw-semibold">
@@ -1161,7 +1166,8 @@ const DaftarPeriksaGroupLeader = () => {
                       <p className="fw-normal text-serif fw-semibold">
                         Disetujui oleh,
                       </p>
-                      <p className="mt-5 text-serif fw-normal">
+                      <img src={ttd.ttd_disetujui} width="100"/>
+                      <p className="text-serif fw-normal">
                         {data.diperiksa}
                       </p>
                       <p className="border-top border-dark text-serif fw-semibold">
