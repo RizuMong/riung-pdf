@@ -35,11 +35,6 @@ const FormKehadiran = () => {
       .then((res) => {
         const { data } = res;
 
-        console.log(data);
-        console.log({
-          ttd: data.list[6].ttd_peserta
-        });
-
         setDatas(data);
         setJudul(res.data?.judul);
         setTanggal(res.data?.tanggal);
