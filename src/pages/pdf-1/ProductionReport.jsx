@@ -66,10 +66,6 @@ const ProductionReport = () => {
           ttd_diserahkan: res.data[0].ttd_diserahkan,
           ttd_diterima: res.data[0].ttd_diterima,
         });
-
-        console.log("====================================");
-        console.log(res.data[0]);
-        console.log("====================================");
       })
       .catch((err) => {
         alert(err);

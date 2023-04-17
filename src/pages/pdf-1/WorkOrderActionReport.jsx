@@ -68,8 +68,6 @@ const WorkOrderActionReport = () => {
       .then((res) => {
         const { data } = res;
 
-        console.log(data);
-
         setData({
           // Data Luar
           jobsite: data.jobsite,

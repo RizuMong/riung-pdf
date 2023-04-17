@@ -47,8 +47,6 @@ const PerintahKerjaHarian = () => {
       )
       .then((res) => {
         const { data } = res;
-
-        console.log(data);
         setDatas(data.detail);
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);

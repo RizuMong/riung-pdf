@@ -14,9 +14,7 @@ const FormKehadiran = () => {
   const [notulen, setNotulen] = useState("");
   const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [ttd, setTTD] = useState("");
 
-  
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
 
