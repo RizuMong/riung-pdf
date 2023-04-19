@@ -7,7 +7,6 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const CheckAktivitasPeledakan = () => {
-  const [datas, setDatas] = useState([]);
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [lokasi, setLokasi] = useState("");
@@ -16,6 +15,12 @@ const CheckAktivitasPeledakan = () => {
   const [diketahui, setDiketahui] = useState("");
   const [rl, setRl] = useState("");
   const [loading, setLoading] = useState(true);
+  const [ttd, setTTD] = useState({
+    ttd_dibuat_oleh: "",
+    ttd_diketahui_oleh: "",
+    jabatan_dibuat_oleh: "",
+    jabatan_diketahui_oleh: "",
+  });
 
   // Data Sebelum 1
   const [q1_sebelum1a, setQ1Sebelum1a] = useState("");
@@ -115,8 +120,6 @@ const CheckAktivitasPeledakan = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/checklist-aktivitas-peledakan",
         {
           data: {
-            _id: queryParams.get("_id"),
-            id: queryParams.get("id"),
             id_checklist_peledakan: queryParams.get("id_checklist_peledakan"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
           },
@@ -124,18 +127,22 @@ const CheckAktivitasPeledakan = () => {
       )
       .then((res) => {
         const { data } = res;
-        setDatas(data);
 
         // Data Luar
-        setJam(res?.data[0]?.jam);
-        setJobsite(res?.data[0]?.jobsite);
-        setTanggal(res?.data[0]?.tanggal);
-        setLokasi(res?.data[0]?.lokasi);
-        setDibuat(res?.data[0]?.dibuat_oleh);
-        setDiketahui(res?.data[0]?.diketahui_oleh);
-        setRl(res?.data[0]?.rl);
+        setJam(data[0]?.jam);
+        setJobsite(data[0]?.jobsite);
+        setTanggal(data[0]?.tanggal);
+        setLokasi(data[0]?.lokasi);
+        setDibuat(data[0]?.dibuat_oleh);
+        setDiketahui(data[0]?.diketahui_oleh);
+        setRl(data[0]?.rl);
+        setTTD({
+          ttd_dibuat_oleh: data[0]?.ttd_dibuat_oleh,
+          ttd_diketahui_oleh: data[0]?.ttd_diketahui_oleh,
+          jabatan_dibuat_oleh: data[0]?.jabatan_dibuat_oleh,
+          jabatan_diketahui_oleh: data[0]?.jabatan_diketahui_oleh,
+        });
 
-        // Cek apabila datanya false maka kosong kalau true akan muncul ceklis
         const checkerTrue = (data, set) => {
           if (data == false) {
             set(" ");
@@ -250,15 +257,15 @@ const CheckAktivitasPeledakan = () => {
         alert(err);
       })
       .finally(() => {
-        setLoading(false)
+        setLoading(false);
       });
   };
 
   if (loading) {
     return (
-      <div class="text-center pt-5">
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
@@ -668,13 +675,15 @@ const CheckAktivitasPeledakan = () => {
               <div className="row align-items-center">
                 <div className="col-6 text-center gap-5">
                   <p className="fw-normal">Dibuat oleh,</p>
-                  <p className="mt-5">({dibuat})</p>
-                  <p className="fw-semibold">Blaster</p>
+                  <img src={ttd?.ttd_diketahui_oleh} width="100" />
+                  <p>({dibuat})</p>
+                  <p className="fw-semibold">{ttd?.jabatan_dibuat_oleh}</p>
                 </div>
                 <div className="col-6 text-center gap-5">
                   <p className="fw-normal">Diketahui Oleh,</p>
-                  <p className="mt-5">({diketahui})</p>
-                  <p className="fw-semibold">Drill & Blasting GL</p>
+                  <img src={ttd?.ttd_diketahui_oleh} width="100" />
+                  <p>({diketahui})</p>
+                  <p className="fw-semibold">{ttd?.jabatan_diketahui_oleh}</p>
                 </div>
               </div>
             </div>

@@ -22,6 +22,10 @@ const BeritaAcaraPeledakan = () => {
     disetujui_oleh_group_leader: "",
     disetujui_oleh_kepala_gudang: "",
     disetujui_oleh_kepala_teknik: "",
+    ttd_disetujui_oleh_group_leader: "",
+    jabatan_disetujui_oleh_group_leader: "",
+    ttd_juru_ledak: "",
+    jabatan_juru_ledak: "",
   });
 
   // Data Detail
@@ -113,6 +117,11 @@ const BeritaAcaraPeledakan = () => {
           disetujui_oleh_group_leader: data.disetujui_oleh_group_leader,
           disetujui_oleh_kepala_gudang: data.disetujui_oleh_kepala_gudang,
           disetujui_oleh_kepala_teknik: data.disetujui_oleh_kepala_teknik,
+          ttd_disetujui_oleh_group_leader: data.ttd_disetujui_oleh_group_leader,
+          jabatan_disetujui_oleh_group_leader:
+            data.jabatan_disetujui_oleh_group_leader,
+          ttd_juru_ledak: data.ttd_juru_ledak,
+          jabatan_juru_ledak: data.jabatan_juru_ledak,
         });
 
         setDetail((prevState) => ({
@@ -181,9 +190,9 @@ const BeritaAcaraPeledakan = () => {
 
   if (loading) {
     return (
-      <div class="text-center pt-5">
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
@@ -461,7 +470,8 @@ const BeritaAcaraPeledakan = () => {
                     <th rowSpan={5} className="fw-normal">
                       <p>Dibuat Oleh,</p>
                       <p>JURU LEDAK</p>
-                      <p className="mt-5">({data.juru_ledak})</p>
+                      <img src={data?.ttd_juru_ledak} width="80" />
+                      <p>({data.juru_ledak})</p>
                     </th>
                     <th className="fw-normal" colSpan={3}>
                       Diketahui oleh,
@@ -503,8 +513,15 @@ const BeritaAcaraPeledakan = () => {
                     <th className="fw-normal"></th>
                     <th className="fw-normal"></th>
                     <th className="fw-normal">Drill & Blast Group Leader</th>
-                    <th className="fw-normal">{data.disetujui_oleh_group_leader}</th>
-                    <th className="fw-normal"></th>
+                    <th className="fw-normal">
+                      {data.disetujui_oleh_group_leader}
+                    </th>
+                    <th className="fw-normal">
+                      <img
+                        src={data?.ttd_disetujui_oleh_group_leader}
+                        width="80"
+                      />
+                    </th>
                   </tr>
                 </thead>
               </Table>

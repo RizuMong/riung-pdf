@@ -9,7 +9,6 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const BlastDesign = () => {
-  const [datas, setDatas] = useState([]);
   const [tableInhale, setTableInhale] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -23,6 +22,12 @@ const BlastDesign = () => {
     powder_factor_aktual: "",
     volume_aktual: "",
     volume_plan: "",
+  });
+  const [ttd, setTTD] = useState({
+    ttd_dibuat_oleh: "",
+    ttd_diterima_oleh: "",
+    jabatan_dibuat_oleh: "",
+    jabatan_diterima_oleh: "",
   });
 
   // Lokasi Drilling
@@ -81,18 +86,22 @@ const BlastDesign = () => {
       .then((res) => {
         const { data } = res;
 
-        setDatas(data);
-
         // Data Luar
         setTanggal(data[0]?.tanggal);
         setJam(data[0]?.jam);
         setDibuat(data[0]?.dibuat_oleh);
         setDiterima(data[0]?.diterima_oleh);
         setDataReport({
-          powder_faktor_plan: data[0].powder_faktor_plan,
-          powder_factor_aktual: data[0].powder_factor_aktual,
-          volume_aktual: data[0].volume_aktual,
-          volume_plan: data[0].volume_plan,
+          powder_faktor_plan: data[0]?.powder_faktor_plan,
+          powder_factor_aktual: data[0]?.powder_factor_aktual,
+          volume_aktual: data[0]?.volume_aktual,
+          volume_plan: data[0]?.volume_plan,
+        });
+        setTTD({
+          ttd_dibuat_oleh: data[0]?.ttd_dibuat_oleh,
+          ttd_diterima_oleh: data[0]?.ttd_diterima_oleh,
+          jabatan_dibuat_oleh: data[0]?.jabatan_dibuat_oleh,
+          jabatan_diterima_oleh: data[0]?.jabatan_diterima_oleh,
         });
 
         // Lokasi Drilling
@@ -144,10 +153,6 @@ const BlastDesign = () => {
             };
           });
           setTableInhale(result);
-
-          console.log("====================================");
-          console.log(data);
-          console.log("====================================");
         }
       })
       .catch((err) => {
@@ -348,14 +353,16 @@ const BlastDesign = () => {
                       <th className="text-center d-flex justify-content-evenly gap-2">
                         <div className="mt-5 mb-5">
                           <p className="fw-normal">Dibuat Oleh,</p>
-                          <p className="fw-normal mt-5">({dibuat})</p>
-                          <p>Drill & Blast Eng</p>
+                          <img src={ttd?.ttd_dibuat_oleh} width="100" />
+                          <p className="fw-normal">({dibuat})</p>
+                          <p className="fw-semibold">{ttd?.ttd_dibuat_oleh}</p>
                         </div>
 
                         <div className="mb-5 mt-5">
                           <p className="fw-normal">Diterima Oleh,</p>
-                          <p className="fw-normal mt-5">({diterima})</p>
-                          <p>Drill & Blast GL</p>
+                          <img src={ttd?.ttd_diterima_oleh} width="100" />
+                          <p className="fw-normal">({diterima})</p>
+                          <p className="fw-semibold">{ttd?.ttd_diterima_oleh}</p>
                         </div>
                       </th>
                       <th style={{ verticalAlign: "middle" }}>

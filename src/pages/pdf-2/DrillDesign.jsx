@@ -14,6 +14,12 @@ const DrillDesign = () => {
   const [dibuat, setDibuat] = useState("");
   const [diketahui, setDiketahui] = useState("");
   const [loading, setLoading] = useState(true);
+  const [ttd, setTTD] = useState({
+    ttd_dibuat_oleh: "",
+    ttd_diketahui_oleh: "",
+    jabatan_dibuat_oleh: "",
+    jabatan_diketahui_oleh: "",
+  });
 
   // Lokasi Drilling
   const [pit, setPit] = useState("");
@@ -49,8 +55,6 @@ const DrillDesign = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/drill-design",
         {
           data: {
-            _id: queryParams.get("_id"),
-            id: queryParams.get("id"),
             id_drill_design: queryParams.get("id_drill_design"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
           },
@@ -59,34 +63,39 @@ const DrillDesign = () => {
       .then((res) => {
         const { data } = res;
         setDatas(data);
-
-        setJobsite(res.data[0]?.jobsite);
-        setTanggal(res.data[0]?.tanggal);
-        setShift(res.data[0]?.shift);
-        setKepada(res.data[0]?.kepada);
-        setDibuat(res.data[0]?.dibuat_oleh);
-        setDiketahui(res.data[0]?.diketahui_oleh);
+        setJobsite(data[0]?.jobsite);
+        setTanggal(data[0]?.tanggal);
+        setShift(data[0]?.shift);
+        setKepada(data[0]?.kepada);
+        setDibuat(data[0]?.dibuat_oleh);
+        setDiketahui(data[0]?.diketahui_oleh);
+        setTTD({
+          ttd_dibuat_oleh: data[0]?.ttd_dibuat_oleh,
+          ttd_diketahui_oleh: data[0]?.ttd_diketahui_oleh,
+          jabatan_dibuat_oleh: data[0]?.jabatan_dibuat_oleh,
+          jabatan_diketahui_oleh: data[0]?.jabatan_diketahui_oleh,
+        });
 
         // Lokasi Drilling
-        setPit(res?.data[0]?.pit);
-        setBlok(res?.data[0]?.blok);
-        setStrip(res?.data[0]?.strip);
-        setElevation(res?.data[0]?.elevation);
-        setDrilling_rl(res?.data[0]?.drilling_rl);
+        setPit(data[0]?.pit);
+        setBlok(data[0]?.blok);
+        setStrip(data[0]?.strip);
+        setElevation(data[0]?.elevation);
+        setDrilling_rl(data[0]?.drilling_rl);
 
         // Dimensi Drilling
-        setCn_unit(res?.data[0].cn_unit);
-        setHole_diameter(res?.data[0].hole_diameter);
-        setBurden(res?.data[0].burden);
-        setSpacing(res?.data[0].spacing);
-        setHole_depth(res?.data[0].hole_depth);
-        setStemming(res?.data[0].stemming);
-        setSubdrill(res?.data[0].subdrill);
-        setInclination(res?.data[0].inclination);
-        setPattern(res?.data[0].pattern);
-        setNo_of_hole(res?.data[0].no_of_hole);
-        setVolume(res?.data[0].volume);
-        setSketsa(res?.data[0]?.sketsa || "");
+        setCn_unit(data[0]?.cn_unit);
+        setHole_diameter(data[0]?.hole_diameter);
+        setBurden(data[0]?.burden);
+        setSpacing(data[0]?.spacing);
+        setHole_depth(data[0]?.hole_depth);
+        setStemming(data[0]?.stemming);
+        setSubdrill(data[0]?.subdrill);
+        setInclination(data[0]?.inclination);
+        setPattern(data[0]?.pattern);
+        setNo_of_hole(data[0]?.no_of_hole);
+        setVolume(data[0]?.volume);
+        setSketsa(data[0]?.sketsa || "");
       })
       .catch((err) => {
         alert(err);
@@ -215,13 +224,17 @@ const DrillDesign = () => {
                       <th className="text-center d-flex justify-content-evenly gap-5">
                         <div className="mt-5 mb-5">
                           <p className="fw-normal dibuat">Dibuat Oleh,</p>
-                          <p className="fw-normal mt-5">({dibuat})</p>
-                          <p className="dibuat">Drill & Blast Eng</p>
+                          <img src={ttd.ttd_dibuat_oleh} width="100" />
+                          <p>({dibuat})</p>
+                          <p className="dibuat">{ttd?.jabatan_dibuat_oleh}</p>
                         </div>
                         <div className="mb-5 mt-5">
                           <p className="fw-normal dibuat">Diketahui Oleh,</p>
-                          <p className="fw-normal mt-5">({diketahui})</p>
-                          <p className="diketahui">Prod Dept/Sect Head</p>
+                          <img src={ttd.ttd_diketahui_oleh} width="100" />
+                          <p>({diketahui})</p>
+                          <p className="diketahui">
+                            {ttd?.jabatan_diketahui_oleh}
+                          </p>
                         </div>
                       </th>
                     </tr>

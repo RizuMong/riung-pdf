@@ -7,7 +7,6 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const FormPengambilanBahanPeledak = () => {
-  const [datas, setDatas] = useState([]);
   const [dikawal, setDikawal] = useState("");
   const [diketahui, setDiketahui] = useState("");
   const [disetujui, setDisetujui] = useState("");
@@ -24,6 +23,12 @@ const FormPengambilanBahanPeledak = () => {
   const [tanggal, setTanggal] = useState("");
   const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ttd, setTTD] = useState({
+    ttd_pemohon: "",
+    jabatan_pemohon: "",
+    ttd_diterima: "",
+    jabatan_diterima: ""
+  });
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -38,35 +43,37 @@ const FormPengambilanBahanPeledak = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/formulir-pengambilan-bahan-peledak",
         {
           data: {
-            _id: queryParams.get("_id"),
-            id: queryParams.get("id"),
             id_pengambilan_bahan_peledak: queryParams.get(
               "id_pengambilan_bahan_peledak"
             ),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            pkh_id: queryParams.get("pkh_id"),
           }
         }
       )
       .then((res) => {
         const { data } = res;
-        setDatas(data);
 
         //Data Luar
-        setDikawal(res?.data[0]?.dikawal);
-        setDiketahui(res?.data[0]?.diketahui);
-        setDisetujui(res?.data[0]?.disetujui);
-        setDiterima(res?.data[0]?.diterima);
-        setDriver(res?.data[0]?.driver);
-        setJam(res?.data[0]?.jam);
-        setJobsite(res?.data[0]?.jobsite);
-        setLokasiEL(res?.data[0]?.lokasi_el_obj);
-        setLokasiRL(res?.data[0]?.lokasi_rl_obj);
-        setNomorMobil(res?.data[0]?.nomor_mobil);
-        setPemohon(res?.data[0]?.pemohon);
-        setPengambil(res?.data[0]?.pengambil);
-        setPetugasGudang(res?.data[0]?.petugas_gudang);
-        setTanggal(res?.data[0]?.tanggal);
+        setDikawal(data[0]?.dikawal);
+        setDiketahui(data[0]?.diketahui);
+        setDisetujui(data[0]?.disetujui);
+        setDiterima(data[0]?.diterima);
+        setDriver(data[0]?.driver);
+        setJam(data[0]?.jam);
+        setJobsite(data[0]?.jobsite);
+        setLokasiEL(data[0]?.lokasi_el_obj);
+        setLokasiRL(data[0]?.lokasi_rl_obj);
+        setNomorMobil(data[0]?.nomor_mobil);
+        setPemohon(data[0]?.pemohon);
+        setPengambil(data[0]?.pengambil);
+        setPetugasGudang(data[0]?.petugas_gudang);
+        setTanggal(data[0]?.tanggal);
+        setTTD({
+          ttd_pemohon: data[0]?.ttd_pemohon,
+          jabatan_pemohon: data[0]?.jabatan_pemohon,
+          ttd_diterima: data[0]?.ttd_diterima,
+          jabatan_diterima: data[0]?.jabatan_diterima
+        })
 
         if (res && Array.isArray(res.data) && res.data[0].line) {
           const data = res.data[0].line.map((item, index) => {
@@ -108,9 +115,9 @@ const FormPengambilanBahanPeledak = () => {
 
   if (loading) {
     return (
-      <div class="text-center pt-5">
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
@@ -250,8 +257,9 @@ const FormPengambilanBahanPeledak = () => {
                 <tr className="text-center align-middle">
                   <th rowSpan={5} className="fw-normal">
                     <p>Pemohon,</p>
-                    <p>Jabatan: Drill & Blast GL</p>
-                    <p className="mt-5">({pemohon})</p>
+                    <p>Jabatan: {ttd?.jabatan_pemohon}</p>
+                    <img src={ttd?.ttd_pemohon} width="100" />
+                    <p >({pemohon})</p>
                   </th>
                   <th className="fw-normal">Disetujui,</th>
                   <th className="fw-normal">NAMA</th>
@@ -288,9 +296,9 @@ const FormPengambilanBahanPeledak = () => {
                   <th className="fw-normal">POLISI</th>
                   <th className="fw-normal">{dikawal}</th>
                   <th className="fw-normal"></th>
-                  <th className="fw-normal">Drill & Blast Group Leader</th>
+                  <th className="fw-normal">{ttd?.jabatan_diterima}</th>
                   <th className="fw-normal">{diterima}</th>
-                  <th className="fw-normal"></th>
+                  <th className="fw-normal">{ttd?.ttd_diterima}</th>
                 </tr>
               </thead>
             </Table>

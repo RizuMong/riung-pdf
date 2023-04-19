@@ -52,6 +52,12 @@ const BlastingReport = () => {
     fragmentasi_attachment: 0,
     fragmentasi_baik_jelek: "",
     note: "",
+
+    // TTD
+    ttd_dilaporkan_oleh: "",
+    ttd_disetujui: "",
+    jabatan_dilaporkan_oleh: "",
+    jabatan_disetujui: ""
   });
 
   const [others_1, setOthers1] = useState([]);
@@ -134,6 +140,12 @@ const BlastingReport = () => {
           fragmentasi_attachment: data.fragmentasi_attachment,
           fragmentasi_baik_jelek: data.fragmentasi_baik_jelek,
           note: data.note,
+
+          // TTD
+          ttd_dilaporkan_oleh: data.ttd_dilaporkan_oleh,
+          ttd_disetujui: data.ttd_disetujui,
+          jabatan_dilaporkan_oleh: data.jabatan_dilaporkan_oleh,
+          jabatan_disetujui: data.jabatan_disetujui
         });
 
         // Cek Fragmentasi Jelek
@@ -502,20 +514,22 @@ const BlastingReport = () => {
                             <div className="d-flex gap-5">
                               <div className="mt-5 mb-5 text-center">
                                 <p className="fw-normal">Dilaporkan,</p>
-                                <p className="fw-normal mt-5">
+                                <img src={data?.ttd_dilaporkan_oleh} width="100" />
+                                <p className="fw-normal">
                                   ({data.dilaporkan})
                                 </p>
                                 <p className="text-lg fw-semibold">
-                                  Drill & Blast Eng
+                                  {data.jabatan_dilaporkan_oleh}
                                 </p>
                               </div>
                               <div className="mb-5 mt-5 text-center">
                                 <p className="fw-normal">Disetujui,</p>
-                                <p className="fw-normal mt-5">
+                                <img src={data?.ttd_disetujui} width="100" />
+                                <p className="fw-normal">
                                   ({data.disetujui})
                                 </p>
                                 <p className="text-lg fw-semibold">
-                                  Drill & Blast Eng
+                                  {data.jabatan_disetujui}
                                 </p>
                               </div>
                             </div>

@@ -6,9 +6,14 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const DrillingReport = () => {
-  const [datas, setDatas] = useState([]);
   const [tableInhole, setTableInhole] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ttd, setTTD] = useState({
+    ttd_dibuat_oleh: "",
+    ttd_diperiksa_oleh: "",
+    jabatan_dibuat_oleh: "",
+    jabatan_diperiksa_oleh: ""
+  });
 
   // Data Luar
   const [pit, setPit] = useState("");
@@ -47,12 +52,11 @@ const DrillingReport = () => {
           data: {
             id_drilling_report: queryParams.get("id_drilling_report"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-          }
+          },
         }
       )
       .then((res) => {
         const { data } = res;
-        setDatas(data);
 
         // Data Luar
         setPit(data?.pit);
@@ -61,6 +65,12 @@ const DrillingReport = () => {
         setShift(data?.shift);
         setDibuat(data?.dibuat_oleh);
         setDiperiksa(data?.diperiksa_oleh);
+        setTTD({
+          ttd_dibuat_oleh: data?.ttd_dibuat_oleh,
+          ttd_diperiksa_oleh: data?.ttd_diperiksa_oleh,
+          jabatan_dibuat_oleh: data?.jabatan_dibuat_oleh,
+          jabatan_diperiksa_oleh: data?.jabatan_diperiksa_oleh
+        })
 
         // Data Total
         setTotalHole(data?.total_no_of_hole);
@@ -142,12 +152,9 @@ const DrillingReport = () => {
 
   if (loading) {
     return (
-      <div class="text-center pt-5">
-        <div
-          class="spinner-border text-warning"
-          role="status"
-        >
-          <span class="visually-hidden">Loading...</span>
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
@@ -361,13 +368,15 @@ const DrillingReport = () => {
                 <div className="row border border-1 align-items-center">
                   <div className="col-3 text-center gap-5">
                     <p className="fw-normal">Dibuat Oleh,</p>
-                    <p className="fw-normal mt-5">({dibuat})</p>
-                    <p className="fw-bolnormal">Drilling & Blast GL</p>
+                    <img src={ttd?.ttd_dibuat_oleh} width="100" />
+                    <p className="fw-normal">({dibuat})</p>
+                    <p className="fw-normal">{ttd?.jabatan_dibuat_oleh}</p>
                   </div>
                   <div className="col-3 text-center gap-5">
                     <p className="fw-normal">Diperiksa Oleh,</p>
-                    <p className="fw-normal mt-5">({diperiksa})</p>
-                    <p className="fw-normal">Prod Dept/Sect. Head</p>
+                    <img src={ttd?.ttd_diperiksa_oleh} width="100" />
+                    <p className="fw-normal">({diperiksa})</p>
+                    <p className="fw-normal">{ttd?.jabatan_diperiksa_oleh}</p>
                   </div>
                   <div className="col-6">
                     <div className="d-flex justify-content-between">

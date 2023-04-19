@@ -9,8 +9,13 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const PemeriksaanKondisiLubangLedak = () => {
-  const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ttd, setTTD] = useState({
+    ttd_dibuat_oleh: "",
+    ttd_disetujui_oleh: "",
+    jabatan_dibuat_oleh: "",
+    jabatan_disetujui_oleh: ""
+  });
 
   // Data Header
   const [pit, setPit] = useState("");
@@ -64,57 +69,61 @@ const PemeriksaanKondisiLubangLedak = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/pemeriksaan-kondisi-kedalaman-lubang-ledak",
         {
           data: {
-            _id: queryParams.get("_id"),
-            id: queryParams.get("id"),
             id_pemeriksaan_kondisi_kedalaman_lubang_ledak: queryParams.get(
               "id_pemeriksaan_kondisi_kedalaman_lubang_ledak"
             ),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            pkh_id: queryParams.get("pkh_id"),
-          },
+          }
         }
       )
       .then((res) => {
         const { data } = res;
-        setDatas(data);
 
-        setPit(res?.data[0]?.pit);
-        setTanggal(res?.data[0]?.tanggal);
-        setShift(res?.data[0]?.shift);
-        setDisetujui(res?.data[0]?.disetujui_oleh);
-        setDibuat(res?.data[0]?.dibuat_oleh);
-        setSketsa(res?.data[0]?.data.sketsa);
-        setCatatan(res?.data[0]?.data.catatan);
+        console.log(data);
+
+        setPit(data[0]?.pit);
+        setTanggal(data[0]?.tanggal);
+        setShift(data[0]?.shift);
+        setDisetujui(data[0]?.disetujui_oleh);
+        setDibuat(data[0]?.dibuat_oleh);
+        setSketsa(data[0]?.data.sketsa);
+        setCatatan(data[0]?.data.catatan);
+        setTTD({
+          ttd_dibuat_oleh: data[0]?.ttd_dibuat_oleh,
+          ttd_disetujui_oleh: data[0]?.ttd_disetujui_oleh,
+          jabatan_dibuat_oleh: data[0]?.jabatan_dibuat_oleh,
+          jabatan_disetujui_oleh: data[0]?.jabatan_disetujui_oleh
+        })
 
         // Hasil Pemeriksaan
-        setPlanRl(res?.data[0]?.data.plan_rl);
-        setActual_rl(res?.data[0]?.data.actual_rl);
-        setKeterangan_rl(res?.data[0]?.data.keterangan_rl);
+        setPlanRl(data[0]?.data.plan_rl);
+        setActual_rl(data[0]?.data.actual_rl);
+        setKeterangan_rl(data[0]?.data.keterangan_rl);
 
-        setDiameter(res?.data[0]?.data.plan_diameter);
-        setActualDiameterHole(res?.data[0]?.data.actual_diameter_hole);
-        setKeteranganDiameter(res?.data[0]?.data.keterangan_diameter);
+        setDiameter(data[0]?.data.plan_diameter);
+        setActualDiameterHole(data[0]?.data.actual_diameter_hole);
+        setKeteranganDiameter(data[0]?.data.keterangan_diameter);
 
-        setPlanSpacing(res?.data[0]?.data.plan_spacing);
-        setActualSpacing(res?.data[0]?.data.actual_spacing);
-        setKeteranganSpacing(res?.data[0]?.data.keterangan_spacing);
+        setPlanSpacing(data[0]?.data.plan_spacing);
+        setActualSpacing(data[0]?.data.actual_spacing);
+        setKeteranganSpacing(data[0]?.data.keterangan_spacing);
 
-        setPlanBurden(res?.data[0]?.data.plan_burden);
-        setActualBurden(res?.data[0]?.data.actual_burden);
-        setKeteranganBurden(res?.data[0]?.data.keterangan_burden);
+        setPlanBurden(data[0]?.data.plan_burden);
+        setActualBurden(data[0]?.data.actual_burden);
+        setKeteranganBurden(data[0]?.data.keterangan_burden);
 
-        setTotalHole(res?.data[0]?.data.plan_total_hole);
-        setActualTotalHole(res?.data[0]?.data.actual_total_hole);
-        setKeteranganTotalHole(res?.data[0]?.data.keterangan_total_hole);
+        setTotalHole(data[0]?.data.plan_total_hole);
+        setActualTotalHole(data[0]?.data.actual_total_hole);
+        setKeteranganTotalHole(data[0]?.data.keterangan_total_hole);
 
-        setActualWet(res?.data[0]?.data.actual_wet);
-        setKeteranganWet(res?.data[0]?.data.keterangan_wet);
+        setActualWet(data[0]?.data.actual_wet);
+        setKeteranganWet(data[0]?.data.keterangan_wet);
 
-        setActualDry(res?.data[0]?.data.actual_dry);
-        setKeteranganDry(res?.data[0]?.data.keterangan_dry);
+        setActualDry(data[0]?.data.actual_dry);
+        setKeteranganDry(data[0]?.data.keterangan_dry);
 
-        setActualBroker(res?.data[0]?.data.actual_broken);
-        setKeteranganBroken(res?.data[0]?.data.keterangan_broken);
+        setActualBroker(data[0]?.data.actual_broken);
+        setKeteranganBroken(data[0]?.data.keterangan_broken);
       })
       .catch((err) => {
         alert(err);
@@ -126,9 +135,9 @@ const PemeriksaanKondisiLubangLedak = () => {
 
   if (loading) {
     return (
-      <div class="text-center pt-5">
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div className="text-center pt-5">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
@@ -335,13 +344,15 @@ const PemeriksaanKondisiLubangLedak = () => {
                         <div className="d-flex gap-5 justify-content-evenly">
                           <div>
                             <p className="fw-normal">Dibuat Oleh,</p>
-                            <p className="fw-normal mt-5">({dibuat})</p>
-                            <p className="fw-bold">Checker</p>
+                            <img src={ttd?.ttd_dibuat_oleh} width="100" />
+                            <p className="fw-normal">({dibuat})</p>
+                            <p className="fw-bold">{ttd?.jabatan_dibuat_oleh}</p>
                           </div>
                           <div>
                             <p className="fw-normal">Disetujui oleh,</p>
-                            <p className="fw-normal mt-5">({disetujui})</p>
-                            <p className="fw-bold">Drill & Blast Eng</p>
+                            <img src={ttd?.ttd_disetujui_oleh} width="100" />
+                            <p className="fw-normal">({disetujui})</p>
+                            <p className="fw-bold">{ttd?.jabatan_disetujui_oleh}</p>
                           </div>
                         </div>
                       </th>
