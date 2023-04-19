@@ -17,6 +17,14 @@ const RoadMaintenanceHandover = () => {
   const [dibuat, setDibuat] = useState("");
   const [diserahkan, setDiserahkan] = useState("");
   const [diterima, setDiterima] = useState("");
+  const [ttd, setTTD] = useState({
+    ttd_diterima_oleh: "",
+    ttd_diserahkan_oleh: "",
+    ttd_dibuat_oleh: "",
+    jabatan_diterima_oleh: "",
+    jabatan_diserahkan_oleh: "",
+    jabatan_dibuat_oleh: ""
+  });
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -31,25 +39,29 @@ const RoadMaintenanceHandover = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/road-maintenance/handover",
         {
           data: {
-            _id: queryParams.get("_id"),
-            id: queryParams.get("id"),
             id_horm: queryParams.get("id_horm"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            pkh: queryParams.get("pkh"),
           },
         }
       )
       .then((res) => {
         const { data } = res;
         setDatas(data);
-
-        setJobsite(res?.data[0]?.jobsite);
-        setTanggal(res?.data[0]?.tanggal);
-        setShift(res?.data[0]?.shift);
-        setDibuat(res?.data[0]?.dibuat_oleh);
-        setDiserahkan(res?.data[0]?.diserahkan_oleh);
-        setDiterima(res?.data[0]?.diterima_oleh);
-        setCatatan(res?.data[0]?.catatan_problem);
+        setJobsite(data[0]?.jobsite);
+        setTanggal(data[0]?.tanggal);
+        setShift(data[0]?.shift);
+        setDibuat(data[0]?.dibuat_oleh);
+        setDiserahkan(data[0]?.diserahkan_oleh);
+        setDiterima(data[0]?.diterima_oleh);
+        setCatatan(data[0]?.catatan_problem);
+        setTTD({
+          ttd_diterima_oleh: data[0]?.ttd_diterima_oleh,
+          ttd_diserahkan_oleh: data[0]?.ttd_diserahkan_oleh,
+          ttd_dibuat_oleh: data[0]?.ttd_dibuat_oleh,
+          jabatan_diterima_oleh: data[0]?.jabatan_diterima_oleh,
+          jabatan_diserahkan_oleh: data[0]?.jabatan_diserahkan_oleh,
+          jabatan_dibuat_oleh: data[0]?.jabatan_dibuat_oleh
+        });
       })
       .catch((err) => {
         alert(err);
@@ -116,7 +128,7 @@ const RoadMaintenanceHandover = () => {
             <hr className="w-100 mb-3 mt-2 solid" />
             {/* Content Table */}
             {/* Table Kegiatatan */}
-            <table class="table table-bordered caption-top mt-3">
+            <table className="table table-bordered caption-top mt-3">
               <caption className="text-black fw-semibold">Kegiatan</caption>
               <thead className="text-center">
                 <tr>
@@ -142,7 +154,7 @@ const RoadMaintenanceHandover = () => {
             </table>
 
             {/* Table Material ( Patching / resheeting ) */}
-            <table class="table table-bordered caption-top mt-3">
+            <table className="table table-bordered caption-top mt-3">
               <caption className="text-black fw-semibold">
                 Material ( Patching / resheeting )
               </caption>
@@ -181,7 +193,7 @@ const RoadMaintenanceHandover = () => {
             </table>
 
             {/* Table A2B & Water Trailler */}
-            <table class="table table-bordered caption-top mt-3">
+            <table className="table table-bordered caption-top mt-3">
               <caption className="text-black fw-semibold">
                 A2B & Water Trailler
               </caption>
@@ -215,15 +227,21 @@ const RoadMaintenanceHandover = () => {
               <div className="row align-items-center">
                 <div className="col-4 text-center gap-5">
                   <p className="fw-normal">Dibuat oleh,</p>
-                  <p className="mt-5">({dibuat})</p>
+                  <img src={ttd?.ttd_dibuat_oleh} width="100" />
+                  <p>{dibuat}</p>
+                  <p>({ttd?.jabatan_dibuat_oleh})</p>
                 </div>
                 <div className="col-4 text-center gap-5">
                   <p className="fw-normal">Diserahkan,</p>
-                  <p className="mt-5">({diserahkan})</p>
+                  <img src={ttd?.ttd_diserahkan_oleh} width="100" />
+                  <p>{diserahkan}</p>
+                  <p>({ttd?.jabatan_diserahkan_oleh})</p>
                 </div>
                 <div className="col-4 text-center">
                   <p className="fw-normal">Diterima,</p>
-                  <p className="mt-5">({diterima})</p>
+                  <img src={ttd?.ttd_diterima_oleh} width="100" />
+                  <p>{diterima}</p>
+                  <p>({ttd?.jabatan_diterima_oleh})</p>
                 </div>
               </div>
             </div>
