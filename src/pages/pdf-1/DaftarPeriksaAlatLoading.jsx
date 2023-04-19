@@ -13,6 +13,11 @@ const DaftarPeriksaAlatLoading = () => {
   const [shift, setShift] = useState("");
   const [penerima, setPenerima] = useState("");
   const [loading, setLoading] = useState(true);
+  const [jabatan, setJabatan] = useState({
+    ttd_penerima: "",
+    jabatan_penerima: "",
+    penerima: ""
+  });
 
   // Kolom 1
   const [cn1, setCn1] = useState("");
@@ -96,7 +101,6 @@ const DaftarPeriksaAlatLoading = () => {
               "id_daftar_kontaminasi_alat_loading"
             ),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            pkh: queryParams.get("pkh"),
           }
         }
       )
@@ -107,6 +111,11 @@ const DaftarPeriksaAlatLoading = () => {
         setTanggal(data[0].tanggal);
         setShift(data[0].shift);
         setPenerima(data[0].penerima);
+        setJabatan({
+          ttd_penerima: data[0]?.ttd_penerima,
+          jabatan_penerima: data[0]?.jabatan_penerima,
+          penerima: data[0]?.penerima
+        })
 
         const checker = (data, set) => {
           if (data == null) {
@@ -532,18 +541,13 @@ const DaftarPeriksaAlatLoading = () => {
             {/* Content Bottom */}
             <div className="container px-5 pt-3">
               <div className="row align-items-center">
-                <div className="col-4 text-center gap-5">
+                <div className="col-6 text-center gap-5">
                   <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
-                  <p className="mt-5">()</p>
-                  <p> Prod. Group Leader</p>
+                  <img src={jabatan.ttd_penerima} width="100" />
+                  <p>({jabatan.penerima})</p>
+                  <p>{jabatan?.jabatan_penerima}</p>
                 </div>
-                <div className="col-4 align-self-end">
-                  <p className="text-base">
-                    Distribusi : <u>Asli</u> : Production Dept., <u>Yellow</u> :
-                    Customer
-                  </p>
-                </div>
-                <div className="col-4 text-center">
+                <div className="col-6 text-center">
                   <p>Mengetahui,</p>
                   <p className="mt-5">({penerima})</p>
                   <p>Customer</p>

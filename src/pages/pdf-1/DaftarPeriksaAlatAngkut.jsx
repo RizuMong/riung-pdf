@@ -7,13 +7,17 @@ import LogoRiung from "../../assets/logo-riung.jpg";
 import "../../styles/App.css";
 
 const DaftarPeriksaAlatAngkut = () => {
-  // const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [jobsite, setJobsite] = useState("");
   const [customer, setCustomer] = useState("");
   const [pemeriksa, setPemeriksa] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
+
+  const [jabatan, setJabatan] = useState({
+    ttd_penerima: "",
+    jabatan_penerima: ""
+  });
 
   // Kolom 1
   const [q1a, setQ1a] = useState("");
@@ -200,20 +204,23 @@ const DaftarPeriksaAlatAngkut = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa-alat-angkut-batubara",
         {
           data: {
-            id_daftar_periksa_kontaminasi_alat_batubara: "6IzHXrL4R",
-            pkh: "qtUIX9Y4g",
+            id_daftar_periksa_kontaminasi_alat_batubara: queryParams.get("id_daftar_periksa_kontaminasi_alat_batubara"),
+            pkh: queryParams.get("pkh"),
           },
         }
       )
       .then((res) => {
         const { data } = res;
-        // setDatas(data);
-        setJobsite(data[0].jobsite);
-        setTanggal(data[0].tanggal);
-        setShift(data[0].shift);
-        setPemeriksa(data[0].pemeriksaan)
-        setCustomer(data[0].customer)
-
+        setJobsite(data[0]?.jobsite);
+        setTanggal(data[0]?.tanggal);
+        setShift(data[0]?.shift);
+        setPemeriksa(data[0]?.pemeriksaan)
+        setCustomer(data[0]?.customer)
+        setJabatan({
+          ttd_penerima: data[0]?.ttd_penerima,
+          jabatan_penerima: data[0]?.jabatan_penerima
+        })
+        
         const checker = (data, set) => {
           if (data == null) {
             set(" ");
@@ -757,8 +764,9 @@ const DaftarPeriksaAlatAngkut = () => {
               <div className="row align-items-center">
                 <div className="col-6 text-center gap-5">
                   <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
-                  <p className="mt-5">({pemeriksa})</p>
-                  <p> Prod. Group Leader</p>
+                  <img src={jabatan.ttd_penerima} width="100" />
+                  <p>({pemeriksa})</p>
+                  <p>{jabatan?.jabatan_penerima}</p>
                 </div>
                 <div className="col-6 text-center">
                   <p>Mengetahui,</p>

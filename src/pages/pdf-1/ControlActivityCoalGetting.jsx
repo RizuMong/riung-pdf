@@ -15,6 +15,10 @@ const ControlActivityCoalGetting = () => {
   const [customer, setCustomer] = useState("");
   const [group_leader, setGroupLeader] = useState("");
   const [loading, setLoading] = useState(true);
+  const [jabatan, setJabatan] = useState({
+    jabatan_prod_group_leader: "",
+    ttd_prod_group_leader: ""
+  });
 
   //Kolom 1
   const [cn1, setCn1] = useState("");
@@ -155,6 +159,10 @@ const ControlActivityCoalGetting = () => {
         setGroupLeader(data[0]?.prod_group_leader);
         setJobsite(data[0]?.jobsite);
         setShift(data[0]?.shift);
+        setJabatan({
+          jabatan_prod_group_leader: data[0]?.jabatan_prod_group_leader,
+          ttd_prod_group_leader: data[0]?.ttd_prod_group_leader
+        })
 
         // Kolom 1
         setPit1(data[0]?.data.pit);
@@ -679,8 +687,9 @@ const ControlActivityCoalGetting = () => {
               <div className="row align-items-center">
                 <div className="col-6 text-center gap-5">
                   <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
-                  <p className="mt-5">({group_leader})</p>
-                  <p> Prod. Group Leader</p>
+                  <img src={jabatan.ttd_prod_group_leader} width="100" />
+                  <p>({group_leader})</p>
+                  <p>{jabatan.jabatan_prod_group_leader}</p>
                 </div>
                 <div className="col-6 text-center">
                   <p>Mengetahui,</p>
