@@ -749,7 +749,7 @@ const DaftarPeriksaGroupLeader = () => {
                       {peralatan_body} <br /> {peralatan_body_note}
                     </td>
                     <td className="text-serif text-sm fw-bold">
-                      {peralatan_jadwal} <br /> {peralatan_body_note}
+                      {peralatan_jadwal} <br /> {peralatan_jadwal_note}
                     </td>
                   </tr>
                 </tbody>
