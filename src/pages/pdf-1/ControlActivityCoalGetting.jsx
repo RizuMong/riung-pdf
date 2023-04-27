@@ -147,10 +147,7 @@ const ControlActivityCoalGetting = () => {
               "id_control_activity_coal_getting"
             ),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            lokasi_pkh: {
-              id: queryParams.get("lokasi_pkh.id"),
-              name: queryParams.get("lokasi_pkh.name"),
-            },
+            lokasi_pkh: queryParams.get("lokasi_pkh"),
           },
         }
       )
