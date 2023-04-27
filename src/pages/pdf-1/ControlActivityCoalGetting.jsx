@@ -17,7 +17,7 @@ const ControlActivityCoalGetting = () => {
   const [loading, setLoading] = useState(true);
   const [jabatan, setJabatan] = useState({
     jabatan_prod_group_leader: "",
-    ttd_prod_group_leader: ""
+    ttd_prod_group_leader: "",
   });
 
   //Kolom 1
@@ -147,7 +147,10 @@ const ControlActivityCoalGetting = () => {
               "id_control_activity_coal_getting"
             ),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            id_lokasi_pkh: queryParams.get("lokasi_pkh.id"),
+            lokasi_pkh: {
+              id: queryParams.get("id"),
+              name: queryParams.get("name"),
+            },
           },
         }
       )
@@ -162,8 +165,8 @@ const ControlActivityCoalGetting = () => {
         setShift(data[0]?.shift);
         setJabatan({
           jabatan_prod_group_leader: data[0]?.jabatan_prod_group_leader,
-          ttd_prod_group_leader: data[0]?.ttd_prod_group_leader
-        })
+          ttd_prod_group_leader: data[0]?.ttd_prod_group_leader,
+        });
 
         // Kolom 1
         setPit1(data[0]?.data.pit);
