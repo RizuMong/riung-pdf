@@ -16,8 +16,8 @@ const LembarPica = () => {
   const [disiapkan_oleh, setDisiapkan_oleh] = useState("");
   const [tablePICA, setTablePICA] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [ttd_disahkan, setDisahkan] = useState("")
-  const [ttd_disiapkan, setDisiapkan] = useState("")
+  const [ttd_disahkan, setDisahkan] = useState("");
+  const [ttd_disiapkan, setDisiapkan] = useState("");
 
   const windowUrl = window.location.search;
   const queryParams = new URLSearchParams(windowUrl);
@@ -30,7 +30,7 @@ const LembarPica = () => {
     axios
       .post("https://api-oos.jojonomic.com/23946/rios/generate-pdf/pica", {
         data: {
-          id_pica: queryParams.get("id_pica")
+          id_pica: queryParams.get("id_pica"),
         },
       })
       .then((res) => {
@@ -44,8 +44,8 @@ const LembarPica = () => {
         setEnd_date(data.end_date);
         setDisahkan_oleh(data.disahkan_oleh);
         setDisiapkan_oleh(data.disiapkan_oleh);
-        setDisahkan(data.ttd_disahkan)
-        setDisiapkan(data.ttd_disiapkan)
+        setDisahkan(data.ttd_disahkan);
+        setDisiapkan(data.ttd_disiapkan);
 
         // Data PICA
         if (res && res.data.pica) {
@@ -157,21 +157,31 @@ const LembarPica = () => {
       {/* Content Bottom */}
       <div className="d-flex justify-content-between px-5 mt-4">
         <div className="mt-2 align-content-center">
-          <p>Disahkan oleh,</p>
+          {/* <p>Disahkan oleh,</p>
           <img src={ttd_disahkan} width="100" />
           <p className="text-center border-bottom border-1 border-dark">
             ({disahkan_oleh})
+          </p> */}
+          <p>Disiapkan oleh,</p>
+          <img src={ttd_disiapkan} width="100" />
+          <p className="text-center border-bottom border-1 border-dark">
+            ({disiapkan_oleh})
           </p>
         </div>
         <div>
           <p>
             {lokasi}, {start_date}
           </p>
-          <p>Disiapkan oleh,</p>
+          <p>Disahkan oleh,</p>
+          <img src={ttd_disahkan} width="100" />
+          <p className="text-center border-bottom border-1 border-dark">
+            ({disahkan_oleh})
+          </p>
+          {/* <p>Disiapkan oleh,</p>
           <img src={ttd_disiapkan} width="100" />
           <p className="text-center border-bottom border-1 border-dark">
             ({disiapkan_oleh})
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
