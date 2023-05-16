@@ -298,7 +298,9 @@ const FormPengambilanBahanPeledak = () => {
                   <th className="fw-normal"></th>
                   <th className="fw-normal">{ttd?.jabatan_diterima}</th>
                   <th className="fw-normal">{diterima}</th>
-                  <th className="fw-normal">{ttd?.ttd_diterima}</th>
+                  <th className="fw-normal">
+                    <img src={ttd?.ttd_diterima} alt="TTD Diterima"  width="100"/>
+                  </th>
                 </tr>
               </thead>
             </Table>
