@@ -355,14 +355,14 @@ const BlastDesign = () => {
                           <p className="fw-normal">Dibuat Oleh,</p>
                           <img src={ttd?.ttd_dibuat_oleh} width="100" />
                           <p className="fw-normal">({dibuat})</p>
-                          <p className="fw-semibold">{ttd?.ttd_dibuat_oleh}</p>
+                          <p className="fw-semibold">{ttd?.jabatan_dibuat_oleh}</p>
                         </div>
 
                         <div className="mb-5 mt-5">
                           <p className="fw-normal">Diterima Oleh,</p>
                           <img src={ttd?.ttd_diterima_oleh} width="100" />
                           <p className="fw-normal">({diterima})</p>
-                          <p className="fw-semibold">{ttd?.ttd_diterima_oleh}</p>
+                          <p className="fw-semibold">{ttd?.jabatan_diterima_oleh}</p>
                         </div>
                       </th>
                       <th style={{ verticalAlign: "middle" }}>
