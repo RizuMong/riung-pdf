@@ -157,13 +157,8 @@ const LembarPica = () => {
       {/* Content Bottom */}
       <div className="d-flex justify-content-between px-5 mt-4">
         <div className="mt-2 align-content-center">
-          {/* <p>Disahkan oleh,</p>
-          <img src={ttd_disahkan} width="100" />
-          <p className="text-center border-bottom border-1 border-dark">
-            ({disahkan_oleh})
-          </p> */}
-          <p>Disiapkan oleh,</p>
-          <img src={ttd_disiapkan} width="100" />
+          <p className="mx-2">Disiapkan oleh,</p>
+          <img className="mx-2" src={ttd_disiapkan} width="100" />
           <p className="text-center border-bottom border-1 border-dark">
             ({disiapkan_oleh})
           </p>
@@ -172,16 +167,11 @@ const LembarPica = () => {
           <p>
             {lokasi}, {start_date}
           </p>
-          <p>Disahkan oleh,</p>
-          <img src={ttd_disahkan} width="100" />
+          <p className="mx-2">Disahkan oleh,</p>
+          <img className="mx-3" src={ttd_disahkan} width="100" />
           <p className="text-center border-bottom border-1 border-dark">
             ({disahkan_oleh})
           </p>
-          {/* <p>Disiapkan oleh,</p>
-          <img src={ttd_disiapkan} width="100" />
-          <p className="text-center border-bottom border-1 border-dark">
-            ({disiapkan_oleh})
-          </p> */}
         </div>
       </div>
     </div>
