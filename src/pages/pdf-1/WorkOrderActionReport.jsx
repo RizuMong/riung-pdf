@@ -29,6 +29,7 @@ const WorkOrderActionReport = () => {
     jabatan_diterima_eng: "",
     departemen_diterima_eng: "",
     ttd_diterima_eng: "",
+    departemen_diterima_eng: "",
 
     // Data Prod (Actual)
     actual_overburden: 0,
@@ -42,6 +43,7 @@ const WorkOrderActionReport = () => {
     tanggal_dilaporkan: "",
     ttd_dilaporkan_prod: "",
     ttd_diterima_prod: "",
+    departemen_diterima_prod: ""
   });
   const [detail, seDetail] = useState([]);
   const [attachment, seAttachment] = useState([]);
@@ -61,6 +63,7 @@ const WorkOrderActionReport = () => {
         {
           data: {
             id_work_order: queryParams.get("id_work_order"),
+            id_work_order: "WCtHYkU4R",
           },
         }
       )
@@ -87,6 +90,7 @@ const WorkOrderActionReport = () => {
           departemen_diterima_eng: data.departemen_eng,
           ttd_diterima_eng: data.ttd_diterima_eng,
           tanggal_diorder: data.tanggal_diorder,
+          departemen_diterima_eng: data.departemen_diterima_eng,
 
           // Data Prod (Actual)
           actual_overburden: data.actual_overburden,
@@ -96,11 +100,12 @@ const WorkOrderActionReport = () => {
           diterima_oleh_prod: data.diterima_oleh_prod,
           dilaporkan_oleh: data.dilaporkan_oleh,
 
-          jabatan_diterima_prod: data.jabatan_prod,
+          jabatan_diterima_prod: data.jabatan_diterima_prod,
           departemen_diterima_prod: data.departemen_prod,
           tanggal_dilaporkan: data.tanggal_dilaporkan,
           ttd_dilaporkan_prod: data.ttd_dilaporkan_prod,
           ttd_diterima_prod: data.ttd_diterima_prod,
+          departemen_diterima_prod: data.departemen_diterima_prod,
         });
 
         if (data && data.attachment) {
@@ -345,7 +350,9 @@ const WorkOrderActionReport = () => {
                     </p>
                     <p>DIORDER OLEH,</p>
                     <img src={data?.ttd_diorder} width="100" />
-                    <p className="border-top border-1">({data.diorder_oleh})</p>
+                    <p className="mt-5 border-top border-1">
+                      ({data.diorder_oleh})
+                    </p>
                   </th>
                   <th width="25%" className="fw-semibold px-1 align-top">
                     <p>DITERIMA OLEH,</p>
