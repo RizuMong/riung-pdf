@@ -61,7 +61,6 @@ const WorkOrderActionReport = () => {
         {
           data: {
             id_work_order: queryParams.get("id_work_order"),
-            // id_work_order: "JD1O_7P4g",
           },
         }
       )
@@ -280,8 +279,11 @@ const WorkOrderActionReport = () => {
                 </td>
                 <td className="text-sm border-0 text-center fw-semibold">
                   {evidence &&
-                    evidence?.map((item) => (
-                      <img width="150" src={item?.url} alt={item?.name} />
+                    evidence.map((item, index) => (
+                      <div key={index}>
+                        <img width="150" src={item?.url} alt={item?.name} />
+                        <br />
+                      </div>
                     ))}
                 </td>
               </tr>
@@ -310,9 +312,6 @@ const WorkOrderActionReport = () => {
             <Table className="m-0">
               <thead>
                 <tr>
-                  {/* <th className="text-sm fw-normal">
-                    GAMBAR ACUAN YANG DIGUNAKAN NO:
-                  </th> */}
                   <th
                     width="50%"
                     className="fw-semibold border-start border-1 align-top"
@@ -413,8 +412,11 @@ const WorkOrderActionReport = () => {
         </div>
         {/* Tempat Attachment */}
         {attachment &&
-          attachment?.map((gambar) => (
-            <img width="1000" src={gambar?.url} alt={gambar?.name} />
+          attachment.map((item, index) => (
+            <div key={index}>
+              <img width="1000" src={item?.url} alt={item?.name} />
+              <br />
+            </div>
           ))}
       </div>
     </div>
