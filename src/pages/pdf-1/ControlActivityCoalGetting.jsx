@@ -15,6 +15,7 @@ const ControlActivityCoalGetting = () => {
   const [customer, setCustomer] = useState("");
   const [group_leader, setGroupLeader] = useState("");
   const [loading, setLoading] = useState(true);
+  const [deviasi, setDeviasi] = useState([]);
   const [jabatan, setJabatan] = useState({
     jabatan_prod_group_leader: "",
     ttd_prod_group_leader: "",
@@ -143,11 +144,14 @@ const ControlActivityCoalGetting = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/control-activity-coal-getting",
         {
           data: {
-            id_control_activity_coal_getting: queryParams.get(
-              "id_control_activity_coal_getting"
-            ),
-            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            lokasi_pkh: queryParams.get("lokasi_pkh"),
+            // id_control_activity_coal_getting: queryParams.get(
+            //   "id_control_activity_coal_getting"
+            // ),
+            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            // lokasi_pkh: queryParams.get("lokasi_pkh"),
+            id_control_activity_coal_getting: "MAekrz84R",
+            lokasi_pkh_id: "Tzskrk84g",
+            lokasi_pkh: "",
           },
         }
       )
@@ -160,10 +164,15 @@ const ControlActivityCoalGetting = () => {
         setGroupLeader(data[0]?.prod_group_leader);
         setJobsite(data[0]?.jobsite);
         setShift(data[0]?.shift);
+        setDeviasi(data[0].deviasi);
         setJabatan({
           jabatan_prod_group_leader: data[0]?.jabatan_prod_group_leader,
           ttd_prod_group_leader: data[0]?.ttd_prod_group_leader,
         });
+
+        console.log('====================================');
+        console.log(data);
+        console.log('====================================');
 
         // Kolom 1
         setPit1(data[0]?.data.pit);
@@ -294,415 +303,428 @@ const ControlActivityCoalGetting = () => {
   }
 
   return (
-    <div className="container-fluid">
-      <div className="mt-1 mb-1">
-        <p className="text-end fst-italic">FRM – OPR - 021</p>
-        <div className="border border-2 border-dark">
-          <div className="p-3">
-            {/* Header */}
-            {/* Header Table */}
-            <table className="table">
-              <thead>
-                <th className="col-4">
-                  {" "}
-                  <div className="d-flex gap-3 mb-3">
-                    <img
-                      className="pl-2 mb-4"
-                      src={LogoRiung}
-                      width="120"
-                      height="60"
-                      alt="Logo RIUNG"
-                    />
-                    <h5 className="fw-bold header-pt">
-                      PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
-                      {jobsite}
-                    </h5>
-                  </div>
-                </th>
-                <div className="vr" style={{ height: 100 }}></div>
-                <th className="col-5">
-                  <h1 className="header-coal-getting mb-8">
-                    CONTROL ACTIVITY COAL GETTING
-                  </h1>
-                </th>
-                <div className="vr" style={{ height: 100 }}></div>
-                <th className="col-3">
-                  <div className="mb-4">
-                    <p className="mb-2 pt-1 px-2 fw-semibold text-alat">
-                      HARI/TANGGAL: {tanggal}
+    <>
+      <div className="container-fluid">
+        <div className="mt-1 mb-1">
+          <p className="text-end fst-italic">FRM – OPR - 021</p>
+          <div className="border border-2 border-dark">
+            <div className="p-3">
+              {/* Header */}
+              {/* Header Table */}
+              <table className="table">
+                <thead>
+                  <th className="col-4">
+                    {" "}
+                    <div className="d-flex gap-3 mb-3">
+                      <img
+                        className="pl-2 mb-4"
+                        src={LogoRiung}
+                        width="120"
+                        height="60"
+                        alt="Logo RIUNG"
+                      />
+                      <h5 className="fw-bold header-pt">
+                        PT. RIUNG MITRA LESTARI PRODUCTION DEPARTMENT JOB SITE{" "}
+                        {jobsite}
+                      </h5>
+                    </div>
+                  </th>
+                  <div className="vr" style={{ height: 100 }}></div>
+                  <th className="col-5">
+                    <h1 className="header-coal-getting mb-8">
+                      CONTROL ACTIVITY COAL GETTING
+                    </h1>
+                  </th>
+                  <div className="vr" style={{ height: 100 }}></div>
+                  <th className="col-3">
+                    <div className="mb-4">
+                      <p className="mb-2 pt-1 px-2 fw-semibold text-alat">
+                        HARI/TANGGAL: {tanggal}
+                      </p>
+                      <hr className="w-100" />
+                      <p className="mb-2 px-2 fw-semibold text-alat">
+                        PIT & SHIFT: {lokasi} & {shift}
+                      </p>
+                      <hr className="w-100" />
+                      <p className="mb-2 px-2 fw-semibold text-alat">
+                        HALAMAN:{" "}
+                      </p>
+                      <hr className="w-100" />
+                    </div>
+                  </th>
+                </thead>
+              </table>
+
+              <hr className="w-100 mb-3 mt-2 solid" />
+              {/* Content Table */}
+              <Table responsive bordered hover>
+                <thead className="text-center">
+                  <tr>
+                    <th
+                      rowSpan={2}
+                      width="15%"
+                      scope="col-3"
+                      className="header-table-coal2 align-middle"
+                    >
+                      PEMERIKSAAN
+                    </th>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      C/N UNIT: {cn1}
+                    </th>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      C/N UNIT: {cn2}
+                    </th>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      C/N UNIT: {cn3}
+                    </th>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      C/N UNIT: {cn4}
+                    </th>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      C/N UNIT: {cn5}
+                    </th>
+                    <th
+                      scope="col-3"
+                      rowSpan={2}
+                      width="15%"
+                      className="header-table-coal2 align-middle"
+                    >
+                      KETERANGAN
+                    </th>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      PIT: {pit1}
+                      <br />
+                      SEAM: {seam1}
+                    </th>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      PIT: {pit2}
+                      <br />
+                      SEAM: {seam2}
+                    </th>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      PIT: {pit3}
+                      <br />
+                      SEAM: {seam3}
+                    </th>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      PIT: {pit4}
+                      <br />
+                      SEAM: {seam4}
+                    </th>
+                    <th
+                      scope="col-3"
+                      width="14%"
+                      className="header-table-coal text-start"
+                    >
+                      PIT: {pit5}
+                      <br />
+                      SEAM: {seam5}
+                    </th>
+                  </tr>
+                </thead>
+
+                {/* Jumlah DT */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>
+                      Jumlah DT:
+                      <br />
+                      Plan:
+                      <br />
+                      Actual:
+                    </td>
+                    <td className="text-center">
+                      <br /> {dt_plan1} <br /> {dt_actual1}
+                    </td>
+                    <td className="text-center">
+                      {" "}
+                      <br /> {dt_plan2} <br /> {dt_actual2}
+                    </td>
+                    <td className="text-center">
+                      {" "}
+                      <br /> {dt_plan3} <br /> {dt_actual3}
+                    </td>
+                    <td className="text-center">
+                      {" "}
+                      <br /> {dt_plan4} <br /> {dt_actual4}
+                    </td>
+                    <td className="text-center">
+                      {" "}
+                      <br /> {dt_plan5} <br /> {dt_actual5}
+                    </td>
+                    <td className="text-center"></td>
+                  </tr>
+                </tbody>
+                {/* Loading */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>
+                      Loading
+                      <br />
+                      <div className="d-flex gap-4">
+                        <span>Start:</span>
+                        <span>-</span>
+                        <span>Stop:</span>
+                      </div>
+                      <div className="d-flex gap-4">
+                        <span>Start:</span>
+                        <span>-</span>
+                        <span>Stop:</span>
+                      </div>
+                    </td>
+                    <td className="text-center text-sm">
+                      {" "}
+                      <br /> {loading_start1a} - {loading_stop1a} <br />{" "}
+                      {loading_start2a} - {loading_stop2a}{" "}
+
+                    </td>
+                    <td className="text-center text-sm">
+                      {" "}
+                      <br /> {loading_start1b} - {loading_stop1b} <br />{" "}
+                      {loading_start2b} - {loading_stop2b}{" "}
+                    </td>
+                    <td className="text-center text-sm">
+                      {" "}
+                      <br /> {loading_start1c} - {loading_start2c} <br />{" "}
+                      {loading_stop1c} - {loading_stop2c}{" "}
+                    </td>
+                    <td className="text-center text-sm">
+                      {" "}
+                      <br /> {loading_start1d} - {loading_start2d} <br />{" "}
+                      {loading_stop1d} - {loading_stop2d}{" "}
+                    </td>
+                    <td className="text-center text-sm">
+                      {" "}
+                      <br /> {loading_start1e} - {loading_start2e} <br />{" "}
+                      {loading_stop1e} - {loading_stop2e}{" "}
+                    </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+                {/* Jalan Hauling */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>
+                      Jalan Hauling
+                      <br />
+                      <div className="d-flex gap-4">
+                        <span>Hujan:</span>
+                        <span>-</span>
+                        <span>Slippery:</span>
+                      </div>
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {jalan_hauling_hujan1} - {jalan_hauling_slippery1}
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {jalan_hauling_hujan2} - {jalan_hauling_slippery2}
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {jalan_hauling_hujan3} - {jalan_hauling_slippery3}
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {jalan_hauling_hujan4} - {jalan_hauling_slippery4}
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {jalan_hauling_hujan5} - {jalan_hauling_slippery5}
+                    </td>
+                    <td className="text-center text-sm"></td>
+                  </tr>
+                </tbody>
+                {/* Area Pit */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>
+                      Area PIT
+                      <br />
+                      <div className="d-flex gap-4">
+                        <span>Hujan:</span>
+                        <span>-</span>
+                        <span>Slippery:</span>
+                      </div>
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {area_pit_hujan1} - {area_pit_slippery1}
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {area_pit_hujan2} - {area_pit_slippery2}
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {area_pit_hujan3} - {area_pit_slippery3}
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {area_pit_hujan4} - {area_pit_slippery4}
+                    </td>
+                    <td className="text-center text-sm">
+                      <br />
+                      {area_pit_hujan5} - {area_pit_slippery5}
+                    </td>
+                    <td className="text-center text-sm"></td>
+                  </tr>
+                </tbody>
+                {/* Size Coal */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>Size Coal:</td>
+                    <td className="text-center">{size_coal1}</td>
+                    <td className="text-center">{size_coal2}</td>
+                    <td className="text-center">{size_coal3}</td>
+                    <td className="text-center">{size_coal4}</td>
+                    <td className="text-center">{size_coal5}</td>
+                    <td className="text-center"></td>
+                  </tr>
+                </tbody>
+                {/* Cleaning */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>Cleaning:</td>
+                    <td className="text-center">{cleaning1}</td>
+                    <td className="text-center">{cleaning2}</td>
+                    <td className="text-center">{cleaning3}</td>
+                    <td className="text-center">{cleaning4}</td>
+                    <td className="text-center">{cleaning5}</td>
+                    <td className="text-center"></td>
+                  </tr>
+                </tbody>
+                {/* Kontaminasi */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>Kontaminasi OB:</td>
+                    <td className="text-center">{kontaminasi1}</td>
+                    <td className="text-center">{kontaminasi2}</td>
+                    <td className="text-center">{kontaminasi3}</td>
+                    <td className="text-center">{kontaminasi4}</td>
+                    <td className="text-center">{kontaminasi5}</td>
+                    <td className="text-center"></td>
+                  </tr>
+                </tbody>
+                {/* Kontaminasi Dirty Coal */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>Kontaminasi dirty coal:</td>
+                    <td className="text-center">{kontaminasi_dirty_coal1}</td>
+                    <td className="text-center">{kontaminasi_dirty_coal2}</td>
+                    <td className="text-center">{kontaminasi_dirty_coal3}</td>
+                    <td className="text-center">{kontaminasi_dirty_coal4}</td>
+                    <td className="text-center">{kontaminasi_dirty_coal5}</td>
+                    <td className="text-center"></td>
+                  </tr>
+                </tbody>
+                {/* Kantongan Air */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>Kantongan air:</td>
+                    <td className="text-center">{kantongan_air1}</td>
+                    <td className="text-center">{kantongan_air2}</td>
+                    <td className="text-center">{kantongan_air3}</td>
+                    <td className="text-center">{kantongan_air4}</td>
+                    <td className="text-center">{kantongan_air5}</td>
+                    <td className="text-center"></td>
+                  </tr>
+                </tbody>
+                {/* Kelayakan Jalan */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>Kelayakan jalan:</td>
+                    <td className="text-center">{kelayakan_akses1}</td>
+                    <td className="text-center">{kelayakan_akses2}</td>
+                    <td className="text-center">{kelayakan_akses3}</td>
+                    <td className="text-center">{kelayakan_akses4}</td>
+                    <td className="text-center">{kelayakan_akses5}</td>
+                    <td className="text-center"></td>
+                  </tr>
+                </tbody>
+                {/* Metode Loading */}
+                <tbody className="text-start">
+                  <tr>
+                    <td>Metode loading:</td>
+                    <td className="text-center">{metode_loading1}</td>
+                    <td className="text-center">{metode_loading2}</td>
+                    <td className="text-center">{metode_loading3}</td>
+                    <td className="text-center">{metode_loading4}</td>
+                    <td className="text-center">{metode_loading5}</td>
+                    <td className="text-center"></td>
+                  </tr>
+                </tbody>
+              </Table>
+
+              <hr className="w-100 mb-3 mt-2 solid" />
+              {/* Content Bottom */}
+              <div className="container px-5 pt-3">
+                <div className="row align-items-center">
+                  <div className="col-6 text-center gap-5">
+                    <p>
+                      Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,
                     </p>
-                    <hr className="w-100" />
-                    <p className="mb-2 px-2 fw-semibold text-alat">
-                      PIT & SHIFT: {lokasi} & {shift}
-                    </p>
-                    <hr className="w-100" />
-                    <p className="mb-2 px-2 fw-semibold text-alat">HALAMAN: </p>
-                    <hr className="w-100" />
+                    <img src={jabatan.ttd_prod_group_leader} width="100" />
+                    <p>({group_leader})</p>
+                    <p>{jabatan.jabatan_prod_group_leader}</p>
                   </div>
-                </th>
-              </thead>
-            </table>
-
-            <hr className="w-100 mb-3 mt-2 solid" />
-            {/* Content Table */}
-            <Table responsive bordered hover>
-              <thead className="text-center">
-                <tr>
-                  <th
-                    rowSpan={2}
-                    width="15%"
-                    scope="col-3"
-                    className="header-table-coal2 align-middle"
-                  >
-                    PEMERIKSAAN
-                  </th>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    C/N UNIT: {cn1}
-                  </th>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    C/N UNIT: {cn2}
-                  </th>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    C/N UNIT: {cn3}
-                  </th>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    C/N UNIT: {cn4}
-                  </th>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    C/N UNIT: {cn5}
-                  </th>
-                  <th
-                    scope="col-3"
-                    rowSpan={2}
-                    width="15%"
-                    className="header-table-coal2 align-middle"
-                  >
-                    KETERANGAN
-                  </th>
-                </tr>
-                <tr>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: {pit1}
-                    <br />
-                    SEAM: {seam1}
-                  </th>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: {pit2}
-                    <br />
-                    SEAM: {seam2}
-                  </th>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: {pit3}
-                    <br />
-                    SEAM: {seam3}
-                  </th>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: {pit4}
-                    <br />
-                    SEAM: {seam4}
-                  </th>
-                  <th
-                    scope="col-3"
-                    width="14%"
-                    className="header-table-coal text-start"
-                  >
-                    PIT: {pit5}
-                    <br />
-                    SEAM: {seam5}
-                  </th>
-                </tr>
-              </thead>
-
-              {/* Jumlah DT */}
-              <tbody className="text-start">
-                <tr>
-                  <td>
-                    Jumlah DT:
-                    <br />
-                    Plan:
-                    <br />
-                    Actual:
-                  </td>
-                  <td className="text-center">
-                    <br /> {dt_plan1} <br /> {dt_actual1}
-                  </td>
-                  <td className="text-center">
-                    {" "}
-                    <br /> {dt_plan2} <br /> {dt_actual2}
-                  </td>
-                  <td className="text-center">
-                    {" "}
-                    <br /> {dt_plan3} <br /> {dt_actual3}
-                  </td>
-                  <td className="text-center">
-                    {" "}
-                    <br /> {dt_plan4} <br /> {dt_actual4}
-                  </td>
-                  <td className="text-center">
-                    {" "}
-                    <br /> {dt_plan5} <br /> {dt_actual5}
-                  </td>
-                  <td className="text-center"></td>
-                </tr>
-              </tbody>
-              {/* Loading */}
-              <tbody className="text-start">
-                <tr>
-                  <td>
-                    Loading
-                    <br />
-                    <div className="d-flex gap-4">
-                      <span>Start:</span>
-                      <span>-</span>
-                      <span>Stop:</span>
-                    </div>
-                    <div className="d-flex gap-4">
-                      <span>Start:</span>
-                      <span>-</span>
-                      <span>Stop:</span>
-                    </div>
-                  </td>
-                  <td className="text-center text-sm">
-                    {" "}
-                    <br /> {loading_start1a} - {loading_start2a} <br />{" "}
-                    {loading_stop1a} - {loading_stop2a}{" "}
-                  </td>
-                  <td className="text-center text-sm">
-                    {" "}
-                    <br /> {loading_start1b} - {loading_start2b} <br />{" "}
-                    {loading_stop1b} - {loading_stop2b}{" "}
-                  </td>
-                  <td className="text-center text-sm">
-                    {" "}
-                    <br /> {loading_start1c} - {loading_start2c} <br />{" "}
-                    {loading_stop1c} - {loading_stop2c}{" "}
-                  </td>
-                  <td className="text-center text-sm">
-                    {" "}
-                    <br /> {loading_start1d} - {loading_start2d} <br />{" "}
-                    {loading_stop1d} - {loading_stop2d}{" "}
-                  </td>
-                  <td className="text-center text-sm">
-                    {" "}
-                    <br /> {loading_start1e} - {loading_start2e} <br />{" "}
-                    {loading_stop1e} - {loading_stop2e}{" "}
-                  </td>
-                  <td></td>
-                </tr>
-              </tbody>
-              {/* Jalan Hauling */}
-              <tbody className="text-start">
-                <tr>
-                  <td>
-                    Jalan Hauling
-                    <br />
-                    <div className="d-flex gap-4">
-                      <span>Hujan:</span>
-                      <span>-</span>
-                      <span>Slippery:</span>
-                    </div>
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {jalan_hauling_hujan1} - {jalan_hauling_slippery1}
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {jalan_hauling_hujan2} - {jalan_hauling_slippery2}
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {jalan_hauling_hujan3} - {jalan_hauling_slippery3}
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {jalan_hauling_hujan4} - {jalan_hauling_slippery4}
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {jalan_hauling_hujan5} - {jalan_hauling_slippery5}
-                  </td>
-                  <td className="text-center text-sm"></td>
-                </tr>
-              </tbody>
-              {/* Area Pit */}
-              <tbody className="text-start">
-                <tr>
-                  <td>
-                    Area PIT
-                    <br />
-                    <div className="d-flex gap-4">
-                      <span>Hujan:</span>
-                      <span>-</span>
-                      <span>Slippery:</span>
-                    </div>
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {area_pit_hujan1} - {area_pit_slippery1}
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {area_pit_hujan2} - {area_pit_slippery2}
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {area_pit_hujan3} - {area_pit_slippery3}
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {area_pit_hujan4} - {area_pit_slippery4}
-                  </td>
-                  <td className="text-center text-sm">
-                    <br />
-                    {area_pit_hujan5} - {area_pit_slippery5}
-                  </td>
-                  <td className="text-center text-sm"></td>
-                </tr>
-              </tbody>
-              {/* Size Coal */}
-              <tbody className="text-start">
-                <tr>
-                  <td>Size Coal:</td>
-                  <td className="text-center">{size_coal1}</td>
-                  <td className="text-center">{size_coal2}</td>
-                  <td className="text-center">{size_coal3}</td>
-                  <td className="text-center">{size_coal4}</td>
-                  <td className="text-center">{size_coal5}</td>
-                  <td className="text-center"></td>
-                </tr>
-              </tbody>
-              {/* Cleaning */}
-              <tbody className="text-start">
-                <tr>
-                  <td>Cleaning:</td>
-                  <td className="text-center">{cleaning1}</td>
-                  <td className="text-center">{cleaning2}</td>
-                  <td className="text-center">{cleaning3}</td>
-                  <td className="text-center">{cleaning4}</td>
-                  <td className="text-center">{cleaning5}</td>
-                  <td className="text-center"></td>
-                </tr>
-              </tbody>
-              {/* Kontaminasi */}
-              <tbody className="text-start">
-                <tr>
-                  <td>Kontaminasi OB:</td>
-                  <td className="text-center">{kontaminasi1}</td>
-                  <td className="text-center">{kontaminasi2}</td>
-                  <td className="text-center">{kontaminasi3}</td>
-                  <td className="text-center">{kontaminasi4}</td>
-                  <td className="text-center">{kontaminasi5}</td>
-                  <td className="text-center"></td>
-                </tr>
-              </tbody>
-              {/* Kontaminasi Dirty Coal */}
-              <tbody className="text-start">
-                <tr>
-                  <td>Kontaminasi dirty coal:</td>
-                  <td className="text-center">{kontaminasi_dirty_coal1}</td>
-                  <td className="text-center">{kontaminasi_dirty_coal2}</td>
-                  <td className="text-center">{kontaminasi_dirty_coal3}</td>
-                  <td className="text-center">{kontaminasi_dirty_coal4}</td>
-                  <td className="text-center">{kontaminasi_dirty_coal5}</td>
-                  <td className="text-center"></td>
-                </tr>
-              </tbody>
-              {/* Kantongan Air */}
-              <tbody className="text-start">
-                <tr>
-                  <td>Kantongan air:</td>
-                  <td className="text-center">{kantongan_air1}</td>
-                  <td className="text-center">{kantongan_air2}</td>
-                  <td className="text-center">{kantongan_air3}</td>
-                  <td className="text-center">{kantongan_air4}</td>
-                  <td className="text-center">{kantongan_air5}</td>
-                  <td className="text-center"></td>
-                </tr>
-              </tbody>
-              {/* Kelayakan Jalan */}
-              <tbody className="text-start">
-                <tr>
-                  <td>Kelayakan jalan:</td>
-                  <td className="text-center">{kelayakan_akses1}</td>
-                  <td className="text-center">{kelayakan_akses2}</td>
-                  <td className="text-center">{kelayakan_akses3}</td>
-                  <td className="text-center">{kelayakan_akses4}</td>
-                  <td className="text-center">{kelayakan_akses5}</td>
-                  <td className="text-center"></td>
-                </tr>
-              </tbody>
-              {/* Metode Loading */}
-              <tbody className="text-start">
-                <tr>
-                  <td>Metode loading:</td>
-                  <td className="text-center">{metode_loading1}</td>
-                  <td className="text-center">{metode_loading2}</td>
-                  <td className="text-center">{metode_loading3}</td>
-                  <td className="text-center">{metode_loading4}</td>
-                  <td className="text-center">{metode_loading5}</td>
-                  <td className="text-center"></td>
-                </tr>
-              </tbody>
-            </Table>
-
-            <hr className="w-100 mb-3 mt-2 solid" />
-            {/* Content Bottom */}
-            <div className="container px-5 pt-3">
-              <div className="row align-items-center">
-                <div className="col-6 text-center gap-5">
-                  <p>Pemeriksaan tersebut sudah dilakukan dengan benar Oleh,</p>
-                  <img src={jabatan.ttd_prod_group_leader} width="100" />
-                  <p>({group_leader})</p>
-                  <p>{jabatan.jabatan_prod_group_leader}</p>
-                </div>
-                <div className="col-6 text-center">
-                  <p>Mengetahui,</p>
-                  <p className="mt-5">({customer})</p>
-                  <p>Customer</p>
+                  <div className="col-6 text-center">
+                    <p>Mengetahui,</p>
+                    <p className="mt-5">({customer})</p>
+                    <p>Customer</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      {deviasi &&
+        deviasi.map((item, index) => (
+          <div key={index}>
+            <img width="1000" src={item} />
+          </div>
+        ))}
+    </>
   );
 };
 
