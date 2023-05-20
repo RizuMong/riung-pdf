@@ -11,12 +11,13 @@ const DaftarPeriksaAlatLoading = () => {
   const [jobsite, setJobsite] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [shift, setShift] = useState("");
-  const [penerima, setPenerima] = useState("");
+  const [pit, setPit] = useState("");
+  const [customer, setCustomer] = useState("");
   const [loading, setLoading] = useState(true);
   const [jabatan, setJabatan] = useState({
     ttd_penerima: "",
     jabatan_penerima: "",
-    penerima: ""
+    penerima: "",
   });
 
   // Kolom 1
@@ -101,21 +102,22 @@ const DaftarPeriksaAlatLoading = () => {
               "id_daftar_kontaminasi_alat_loading"
             ),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-          }
+          },
         }
       )
       .then((res) => {
         const { data } = res;
         setDatas(data);
-        setJobsite(data[0].jobsite);
-        setTanggal(data[0].tanggal);
-        setShift(data[0].shift);
-        setPenerima(data[0].penerima);
+        setJobsite(data[0]?.jobsite);
+        setTanggal(data[0]?.tanggal);
+        setShift(data[0]?.shift);
+        setPit(data[0]?.pit);
+        setCustomer(data[0]?.customer);
         setJabatan({
           ttd_penerima: data[0]?.ttd_penerima,
           jabatan_penerima: data[0]?.jabatan_penerima,
-          penerima: data[0]?.penerima
-        })
+          penerima: data[0]?.penerima,
+        });
 
         const checker = (data, set) => {
           if (data == null) {
@@ -252,7 +254,7 @@ const DaftarPeriksaAlatLoading = () => {
                     </p>
                     <hr className="w-100" />
                     <p className="mb-1 px-2 fw-semibold text-alat">
-                      PIT & SHIFT: {shift}
+                      PIT & SHIFT: {pit} & {shift}
                     </p>
                     <hr className="w-100" />
                     <p className="mb-1 px-2 fw-semibold text-alat">HALAMAN: </p>
@@ -549,7 +551,7 @@ const DaftarPeriksaAlatLoading = () => {
                 </div>
                 <div className="col-6 text-center">
                   <p>Mengetahui,</p>
-                  <p className="mt-5">({penerima})</p>
+                  <p className="mt-5">({customer})</p>
                   <p>Customer</p>
                 </div>
               </div>
