@@ -41,7 +41,7 @@ const ProductionReport = () => {
             id_hop: queryParams.get("id_hop"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh_id: queryParams.get("pkh_id"),
-          },
+          }
         }
       )
       .then((res) => {
@@ -61,10 +61,14 @@ const ProductionReport = () => {
         setDiserahkan(res.data[0]?.diserahkan);
         setDiterima(res.data[0]?.diterima);
 
+        console.log("====================================");
+        console.log(data);
+        console.log("====================================");
+
         setTTD({
-          ttd_dibuat_oleh: res.data[0].ttd_dibuat_oleh,
-          ttd_diserahkan: res.data[0].ttd_diserahkan,
-          ttd_diterima: res.data[0].ttd_diterima,
+          ttd_dibuat_oleh: res.data[0]?.ttd_dibuat_oleh,
+          ttd_diserahkan: res.data[0]?.ttd_diserahkan,
+          ttd_diterima: res.data[0]?.ttd_diterima,
         });
       })
       .catch((err) => {
@@ -344,125 +348,144 @@ const ProductionReport = () => {
 
               {/* Data */}
               <tbody className="text-start">
-                {datas?.map((item, index) => (
-                  <tr key={index}>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.cn_loader}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.cn_hauler}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.pit}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.block}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.seam}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.front_loading_material_type}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.front_loading_plan}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.front_loading_action}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.front_loading_condition}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.front_loading_support_equipment}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.raad_condition}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.road_support_equipment}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.dumping_point_pile}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.dumping_point_plan}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.dumping_point_action}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.dumping_point_condition}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.dumping_point_support_equipment}
-                    </th>
-                    <th
-                      scope="col"
-                      colSpan={2}
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.dumping_point_distance}
-                    </th>
-                    <th
-                      scope="col"
-                      className="header-table-production2 fw-normal align-middle"
-                    >
-                      {item.line.remarks}
-                    </th>
-                  </tr>
-                ))}
+                {datas?.map((item, index) => {
+                  function FuncDataSpasi(text) {
+                    const lines = text.split("\n");
+                    return (
+                      <div>
+                        {lines.map((line, index) => (
+                          <React.Fragment key={index}>
+                            {line}
+                            <br />
+                          </React.Fragment>
+                        ))}
+                      </div>
+                    );
+                  }
+
+                  const data = item.line.remarks;
+
+                  return (
+                    <tr key={index}>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.cn_loader}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.cn_hauler}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.pit}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.block}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.seam}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.front_loading_material_type}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.front_loading_plan}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.front_loading_action}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.front_loading_condition}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.front_loading_support_equipment}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.raad_condition}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.road_support_equipment}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.dumping_point_pile}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.dumping_point_plan}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.dumping_point_action}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.dumping_point_condition}
+                      </th>
+                      <th
+                        scope="col"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.dumping_point_support_equipment}
+                      </th>
+                      <th
+                        scope="col"
+                        colSpan={2}
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        {item.line.dumping_point_distance}
+                      </th>
+                      <th
+                        scope="col"
+                        id="data-remarks"
+                        className="header-table-production2 fw-normal align-middle"
+                      >
+                        <div>{FuncDataSpasi(data)}</div>
+                      </th>
+                    </tr>
+                  );
+                })}
               </tbody>
             </Table>
 
@@ -500,7 +523,7 @@ const ProductionReport = () => {
                 <td className="text-sm fw-semibold border border-1">
                   {unit_sb}
                 </td>
-                <td className="text-sm fw-semibold border border-1">
+                <td className="text-sm fw-semibold border border-1 text-start">
                   {catatan}
                   <br />
                   <br />
