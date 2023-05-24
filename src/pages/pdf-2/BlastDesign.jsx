@@ -17,6 +17,7 @@ const BlastDesign = () => {
   const [jam, setJam] = useState("");
   const [dibuat, setDibuat] = useState("");
   const [diterima, setDiterima] = useState("");
+  const [sketsa, setSketsa] = useState("");
   const [data_report, setDataReport] = useState({
     powder_faktor_plan: "",
     powder_factor_aktual: "",
@@ -86,11 +87,13 @@ const BlastDesign = () => {
       .then((res) => {
         const { data } = res;
 
+        console.log(data);
         // Data Luar
         setTanggal(data[0]?.tanggal);
         setJam(data[0]?.jam);
         setDibuat(data[0]?.dibuat_oleh);
         setDiterima(data[0]?.diterima_oleh);
+        setSketsa(data[0]?.sketsa)
         setDataReport({
           powder_faktor_plan: data[0]?.powder_faktor_plan,
           powder_factor_aktual: data[0]?.powder_factor_aktual,
@@ -242,11 +245,11 @@ const BlastDesign = () => {
                         className="fw-semibold"
                       >
                         <h5 className="fs-6 p-1 fw-semibold">SKETSA</h5>
-                        {/* <img
+                        <img
                           src={sketsa}
                           alt="Gambar Sketsa"
-                          width="100px"
-                        /> */}
+                          width="700px"
+                        />
                       </th>
                     </tr>
 
