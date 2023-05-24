@@ -62,7 +62,6 @@ const WorkOrderActionReport = () => {
         {
           data: {
             id_work_order: queryParams.get("id_work_order"),
-            // id_work_order: "WCtHYkU4R",
           },
         }
       )

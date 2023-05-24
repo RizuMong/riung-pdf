@@ -11,13 +11,13 @@ const DaftarPeriksaLeader = () => {
   const [tanggal, setTanggal] = useState("");
   const [lokasi, setLokasi] = useState("");
   const [shift, setShift] = useState("");
+  const [catatan, setCatatan] = useState("");
   const [diperiksa, setDiperiksa] = useState("");
   const [disetujui, setDisetujui] = useState("");
   const [ttd, setTTD] = useState({
     ttd_diperiksa: "",
     ttd_disetujui: ""
   });
-
 
   // Loading Area
   const [loading_area_bebas_genang, SetLoading_area_bebas_genang] =
@@ -186,7 +186,7 @@ const DaftarPeriksaLeader = () => {
         const { data } = res;
 
         console.log(data);
-
+        setCatatan(data?.catatan)
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);
         setShift(data?.shift);
@@ -959,9 +959,7 @@ const DaftarPeriksaLeader = () => {
             <div className="d-flex align-items-center">
               <div className="col-4 mb-3 mt-4 w-75">
                 <h5 className="header-leader text-serif">8. CATATAN</h5>
-                <p className="border-bottom border-dark">.</p>
-                <p className="border-bottom border-dark">.</p>
-                <p className="border-bottom border-dark">.</p>
+                <p className="border-bottom border-dark">{catatan}</p>
               </div>
 
               {/* Tanda Tangan */}
