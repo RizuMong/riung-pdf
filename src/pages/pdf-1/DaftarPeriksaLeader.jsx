@@ -184,8 +184,7 @@ const DaftarPeriksaLeader = () => {
       )
       .then((res) => {
         const { data } = res;
-
-        console.log(data);
+        
         setCatatan(data?.catatan)
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);

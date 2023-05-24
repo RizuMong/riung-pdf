@@ -12,7 +12,7 @@ const DrillingReport = () => {
     ttd_dibuat_oleh: "",
     ttd_diperiksa_oleh: "",
     jabatan_dibuat_oleh: "",
-    jabatan_diperiksa_oleh: ""
+    jabatan_diperiksa_oleh: "",
   });
 
   // Data Luar
@@ -22,6 +22,16 @@ const DrillingReport = () => {
   const [shift, setShift] = useState("");
   const [dibuat, setDibuat] = useState("");
   const [diperiksa, setDiperiksa] = useState("");
+
+  // Data Design
+  const [design, setDesign] = useState({
+    blok: "",
+    strip: "",
+    elevation_plan: "",
+    elevation_action: "",
+    no_of_hole: "",
+    hole_depth: "",
+  });
 
   // Data Total
   const [total_of_hole, setTotalHole] = useState("");
@@ -69,7 +79,17 @@ const DrillingReport = () => {
           ttd_dibuat_oleh: data?.ttd_dibuat_oleh,
           ttd_diperiksa_oleh: data?.ttd_diperiksa_oleh,
           jabatan_dibuat_oleh: data?.jabatan_dibuat_oleh,
-          jabatan_diperiksa_oleh: data?.jabatan_diperiksa_oleh
+          jabatan_diperiksa_oleh: data?.jabatan_diperiksa_oleh,
+        });
+
+        // Data Design
+        setDesign({
+          blok: data?.blok,
+          strip: data?.strip,
+          elevation_plan: data?.elevation_plan,
+          elevation_action: data?.elevation_action,
+          no_of_hole: data?.no_of_hole,
+          hole_depth: data?.hole_depth,
         })
 
         // Data Total
@@ -311,12 +331,12 @@ const DrillingReport = () => {
                         className="text-center text-black align-middle"
                       >
                         <td>{item?.cn_unit}</td>
-                        <td>{item?.lokasi_blok}</td>
-                        <td>{item?.lokasi_strip}</td>
-                        <td>{item?.elv_actual}</td>
-                        <td>{item?.elv_plan}</td>
-                        <td>{item?.no_of_hole}</td>
-                        <td>{item?.depth}</td>
+                        <td>{design?.blok}</td>
+                        <td>{design?.strip}</td>
+                        <td>{design?.elevation_action}</td>
+                        <td>{design?.elevation_plan}</td>
+                        <td>{design?.no_of_hole}</td>
+                        <td>{design?.hole_depth}</td>
                         <td>{item?.work}</td>
                         <td>{item?.d01}</td>
                         <td>{item?.d02}</td>
