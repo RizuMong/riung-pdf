@@ -29,7 +29,7 @@ const WorkOrderActionReport = () => {
     jabatan_diterima_eng: "",
     departemen_diterima_eng: "",
     ttd_diterima_eng: "",
-    departemen_diterima_eng: "",
+    // departemen_diterima_eng: "",
 
     // Data Prod (Actual)
     actual_overburden: 0,
@@ -43,7 +43,6 @@ const WorkOrderActionReport = () => {
     tanggal_dilaporkan: "",
     ttd_dilaporkan_prod: "",
     ttd_diterima_prod: "",
-    departemen_diterima_prod: ""
   });
   const [detail, seDetail] = useState([]);
   const [attachment, seAttachment] = useState([]);
@@ -63,7 +62,7 @@ const WorkOrderActionReport = () => {
         {
           data: {
             id_work_order: queryParams.get("id_work_order"),
-            id_work_order: "WCtHYkU4R",
+            // id_work_order: "WCtHYkU4R",
           },
         }
       )
@@ -87,7 +86,7 @@ const WorkOrderActionReport = () => {
           catatan_eng: data.catatan_eng,
           diterima_oleh_eng: data.diterima_oleh_eng,
           jabatan_diterima_eng: data.jabatan_diterima_eng,
-          departemen_diterima_eng: data.departemen_eng,
+          // departemen_diterima_eng: data.departemen_eng,
           ttd_diterima_eng: data.ttd_diterima_eng,
           tanggal_diorder: data.tanggal_diorder,
           departemen_diterima_eng: data.departemen_diterima_eng,
@@ -101,7 +100,7 @@ const WorkOrderActionReport = () => {
           dilaporkan_oleh: data.dilaporkan_oleh,
 
           jabatan_diterima_prod: data.jabatan_diterima_prod,
-          departemen_diterima_prod: data.departemen_prod,
+          // departemen_diterima_prod: data.departemen_prod,
           tanggal_dilaporkan: data.tanggal_dilaporkan,
           ttd_dilaporkan_prod: data.ttd_dilaporkan_prod,
           ttd_diterima_prod: data.ttd_diterima_prod,
