@@ -61,10 +61,6 @@ const ProductionReport = () => {
         setDiserahkan(res.data[0]?.diserahkan);
         setDiterima(res.data[0]?.diterima);
 
-        console.log("====================================");
-        console.log(data);
-        console.log("====================================");
-
         setTTD({
           ttd_dibuat_oleh: res.data[0]?.ttd_dibuat_oleh,
           ttd_diserahkan: res.data[0]?.ttd_diserahkan,

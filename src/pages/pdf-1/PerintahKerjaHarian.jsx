@@ -195,34 +195,32 @@ const PerintahKerjaHarian = () => {
 
             <hr className="w-100 solid m-0" />
             {/* Content Bottom */}
-            <div className="row">
-              <div>
-                <div className="d-flex gap-4 mt-1">
+            {/* <div className="row"> */}
+              <div className="d-flex justify-content-between">
+                <div className="gap-4 mt-1">
                   <p className="mb-2 fw-normal text-alat">
-                    Dibuat: {data.jabatan_dibuat}
+                    Dibuat: {data.jabatan_dibuat} {dibuat}
                   </p>
-                  <p className="fw-normal text-alat">{dibuat}</p>
-                </div>
-
-                <div className="d-flex justify-content-between gap-2">
                   <div>
-                    <p className="mb-2 fw-normal text-alat">
-                      Dilaporkan: {data.jabatan_dilaporkan}
+                    <p className="mb-2 fw-normal  text-sm">
+                      Dilaporkan: {data.jabatan_dilaporkan} {dilaporkan}
                     </p>
-                    <p className="mb-2 mt fw-normal text-alat">{dilaporkan}</p>
-                    <p className="mb-2 fw-normal text-alat">
+                    {/* <p className="mb-2 mt fw-normal text-alat">{dilaporkan}</p> */}
+                    <p className="fw-normal text-alat">
                       Dilaksanakan: Group Leader
                     </p>
                   </div>
+                </div>
 
-                  <div className="text-center d-block">
+                <div className="d-flex gap-2 align-self-end mt-3">
+                  <div className="text-center d-block mx-ttd2">
                     <img src={data.ttd_dilaksanakan_1} width="100" />
                     <p className="mb-2 fw-semibold text-alat px-5">
                       ({dilaksanakan1})
                     </p>
                   </div>
                   <div>
-                    <div className="text-center d-block">
+                    <div className="text-center d-block mx-ttd1">
                       <img src={data.ttd_dilaksanakan_2} width="100" />
                       <p className="mb-2 px-2 fw-semibold text-alat px-5">
                         ({dilaksanakan2})
@@ -231,13 +229,13 @@ const PerintahKerjaHarian = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            {/* </div> */}
             <hr className="w-100 solid m-0" />
             <div className="d-flex justify-content-between">
               <h5 className="fs-6 mt-1 border-end px-2 border-2">
                 NB: {note_pkh}
               </h5>
-              <p className="fs-6 mt-1 text-sm">Halaman: 02/02</p>
+              <p className="fs-6 mt-1 text-sm">Halaman: 01/01</p>
             </div>
           </div>
         </div>
