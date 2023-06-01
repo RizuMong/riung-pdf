@@ -112,9 +112,6 @@ const PerintahKerjaHarian = () => {
                       <p className="mb-4 px-2 fw-semibold fst-italic text-alat">
                         FRM-OPR - 006
                       </p>
-                      {/* <p className="mb-2 px-2 fw-semibold fs-6 text-alat">
-                        2-2
-                      </p> */}
                     </div>
                   </th>
                 </thead>
@@ -176,15 +173,19 @@ const PerintahKerjaHarian = () => {
                 <tbody className="text-center">
                   {datas?.map((item, index) => (
                     <tr>
-                      <td className="text-sm fw-normal">{index + 1}</td>
-                      <td className="text-sm fw-normal">{item.lokasi}</td>
-                      <td className="text-sm fw-normal">
+                      <td className="text-sm fw-normal align-middle">
+                        {index + 1}
+                      </td>
+                      <td className="text-sm fw-normal align-middle">
+                        {item.lokasi}
+                      </td>
+                      <td className="text-sm fw-normal align-middle">
                         {item.instruksi_kerja}
                       </td>
-                      <td className="text-sm fw-normal">
+                      <td className="text-sm fw-normal align-middle">
                         {item.laporan_pelaksanaan_1}
                       </td>
-                      <td className="text-sm fw-normal">
+                      <td className="text-sm fw-normal align-middle">
                         {item.laporan_pelaksanaan_2}
                       </td>
                     </tr>
@@ -195,41 +196,38 @@ const PerintahKerjaHarian = () => {
 
             <hr className="w-100 solid m-0" />
             {/* Content Bottom */}
-            {/* <div className="row"> */}
-              <div className="d-flex justify-content-between">
-                <div className="gap-4 mt-1">
-                  <p className="mb-2 fw-normal text-alat">
-                    Dibuat: {data.jabatan_dibuat} {dibuat}
+            <div className="d-flex justify-content-between">
+              <div className="gap-4 mt-1">
+                <p className="mb-2 fw-normal text-alat">
+                  Dibuat: {data.jabatan_dibuat} {dibuat}
+                </p>
+                <div>
+                  <p className="mb-2 fw-normal  text-sm">
+                    Dilaporkan: {data.jabatan_dilaporkan} {dilaporkan}
                   </p>
-                  <div>
-                    <p className="mb-2 fw-normal  text-sm">
-                      Dilaporkan: {data.jabatan_dilaporkan} {dilaporkan}
-                    </p>
-                    {/* <p className="mb-2 mt fw-normal text-alat">{dilaporkan}</p> */}
-                    <p className="fw-normal text-alat">
-                      Dilaksanakan: Group Leader
-                    </p>
-                  </div>
+                  <p className="fw-normal text-alat">
+                    Dilaksanakan: Group Leader
+                  </p>
                 </div>
+              </div>
 
-                <div className="d-flex gap-2 align-self-end mt-3">
-                  <div className="text-center d-block mx-ttd2">
-                    <img src={data.ttd_dilaksanakan_1} width="100" />
-                    <p className="mb-2 fw-semibold text-alat px-5">
-                      ({dilaksanakan1})
+              <div className="d-flex gap-2 align-self-end mt-3">
+                <div className="text-center d-block mx-ttd2">
+                  <img src={data.ttd_dilaksanakan_1} width="100" />
+                  <p className="mb-2 fw-semibold text-alat px-5">
+                    ({dilaksanakan1})
+                  </p>
+                </div>
+                <div>
+                  <div className="text-center d-block mx-ttd1">
+                    <img src={data.ttd_dilaksanakan_2} width="100" />
+                    <p className="mb-2 px-2 fw-semibold text-alat px-5">
+                      ({dilaksanakan2})
                     </p>
-                  </div>
-                  <div>
-                    <div className="text-center d-block mx-ttd1">
-                      <img src={data.ttd_dilaksanakan_2} width="100" />
-                      <p className="mb-2 px-2 fw-semibold text-alat px-5">
-                        ({dilaksanakan2})
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
-            {/* </div> */}
+            </div>
             <hr className="w-100 solid m-0" />
             <div className="d-flex justify-content-between">
               <h5 className="fs-6 mt-1 border-end px-2 border-2">
