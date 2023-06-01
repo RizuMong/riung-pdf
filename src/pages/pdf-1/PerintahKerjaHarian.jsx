@@ -202,7 +202,7 @@ const PerintahKerjaHarian = () => {
                   Dibuat: {data.jabatan_dibuat} {dibuat}
                 </p>
                 <div>
-                  <p className="mb-2 fw-normal  text-sm">
+                  <p className="mb-2 fw-normal text-alat">
                     Dilaporkan: {data.jabatan_dilaporkan} {dilaporkan}
                   </p>
                   <p className="fw-normal text-alat">
