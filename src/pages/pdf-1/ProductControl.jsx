@@ -125,7 +125,7 @@ const ProductControl = () => {
                     </p>
                     <hr className="w-100" />
                     <p className="pt-2 px-2 text-serif fw-semibold text-alat">
-                      {/* Lokasi: {lokasi} */}
+                      Lokasi: {lokasi}
                     </p>
                   </div>
                 </th>
