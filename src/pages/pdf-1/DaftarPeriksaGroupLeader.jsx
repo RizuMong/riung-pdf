@@ -220,7 +220,7 @@ const DaftarPeriksaGroupLeader = () => {
             id_dpgl_open_channel: queryParams.get("id_dpgl_open_channel"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             pkh_id: queryParams.get("pkh_id"),
-          },
+          }
         }
       )
       .then((res) => {
@@ -599,29 +599,29 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_lebar_grade} <br /> {jalan_lebar_grade_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_lebar_grade} {jalan_lebar_grade_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_rata_bebas} <br /> {jalan_rata_bebas_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_rata_bebas} {jalan_rata_bebas_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_bebas_debu} <br /> {jalan_bebas_debu_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_bebas_debu} {jalan_bebas_debu_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_pintas} <br /> {jalan_pintas_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_pintas} {jalan_pintas_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_batang_kayu} <br /> {jalan_batang_kayu_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_batang_kayu} {jalan_batang_kayu_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_longsor} <br /> {jalan_longsor_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_longsor} {jalan_longsor_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_driver} <br /> {jalan_driver_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_driver} {jalan_driver_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_dua_batang_kayu} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_dua_batang_kayu}{" "}
                       {jalan_dua_batang_kayu_note}
                     </td>
                   </tr>
@@ -667,23 +667,23 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_track_kering} <br /> {jalan_track_kering_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_track_kering} {jalan_track_kering_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_track_basah} <br /> {jalan_track_basah_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_track_basah} {jalan_track_basah_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_soil_lumpur} <br /> {jalan_soil_lumpur_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_soil_lumpur} {jalan_soil_lumpur_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_aman_amblas} <br /> {jalan_aman_amblas_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_aman_amblas} {jalan_aman_amblas_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_unit_travel} <br /> {jalan_unit_travel_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_unit_travel} {jalan_unit_travel_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {jalan_jarak_lapuk} <br /> {jalan_jarak_lapuk_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {jalan_jarak_lapuk} {jalan_jarak_lapuk_note}
                     </td>
                   </tr>
                 </tbody>
@@ -735,21 +735,21 @@ const DaftarPeriksaGroupLeader = () => {
                     <td className="text-serif text-sm">Di isi sesuai jadwal</td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">
-                      {peralatan_status_unit} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {peralatan_status_unit} {" "}
                       {peralatan_status_unit_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {peralatan_long_arm} <br /> {peralatan_long_arm_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {peralatan_long_arm} {peralatan_long_arm_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {peralatan_amphibi} <br /> {peralatan_amphibi_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {peralatan_amphibi} {peralatan_amphibi_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {peralatan_body} <br /> {peralatan_body_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {peralatan_body} {peralatan_body_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {peralatan_jadwal} <br /> {peralatan_jadwal_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {peralatan_jadwal} {peralatan_jadwal_note}
                     </td>
                   </tr>
                 </tbody>
@@ -815,31 +815,31 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_lokasi_unit} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_lokasi_unit} 
                       {land_clearing_lokasi_unit_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_alat_kerja} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_alat_kerja} 
                       {land_clearing_alat_kerja_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_jalur_land_clearing} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_jalur_land_clearing} 
                       {land_clearing_jalur_land_clearing_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_patok} <br /> {land_clearing_patok_note}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_patok} {land_clearing_patok_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_patok_gps} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_patok_gps} 
                       {land_clearing_patok_gps_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_kondisi_area} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_kondisi_area} 
                       {land_clearing_kondisi_area_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_area_kerja} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_area_kerja} 
                       {land_clearing_area_kerja_note}
                     </td>
                   </tr>
@@ -869,16 +869,16 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_longsor} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_longsor} 
                       {land_clearing_longsor_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_long_arm} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_long_arm} 
                       {land_clearing_long_arm_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {land_clearing_kayu_kering} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {land_clearing_kayu_kering} 
                       {land_clearing_kayu_kering_note}
                     </td>
                   </tr>
@@ -934,28 +934,28 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_gali_primer} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {penggalian_channel_gali_primer} 
                       {penggalian_channel_gali_primer_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_unit_track} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {penggalian_channel_unit_track} 
                       {penggalian_channel_unit_track_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_unit_amphibi} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {penggalian_channel_unit_amphibi} 
                       {penggalian_channel_unit_amphibi_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
+                    <td className="text-serif text-sm fw-bold align-middle">
                       {penggalian_channel_alokasi}
                       <br /> {penggalian_channel_alokasi_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_alat_kerja} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {penggalian_channel_alat_kerja} 
                       {penggalian_channel_alat_kerja_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_pita_survey} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {penggalian_channel_pita_survey}{" "}
                       {penggalian_channel_pita_survey_note}
                     </td>
                   </tr>
@@ -988,20 +988,20 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_longsor} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {penggalian_channel_longsor} 
                       {penggalian_channel_longsor_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_unit_aman} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {penggalian_channel_unit_aman} 
                       {penggalian_channel_unit_aman_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_operator_penggalian} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {penggalian_channel_operator_penggalian} 
                       {penggalian_channel_operator_penggalian_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {penggalian_channel_lampu_kerja} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {penggalian_channel_lampu_kerja} 
                       {penggalian_channel_lampu_kerja_note}
                     </td>
                   </tr>
@@ -1063,28 +1063,28 @@ const DaftarPeriksaGroupLeader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="text-serif text-sm fw-bold">
-                      {perawatan_channel_kedalaman} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {perawatan_channel_kedalaman} 
                       {perawatan_channel_kedalaman_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {perawatan_channel_genangan} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {perawatan_channel_genangan} 
                       {perawatan_channel_genangan_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {perawatan_channel_alokasi} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {perawatan_channel_alokasi} 
                       {perawatan_channel_alokasi_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {perawatan_channel_alat_kerja} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {perawatan_channel_alat_kerja} 
                       {perawatan_channel_alat_kerja_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {perawatan_channel_longsor} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {perawatan_channel_longsor} 
                       {perawatan_channel_longsor_note}
                     </td>
-                    <td className="text-serif text-sm fw-bold">
-                      {perawatan_channel_lampu_kerja} <br />{" "}
+                    <td className="text-serif text-sm fw-bold align-middle">
+                      {perawatan_channel_lampu_kerja} 
                       {perawatan_channel_lampu_kerja_note}
                     </td>
                   </tr>
