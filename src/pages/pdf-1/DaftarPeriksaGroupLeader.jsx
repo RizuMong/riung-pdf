@@ -600,25 +600,32 @@ const DaftarPeriksaGroupLeader = () => {
                   </tr>
                   <tr>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_lebar_grade} {jalan_lebar_grade_note}
+                      {jalan_lebar_grade} <br></br>
+                      {jalan_lebar_grade_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_rata_bebas} {jalan_rata_bebas_note}
+                      {jalan_rata_bebas} <br></br>
+                      {jalan_rata_bebas_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_bebas_debu} {jalan_bebas_debu_note}
+                      {jalan_bebas_debu} <br></br>
+                      {jalan_bebas_debu_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_pintas} {jalan_pintas_note}
+                      {jalan_pintas} <br></br>
+                      {jalan_pintas_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_batang_kayu} {jalan_batang_kayu_note}
+                      {jalan_batang_kayu} <br></br>
+                      {jalan_batang_kayu_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_longsor} {jalan_longsor_note}
+                      {jalan_longsor} <br></br>
+                      {jalan_longsor_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_driver} {jalan_driver_note}
+                      {jalan_driver} <br></br>
+                      {jalan_driver_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
                       {jalan_dua_batang_kayu}{" "} <br></br>
@@ -668,22 +675,28 @@ const DaftarPeriksaGroupLeader = () => {
                   </tr>
                   <tr>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_track_kering} {jalan_track_kering_note}
+                      {jalan_track_kering} <br></br>
+                      {jalan_track_kering_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_track_basah} {jalan_track_basah_note}
+                      {jalan_track_basah} <br></br>
+                      {jalan_track_basah_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_soil_lumpur} {jalan_soil_lumpur_note}
+                      {jalan_soil_lumpur} <br></br>
+                      {jalan_soil_lumpur_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_aman_amblas} {jalan_aman_amblas_note}
+                      {jalan_aman_amblas} <br></br>
+                      {jalan_aman_amblas_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_unit_travel} {jalan_unit_travel_note}
+                      {jalan_unit_travel} <br></br>
+                      {jalan_unit_travel_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_jarak_lapuk} {jalan_jarak_lapuk_note}
+                      {jalan_jarak_lapuk} <br></br>
+                      {jalan_jarak_lapuk_note}
                     </td>
                   </tr>
                 </tbody>
