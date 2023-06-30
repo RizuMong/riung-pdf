@@ -621,7 +621,8 @@ const DaftarPeriksaGroupLeader = () => {
                       {jalan_driver} {jalan_driver_note}
                     </td>
                     <td className="text-serif text-sm fw-bold align-middle">
-                      {jalan_dua_batang_kayu}{"\n"}
+                      {jalan_dua_batang_kayu}{" "}
+                      <br />
                       {jalan_dua_batang_kayu_note}
                     </td>
                   </tr>
