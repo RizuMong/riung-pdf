@@ -135,7 +135,7 @@ const FormKehadiran = () => {
           </thead>
           <tbody>
             {tableData?.map((item) => (
-              <tr key={item.id} className="text-center" style={{ height: 30 }}>
+              <tr key={item.id} className="text-center" style={{ height: 65 }}>
                 <th className="fw-normal align-middle">{item.id + 1}</th>
                 <th className="fw-normal align-middle">{item?.peserta || item?.peserta_text}</th>
                 <th className="fw-normal align-middle">{item?.dept}</th>
