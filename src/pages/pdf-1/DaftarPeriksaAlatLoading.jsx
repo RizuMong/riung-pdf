@@ -95,7 +95,7 @@ const DaftarPeriksaAlatLoading = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/daftar-periksa/alat-loading-v2",
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/control-activity-coal-getting/offline",
         {
           data: {
             id_daftar_kontaminasi_alat_loading: queryParams.get(
