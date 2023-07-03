@@ -141,7 +141,7 @@ const ControlActivityCoalGetting = () => {
   const fetchData = async () => {
     axios
       .post(
-        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/control-activity-coal-getting",
+        "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/control-activity-coal-getting/offline",
         {
           data: {
             id_control_activity_coal_getting: queryParams.get(
