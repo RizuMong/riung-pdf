@@ -149,6 +149,7 @@ const ControlActivityCoalGetting = () => {
             ),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
             lokasi_pkh: queryParams.get("lokasi_pkh"),
+            id_lokasi_pkh: queryParams.get("id_lokasi_pkh")
             // id_control_activity_coal_getting: "MAekrz84R",
             // lokasi_pkh_id: "Tzskrk84g",
             // lokasi_pkh: "",
