@@ -144,14 +144,14 @@ const ControlActivityCoalGetting = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/control-activity-coal-getting",
         {
           data: {
-            // id_control_activity_coal_getting: queryParams.get(
-            //   "id_control_activity_coal_getting"
-            // ),
-            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            // lokasi_pkh: queryParams.get("lokasi_pkh"),
-            id_control_activity_coal_getting: "MAekrz84R",
-            lokasi_pkh_id: "Tzskrk84g",
-            lokasi_pkh: "",
+            id_control_activity_coal_getting: queryParams.get(
+              "id_control_activity_coal_getting"
+            ),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            lokasi_pkh: queryParams.get("lokasi_pkh"),
+            // id_control_activity_coal_getting: "MAekrz84R",
+            // lokasi_pkh_id: "Tzskrk84g",
+            // lokasi_pkh: "",
           },
         }
       )
