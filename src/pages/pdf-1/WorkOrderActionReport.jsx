@@ -312,9 +312,9 @@ const WorkOrderActionReport = () => {
             </Table>
 
             {/* Catatan */}
-            <Table className="m-0">
+            <Table className="m-0 border border-1">
               <thead>
-                <tr>
+                <tr className="border border-1">
                   <th
                     width="50%"
                     className="fw-semibold border-start border-1 align-top"
