@@ -177,9 +177,12 @@ const DaftarPeriksaLeader = () => {
         "https://api-oos.jojonomic.com/23946/rios/generate-pdf/daftar-periksa/group-leader-new",
         {
           data: {
-            id_dpgl: queryParams.get("id_dpgl"),
-            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            // id_dpgl: queryParams.get("id_dpgl"),
+            // lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            id_dpgl: "i1Uh-MC4R",
+            lokasi_pkh_id: "9Lp2-MCVR",
           }
+          // id_dpgl=i1Uh-MC4R&lokasi_pkh_id=9Lp2-MCVR
         }
       )
       .then((res) => {
@@ -509,30 +512,30 @@ const DaftarPeriksaLeader = () => {
                 </thead>
                 <tbody className="text-center">
                   <tr>
-                    <td className="text-serif text-sm">Grade sesuai standar</td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">Grade sesuai standar</td>
+                    <td className="text-serif text-sm align-middle">
                       Lebar & tinggi sesuai standar
                     </td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Rata & bebas material lepas
                     </td>
-                    <td className="text-serif text-sm">Bebas genangan air</td>
-                    <td className="text-serif text-sm">Bulldozer</td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">Bebas genangan air</td>
+                    <td className="text-serif text-sm align-middle">Bulldozer</td>
+                    <td className="text-serif text-sm align-middle">
                       Cara kerja alat sesuai standar
                     </td>
-                    <td className="text-serif text-sm">Patok Ada & jelas</td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">Patok Ada & jelas</td>
+                    <td className="text-serif text-sm align-middle">
                       Penggalian sesuai patok
                     </td>
-                    <td className="text-serif text-sm">Aman dari longsor</td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">Aman dari longsor</td>
+                    <td className="text-serif text-sm align-middle">
                       Cukup Penerangan (Malam Hari)
                     </td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Sudah di blasting / ripping
                     </td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Volume cukup untuk 1 shift
                     </td>
                   </tr>
@@ -610,29 +613,29 @@ const DaftarPeriksaLeader = () => {
                 </thead>
                 <tbody className="text-center">
                   <tr>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Lebar, grade & super elevasi sesuai standar
                     </td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Rata & bebas material lepas
                     </td>
-                    <td className="text-serif text-sm">Bebas debu</td>
+                    <td className="text-serif text-sm align-middle">Bebas debu</td>
 
-                    <td className="text-serif text-sm">Grader</td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">Grader</td>
+                    <td className="text-serif text-sm align-middle">
                       Cara kerja alat sesuai standar
                     </td>
 
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Aman dari resiko (longsor/insiden)
                     </td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Ada safety berm di area riskan
                     </td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Rambu ada/jelas di area riskan
                     </td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Operator/driver mematuhi rambu
                     </td>
                   </tr>
@@ -694,25 +697,25 @@ const DaftarPeriksaLeader = () => {
                 </thead>
                 <tbody className="text-center">
                   <tr>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">
                       Jalan dan area dumping rata
                     </td>
-                    <td className="text-serif text-sm">Bebas debu</td>
-                    <td className="text-serif text-sm">Bebas genangan air</td>
-                    <td className="text-serif text-sm">Lebar sesuai standar</td>
+                    <td className="text-serif text-sm align-middle">Bebas debu</td>
+                    <td className="text-serif text-sm align-middle">Bebas genangan air</td>
+                    <td className="text-serif text-sm align-middle">Lebar sesuai standar</td>
 
-                    <td className="text-serif text-sm">Bulldozer</td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">Bulldozer</td>
+                    <td className="text-serif text-sm align-middle">
                       Cara kerja alat sesuai standar
                     </td>
 
-                    <td className="text-serif text-sm">Patok ada/jelas</td>
-                    <td className="text-serif text-sm">
+                    <td className="text-serif text-sm align-middle">Patok ada/jelas</td>
+                    <td className="text-serif text-sm align-middle">
                       Alokasi material sesuai patok
                     </td>
 
-                    <td className="text-serif text-sm">Aman dari longsor</td>
-                    <td className="text-serif text-sm">Cukup penerangan</td>
+                    <td className="text-serif text-sm align-middle">Aman dari longsor</td>
+                    <td className="text-serif text-sm align-middle">Cukup penerangan</td>
                   </tr>
                   <tr className="align-middle">
                     <td className="text-serif text-sm fw-bold">
@@ -766,13 +769,13 @@ const DaftarPeriksaLeader = () => {
                   </caption>
                   <thead className="text-center">
                     <tr>
-                      <th scope="col" className="text-serif text-sm">
+                      <th scope="col" className="text-serif text-sm align-middle">
                         Ada saluran air di Pit dan berfungsi
                       </th>
-                      <th scope="col" className="text-serif text-sm">
+                      <th scope="col" className="text-serif text-sm align-middle">
                         Ada saluran air di jalan utama dan berfungsi
                       </th>
-                      <th scope="col" className="text-serif text-sm">
+                      <th scope="col" className="text-serif text-sm align-middle">
                         Besar gorong gorong sesuai debit
                       </th>
                     </tr>
@@ -890,13 +893,13 @@ const DaftarPeriksaLeader = () => {
                   </caption>
                   <thead className="text-center">
                     <tr>
-                      <th scope="col" className="text-serif text-sm">
+                      <th scope="col" className="text-serif text-sm align-middle">
                         bersih dan bebas kontaminasi
                       </th>
-                      <th scope="col" className="text-serif text-sm">
+                      <th scope="col" className="text-serif text-sm align-middle">
                         Type / kwalitas Sesuai rencana
                       </th>
-                      <th scope="col" className="text-serif text-sm">
+                      <th scope="col" className="text-serif text-sm align-middle">
                         Volume / tonase cukup Untuk 1 shift
                       </th>
                     </tr>
@@ -925,13 +928,13 @@ const DaftarPeriksaLeader = () => {
                   </caption>
                   <thead className="text-center">
                     <tr>
-                      <th scope="col" className="text-serif text-sm">
+                      <th scope="col" className="text-serif text-sm align-middle">
                         Balance material sudah dihitung
                       </th>
-                      <th scope="col" className="text-serif text-sm">
+                      <th scope="col" className="text-serif text-sm align-middle">
                         Kondisi baik dan siap operasi
                       </th>
-                      <th scope="col" className="text-serif text-sm">
+                      <th scope="col" className="text-serif text-sm align-middle">
                         Cukup penerangan
                       </th>
                     </tr>
