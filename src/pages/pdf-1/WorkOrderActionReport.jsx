@@ -61,8 +61,8 @@ const WorkOrderActionReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order-v2",
         {
           data: {
-            // id_work_order: queryParams.get("id_work_order"),
-            id_work_order: "feXLEE84R",
+            id_work_order: queryParams.get("id_work_order"),
+            // id_work_order: "feXLEE84R",
           },
         }
       )

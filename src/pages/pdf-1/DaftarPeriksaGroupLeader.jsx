@@ -216,16 +216,16 @@ const DaftarPeriksaGroupLeader = () => {
       .post(
         "https://api-oos.jojonomic.com/23946/rios/generate-pdf/daftar-periksa/group-leader-open-channel-v2",
         {
-          // data: {
-          //   id_dpgl_open_channel: queryParams.get("id_dpgl_open_channel"),
-          //   lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-          //   pkh_id: queryParams.get("pkh_id"),
-          // }
-          "data": {
-            "id_dpgl_open_channel": "IkXVVZ94g",
-            "lokasi_pkh_id": "pmUy3z84R",
-            "pkh_id": null
-        }
+          data: {
+            id_dpgl_open_channel: queryParams.get("id_dpgl_open_channel"),
+            lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
+            pkh_id: queryParams.get("pkh_id"),
+          }
+        //   "data": {
+        //     "id_dpgl_open_channel": "IkXVVZ94g",
+        //     "lokasi_pkh_id": "pmUy3z84R",
+        //     "pkh_id": null
+        // }
         }
       )
       .then((res) => {
