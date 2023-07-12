@@ -140,7 +140,7 @@ const WorkOrderActionReport = () => {
         <p className="text-end fs-6 fst-italic">Form Eng 024</p>
         <div className="border border-3 border-dark">
           <div className="p-1">
-            <div className="row align-items-center">
+            <div className="row align-items-center table-responsive">
               {/* Header Table */}
               <Table className="table">
                 <thead>
