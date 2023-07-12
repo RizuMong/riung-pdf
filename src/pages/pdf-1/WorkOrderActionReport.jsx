@@ -61,7 +61,8 @@ const WorkOrderActionReport = () => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/work-order-v2",
         {
           data: {
-            id_work_order: queryParams.get("id_work_order"),
+            // id_work_order: queryParams.get("id_work_order"),
+            id_work_order: "feXLEE84R",
           },
         }
       )
@@ -294,16 +295,16 @@ const WorkOrderActionReport = () => {
               {detail?.map((item, index) => (
                 <tbody className="text-center text-sm">
                   <td className="border border-1">({index + 2})</td>
-                  <td className="border border-1 text-start">
+                  <td className="border border-1 text-start align-middle">
                     {item?.hasil_target}
                   </td>
-                  <td className="border border-1 fw-semibold">
+                  <td className="border border-1 fw-semibold align-middle">
                     {item?.lokasi}
                   </td>
-                  <td className="border border-1 fw-semibold">
+                  <td className="border border-1 fw-semibold align-middle">
                     {item?.target_waktu}
                   </td>
-                  <td className="border border-1 text-start">
+                  <td className="border border-1 text-start align-middle">
                     {item?.hasil_actual}
                   </td>
                   <td className="border-0"></td>
