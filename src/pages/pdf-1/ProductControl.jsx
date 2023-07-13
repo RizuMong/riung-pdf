@@ -21,6 +21,7 @@ const ProductControl = () => {
     ttd_section_1: "",
     ttd_section_2: "",
   });
+
   const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
@@ -46,6 +47,7 @@ const ProductControl = () => {
       .then((res) => {
         const { data } = res;
         setData(data);
+        
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);
         setLokasi(data?.lokasi);
@@ -59,6 +61,8 @@ const ProductControl = () => {
           ttd_section_1: data.ttd_section_1,
           ttd_section_2: data.ttd_section_2,
         });
+
+        // setSection1()
       })
       .catch((err) => {
         alert(err);
@@ -178,7 +182,6 @@ const ProductControl = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
-                {/* Shift 1 */}
                 <tr>
                   <td>06:00 - 07:00</td>
                   <td>{getDataByJam("06:00 - 07:00").produksi_aktual}</td>
@@ -283,7 +286,6 @@ const ProductControl = () => {
                   <td>{getDataByJam("18:00 - 19:00").akumulasi_plan}</td>
                   <td>{getDataByJam("18:00 - 19:00").keterangan}</td>
                 </tr>
-                {/* Shift 2 */}
                 <tr>
                   <td>19:00 - 20:00</td>
                   <td>{getDataByJam("19:00 - 20:00").produksi_aktual}</td>
