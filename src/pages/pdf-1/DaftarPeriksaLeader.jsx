@@ -819,7 +819,8 @@ const DaftarPeriksaLeader = () => {
                         {drainage_saluran_pit_note}
                       </td>
                       <td className="text-serif text-sm fw-bold">
-                        {drainage_gorong} <br /> {drainage_gorong_note}
+                        {drainage_saluran_air} <br />{" "}
+                        {drainage_saluran_air_note}
                       </td>
                       <td className="text-serif text-sm fw-bold">
                         {drainage_gorong} <br /> {drainage_gorong_note}
