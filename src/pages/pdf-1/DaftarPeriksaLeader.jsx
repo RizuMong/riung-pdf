@@ -16,7 +16,7 @@ const DaftarPeriksaLeader = () => {
   const [disetujui, setDisetujui] = useState("");
   const [ttd, setTTD] = useState({
     ttd_diperiksa: "",
-    ttd_disetujui: ""
+    ttd_disetujui: "",
   });
 
   // Loading Area
@@ -179,16 +179,13 @@ const DaftarPeriksaLeader = () => {
           data: {
             id_dpgl: queryParams.get("id_dpgl"),
             lokasi_pkh_id: queryParams.get("lokasi_pkh_id"),
-            // id_dpgl: "i1Uh-MC4R",
-            // lokasi_pkh_id: "9Lp2-MCVR",
-          }
-          // id_dpgl=i1Uh-MC4R&lokasi_pkh_id=9Lp2-MCVR
+          },
         }
       )
       .then((res) => {
         const { data } = res;
-        
-        setCatatan(data?.catatan)
+
+        setCatatan(data?.catatan);
         setJobsite(data?.jobsite);
         setTanggal(data?.tanggal);
         setShift(data?.shift);
@@ -197,8 +194,8 @@ const DaftarPeriksaLeader = () => {
         setDisetujui(data?.disetujui);
         setTTD({
           ttd_diperiksa: data.ttd_diperiksa,
-          ttd_disetujui: data.ttd_disetujui
-        })
+          ttd_disetujui: data.ttd_disetujui,
+        });
 
         // Check Data True
         const checkData = (data, set) => {
@@ -512,23 +509,33 @@ const DaftarPeriksaLeader = () => {
                 </thead>
                 <tbody className="text-center">
                   <tr>
-                    <td className="text-serif text-sm align-middle">Grade sesuai standar</td>
+                    <td className="text-serif text-sm align-middle">
+                      Grade sesuai standar
+                    </td>
                     <td className="text-serif text-sm align-middle">
                       Lebar & tinggi sesuai standar
                     </td>
                     <td className="text-serif text-sm align-middle">
                       Rata & bebas material lepas
                     </td>
-                    <td className="text-serif text-sm align-middle">Bebas genangan air</td>
-                    <td className="text-serif text-sm align-middle">Bulldozer</td>
+                    <td className="text-serif text-sm align-middle">
+                      Bebas genangan air
+                    </td>
+                    <td className="text-serif text-sm align-middle">
+                      Bulldozer
+                    </td>
                     <td className="text-serif text-sm align-middle">
                       Cara kerja alat sesuai standar
                     </td>
-                    <td className="text-serif text-sm align-middle">Patok Ada & jelas</td>
+                    <td className="text-serif text-sm align-middle">
+                      Patok Ada & jelas
+                    </td>
                     <td className="text-serif text-sm align-middle">
                       Penggalian sesuai patok
                     </td>
-                    <td className="text-serif text-sm align-middle">Aman dari longsor</td>
+                    <td className="text-serif text-sm align-middle">
+                      Aman dari longsor
+                    </td>
                     <td className="text-serif text-sm align-middle">
                       Cukup Penerangan (Malam Hari)
                     </td>
@@ -619,7 +626,9 @@ const DaftarPeriksaLeader = () => {
                     <td className="text-serif text-sm align-middle">
                       Rata & bebas material lepas
                     </td>
-                    <td className="text-serif text-sm align-middle">Bebas debu</td>
+                    <td className="text-serif text-sm align-middle">
+                      Bebas debu
+                    </td>
 
                     <td className="text-serif text-sm align-middle">Grader</td>
                     <td className="text-serif text-sm align-middle">
@@ -700,22 +709,36 @@ const DaftarPeriksaLeader = () => {
                     <td className="text-serif text-sm align-middle">
                       Jalan dan area dumping rata
                     </td>
-                    <td className="text-serif text-sm align-middle">Bebas debu</td>
-                    <td className="text-serif text-sm align-middle">Bebas genangan air</td>
-                    <td className="text-serif text-sm align-middle">Lebar sesuai standar</td>
+                    <td className="text-serif text-sm align-middle">
+                      Bebas debu
+                    </td>
+                    <td className="text-serif text-sm align-middle">
+                      Bebas genangan air
+                    </td>
+                    <td className="text-serif text-sm align-middle">
+                      Lebar sesuai standar
+                    </td>
 
-                    <td className="text-serif text-sm align-middle">Bulldozer</td>
+                    <td className="text-serif text-sm align-middle">
+                      Bulldozer
+                    </td>
                     <td className="text-serif text-sm align-middle">
                       Cara kerja alat sesuai standar
                     </td>
 
-                    <td className="text-serif text-sm align-middle">Patok ada/jelas</td>
+                    <td className="text-serif text-sm align-middle">
+                      Patok ada/jelas
+                    </td>
                     <td className="text-serif text-sm align-middle">
                       Alokasi material sesuai patok
                     </td>
 
-                    <td className="text-serif text-sm align-middle">Aman dari longsor</td>
-                    <td className="text-serif text-sm align-middle">Cukup penerangan</td>
+                    <td className="text-serif text-sm align-middle">
+                      Aman dari longsor
+                    </td>
+                    <td className="text-serif text-sm align-middle">
+                      Cukup penerangan
+                    </td>
                   </tr>
                   <tr className="align-middle">
                     <td className="text-serif text-sm fw-bold">
@@ -769,13 +792,22 @@ const DaftarPeriksaLeader = () => {
                   </caption>
                   <thead className="text-center">
                     <tr>
-                      <th scope="col" className="text-serif text-sm align-middle">
+                      <th
+                        scope="col"
+                        className="text-serif text-sm align-middle"
+                      >
                         Ada saluran air di Pit dan berfungsi
                       </th>
-                      <th scope="col" className="text-serif text-sm align-middle">
+                      <th
+                        scope="col"
+                        className="text-serif text-sm align-middle"
+                      >
                         Ada saluran air di jalan utama dan berfungsi
                       </th>
-                      <th scope="col" className="text-serif text-sm align-middle">
+                      <th
+                        scope="col"
+                        className="text-serif text-sm align-middle"
+                      >
                         Besar gorong gorong sesuai debit
                       </th>
                     </tr>
@@ -790,8 +822,7 @@ const DaftarPeriksaLeader = () => {
                         {drainage_gorong} <br /> {drainage_gorong_note}
                       </td>
                       <td className="text-serif text-sm fw-bold">
-                        {drainage_saluran_air} <br />{" "}
-                        {drainage_saluran_air_note}
+                        {drainage_gorong} <br /> {drainage_gorong_note}
                       </td>
                     </tr>
                   </tbody>
@@ -893,13 +924,22 @@ const DaftarPeriksaLeader = () => {
                   </caption>
                   <thead className="text-center">
                     <tr>
-                      <th scope="col" className="text-serif text-sm align-middle">
+                      <th
+                        scope="col"
+                        className="text-serif text-sm align-middle"
+                      >
                         bersih dan bebas kontaminasi
                       </th>
-                      <th scope="col" className="text-serif text-sm align-middle">
+                      <th
+                        scope="col"
+                        className="text-serif text-sm align-middle"
+                      >
                         Type / kwalitas Sesuai rencana
                       </th>
-                      <th scope="col" className="text-serif text-sm align-middle">
+                      <th
+                        scope="col"
+                        className="text-serif text-sm align-middle"
+                      >
                         Volume / tonase cukup Untuk 1 shift
                       </th>
                     </tr>
@@ -928,13 +968,22 @@ const DaftarPeriksaLeader = () => {
                   </caption>
                   <thead className="text-center">
                     <tr>
-                      <th scope="col" className="text-serif text-sm align-middle">
+                      <th
+                        scope="col"
+                        className="text-serif text-sm align-middle"
+                      >
                         Balance material sudah dihitung
                       </th>
-                      <th scope="col" className="text-serif text-sm align-middle">
+                      <th
+                        scope="col"
+                        className="text-serif text-sm align-middle"
+                      >
                         Kondisi baik dan siap operasi
                       </th>
-                      <th scope="col" className="text-serif text-sm align-middle">
+                      <th
+                        scope="col"
+                        className="text-serif text-sm align-middle"
+                      >
                         Cukup penerangan
                       </th>
                     </tr>
@@ -971,7 +1020,7 @@ const DaftarPeriksaLeader = () => {
                     <p className="fw-normal text-serif fw-semibold">
                       Diperiksa oleh,
                     </p>
-                    <img src={ttd.ttd_diperiksa} width="100"/>
+                    <img src={ttd.ttd_diperiksa} width="100" />
                     <p>{diperiksa}</p>
                     <p className="border-top border-dark text-serif fw-semibold">
                       Group Leader
@@ -981,7 +1030,7 @@ const DaftarPeriksaLeader = () => {
                     <p className="fw-normal text-serif fw-semibold">
                       Disetujui oleh,
                     </p>
-                    <img src={ttd.ttd_disetujui} width="100"/>
+                    <img src={ttd.ttd_disetujui} width="100" />
                     <p>{disetujui}</p>
                     <p className="border-top border-dark text-serif fw-semibold">
                       Section Head
