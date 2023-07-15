@@ -214,15 +214,14 @@ const LogBookSectionReport = ({}) => {
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  <td className="text-sm fw-semibold border border-1">
+                  <td className="text-sm fw-semibold border border-1 align-middle">
                     {datas?.unit_breakdown}
                   </td>
-                  <td className="text-sm fw-semibold border border-1">
+                  <td className="text-sm fw-semibold border border-1 align-middle">
                     {datas?.unit_stb}
                   </td>
-                  <td className="text-sm fw-semibold border border-1">
+                  <td className="text-sm fw-semibold border border-1 align-middle">
                     {datas?.catatan}
-                    <br />
                     <br />
                     <br />
                   </td>
