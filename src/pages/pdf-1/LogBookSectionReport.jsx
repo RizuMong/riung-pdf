@@ -105,7 +105,7 @@ const LogBookSectionReport = ({}) => {
                       </p>
                       <hr className="w-100" />
                       <p className="mb-2 px-2  fw-normal align-middle text-alat">
-                        Halaman:{" "}
+                        Halaman: 1{" "}
                       </p>
                       <hr className="w-100" />
                     </div>
