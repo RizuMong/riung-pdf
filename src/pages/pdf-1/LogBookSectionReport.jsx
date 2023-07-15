@@ -93,18 +93,18 @@ const LogBookSectionReport = ({}) => {
                   <div className="vr" style={{ height: 100 }}></div>
                   <th className="col-3">
                     <div className="mb-1">
-                      <p className="mb-2 px-2  fw-normal text-alat">
+                      <p className="mb-2 px-2  fw-normal align-middle text-alat">
                         No. Dokumen:{" "}
                         <span className="fw-semibold fst-italic">
                           FRM-OPR - 006
                         </span>
                       </p>
                       <hr className="w-100" />
-                      <p className="mb-2 px-2  fw-normal text-alat">
+                      <p className="mb-2 px-2  fw-normal align-middle text-alat">
                         Hari / Tanggal: {datas.tanggal}
                       </p>
                       <hr className="w-100" />
-                      <p className="mb-2 px-2  fw-normal text-alat">
+                      <p className="mb-2 px-2  fw-normal align-middle text-alat">
                         Halaman:{" "}
                       </p>
                       <hr className="w-100" />
@@ -160,31 +160,31 @@ const LogBookSectionReport = ({}) => {
                   {datas.line?.map((item, index) => {
                     return (
                       <tr key={index}>
-                        <td className="text-sm fw-normal">{index + 1}</td>
-                        <td className="text-sm fw-normal">{item?.lokasi}</td>
-                        <td className="text-sm fw-normal">{item?.cn_hauler}</td>
-                        <td className="text-sm fw-normal">{item?.cn_loader}</td>
-                        <td className="text-sm fw-normal">
+                        <td className="text-sm fw-normal align-middle">{index + 1}</td>
+                        <td className="text-sm fw-normal align-middle">{item?.lokasi}</td>
+                        <td className="text-sm fw-normal align-middle">{item?.cn_hauler}</td>
+                        <td className="text-sm fw-normal align-middle">{item?.cn_loader}</td>
+                        <td className="text-sm fw-normal align-middle">
                           {item?.cn_support}
                         </td>
-                        <td className="text-sm fw-normal text-akivitas-logbook">
+                        <td className="text-sm fw-normal align-middle text-akivitas-logbook">
                           {item?.aktivitas}
                         </td>
-                        <td className="text-sm fw-normal">
+                        <td className="text-sm fw-normal align-middle">
                           <img
                             src={item?.sketsa.url}
                             alt={item?.sketsa.name}
                             width="150"
                           />
                         </td>
-                        <td className="text-sm fw-normal">
+                        <td className="text-sm fw-normal align-middle">
                           {item?.status_pkh}
                         </td>
-                        <td className="text-sm fw-normal">{item?.problem}</td>
-                        <td className="text-sm fw-normal">
+                        <td className="text-sm fw-normal align-middle">{item?.problem}</td>
+                        <td className="text-sm fw-normal align-middle">
                           {item?.corrective_action}
                         </td>
-                        <td className="text-sm fw-normal">{item?.paraf}</td>
+                        <td className="text-sm fw-normal align-middle">{item?.paraf}</td>
                       </tr>
                     );
                   })}
