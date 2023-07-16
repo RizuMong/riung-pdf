@@ -14,6 +14,7 @@ const LogBookSectionReport = ({}) => {
     ttd_diterima: "",
     jabatan_diketahui: "",
   });
+  const [sketsa, setSketsa] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const windowUrl = window.location.search;
@@ -34,8 +35,7 @@ const LogBookSectionReport = ({}) => {
       .then((res) => {
         const { data } = res;
         setDatas(data);
-
-        console.log(data);
+        setSketsa(data.sketsa);
         setTTD({
           ttd_diketahui: data.ttd_diketahui,
           ttd_diserahkan: data.ttd_diserahkan,
@@ -268,6 +268,13 @@ const LogBookSectionReport = ({}) => {
           </div>
         </div>
       </div>
+      {sketsa &&
+        sketsa.map((item, index) => (
+          <div key={index}>
+            <img width="1000" src={item?.url} alt={item?.name} />
+            <br />
+          </div>
+        ))}
     </div>
   );
 };
