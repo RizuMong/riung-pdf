@@ -34,6 +34,8 @@ const LogBookSectionReport = ({}) => {
       .then((res) => {
         const { data } = res;
         setDatas(data);
+
+        console.log(data);
         setTTD({
           ttd_diketahui: data.ttd_diketahui,
           ttd_diserahkan: data.ttd_diserahkan,
@@ -160,31 +162,40 @@ const LogBookSectionReport = ({}) => {
                   {datas.line?.map((item, index) => {
                     return (
                       <tr key={index}>
-                        <td className="text-sm fw-normal align-middle">{index + 1}</td>
-                        <td className="text-sm fw-normal align-middle">{item?.lokasi}</td>
-                        <td className="text-sm fw-normal align-middle">{item?.cn_hauler}</td>
-                        <td className="text-sm fw-normal align-middle">{item?.cn_loader}</td>
+                        <td className="text-sm fw-normal align-middle">
+                          {index + 1}
+                        </td>
+                        <td className="text-sm fw-normal align-middle">
+                          {item?.lokasi}
+                        </td>
+                        <td className="text-sm fw-normal align-middle">
+                          {item?.cn_hauler}
+                        </td>
+                        <td className="text-sm fw-normal align-middle">
+                          {item?.cn_loader}
+                        </td>
                         <td className="text-sm fw-normal align-middle">
                           {item?.cn_support}
                         </td>
                         <td className="text-sm fw-normal align-middle text-akivitas-logbook">
                           {item?.aktivitas}
                         </td>
+
                         <td className="text-sm fw-normal align-middle">
-                          <img
-                            src={item?.sketsa.url}
-                            alt={item?.sketsa.name}
-                            width="150"
-                          />
+                          <img src={item?.sketsa_detail} width="150" />
                         </td>
                         <td className="text-sm fw-normal align-middle">
                           {item?.status_pkh}
                         </td>
-                        <td className="text-sm fw-normal align-middle">{item?.problem}</td>
+                        <td className="text-sm fw-normal align-middle">
+                          {item?.problem}
+                        </td>
                         <td className="text-sm fw-normal align-middle">
                           {item?.corrective_action}
                         </td>
-                        <td className="text-sm fw-normal align-middle">{item?.paraf}</td>
+                        <td className="text-sm fw-normal align-middle">
+                          {item?.paraf}
+                        </td>
                       </tr>
                     );
                   })}
