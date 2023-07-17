@@ -63,7 +63,7 @@ const LogBookSectionReport = ({}) => {
 
   return (
     <div className="container-fluid">
-      <div className="">
+      <div>
         <div className="border border-3 border-dark">
           <div className="p-1">
             <div className="row align-items-center">
@@ -233,8 +233,6 @@ const LogBookSectionReport = ({}) => {
                   </td>
                   <td className="text-sm fw-semibold border border-1 align-middle">
                     {datas?.catatan}
-                    <br />
-                    <br />
                   </td>
                 </tbody>
               </Table>

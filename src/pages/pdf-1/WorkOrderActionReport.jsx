@@ -18,6 +18,7 @@ const WorkOrderActionReport = () => {
     nomor_dokumen: "",
     tanggal_diorder: "",
     ttd_diorder: "",
+    kepada_jabatan: "",
 
     // Data Eng (Target)
     target_overburden_bcm: 0,
@@ -78,6 +79,7 @@ const WorkOrderActionReport = () => {
           diorder_oleh: data.diorder_oleh,
           nomor_dokumen: data.nomor_dokumen,
           ttd_diorder: data.ttd_diorder,
+          kepada_jabatan: data.kepada_jabatan,
 
           // Data Eng (Target)
           target_overburden_bcm: data.target_overburden_bcm,
@@ -212,8 +214,9 @@ const WorkOrderActionReport = () => {
                   </th>
                 </tr>
                 <tr>
+                  
                   <th scope="col-3" className="header-table-coal text-start ">
-                    KEPADA: Prod & TDC Dept. Head
+                    KEPADA: {data?.kepada_jabatan}
                   </th>
                   <th
                     scope="col-3"
