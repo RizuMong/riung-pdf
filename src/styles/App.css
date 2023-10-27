@@ -85,8 +85,16 @@ table {
   }
 
   .header-report-production {
-    font-size: 22px !important;
+    font-size: 16px !important;
     text-align: center;
+  };
+
+  .header-side-logbook {
+    font-size: 12px !important;
+  }
+
+  .text-table-logbook {
+    font-size: 10px !important;
   }
 
   .text-alat {

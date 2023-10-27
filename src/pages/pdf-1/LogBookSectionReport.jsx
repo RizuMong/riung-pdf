@@ -30,6 +30,7 @@ const LogBookSectionReport = ({}) => {
         "https://gateway.jojonomic.com/v1/nocode/api/rios/generate-pdf/logbook",
         {
           id_logbook: queryParams.get("id_logbook"),
+          // id_logbook: "pGyKbGC4g",
         }
       )
       .then((res) => {
@@ -72,7 +73,7 @@ const LogBookSectionReport = ({}) => {
                 <thead>
                   <th className="col-3">
                     {" "}
-                    <div className="d-flex gap-3 mb-4">
+                    <div className="d-flex gap-3 mb-3">
                       <img
                         className="pl-2"
                         src={LogoRiung}
@@ -80,33 +81,33 @@ const LogBookSectionReport = ({}) => {
                         height="40"
                         alt="Logo RIUNG"
                       />
-                      <h5 className="fw-bold text-lg">
+                      <h5 className="header-side-logbook fw-bold text-lg">
                         PT Riung Mitra Lestari Production Department Jobsite:{" "}
                         {datas.jobsite}
                       </h5>
                     </div>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 70 }}></div>
                   <th className="col-6">
-                    <h1 className="header-report-production mb-6 fw-semibold">
+                    <h1 className="header-report-production mb-4 fw-semibold">
                       LOG BOOK SECTION HEAD REPORT
                     </h1>
                   </th>
-                  <div className="vr" style={{ height: 100 }}></div>
+                  <div className="vr" style={{ height: 70 }}></div>
                   <th className="col-3">
                     <div className="mb-1">
-                      <p className="mb-2 px-2  fw-normal align-middle text-alat">
+                      <p className="px-2 fw-normal align-middle text-alat">
                         No. Dokumen:{" "}
                         <span className="fw-semibold fst-italic">
                           FRM-OPR - 006
                         </span>
                       </p>
                       <hr className="w-100" />
-                      <p className="mb-2 px-2  fw-normal align-middle text-alat">
+                      <p className="px-2  fw-normal align-middle text-alat">
                         Hari / Tanggal: {datas.tanggal}
                       </p>
                       <hr className="w-100" />
-                      <p className="mb-2 px-2  fw-normal align-middle text-alat">
+                      <p className="px-2 fw-normal align-middle text-alat">
                         Halaman: 1{" "}
                       </p>
                       <hr className="w-100" />
@@ -122,37 +123,37 @@ const LogBookSectionReport = ({}) => {
               <table className="table table-bordered caption-top mt-2">
                 <thead className="text-center">
                   <tr>
-                    <th width="3%" scope="col" className="fs-6 align-middle">
+                    <th width="3%" scope="col" className="text-table-logbook align-middle">
                       NO
                     </th>
-                    <th width="10%" scope="col" className="fs-6 align-middle">
+                    <th width="10%" scope="col" className="text-table-logbook align-middle">
                       LOKASI
                     </th>
-                    <th width="5%" scope="col" className="fs-6 align-middle">
+                    <th width="5%" scope="col" className="text-table-logbook align-middle">
                       C/N HAULER
                     </th>
-                    <th width="5%" scope="col" className="fs-6 align-middle">
+                    <th width="5%" scope="col" className="text-table-logbook align-middle">
                       C/N LOADER
                     </th>
-                    <th width="5%" scope="col" className="fs-6 align-middle">
+                    <th width="5%" scope="col" className="text-table-logbook align-middle">
                       C/N SUPPORT
                     </th>
-                    <th width="22%" scope="col" className="fs-6 align-middle">
+                    <th width="22%" scope="col" className="text-table-logbook align-middle">
                       AKTIVITAS
                     </th>
-                    <th width="14%" scope="col" className="fs-6 align-middle">
+                    <th width="14%" scope="col" className="text-table-logbook align-middle">
                       SKETSA
                     </th>
-                    <th width="5%" scope="col" className="fs-6 align-middle">
+                    <th width="5%" scope="col" className="text-table-logbook align-middle">
                       STATUS PKH
                     </th>
-                    <th width="15%" scope="col" className="fs-6 align-middle">
+                    <th width="15%" scope="col" className="text-table-logbook align-middle">
                       PROBLEM
                     </th>
-                    <th width="10%" scope="col" className="fs-6 align-middle">
+                    <th width="10%" scope="col" className="text-table-logbook align-middle">
                       CORRECTIVE ACTION
                     </th>
-                    <th width="5%" scope="col" className="fs-6 align-middle">
+                    <th width="5%" scope="col" className="text-table-logbook align-middle">
                       PARAF
                     </th>
                   </tr>
@@ -162,38 +163,38 @@ const LogBookSectionReport = ({}) => {
                   {datas.line?.map((item, index) => {
                     return (
                       <tr key={index}>
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           {index + 1}
                         </td>
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           {item?.lokasi}
                         </td>
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           {item?.cn_hauler}
                         </td>
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           {item?.cn_loader}
                         </td>
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           {item?.cn_support}
                         </td>
-                        <td className="text-sm fw-normal align-middle text-akivitas-logbook">
+                        <td align="justify" className="text-sm text-table-logbook fw-normal align-middle text-akivitas-logbook">
                           {item?.aktivitas}
                         </td>
 
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           <img src={item?.sketsa_detail} width="150" />
                         </td>
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           {item?.status_pkh}
                         </td>
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           {item?.problem}
                         </td>
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           {item?.corrective_action}
                         </td>
-                        <td className="text-sm fw-normal align-middle">
+                        <td className="text-sm text-table-logbook fw-normal align-middle">
                           {item?.paraf}
                         </td>
                       </tr>
@@ -208,7 +209,7 @@ const LogBookSectionReport = ({}) => {
                     <th
                       width="15%"
                       scope="col"
-                      className="fs-6 table-dark align-middle"
+                      className="header-side-logbook table-dark align-middle"
                     >
                       UNIT BREAK DOWN
                     </th>
@@ -219,19 +220,19 @@ const LogBookSectionReport = ({}) => {
                     >
                       UNIT STB
                     </th>
-                    <th width="70%" scope="col" className="fs-6 align-middle">
+                    <th width="70%" scope="col" className="header-side-logbook align-middle">
                       CATATAN
                     </th>
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  <td className="text-sm fw-semibold border border-1 align-middle">
+                  <td className="text-sm text-table-logbook fw-normal border border-1 align-middle">
                     {datas?.unit_breakdown}
                   </td>
-                  <td className="text-sm fw-semibold border border-1 align-middle">
+                  <td className="text-sm text-table-logbook fw-normal border border-1 align-middle">
                     {datas?.unit_stb}
                   </td>
-                  <td className="text-sm fw-semibold border border-1 align-middle">
+                  <td className="text-sm text-table-logbook fw-normal border border-1 align-middle">
                     {datas?.catatan}
                   </td>
                 </tbody>
