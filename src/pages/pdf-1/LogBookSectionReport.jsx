@@ -77,9 +77,11 @@ const LogBookSectionReport = ({}) => {
                     <div className="d-flex gap-3">
                       <img
                         className="pl-2 img-logbook-header"
+                        className="pl-2 img-logbook-header"
                         src={LogoRiung}
                         alt="Logo RIUNG"
                       />
+                      <h5 className="text-table-logbook fw-bold">
                       <h5 className="text-table-logbook fw-bold">
                         PT Riung Mitra Lestari Production Department Jobsite:{" "}
                         {datas.jobsite}
@@ -87,16 +89,22 @@ const LogBookSectionReport = ({}) => {
                     </div>
                   </th>
                   <div className="vr height-header-logbook"></div>
+                  <div className="vr height-header-logbook"></div>
                   <th className="col-6">
                     <h4 className="header-report-logbook mb-3 fw-semibold">
                       LOG BOOK SECTION HEAD REPORT
                     </h4>
+                    </h4>
                   </th>
+                  <div className="vr height-header-logbook"></div>
                   <div className="vr height-header-logbook"></div>
                   <th className="col-3">
                     <div>
                       <p className="px-1 fw-normal align-middle text-alat text-table-logbook">
+                    <div>
+                      <p className="px-1 fw-normal align-middle text-alat text-table-logbook">
                         No. Dokumen:{" "}
+                        <span className="fw-semibold fst-italic text-table-logbook">
                         <span className="fw-semibold fst-italic text-table-logbook">
                           FRM-OPR - 006
                         </span>
@@ -118,35 +126,46 @@ const LogBookSectionReport = ({}) => {
                 <thead className="text-center">
                   <tr>
                     <th width="2%" className="text-table-logbook align-middle">
+                    <th width="2%" className="text-table-logbook align-middle">
                       NO
                     </th>
+                    <th width="8%" className="text-table-logbook align-middle">
                     <th width="8%" className="text-table-logbook align-middle">
                       LOKASI
                     </th>
                     <th width="5%" className="text-table-logbook align-middle">
+                    <th width="5%" className="text-table-logbook align-middle">
                       C/N HAULER
                     </th>
+                    <th width="5%" className="text-table-logbook align-middle">
                     <th width="5%" className="text-table-logbook align-middle">
                       C/N LOADER
                     </th>
                     <th width="5%" className="text-table-logbook align-middle">
+                    <th width="5%" className="text-table-logbook align-middle">
                       C/N SUPPORT
                     </th>
+                    <th width="20%" className="text-table-logbook align-middle">
                     <th width="20%" className="text-table-logbook align-middle">
                       AKTIVITAS
                     </th>
                     <th width="14%" className="text-table-logbook align-middle">
+                    <th width="14%" className="text-table-logbook align-middle">
                       SKETSA
                     </th>
+                    <th width="5%" className="text-table-logbook align-middle">
                     <th width="5%" className="text-table-logbook align-middle">
                       STATUS PKH
                     </th>
                     <th width="14%" className="text-table-logbook align-middle">
+                    <th width="14%" className="text-table-logbook align-middle">
                       PROBLEM
                     </th>
                     <th width="10%" className="text-table-logbook align-middle">
+                    <th width="10%" className="text-table-logbook align-middle">
                       CORRECTIVE ACTION
                     </th>
+                    <th width="5%" className="text-table-logbook align-middle">
                     <th width="5%" className="text-table-logbook align-middle">
                       PARAF
                     </th>
@@ -207,12 +226,14 @@ const LogBookSectionReport = ({}) => {
                       width="15%"
                       scope="col"
                       className="text-table-logbook table-dark align-middle"
+                      className="text-table-logbook table-dark align-middle"
                     >
                       UNIT BREAK DOWN
                     </th>
                     <th
                       width="15%"
                       scope="col"
+                      className="table-dark align-middle text-table-logbook"
                       className="table-dark align-middle text-table-logbook"
                     >
                       UNIT STB
@@ -250,10 +271,12 @@ const LogBookSectionReport = ({}) => {
             </div>
 
             {/* <hr className="w-100 solid m-0" /> */}
+            {/* <hr className="w-100 solid m-0" /> */}
 
             {/* Content Bottom */}
             <div className="container px-5 pt-3">
               <div className="row align-items-center">
+                <div className="col-4 text-center text-table-logbook gap-5">
                 <div className="col-4 text-center text-table-logbook gap-5">
                   <p className="fw-bold">Diserahkan Oleh,</p>
                   <img src={ttd?.ttd_diserahkan} width="100" />
@@ -261,11 +284,13 @@ const LogBookSectionReport = ({}) => {
                   <p className="fw-bold">Section Shift 1</p>
                 </div>
                 <div className="col-4 text-center text-table-logbook gap-5">
+                <div className="col-4 text-center text-table-logbook gap-5">
                   <p className="fw-bold">Diterima Oleh,</p>
                   <img src={ttd?.ttd_diterima} width="100" />
                   <p className="fw-bold">({datas?.diterima_oleh})</p>
                   <p className="fw-bold">Section Shift 2</p>
                 </div>
+                <div className="col-4 text-center text-table-logbook">
                 <div className="col-4 text-center text-table-logbook">
                   <p className="fw-bold">Diketahui,</p>
                   <img src={ttd?.ttd_diketahui} width="100" />
@@ -277,13 +302,13 @@ const LogBookSectionReport = ({}) => {
           </div>
         </div>
       </div>
-      {sketsa &&
+      {/* {sketsa &&
         sketsa.map((item, index) => (
           <div key={index}>
             <img width="1000" src={item?.url} alt={item?.name} />
             <br />
           </div>
-        ))}
+        ))} */}
     </div>
   );
 };
