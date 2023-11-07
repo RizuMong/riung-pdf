@@ -49,6 +49,8 @@ p {
   margin-bottom: 0 !important;
 }
 
+@page { margin: 0cm /* or 0, if you want */ }
+
 table {
   margin: 0;
   margin-bottom: 0 !important;
@@ -58,10 +60,41 @@ table {
   visibility: hidden;
 }
 
+.height-header-logbook {
+  height: 70px;
+}
+
+.text-table-logbook {
+  font-size: 12px !important;
+}
+
+.img-logbook-header {
+  width: 80px;
+  height: 40px;
+}
+.header-report-logbook {
+  font-size: 20px !important;
+  text-align: center;
+}
+
 @media print {
   /* Logbook */
   .text-akivitas-logbook {
     font-size: 10px !important;
+  }
+
+  .height-header-logbook {
+    height: 50px;
+  }
+
+  .header-report-logbook {
+    font-size: 10px !important;
+    /* text-align: center; */
+  };
+
+  .img-logbook-header {
+    width: 20px !important;
+    height: 10px !important;
   }
 
   .header-alat-loading {
@@ -85,8 +118,8 @@ table {
   }
 
   .header-report-production {
-    font-size: 16px !important;
-    text-align: center;
+    font-size: 10px !important;
+    /* text-align: center; */
   };
 
   .header-side-logbook {
@@ -94,7 +127,7 @@ table {
   }
 
   .text-table-logbook {
-    font-size: 10px !important;
+    font-size: 8px !important;
   }
 
   .text-alat {
