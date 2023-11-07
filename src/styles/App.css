@@ -84,7 +84,7 @@ table {
   }
 
   .height-header-logbook {
-    height: 50px;
+    height: 30px;
   }
 
   .header-report-logbook {
@@ -93,8 +93,8 @@ table {
   };
 
   .img-logbook-header {
-    width: 20px !important;
-    height: 10px !important;
+    width: 22px !important;
+    height: 8px !important;
   }
 
   .header-alat-loading {

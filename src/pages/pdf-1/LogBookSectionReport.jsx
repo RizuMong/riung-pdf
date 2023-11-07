@@ -96,7 +96,7 @@ const LogBookSectionReport = ({}) => {
                 <div className="vr height-header-logbook"></div>
                 <th className="col-3">
                   <div>
-                    <p className="px-1 fw-normal align-middle text-alat text-table-logbook">
+                    <p className="px-1 fw-normal align-middle text-table-logbook">
                       No. Dokumen:{" "}
                       <span className="fw-semibold fst-italic text-table-logbook">
                         FRM-OPR - 006
